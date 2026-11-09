@@ -1,6 +1,8 @@
 /** Independent ECMAScript implementation of the restricted canonical/input model. */
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { resolve } from 'node:path';
 export function canonical(value) {
   if (value===null) return 'null';
   if (typeof value==='boolean') return value?'true':'false';
@@ -22,7 +24,7 @@ export function input(contractId,payload,registry,options={}) {
   const selected=Object.fromEntries(contract.included_fields.filter(x=>x in payload).map(x=>[x,payload[x]]));
   return Buffer.concat([Buffer.from('E2EESA\0'),Buffer.from(canonical(header)),Buffer.from([0]),Buffer.from(canonical(selected))]);
 }
-if (process.argv[2]) {
+if (process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1])) {
   const value=JSON.parse(readFileSync(0,'utf8'));
   if(process.argv[2]==='canonical')process.stdout.write(Buffer.from(canonical(value)).toString('hex'));
   else {const registry=JSON.parse(readFileSync(process.argv[2],'utf8'));process.stdout.write(input(value.contract_id,value.payload,registry,value.options).toString('hex'));}
