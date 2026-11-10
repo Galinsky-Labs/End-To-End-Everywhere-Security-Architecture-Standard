@@ -1,11 +1,15 @@
 {
   "schemaVersion": 1,
   "repository": "neophilism/End-To-End-Everywhere-Security-Architecture-Standard",
-  "updatedAt": "2026-10-12T13:18:45.291Z",
+  "updatedAt": "2026-11-10T01:55:14Z",
   "standard": {
     "repository": "neophilism/End-To-End-Everywhere-Security-Architecture-Standard",
-    "commit": "8441335f359c6e446f9bfe8b959f9606ce341409",
-    "basis": "development"
+    "commit": "b137a3d1cb54900204ff13c7694ed00a50c00141",
+    "basis": "production",
+    "version": "1.0.0",
+    "canonicalRepository": "Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard",
+    "releaseManifest": "release/1.0.0-manifest.json",
+    "releaseTreeDigest": "sha256:e0b0390cf6c7e36776b7c4d515742cdda68a0edbf35b7b0d53cb3f599d2becb5"
   },
   "inventory": {
     "path": "security/e2eesa-inventory.json",
@@ -54,10 +58,11 @@
     "spec/transport-security.md"
   ],
   "nextActions": [
-    "Read the product plan, AGENTS, current implementation, security pins and the existing evidence listed above; preserve approved scope.",
+    "The 1.0.0 engineering standard is released; this record's three stages apply to separately scoped adoption, implementation testing, and independently evidenced review.",
     "Complete and independently review the source/build/runtime component and data-flow inventory using the pinned upstream contracts.",
     "Implement or close unverified protected flows; retain intentional public data and authorized business processing boundaries.",
     "Verify all six required gates and actual applicable integrations/platforms on the same source, preserving immutable reports.",
     "Keep the owner-arranged independent expert review unchecked until qualified authenticated review and owner acceptance are recorded."
-  ]
+  ],
+  "canonicalRepository": "Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard"
 }

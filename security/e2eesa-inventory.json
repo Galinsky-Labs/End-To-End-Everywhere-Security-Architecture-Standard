@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "repository": "neophilism/End-To-End-Everywhere-Security-Architecture-Standard",
+  "repository": "Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard",
   "classificationStatus": "unverified",
   "coverageComplete": false,
   "components": [],
@@ -13,6 +13,7 @@
   ],
   "limitations": [
     "This is a discovery placeholder, not a complete E2EESA component inventory or a claim that no protected flows exist.",
-    "Use the pinned upstream 0.2 component-inventory and scoped-assessment contracts for actual assessment."
+    "Use the pinned upstream 0.2 component-inventory and scoped-assessment contracts for actual assessment.",
+    "This remains a downstream adoption inventory placeholder, independent from the released E2EESA 1.0.0 normative standard."
   ]
 }
