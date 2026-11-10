@@ -114,11 +114,12 @@ class RequirementAnalysisTests(unittest.TestCase):
         self.assertEqual(self.inspect(r, verifier=lambda review, row: True)
                          ["independently_authenticated_reviewed"], 0)
 
-    def test_repository_baseline_explicitly_pending(self):
+    def test_repository_reports_real_authored_coverage(self):
         r = a.validate_repository(ROOT)
         self.assertEqual(r["errors"], [])
         self.assertGreater(r["total"], 0)
-        self.assertEqual(r["authored"], 0)
+        self.assertGreater(r["authored"], 0)
+        self.assertLess(r["authored"], r["total"])
         self.assertEqual(r["independently_authenticated_reviewed"], 0)
 
 

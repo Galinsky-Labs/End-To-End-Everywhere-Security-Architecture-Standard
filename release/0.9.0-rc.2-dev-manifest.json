@@ -3676,8 +3676,8 @@
     },
     {
       "path": "tests/test_requirement_analysis.py",
-      "size": 6241,
-      "git_blob_sha": "6b7ab570377ebf3d90a684d4d07fcfe9d1d62789"
+      "size": 6297,
+      "git_blob_sha": "a26966ddc52397ab688d00f20698eee87448a787"
     },
     {
       "path": "tests/test_research_profile_registry.py",
@@ -3765,5 +3765,5 @@
       "git_blob_sha": "d9bdee577379699279bb46a759601eec34364dde"
     }
   ],
-  "tree_digest": "sha256:13b3387d670ce96cda7f2c3b780e595ad73fd28f742ab0f3464c26c667e10211"
+  "tree_digest": "sha256:9e409f67f7bec23b41b26aaf74b8acf9b33b08859b2ba18cfe1645b55330db9f"
 }
