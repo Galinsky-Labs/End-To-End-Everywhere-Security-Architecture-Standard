@@ -1,0 +1,60 @@
+name: Prepare E2EESA 1.0 engineering release
+
+on:
+  push:
+    branches:
+      - work/e2eesa-1-0-promotion-20261109
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    if: github.repository == 'Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out proposed release branch
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.13"
+
+      - name: Promote exact frozen rc2 source into 1.0 engineering edition
+        run: python release/engineering_1_0.py --apply
+
+      - name: Validate exact 1.0 engineering source manifest
+        run: python release/validate_1_0_engineering.py
+
+      - name: Validate all repository invariants
+        run: python scripts/validate_repo.py
+
+      - name: Validate current source-bound requirements
+        run: python scripts/requirement_analysis.py
+
+      - name: Run full unit regression suite
+        run: python -m unittest discover -s tests -v
+
+      - name: Run cross-runtime canonicalization checks
+        run: python -m unittest discover -s tests -p test_cross_language_bytes.py -v
+
+      - name: Run seeded adversarial reference tests
+        run: python scripts/run_reference_security_checks.py --seed 20261007 --iterations 1000
+
+      - name: Build and test public standards portal
+        run: |
+          node website/build.mjs
+          node website/check.mjs
+
+      - name: Commit validated release conversion to proposed branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add VERSION README.md registry scripts spec tests profiles fixtures adr reference .github/workflows website/build.mjs
+          git add release/1.0.0-manifest.json release/1.0.0-RELEASE-NOTES.md
+          git commit -m "Promote validated E2EESA 1.0.0 engineering standard"
+          git push origin HEAD:work/e2eesa-1-0-promotion-20261109
