@@ -1901,8 +1901,8 @@
     },
     {
       "path": "registry/requirement-analyses.json",
-      "size": 78,
-      "git_blob_sha": "fec27329ac9a5ab459fac4fa87a87db86c5982ca"
+      "size": 26510,
+      "git_blob_sha": "2eb5b4040d582c669114ccabb6952a6bacd3351c"
     },
     {
       "path": "registry/research-profile-registry.json",
@@ -3765,5 +3765,5 @@
       "git_blob_sha": "d9bdee577379699279bb46a759601eec34364dde"
     }
   ],
-  "tree_digest": "sha256:35416a52a2a873df1b0eb531d2024ed713e8a0b938052714cc597205997449ae"
+  "tree_digest": "sha256:13b3387d670ce96cda7f2c3b780e595ad73fd28f742ab0f3464c26c667e10211"
 }
