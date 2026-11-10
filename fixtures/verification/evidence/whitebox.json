@@ -5,7 +5,7 @@
   "product_id": "example-messenger",
   "product_version": "1.0.0",
   "platform": "service",
-  "policy_digest": "sha256:6c4e2cc266a026e3de284ded0b3a279f59d2f37eb62c1ba491f091e6df69a19d",
+  "policy_digest": "sha256:b41bc4746f9f11e7fc6b6bac53889a377ad0e331c09f6a25f3ba35fe157c6a4a",
   "assessor_id": "fixture-assessor",
   "observed_at": "2026-10-07T22:40:20Z",
   "report_refs": [
@@ -136,7 +136,7 @@
       "model": {
         "model_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
         "specification_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
-        "standard_version": "0.1.0-dev",
+        "standard_version": "1.0.0",
         "explored_states": 1000,
         "claim_type": "bounded-model"
       }

@@ -20,9 +20,28 @@ def load(path):return c.parse_json(path.read_text())
 def parse_time(text):return datetime.strptime(text,'%Y-%m-%dT%H:%M:%SZ').replace(tzinfo=timezone.utc)
 
 def standard_lock(root=ROOT):
-    policy=load(root/'registry/release-candidate.json');manifest=load(root/policy['manifest_path'])
-    if manifest!=release_candidate.build_manifest(root,policy):raise ValueError('standard manifest differs from evaluated source tree')
-    return {'release_version':policy['release_version'],'tree_digest':manifest['tree_digest'],'profile_catalog_digest':c.canonical_digest(load(root/'profiles/catalog.json')),'serialization_scheme':c.SCHEME,'digest_scheme':digest_contracts.DIGEST_SCHEME}
+    release = (root / "VERSION").read_text(encoding="utf-8").strip()
+    if release == "1.0.0":
+        if root.resolve() != ROOT.resolve():
+            raise ValueError("cannot assess a foreign source tree without its own final release validator")
+        import sys
+        release_path = str(ROOT / "release")
+        if release_path not in sys.path:
+            sys.path.insert(0, release_path)
+        import validate_1_0_engineering as final
+        manifest = load(root / "release/1.0.0-manifest.json")
+        if manifest != final.build_manifest():
+            raise ValueError("standard manifest differs from evaluated source tree")
+        version = "1.0.0"
+    else:
+        policy = load(root / "registry/release-candidate.json")
+        manifest = load(root / policy["manifest_path"])
+        if manifest != release_candidate.build_manifest(root, policy):
+            raise ValueError("standard manifest differs from evaluated source tree")
+        version = policy["release_version"]
+    return {"release_version":version, "tree_digest":manifest["tree_digest"],
+            "profile_catalog_digest":c.canonical_digest(load(root / "profiles/catalog.json")),
+            "serialization_scheme":c.SCHEME, "digest_scheme":digest_contracts.DIGEST_SCHEME}
 
 def request_digest(request):return digest_contracts.digest('scoped-assessment-request-record@1.0.0',request)
 

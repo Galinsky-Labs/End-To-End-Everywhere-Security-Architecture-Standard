@@ -664,6 +664,7 @@ PROPERTY_ID = re.compile(r"^SP-[A-Z0-9]+(?:-[A-Z0-9]+)*$")
 SEMVER = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+(?:-[0-9A-Za-z.-]+)?$")
 DEV_VERSION = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+-dev$")
 CANDIDATE_VERSION = re.compile(r"^0\.9\.0-rc\.[0-9]+(?:-dev)?$")
+STABLE_VERSION = re.compile(r"^1\.0\.0$")
 
 
 class ValidationError(Exception):
@@ -1215,8 +1216,8 @@ def validate_repository(root: Path = ROOT) -> list[str]:
     version_path = root / "VERSION"
     if version_path.is_file():
         version = version_path.read_text(encoding="utf-8").strip()
-        if not (DEV_VERSION.fullmatch(version) or CANDIDATE_VERSION.fullmatch(version)):
-            errors.append("VERSION must use x.y.z-dev or the 0.9.0-rc.N candidate line before 1.0")
+        if not (DEV_VERSION.fullmatch(version) or CANDIDATE_VERSION.fullmatch(version) or STABLE_VERSION.fullmatch(version)):
+            errors.append("VERSION must use development, candidate, or the 1.0.0 engineering release")
 
     for schema_rel in (
         "schemas/profile.schema.json",
@@ -2875,10 +2876,11 @@ def validate_repository(root: Path = ROOT) -> list[str]:
         if rationale_report["coverage_percent_basis_points"] != 10000:
             errors.append("security rationale coverage must be 100 percent")
 
-    errors.extend(
-        "release candidate: " + error
-        for error in release_candidate.validate_release(root)
-    )
+    if (root / "VERSION").is_file() and (root / "VERSION").read_text(encoding="utf-8").strip() != "1.0.0":
+        errors.extend(
+            "release candidate: " + error
+            for error in release_candidate.validate_release(root)
+        )
 
     errors.extend(client_security_engine.validate_repository(root, profile_catalog))
 

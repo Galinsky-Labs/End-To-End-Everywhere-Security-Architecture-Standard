@@ -8,7 +8,7 @@
   "configuration": {
     "schema_version": "0.1",
     "configuration_id": "example-a3-config",
-    "standard_version": "0.1.0-dev",
+    "standard_version": "1.0.0",
     "selected_profiles": [
       "foundation-baseline@0.1.0",
       "example-choice-b@0.1.0",

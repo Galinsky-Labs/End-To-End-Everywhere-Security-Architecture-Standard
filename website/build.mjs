@@ -56,7 +56,7 @@ for (const name of names) {
     '<p>Read the full specification in a comfortable, navigable format. Generated automatically from the GitHub repository, with no separately maintained copy.</p>',
     '<div class="reader-actions"><a href="../?view=library">← Back to library</a><a href="../?view=profiles">Explore profiles →</a></div></section>',
     '<div class="reader-layout"><aside class="reader-toc" aria-label="On this page"><h2>On this page</h2>' + (toc || '<a href="#main-document">Document</a>') + '</aside>',
-    '<main id="main-document" class="reader-article"><div class="reader-status-note">This engineering release candidate has not completed independent expert review and does not confer product certification or approval.</div>',
+    '<main id="main-document" class="reader-article"><div class="reader-status-note">E2EESA 1.0.0 is an engineering standard; independent expert review remains pending and publication does not certify a product.</div>',
     html,
     '<div class="reader-status-note">Source file: <a href="' + sourceLink + '" target="_blank" rel="noopener noreferrer">spec/' + escapeHtml(name) + '</a> · Git commit ' + escapeHtml(commit.slice(0,12) || "unknown") + '</div></main></div>',
     '<footer class="reader-bottom"><span>End-to-End Everywhere — clarity first, security always.</span><a href="../?view=library">Back to all specifications →</a></footer>',

@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1",
-  "standard_version": "0.1.0-dev",
+  "standard_version": "1.0.0",
   "contracts": [
     {
       "contract_id": "requires-assurance-a1-observed-verification-blackbox",

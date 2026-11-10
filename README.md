@@ -32,9 +32,9 @@ Security-sensitive changes are made through reviewed pull requests. Controversia
 
 ## Current status
 
-The `0.9.0-rc.2` engineering release candidate has a source-frozen manifest and required CI validation. Original `0.9.0-rc.1` bytes remain archived and verified. Its normative/reference implementation statuses do not prove deployed product security. This is **not 1.0**, not independently certified, and independent human review is still pending. Individual requirement analyses remain incomplete (21 of 1,055 requirements). The owner's policy permits development and engineering distribution without waiting for human review, but actual vulnerabilities and failing required tests remain blockers.
+**E2EESA 1.0.0 is the owner-authorized stable engineering edition of the implementation-neutral architecture standard.** It is published from a validated, immutable rc.2 source candidate. Conformance to the standard requires independent scoped product evidence; this publication alone does not certify any product. External expert review remains pending and is not falsely reported as complete.
 
-The ordered work and evidence states are in `registry/audit-remediation.json`. Downstream adoption follows the corrected component and data-flow contracts.
+Audit v2 normative/reference-tooling work is recorded in registry/audit-remediation.json. Optional PQ MLS research and completion of individual requirement-level rationales are tracked separately; at the source rc.2 freeze, 21 of 1,055 paragraphs had individual analysis and no externally authenticated review. Failed security tests or demonstrable vulnerabilities remain genuine reasons to withhold affected conformance claims.
 
 ## End-to-End Everywhere progress
 
