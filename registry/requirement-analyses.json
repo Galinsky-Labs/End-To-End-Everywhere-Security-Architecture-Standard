@@ -1,5 +1,556 @@
 {
   "schema_version": "0.1",
   "analysis_version": "0.1.0",
-  "records": []
+  "records": [
+    {
+      "logical_id": "E2EESA-R-00001",
+      "requirement_id": "REQ-0e455721649ea0fe7d0f82b8d389326f886663c1282473c44e8118b93334cf9c",
+      "document_path": "spec/key-change-state-machine.md",
+      "text_digest": "sha256:106b34cf0920b2544e518370b91b6d36cb26ec27ec9a45111812d4c674bbbc8d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "An identity-key change creates a recipient-substitution risk before the application prepares ciphertext. Comparing the accepted subject to a locally anchored prior subject, recording the transition, and requiring a fresh independent verification prevent an untrusted directory update, including a later return to the old fingerprint, from silently inheriting trusted status.",
+      "threat_ids": [
+        "TM-DIRECTORY",
+        "TM-ACCOUNT"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "atomic-endpoint-change-notification-test",
+        "verified-and-unverified-peer-subject-transition-regressions"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:d423495ee75f5289bc5e1636bd6de94127704d9bbc068e4311d7bd311c8f37f7",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00002",
+      "requirement_id": "REQ-3a51a2a478fcd5414514755e4249cce2f965d447b009c7e850a47d5ca16837f4",
+      "document_path": "spec/key-change-state-machine.md",
+      "text_digest": "sha256:0e7b768c192639e585d8c282b37cd6f5171e3db0df093d40fec9dc1a99ee5f70",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A hash chain detects rewritten journal entries but cannot detect that an attacker restored an earlier complete prefix. A separate monotonic trusted head must therefore be checked and updated durably on every accepted change; otherwise valid historic state can falsely authorize new content after a key replacement.",
+      "threat_ids": [
+        "TM-ROLLBACK",
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-ROLLBACK-RESISTANCE",
+        "SP-KEY-CONSISTENCY"
+      ],
+      "evidence_expectations": [
+        "independent-monotonic-anchor-rollback-negative-test",
+        "journal-chain-tamper-and-order-fixtures"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:86cf55c07d58334b48794a511bd7a5ee90739a23508c0e25b8fffccde259b2e8",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00003",
+      "requirement_id": "REQ-1e46cae601cffbd7afae861c60f7da72e6a82bed08c1c0babfac6d4fbc40a395",
+      "document_path": "spec/key-change-state-machine.md",
+      "text_digest": "sha256:b8b0ca8ea4f1024b598f2d234d904e75e97287e881103a72557c11d8d43b27c4",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A security notice that exists only in an internal event log is insufficient when users rely on displayed verification status. Accessibility, display ordering, crash consistency and host transaction serialization are necessary to prevent hidden or racing identity changes from being represented as trusted delivery.",
+      "threat_ids": [
+        "TM-ROLLBACK",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "screen-reader-visible-change-alert-test",
+        "crash-and-concurrent-send-commit-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:346ce92ea3b4cec2962a150892aa94c391338cec808c5ab608b2076960bdc99b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00004",
+      "requirement_id": "REQ-0a68c358bac1b1f8d840a44bc7c24a1484c7a2b4ddecc868874b79d923dc6286",
+      "document_path": "spec/key-change-state-machine.md",
+      "text_digest": "sha256:e7f6b9db9ebbe5a90c3326ac7ec96898e5714507ef7989b1a35231160a1d2371",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A queued message is an authorization to encrypt for a specific observed identity state, not for an arbitrary future account occupant. Binding the queue item to a fingerprint and monotonically increasing journal revision forces renewed user authorization after all transitions, even if the fingerprint cycles back to its original value.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "queued-recipient-binding-negative-cases",
+        "final-encryption-dispatch-interception-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:d49aad5f1fec27bce3be59b23531c9b63e2f83e9fa8e8a23873032ab732e4917",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00005",
+      "requirement_id": "REQ-6dea10abe1a1928f3457fb242101899793b47c791304988ee85d2a2939f46e6c",
+      "document_path": "spec/hardware-recovery-attempt-budgets.md",
+      "text_digest": "sha256:00a9cc9acbd3b2e12dc593e9ba7220ded89a1cf9faaf9de9537933e8a5a985b4",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Recovery guess resistance is determined by the real hardware release gate, policy identity and finite attempt budget, not merely the apparent entropy of a user secret. A failed guess must reserve a counter slot before key release so a compromised front end cannot test unlimited candidates and then decide not to count failures.",
+      "threat_ids": [
+        "TM-RECOVERY",
+        "TM-HARDWARE"
+      ],
+      "security_property_ids": [
+        "SP-RECOVERY-CONFIDENTIALITY",
+        "SP-AVAILABILITY"
+      ],
+      "evidence_expectations": [
+        "hardware-identity-and-code-attestation-validation",
+        "budget-reservation-before-unwrapping-adversarial-test"
+      ],
+      "external_standard_ids": [
+        "NIST-SP800-57P1R5",
+        "NIST-SP800-53R5"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:68a3fc5bc9b8393b34d9e0f27e936ae2e5367470cef0fcc3ce48694fe04b7187",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00006",
+      "requirement_id": "REQ-d0be44ca3c53cdccf3cd33979db2da41163e0f9d8b0a1ec71dc3b894d46709e6",
+      "document_path": "spec/hardware-recovery-attempt-budgets.md",
+      "text_digest": "sha256:568aaee3e1315f33b42973ef7c3f03498d6daec873eb8d92b76ba756c4737bbd",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Counter reset by snapshots, replicas or support channels permits offline-style dictionary attacks through repeated online guesses. The backend must authenticate initiators before any reservation while preserving an explicit denial-of-service model for a malicious already-authorized actor who exhausts the finite budget.",
+      "threat_ids": [
+        "TM-ROLLBACK",
+        "TM-DOS"
+      ],
+      "security_property_ids": [
+        "SP-RECOVERY-CONFIDENTIALITY",
+        "SP-AVAILABILITY"
+      ],
+      "evidence_expectations": [
+        "snapshot-replica-and-support-rollback-negative-tests",
+        "unauthenticated-request-exhaustion-negative-test"
+      ],
+      "external_standard_ids": [
+        "NIST-SP800-57P1R5",
+        "NIST-SP800-53R5"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:b07e07c53086be7d9e5600c72b26679afdf1e8734af194176519382b37990f10",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00007",
+      "requirement_id": "REQ-011798c072dae416a771ed52cff50a0eb2a839d0ca2953928ddb4d0fe2541a48",
+      "document_path": "spec/hardware-recovery-attempt-budgets.md",
+      "text_digest": "sha256:105af53fec927c53c2b8a24cc279b977182b7f827c9a4f3a57b68c107a864efd",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A textual attestation identifier or boolean can be fabricated by the service it purports to constrain. Hardware roots, approved measurements, policy and revocation must be independently verified at the secret-release boundary, including tests that intentionally substitute stale hardware identities and measurements.",
+      "threat_ids": [
+        "TM-HARDWARE",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-RECOVERY-CONFIDENTIALITY",
+        "SP-KEY-CONSISTENCY"
+      ],
+      "evidence_expectations": [
+        "real-trust-root-attestation-chain-verification",
+        "stale-revoked-and-substituted-measurement-tests"
+      ],
+      "external_standard_ids": [
+        "NIST-SP800-57P1R5",
+        "NIST-SP800-53R5"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:bc8839949ddc186a2b96810f5dc13d26896aa87a58e8fd63e1ece1c7d65af5f0",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00008",
+      "requirement_id": "REQ-f589687ae5eae2dc1d10b743a6e8ee365f904bf7f55730e470b88b643508dc5d",
+      "document_path": "spec/hardware-recovery-attempt-budgets.md",
+      "text_digest": "sha256:ca4edb5e94a1453d0d408baec148cbadcf6d88c4532c0a8203ea55e479c27b5d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Per-replica counters are not a global guess budget: an attacker can multiply attempts across cloned hosts or new replicas. Hardware-backed single-device enforcement or a genuinely strongly consistent shared counter must authorize every release, and replica enrollment must preserve remaining attempts.",
+      "threat_ids": [
+        "TM-ROLLBACK",
+        "TM-RECOVERY"
+      ],
+      "security_property_ids": [
+        "SP-RECOVERY-CONFIDENTIALITY",
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "concurrent-cross-replica-budget-test",
+        "unauthorized-replica-enrollment-negative-case"
+      ],
+      "external_standard_ids": [
+        "NIST-SP800-57P1R5",
+        "NIST-SP800-53R5"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:0655bff448af4b571cd4aab1846c27965017ab0bbdf5ac24f027124b209d5872",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00009",
+      "requirement_id": "REQ-04403affca226d57e855778011b7efa88d92bb623a4e14b115cef339ad901791",
+      "document_path": "spec/hardware-recovery-attempt-budgets.md",
+      "text_digest": "sha256:de2e581cd51a1e04ebc853af4ca438a8dcabc0965f82fbf7e0143e60685884f9",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Checking counter state and only afterwards incrementing it creates a time-of-check/time-of-use window for repeated guesses. An atomic reservation plus independently trusted checkpoint is required before decryption, with fail-closed handling for network partitions, commit uncertainty and replayed signed snapshots.",
+      "threat_ids": [
+        "TM-ROLLBACK",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-RECOVERY-CONFIDENTIALITY",
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "atomic-reservation-failure-injection-test",
+        "monotonic-checkpoint-replay-test"
+      ],
+      "external_standard_ids": [
+        "NIST-SP800-57P1R5",
+        "NIST-SP800-53R5"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:ce8788da0d5d9632806b5b8c2963158cb61fbf912aa1f296861e7a7d8c595fa0",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00010",
+      "requirement_id": "REQ-9aaa0678d7ff7afd36d3feb1c8e7ef2e8303c493c0b62b83682cdd08e4450e42",
+      "document_path": "spec/hardware-recovery-attempt-budgets.md",
+      "text_digest": "sha256:7cb7e1b4b1296aa52ebfa194f846c5720197026374087abf6749afeda17b93c0",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Recovery-budget replenishment should be an explicit new authorization event rather than a consequence of elapsed time or an operator button. Separate reset credentials, counter-epoch increments and denial of implicit support privileges preserve the finite-guess guarantee and make malicious exhaustion recoverable only under the chosen policy.",
+      "threat_ids": [
+        "TM-INSIDER",
+        "TM-ACCOUNT"
+      ],
+      "security_property_ids": [
+        "SP-RECOVERY-CONFIDENTIALITY",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "independent-reset-authority-proof-test",
+        "reset-epoch-monotonicity-negative-case"
+      ],
+      "external_standard_ids": [
+        "NIST-SP800-57P1R5",
+        "NIST-SP800-53R5"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:dbaf87a4afe5c5dec789e7ae99c9fd7a23d41141fc736138ed7be7e40365dff5",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00011",
+      "requirement_id": "REQ-c5f1e7e3bf88de0d9c4c5bf590c0e8c1eb99ad0850e9c6424851b3b617beaf66",
+      "document_path": "spec/hardware-recovery-attempt-budgets.md",
+      "text_digest": "sha256:5ed089351f24ad03b061cca28401478ecf8b25fb722e6acfb800c23468c2c534",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A schema-valid budget receipt demonstrates only that reported fields are internally consistent; it does not prove that an HSM actually enforced the limit. Requiring independently authenticated counter and attestation inputs prevents a reference evaluator from being mistaken for an operating cryptographic release mechanism.",
+      "threat_ids": [
+        "TM-RECOVERY",
+        "TM-HARDWARE"
+      ],
+      "security_property_ids": [
+        "SP-RECOVERY-CONFIDENTIALITY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "actual-hardware-release-path-trace",
+        "explicit-no-release-from-reference-only-contract-test"
+      ],
+      "external_standard_ids": [
+        "NIST-SP800-57P1R5",
+        "NIST-SP800-53R5"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:086b2f4440a763572f15bf3d494db695eada3e8d4b8db6b6e25bc2a44943115a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00012",
+      "requirement_id": "REQ-231f2d0814970dd5bc37f8d02cbdb09d9e0899cbd90efdce3c8f8ddaed1a4970",
+      "document_path": "spec/pairwise-prekey-lifecycle.md",
+      "text_digest": "sha256:82f20686a7f28b667c4aee80ad113e746cfb4150e5813938a1237241e72f6d53",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Bounded prekey publication limits exposure and gives operators a testable freshness policy, but the chosen seven-day and thirty-day values are application policy, not a theorem from a cryptographic protocol. Separately limiting retained private keys prevents the nominal public lifetime from concealing a longer decryptability window.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE",
+        "TM-CLOCK"
+      ],
+      "security_property_ids": [
+        "SP-FORWARD-SECRECY",
+        "SP-KEY-CONSISTENCY"
+      ],
+      "evidence_expectations": [
+        "policy-version-lifetime-boundary-tests",
+        "private-prekey-deletion-grace-retention-test"
+      ],
+      "external_standard_ids": [
+        "IETF-BCP201",
+        "NIST-FIPS203"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:879db0f44a526a2402310fb317c0701b2e5e163c52ccffa85ed85e6ef08d10da",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00013",
+      "requirement_id": "REQ-6d07ff2cc26243df7658c5c6f841772c1066216162eb7ec0119800750a611737",
+      "document_path": "spec/pairwise-prekey-lifecycle.md",
+      "text_digest": "sha256:35848dbf11ff3738e5638b4e3132a150a66e31ffe7aacdc3c88e420f17f9454a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A malicious directory or skewed clock can substitute a future, expired or differently signed prekey bundle and trick a client into an outdated or unauthenticated session. Authenticating the bundle against the intended identity and rejecting ambiguous time and stale offline state prevent insecure availability fallbacks.",
+      "threat_ids": [
+        "TM-DIRECTORY",
+        "TM-CLOCK"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "offline-expiry-and-clock-skew-matrix",
+        "signed-prekey-substitution-and-signature-negative-tests"
+      ],
+      "external_standard_ids": [
+        "IETF-BCP201",
+        "NIST-FIPS203"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:733a53834132f31f3fcea8098a64df931aa52fdfa53d9a5467694cf89388fe6c",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00014",
+      "requirement_id": "REQ-c87bef35dd650d24f6e4bc4b42801d2cf64015d6545c5b423401c3e0ec7b276a",
+      "document_path": "spec/pairwise-prekey-lifecycle.md",
+      "text_digest": "sha256:e2d4320bcc3791bc88952f2519fd1669c153eed6262d3b331be6415375923ab5",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "One-time keys only contribute their intended replay properties when selected, marked consumed and deleted according to the actual protocol. Quietly skipping stocked keys or endlessly reusing last-resort material increases replay and compromise exposure, so the application must track exhaustion and explicitly disclose delivery tradeoffs.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-REPLAY-RESISTANCE",
+        "SP-FORWARD-SECRECY"
+      ],
+      "evidence_expectations": [
+        "one-time-key-consume-and-erasure-integration-test",
+        "stock-exhaustion-and-last-resort-profile-tests"
+      ],
+      "external_standard_ids": [
+        "IETF-BCP201",
+        "NIST-FIPS203"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:2f05abc48b4746493d58930aee4e2257eec4245ad5513e41874c8ff5bf07fc23",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00015",
+      "requirement_id": "REQ-ff7b58bd830087c2d4922ade6b752ec17a0f155c250722e2bcf71498afe77ce4",
+      "document_path": "spec/pairwise-prekey-lifecycle.md",
+      "text_digest": "sha256:f04948d15bf217ebfff1256ca9ca01ebe7bd08dd244ffdb779a3b52ae0591363",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A classical X3DH profile has no ML-KEM input and must not be mislabeled a broken PQXDH configuration. Conversely, a PQXDH client that accepts missing or substituted PQ material as a classical fallback loses the very protection it advertises, making explicit algorithm and parameter pinning necessary.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-QUANTUM-HARVEST"
+      ],
+      "security_property_ids": [
+        "SP-PQ-CONFIDENTIALITY",
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "exact-mlkem-parameter-pin-fixture",
+        "stripped-pq-bundle-and-classical-x3dh-separation-test"
+      ],
+      "external_standard_ids": [
+        "IETF-BCP201",
+        "NIST-FIPS203"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:4f588d20ee2d53169200b10da72c7d17087e20e5c826306f1c49de51f75cfa9f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00016",
+      "requirement_id": "REQ-e6fe555a08db97eeb616962c8839010d1367d0bc90d8ef8be8b510d31b3a92f9",
+      "document_path": "spec/pairwise-prekey-lifecycle.md",
+      "text_digest": "sha256:85560c40cd5e438d4cf4a13d69b40725938b4478e410d32ed299b17d9487c4f0",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "An observed server rotation event or new public prekey cannot prove erasure of private material held by the client, its backups or an attacker. Exposure-bound claims therefore depend on device-storage and backup lifecycle evidence, including delayed delivery and old-key grace, not merely metadata freshness.",
+      "threat_ids": [
+        "TM-BACKUP",
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-FORWARD-SECRECY",
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "retained-private-key-copy-adversarial-test",
+        "delayed-message-and-deletion-grace-validation"
+      ],
+      "external_standard_ids": [
+        "IETF-BCP201",
+        "NIST-FIPS203"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:c1cf419d1aea6e17c8f7253af32aef0de399639a1fe5277339d6ac24f834cb4e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00017",
+      "requirement_id": "REQ-7e11dc97c049bd86a105c3abf3ae4b3fe84727ce7a4d43072ac146eb28b0a8d3",
+      "document_path": "spec/push-provider-privacy.md",
+      "text_digest": "sha256:1b9037491774e56f734d5b702f6ab4ef6a43943ff5688d44230a63147c5ac941",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Push notification payload modes have different attacker-visible content. Wake-only data may still reveal timing and routing, while encrypted-payload mode is confidential only to the chosen endpoint key and cannot treat provider-controlled encryption as E2EE; both modes must declare their remaining observables.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-SERVICE-READ"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-METADATA-MINIMIZATION"
+      ],
+      "evidence_expectations": [
+        "real-provider-payload-capture-and-key-isolation-test",
+        "wake-only-plaintext-identifier-negative-case"
+      ],
+      "external_standard_ids": [
+        "NIST-SP800-53R5"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:15f126857f7fbc183086f60c145b04c97cdecee4833de9a29e96c8de64d58721",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00018",
+      "requirement_id": "REQ-ab5de3200b6dd9d10f41ea724a6d2a7564f6710c9f4618b2a5817cc08040833f",
+      "document_path": "spec/push-provider-privacy.md",
+      "text_digest": "sha256:3d8d2fb05862fd92e208ba9347c38410d800a0e6337f1c1c52b0518822fae438",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Silent fallback from endpoint-encrypted notifications to provider-decryptable data bypasses the protected recipient set. Explicit mode, allowable outer fields, recipient identity and version checks are required to reject downgrade and unrecognized payload extensions at the final network egress point.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "mode-confusion-and-provider-key-negative-test",
+        "captured-egress-outer-field-validation"
+      ],
+      "external_standard_ids": [
+        "NIST-SP800-53R5"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:4285bd90440d2822e474c576fc0f63863625fbded1434fd7f5775ee5afd656fa",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00019",
+      "requirement_id": "REQ-5ccd0d2c22c38bf665be027e44a543f1f1c84b6247c11c188bca560726ddda28",
+      "document_path": "spec/push-provider-privacy.md",
+      "text_digest": "sha256:9601804b34db2900881748347b0226379634ee433accbf363024840a7ff3adfa",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A reused routing token or highly correlated notification timing can join otherwise separate application identities. Scoped identifiers and source-bound observation reporting reduce unnecessary linkage, while avoiding unsupported anonymity guarantees against observers that can correlate global traffic patterns.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-NET-PASSIVE"
+      ],
+      "security_property_ids": [
+        "SP-UNLINKABILITY",
+        "SP-METADATA-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "cross-service-token-reuse-negative-test",
+        "notification-timing-and-retry-traffic-analysis"
+      ],
+      "external_standard_ids": [
+        "NIST-SP800-53R5"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:2d5b51397c7ce0422cc5943d9258caedd0e51fcee000d238e8bbbd52180833e0",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00020",
+      "requirement_id": "REQ-e68beea9d173f5e81f33f61fabcb45252db54890cf8027ec863ad6840ec046be",
+      "document_path": "spec/push-provider-privacy.md",
+      "text_digest": "sha256:ed8cdbfd3f9333376a4828e7c25cb02e36e08381ccbc5fcdcc7c745f7cbd8244",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A response-delay or batching policy is meaningful only if final dispatch actually enforces it. A digest of a correlation study does not establish a concrete anonymity set, so privacy claims must be limited to the studied observer, service conditions and empirical evidence rather than inferred from policy labels.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-NET-PASSIVE"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION",
+        "SP-UNLINKABILITY"
+      ],
+      "evidence_expectations": [
+        "actual-dispatch-policy-integration-test",
+        "measured-observer-correlation-evidence"
+      ],
+      "external_standard_ids": [
+        "NIST-SP800-53R5"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:ab76fbf806efd0fd9ecc571907412f81bab5b6f013119527ddf52f69da0156a0",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00021",
+      "requirement_id": "REQ-160c25bf9f21a6cad6862158c9777ac10e2e4cfad7ff5a62d9e7c72efee6640f",
+      "document_path": "spec/push-provider-privacy.md",
+      "text_digest": "sha256:bf28fe49d209ecfa1f3b5fd46dd768b25b420994919422ef7ec299bf2ecd314c",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Reference policy checking is valuable for rejecting malformed push declarations but cannot establish what bytes a real provider receives or whether the provider holds the decryption key. Product-level privacy therefore needs network captures, endpoint instrumentation and key-control evidence across retries, crashes and notification extensions.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-METADATA-MINIMIZATION"
+      ],
+      "evidence_expectations": [
+        "source-bound-real-provider-packet-evidence",
+        "crash-retry-notification-extension-egress-capture"
+      ],
+      "external_standard_ids": [
+        "NIST-SP800-53R5"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:8367729ff09e6920364e92eb7aee6cd7d81e4cba5b6a5aaec694c6efc53c0c48",
+      "review": null
+    }
+  ]
 }
