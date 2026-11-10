@@ -6,9 +6,13 @@ complete testing, and later independent expert review. The canonical record is
 Engine Room reads the default branch through GitHub on manual and background
 refresh. The repository owns its status; no Engine Room snapshot edit is needed.
 
-The initial record leaves all three stages pending. Existing security locks,
-source evidence and approved decisions remain authoritative in their cited files.
-The tracking baseline pin does not upgrade a product's cryptographic profiles.
+The upstream E2EESA engineering standard is published as **1.0.0** (pinned in
+`release/1.0.0-manifest.json`). The three boxes in this status file are separate
+implementation, testing and independent-review evidence stages for a scoped
+product or application assessment. Their pending status must **not** be
+interpreted as the upstream architecture standard remaining unpublished.
+Existing profile locks and approved decisions remain authoritative. A standard
+version does not automatically certify any implementing product.
 
 ## Scope and prerequisite work
 
@@ -67,8 +71,8 @@ and conformance verdict. Engine Room checks structure, source drift, evidence
 paths, stage dependencies and freshness. Review identity/authentication and
 cryptographic quality require independent assessment. All three boxes record
 development progress; production certification remains a separate gate. The
-current upstream development basis cannot pass final Candidate or production
-certification.
+published 1.0.0 engineering edition does not certify actual products; product
+certification requires separate authenticated scoped runtime evidence.
 
 ## Independent-account continuation
 
@@ -92,3 +96,7 @@ certification.
 High/critical findings require fixes and source-bound retests. Lower-severity
 acceptance follows the standard's independent, scoped, time-limited process.
 Metadata cannot waive an invariant or approval requirement.
+
+## Canonical repository and published standard
+
+The canonical source repository is `Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard`. Historic `neophilism/` identifiers are retained in the version-1 status record for compatibility with the immutable 1.0 source-basis validator; the separate `canonicalRepository` values identify the current owner. `standard.basis: production` means the **normative engineering standard was published**, not that implementation, real-world testing, or expert review has passed. The latter three claims remain false until supported by separate source-bound evidence.
