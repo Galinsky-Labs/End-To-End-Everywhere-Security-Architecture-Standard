@@ -183,6 +183,24 @@ def refresh_valid_verification_bindings(matched):
         )
 
 
+def adjust_scoped_assessment_regressions():
+    """Retain negative tests for both the frozen rc2 candidate and the new 1.0 basis."""
+    path = ROOT / "tests/test_scoped_assessment.py"
+    source = path.read_text(encoding="utf-8")
+    old = "r['standard_lock']['release_version']='1.0.0';self.assertEqual"
+    new = "r['standard_lock']['release_version']='0.9.0-rc.2';self.assertEqual"
+    if source.count(old) != 1:
+        raise ValueError("historical negative-lock assertion not found")
+    source = source.replace(old, new)
+    old = "            path=root/'profiles/catalog.json';catalog=json.loads(path.read_text())"
+    new = ("            (root/'VERSION').write_text('0.9.0-rc.2\\n',encoding='utf-8')\n"
+           "            path=root/'profiles/catalog.json';catalog=json.loads(path.read_text())")
+    if source.count(old) != 1:
+        raise ValueError("candidate-only sandbox setup changed")
+    source = source.replace(old, new)
+    path.write_text(source, encoding="utf-8")
+
+
 def adjust_scoped_standard_lock():
     """Pin assessment claims to the active 1.0 source, not historical rc.2 bytes."""
     path = ROOT / "scripts/scoped_assessment.py"
@@ -235,6 +253,7 @@ def apply():
         (ROOT / rel).write_text(content.replace(OLD, NEW), encoding="utf-8")
     adjust_active_validator()
     adjust_scoped_standard_lock()
+    adjust_scoped_assessment_regressions()
     adjust_historical_candidate_tests()
     refresh_valid_verification_bindings(bound_verification)
     new_basis = requirement_analysis.source_basis(ROOT)
