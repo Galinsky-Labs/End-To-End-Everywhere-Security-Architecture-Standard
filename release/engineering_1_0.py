@@ -151,6 +151,70 @@ def amend_website():
     path.write_text(text, encoding="utf-8")
 
 
+
+def capture_valid_verification_bindings():
+    """Only update evidence digests that were genuinely correct before promotion."""
+    from assurance_common import digest
+    root = ROOT / "fixtures/verification"
+    cases = json.loads((root / "cases.json").read_text(encoding="utf-8"))
+    matched = {}
+    for case in cases:
+        if case["valid"] is not True:
+            continue
+        policy_rel, evidence_rel = case["policy"], case["evidence"]
+        policy = json.loads((root / policy_rel).read_text(encoding="utf-8"))
+        evidence = json.loads((root / evidence_rel).read_text(encoding="utf-8"))
+        if evidence.get("policy_digest") != digest(policy):
+            raise ValueError("positive fixture has unbound policy: " + evidence_rel)
+        matched[evidence_rel] = policy_rel
+    return matched
+
+
+def refresh_valid_verification_bindings(matched):
+    from assurance_common import digest
+    root = ROOT / "fixtures/verification"
+    for evidence_rel, policy_rel in matched.items():
+        policy = json.loads((root / policy_rel).read_text(encoding="utf-8"))
+        evidence = json.loads((root / evidence_rel).read_text(encoding="utf-8"))
+        evidence["policy_digest"] = digest(policy)
+        (root / evidence_rel).write_text(
+            json.dumps(evidence, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
+
+
+def adjust_scoped_standard_lock():
+    """Pin assessment claims to the active 1.0 source, not historical rc.2 bytes."""
+    path = ROOT / "scripts/scoped_assessment.py"
+    source = path.read_text(encoding="utf-8")
+    start = source.index("def standard_lock(root=ROOT):")
+    end = source.index("\ndef request_digest(request):", start)
+    substitute = '''def standard_lock(root=ROOT):
+    release = (root / "VERSION").read_text(encoding="utf-8").strip()
+    if release == "1.0.0":
+        if root.resolve() != ROOT.resolve():
+            raise ValueError("cannot assess a foreign source tree without its own final release validator")
+        import sys
+        release_path = str(ROOT / "release")
+        if release_path not in sys.path:
+            sys.path.insert(0, release_path)
+        import validate_1_0_engineering as final
+        manifest = load(root / "release/1.0.0-manifest.json")
+        if manifest != final.build_manifest():
+            raise ValueError("standard manifest differs from evaluated source tree")
+        version = "1.0.0"
+    else:
+        policy = load(root / "registry/release-candidate.json")
+        manifest = load(root / policy["manifest_path"])
+        if manifest != release_candidate.build_manifest(root, policy):
+            raise ValueError("standard manifest differs from evaluated source tree")
+        version = policy["release_version"]
+    return {"release_version":version, "tree_digest":manifest["tree_digest"],
+            "profile_catalog_digest":c.canonical_digest(load(root / "profiles/catalog.json")),
+            "serialization_scheme":c.SCHEME, "digest_scheme":digest_contracts.DIGEST_SCHEME}
+'''
+    path.write_text(source[:start] + substitute + source[end:], encoding="utf-8")
+
 def apply():
     if (ROOT / "VERSION").read_text(encoding="utf-8").strip() != "0.9.0-rc.2":
         raise ValueError("promotion requires source-frozen 0.9.0-rc.2")
@@ -165,11 +229,14 @@ def apply():
             previous[doc] = standards_crosswalk.extract_requirements_from_text(
                 doc, (ROOT / doc).read_text(encoding="utf-8")
             )
+    bound_verification = capture_valid_verification_bindings()
     touched = scan_changes()
     for rel, content in touched:
         (ROOT / rel).write_text(content.replace(OLD, NEW), encoding="utf-8")
     adjust_active_validator()
+    adjust_scoped_standard_lock()
     adjust_historical_candidate_tests()
+    refresh_valid_verification_bindings(bound_verification)
     new_basis = requirement_analysis.source_basis(ROOT)
     new_lookup = {}
     for doc, rows in previous.items():
