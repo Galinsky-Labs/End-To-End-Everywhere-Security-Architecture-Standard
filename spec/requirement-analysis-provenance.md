@@ -1,6 +1,6 @@
 # Requirement-specific security analysis and independent review provenance (AUD-21)
 
-**Status:** Normative reference governance. Current per-requirement authored and externally reviewed coverage begins at zero.
+**Status:** Normative reference governance. Current authored coverage is 21 of 1,055 normative requirements, with zero independently authenticated reviews; the coverage work remains incomplete.
 
 ## Analysis identity and provenance
 
@@ -16,4 +16,4 @@ An individually authored analysis is not an independently reviewed analysis. A r
 
 Coverage MUST distinguish at least: generated/document-level projections, individually authored current analysis, recorded but unauthenticated review provenance, and externally authenticated current review. A 100% projected coverage value does not imply any authored or reviewed requirements. Each reported numerator and denominator MUST identify its exact frozen source and support-registry basis.
 
-Reference implementation: \`scripts/requirement_analysis.py\`. Source registry: \`registry/requirement-analyses.json\`. Tests: \`tests/test_requirement_analysis.py\`. The initial empty registry honestly reports zero individually authored and zero independently authenticated reviewed analyses. A structural validator does not substitute for the costly real analysis/review work.
+Reference implementation: \`scripts/requirement_analysis.py\`. Source registry: \`registry/requirement-analyses.json\`. Tests: \`tests/test_requirement_analysis.py\`. The active registry contains 21 individually authored AI-assisted, source-bound analyses. It reports zero independently authenticated review, and projections must not be counted as authored analysis. A structural validator does not substitute for the costly real analysis/review work.

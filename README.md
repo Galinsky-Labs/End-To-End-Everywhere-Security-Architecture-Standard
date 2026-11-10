@@ -32,7 +32,7 @@ Security-sensitive changes are made through reviewed pull requests. Controversia
 
 ## Current status
 
-Development toward `0.9.0-rc.2` is addressing Audit v2. The original `0.9.0-rc.1` bytes and manifest remain archived and verified on every check. The current development tree is not a frozen candidate or a production certification basis. Legacy evaluator passes establish configuration consistency only. Independent expert review and the 1.0 decision remain separate gates.
+The `0.9.0-rc.2` engineering release candidate has a source-frozen manifest and required CI validation. Original `0.9.0-rc.1` bytes remain archived and verified. Its normative/reference implementation statuses do not prove deployed product security. This is **not 1.0**, not independently certified, and independent human review is still pending. Individual requirement analyses remain incomplete (21 of 1,055 requirements). The owner's policy permits development and engineering distribution without waiting for human review, but actual vulnerabilities and failing required tests remain blockers.
 
 The ordered work and evidence states are in `registry/audit-remediation.json`. Downstream adoption follows the corrected component and data-flow contracts.
 

@@ -1,8 +1,8 @@
 {
   "schema_version": "0.1",
-  "release_version": "0.9.0-rc.2-dev",
+  "release_version": "0.9.0-rc.2",
   "basis_standard_version": "0.1.0-dev",
-  "manifest_path": "release/0.9.0-rc.2-dev-manifest.json",
+  "manifest_path": "release/0.9.0-rc.2-manifest.json",
   "frozen_roots": [
     ".github/workflows",
     "adr",
@@ -24,7 +24,8 @@
   "excluded_paths": [
     "registry/release-candidate.json",
     "release/0.9.0-rc.1-manifest.json",
-    "release/0.9.0-rc.2-dev-manifest.json"
+    "release/0.9.0-rc.2-dev-manifest.json",
+    "release/0.9.0-rc.2-manifest.json"
   ],
   "required_release_gates": [
     "repository-validation",
@@ -34,7 +35,7 @@
     "complete-standards-crosswalk",
     "complete-security-rationale"
   ],
-  "development_state": "audit-remediation",
+  "development_state": "frozen-candidate",
   "historical_candidates": [
     "release/0.9.0-rc.1-archive.json"
   ]
