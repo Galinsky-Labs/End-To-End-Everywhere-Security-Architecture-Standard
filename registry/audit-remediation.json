@@ -55,44 +55,86 @@
     {
       "id": "AUD-09",
       "title": "Key-change state machine",
-      "state": "pending",
-      "independent_review": "pending"
+      "state": "implemented",
+      "independent_review": "pending",
+      "implementation_scope": "normative-and-reference-tooling-only",
+      "implementation_evidence": [
+        "spec/key-change-state-machine.md",
+        "scripts/key_change_state_machine.py",
+        "tests/test_key_change_state_machine.py"
+      ]
     },
     {
       "id": "AUD-10",
       "title": "Endpoint disclosure boundary",
-      "state": "pending",
-      "independent_review": "pending"
+      "state": "implemented",
+      "independent_review": "pending",
+      "implementation_scope": "normative-and-reference-tooling-only",
+      "implementation_evidence": [
+        "spec/endpoint-export-boundary.md",
+        "scripts/endpoint_egress_engine.py",
+        "tests/test_scoped_egress_assurance.py"
+      ]
     },
     {
       "id": "AUD-11",
       "title": "Hardware recovery budgets",
-      "state": "pending",
-      "independent_review": "pending"
+      "state": "implemented",
+      "independent_review": "pending",
+      "implementation_scope": "normative-and-reference-tooling-only",
+      "implementation_evidence": [
+        "spec/hardware-recovery-attempt-budgets.md",
+        "scripts/recovery_attempt_budget.py",
+        "tests/test_recovery_attempt_budget.py"
+      ]
     },
     {
       "id": "AUD-12",
       "title": "Authenticated backup rotation",
-      "state": "pending",
-      "independent_review": "pending"
+      "state": "implemented",
+      "independent_review": "pending",
+      "implementation_scope": "normative-and-reference-tooling-only",
+      "implementation_evidence": [
+        "spec/backup-generation-rotation.md",
+        "scripts/backup_generation_rotation.py",
+        "tests/test_backup_generation_rotation.py"
+      ]
     },
     {
       "id": "AUD-13",
       "title": "Pairwise strength and operational bounds",
-      "state": "pending",
-      "independent_review": "pending"
+      "state": "implemented",
+      "independent_review": "pending",
+      "implementation_scope": "normative-and-reference-tooling-only",
+      "implementation_evidence": [
+        "spec/pairwise-prekey-lifecycle.md",
+        "scripts/pairwise_prekey_lifecycle.py",
+        "tests/test_pairwise_prekey_lifecycle.py"
+      ]
     },
     {
       "id": "AUD-14",
       "title": "Protocol pins and binding conventions",
-      "state": "pending",
-      "independent_review": "pending"
+      "state": "implemented",
+      "independent_review": "pending",
+      "implementation_scope": "normative-and-reference-tooling-only",
+      "implementation_evidence": [
+        "spec/pairwise-e2ee.md",
+        "scripts/pqxdh_binding_contract.py",
+        "tests/test_pqxdh_binding_contract.py"
+      ]
     },
     {
       "id": "AUD-15",
       "title": "Group update and PQ claims",
-      "state": "pending",
-      "independent_review": "pending"
+      "state": "implemented",
+      "independent_review": "pending",
+      "implementation_scope": "normative-and-reference-tooling-only",
+      "implementation_evidence": [
+        "spec/group-e2ee.md",
+        "scripts/group_applied_update.py",
+        "tests/test_cross_language_group_update.py"
+      ]
     },
     {
       "id": "AUD-16",
@@ -103,32 +145,62 @@
     {
       "id": "AUD-17",
       "title": "Push and correlation boundaries",
-      "state": "pending",
-      "independent_review": "pending"
+      "state": "implemented",
+      "independent_review": "pending",
+      "implementation_scope": "normative-and-reference-tooling-only",
+      "implementation_evidence": [
+        "spec/push-provider-privacy.md",
+        "scripts/push_metadata_engine.py",
+        "tests/test_push_metadata_engine.py"
+      ]
     },
     {
       "id": "AUD-18",
       "title": "Algorithm and version registries",
-      "state": "pending",
-      "independent_review": "pending"
+      "state": "implemented",
+      "independent_review": "pending",
+      "implementation_scope": "normative-and-reference-tooling-only",
+      "implementation_evidence": [
+        "spec/cryptographic-registry.md",
+        "scripts/hybrid_construction_claims.py",
+        "tests/test_hybrid_construction_claims.py"
+      ]
     },
     {
       "id": "AUD-19",
       "title": "Parser isolation evidence",
-      "state": "pending",
-      "independent_review": "pending"
+      "state": "implemented",
+      "independent_review": "pending",
+      "implementation_scope": "normative-and-reference-tooling-only",
+      "implementation_evidence": [
+        "spec/native-web-client-security.md",
+        "scripts/client_security_engine.py",
+        "tests/test_client_security_engine.py"
+      ]
     },
     {
       "id": "AUD-20",
       "title": "Transport PKI CT and ECH",
-      "state": "pending",
-      "independent_review": "pending"
+      "state": "implemented",
+      "independent_review": "pending",
+      "implementation_scope": "normative-and-reference-tooling-only",
+      "implementation_evidence": [
+        "spec/transport-security.md",
+        "scripts/pki_ech_policy.py",
+        "tests/test_pki_ech_policy.py"
+      ]
     },
     {
       "id": "AUD-21",
       "title": "Requirement analysis infrastructure",
-      "state": "pending",
-      "independent_review": "pending"
+      "state": "implemented",
+      "independent_review": "pending",
+      "implementation_scope": "normative-and-reference-tooling-only",
+      "implementation_evidence": [
+        "spec/requirement-analysis-provenance.md",
+        "scripts/requirement_analysis.py",
+        "tests/test_requirement_analysis.py"
+      ]
     },
     {
       "id": "AUD-22",
@@ -139,26 +211,50 @@
     {
       "id": "AUD-23",
       "title": "Cross-implementation adversarial corpus",
-      "state": "pending",
-      "independent_review": "pending"
+      "state": "implemented",
+      "independent_review": "pending",
+      "implementation_scope": "normative-and-reference-tooling-only",
+      "implementation_evidence": [
+        "scripts/canonical_serialization.py",
+        "tests/test_cross_language_bytes.py",
+        "tests/test_cross_language_group_update.py"
+      ]
     },
     {
       "id": "AUD-24",
       "title": "SDK and legacy migration",
-      "state": "pending",
-      "independent_review": "pending"
+      "state": "implemented",
+      "independent_review": "pending",
+      "implementation_scope": "normative-and-reference-tooling-only",
+      "implementation_evidence": [
+        "spec/integration-contracts.md",
+        "scripts/migration_conformance.py",
+        "tests/test_migration_conformance.py"
+      ]
     },
     {
       "id": "AUD-25",
       "title": "Public source-backed guidance",
-      "state": "pending",
-      "independent_review": "pending"
+      "state": "implemented",
+      "independent_review": "pending",
+      "implementation_scope": "normative-and-reference-tooling-only",
+      "implementation_evidence": [
+        "website/build.mjs",
+        "website/check.mjs",
+        "website/smoke.mjs"
+      ]
     },
     {
       "id": "AUD-26",
       "title": "New candidate freeze and review handoff",
-      "state": "pending",
-      "independent_review": "pending"
+      "state": "implemented",
+      "independent_review": "pending",
+      "implementation_scope": "normative-and-reference-tooling-only",
+      "implementation_evidence": [
+        "registry/release-candidate.json",
+        "release/0.9.0-rc.2-manifest.json",
+        "tests/test_release_candidate.py"
+      ]
     }
   ],
   "findings": [
@@ -224,39 +320,69 @@
     },
     {
       "id": "F05",
-      "state": "reported",
+      "state": "regression-verified",
       "source": "Claude audit v2",
-      "reproductions": []
+      "reproductions": [
+        {
+          "origin": "Reference regression test in CI; NOT an independently authenticated audit",
+          "reference": "tests/test_endpoint_egress_engine.py"
+        }
+      ]
     },
     {
       "id": "F06",
-      "state": "reported",
+      "state": "regression-verified",
       "source": "Claude audit v2",
-      "reproductions": []
+      "reproductions": [
+        {
+          "origin": "Reference regression test in CI; NOT an independently authenticated audit",
+          "reference": "tests/test_key_change_state_machine.py"
+        }
+      ]
     },
     {
       "id": "F07",
-      "state": "reported",
+      "state": "regression-verified",
       "source": "Claude audit v2",
-      "reproductions": []
+      "reproductions": [
+        {
+          "origin": "Reference regression test in CI; NOT an independently authenticated audit",
+          "reference": "tests/test_recovery_attempt_budget.py"
+        }
+      ]
     },
     {
       "id": "F08",
-      "state": "reported",
+      "state": "regression-verified",
       "source": "Claude audit v2",
-      "reproductions": []
+      "reproductions": [
+        {
+          "origin": "Reference regression test in CI; NOT an independently authenticated audit",
+          "reference": "tests/test_pairwise_prekey_lifecycle.py"
+        }
+      ]
     },
     {
       "id": "F09",
-      "state": "reported",
+      "state": "regression-verified",
       "source": "Claude audit v2",
-      "reproductions": []
+      "reproductions": [
+        {
+          "origin": "Reference regression test in CI; NOT an independently authenticated audit",
+          "reference": "tests/test_group_applied_update.py"
+        }
+      ]
     },
     {
       "id": "F10",
-      "state": "reported",
+      "state": "regression-verified",
       "source": "Claude audit v2",
-      "reproductions": []
+      "reproductions": [
+        {
+          "origin": "Reference regression test in CI; NOT an independently authenticated audit",
+          "reference": "tests/test_push_metadata_engine.py"
+        }
+      ]
     },
     {
       "id": "F11",
@@ -275,9 +401,14 @@
     },
     {
       "id": "F12",
-      "state": "reported",
+      "state": "regression-verified",
       "source": "Claude audit v2",
-      "reproductions": []
+      "reproductions": [
+        {
+          "origin": "Reference regression test in CI; NOT an independently authenticated audit",
+          "reference": "tests/test_digest_contracts.py"
+        }
+      ]
     },
     {
       "id": "F13",
@@ -287,15 +418,25 @@
     },
     {
       "id": "F14",
-      "state": "reported",
+      "state": "regression-verified",
       "source": "Claude audit v2",
-      "reproductions": []
+      "reproductions": [
+        {
+          "origin": "Reference regression test in CI; NOT an independently authenticated audit",
+          "reference": "tests/test_hybrid_construction_claims.py"
+        }
+      ]
     },
     {
       "id": "F15",
-      "state": "reported",
+      "state": "regression-verified",
       "source": "Claude audit v2",
-      "reproductions": []
+      "reproductions": [
+        {
+          "origin": "Reference regression test in CI; NOT an independently authenticated audit",
+          "reference": "tests/test_pki_ech_policy.py"
+        }
+      ]
     }
   ],
   "baseline_test_run": {

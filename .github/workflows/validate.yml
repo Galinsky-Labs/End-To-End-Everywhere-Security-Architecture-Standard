@@ -40,3 +40,9 @@ jobs:
 
       - name: Seeded adversarial reference checks
         run: python scripts/run_reference_security_checks.py --seed 20261007 --iterations 1000
+
+      - name: Build source-backed public portal
+        run: node website/build.mjs
+
+      - name: Test generated portal and accessible navigation
+        run: node website/check.mjs

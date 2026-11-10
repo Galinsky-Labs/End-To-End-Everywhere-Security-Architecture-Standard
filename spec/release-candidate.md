@@ -1,6 +1,6 @@
 # E2EESA 0.9 Release Candidate
 
-**Status:** Candidate release process. **Release:** 0.9.0-rc.1. **Milestone:** PR 48.
+**Status:** Current frozen engineering candidate `0.9.0-rc.2`; original `0.9.0-rc.1` remains immutable. Independent review remains pending.
 
 E2EESA 0.9 is the first frozen release candidate of the complete architecture standard.
 
@@ -91,3 +91,7 @@ The candidate status does not by itself certify any product.
 ## Audit remediation and historical candidate preservation
 
 The rc.1 manifest and archived source bytes remain immutable. The active development manifest is a distinct artifact for rc.2 development, regenerated after each change and checked against the complete active release surface. Archived bytes are verified without extracting archive paths or requiring Git history. A development manifest is not a candidate freeze, independent review, or production certification.
+
+## Current rc.2 candidate and limits
+
+The current frozen source tree is recorded in `release/0.9.0-rc.2-manifest.json`, while the original rc.1 archive remains byte-verified. `registry/audit-remediation.json` records normative/reference implementation and regression-test evidence, not evidence of certified hardware, implemented product integrations, or independent audit. The optional AUD-16 research track and incomplete AUD-22 individual requirement analysis remain explicitly pending (21 of 1,055 authored). External review does not block engineering release by owner policy; failed required tests and actual vulnerabilities do. No product certification is implied.

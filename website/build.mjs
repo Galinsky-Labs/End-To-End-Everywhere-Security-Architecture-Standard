@@ -36,7 +36,7 @@ for (const name of names) {
   const markdown = await read("spec/" + name);
   const {html, headings} = renderMarkdown(markdown, name, names);
   const meta = specifications.find(item => item.path === "spec/" + name);
-  const sourceLink = "https://github.com/neophilism/End-To-End-Everywhere-Security-Architecture-Standard/blob/main/spec/" + encodeURIComponent(name);
+  const sourceLink = "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/blob/main/spec/" + encodeURIComponent(name);
   const toc = headings.filter(h => h.level > 1 && h.level < 4).slice(0, 70).map(h => {
     return '<a class="' + (h.level === 3 ? "subsection" : "") + '" href="#' + escapeHtml(h.id) + '">' + escapeHtml(h.title) + '</a>';
   }).join("\n");
@@ -56,7 +56,7 @@ for (const name of names) {
     '<p>Read the full specification in a comfortable, navigable format. Generated automatically from the GitHub repository, with no separately maintained copy.</p>',
     '<div class="reader-actions"><a href="../?view=library">← Back to library</a><a href="../?view=profiles">Explore profiles →</a></div></section>',
     '<div class="reader-layout"><aside class="reader-toc" aria-label="On this page"><h2>On this page</h2>' + (toc || '<a href="#main-document">Document</a>') + '</aside>',
-    '<main id="main-document" class="reader-article"><div class="reader-status-note">The standard is a release candidate undergoing expert review. Reading this document does not confer certification or production approval.</div>',
+    '<main id="main-document" class="reader-article"><div class="reader-status-note">This engineering release candidate has not completed independent expert review and does not confer product certification or approval.</div>',
     html,
     '<div class="reader-status-note">Source file: <a href="' + sourceLink + '" target="_blank" rel="noopener noreferrer">spec/' + escapeHtml(name) + '</a> · Git commit ' + escapeHtml(commit.slice(0,12) || "unknown") + '</div></main></div>',
     '<footer class="reader-bottom"><span>End-to-End Everywhere — clarity first, security always.</span><a href="../?view=library">Back to all specifications →</a></footer>',

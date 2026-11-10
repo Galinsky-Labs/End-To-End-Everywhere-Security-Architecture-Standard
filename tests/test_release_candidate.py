@@ -19,10 +19,10 @@ class ReleaseCandidateTests(unittest.TestCase):
     def load(self,rel):
         return json.loads((ROOT/rel).read_text(encoding="utf-8"))
 
-    def test_release_version_is_rc2_development(self):
+    def test_release_version_is_frozen_rc2_candidate(self):
         policy=self.load("registry/release-candidate.json")
-        self.assertEqual(policy["release_version"],"0.9.0-rc.2-dev")
-        self.assertEqual((ROOT/"VERSION").read_text(encoding="utf-8").strip(),"0.9.0-rc.2-dev")
+        self.assertEqual(policy["release_version"],"0.9.0-rc.2")
+        self.assertEqual((ROOT/"VERSION").read_text(encoding="utf-8").strip(),"0.9.0-rc.2")
 
     def test_historical_candidate_bytes_are_verified(self):
         self.assertEqual(release_candidate.validate_historical_candidates(ROOT, self.load("registry/release-candidate.json")), [])

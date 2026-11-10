@@ -1,4 +1,4 @@
-const REPO="neophilism/End-To-End-Everywhere-Security-Architecture-Standard";
+const REPO="Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard";
 const BASE="https://github.com/"+REPO+"/blob/main/";
 const state={data:null,view:"home",filter:"all",selected:[],query:"",role:"product"};
 const $=id=>document.getElementById(id);
