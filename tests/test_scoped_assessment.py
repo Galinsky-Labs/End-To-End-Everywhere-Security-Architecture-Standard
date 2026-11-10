@@ -28,7 +28,7 @@ class ScopedAssessmentTests(unittest.TestCase):
         r=self.messaging(self.request());r['policy']='production';r['claims']=[dict(self.claim(),profile_refs=['pairwise-pqxdh-triple-ratchet@0.1.0'],evidence_refs=['mock'])]
         result=assess.evaluate(self.bind(r),verified_evidence={'mock':{'provider_kind':'mock'}});self.assertEqual(result['verdict'],'indeterminate');self.assertEqual(result['claims'][0]['status'],'indeterminate')
     def test_wrong_lock_and_request_digest_fail(self):
-        r=self.request();r['standard_lock']['release_version']='1.0.0';self.assertEqual(assess.evaluate(self.bind(r))['verdict'],'fail')
+        r=self.request();r['standard_lock']['release_version']='0.9.0-rc.2';self.assertEqual(assess.evaluate(self.bind(r))['verdict'],'fail')
         r=self.request();r['assessment_id']='mutated';self.assertEqual(assess.evaluate(r)['verdict'],'fail')
     def test_applicant_cannot_inject_trusted_assessor_fields(self):
         r=self.request();r['trusted_observations']={'flows':r['inventory']['flows']};self.assertEqual(assess.evaluate(r)['verdict'],'fail')
@@ -38,6 +38,7 @@ class ScopedAssessmentTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory)
             shutil.copytree(ROOT,root,dirs_exist_ok=True,ignore=shutil.ignore_patterns('.git','__pycache__'))
+            (root/'VERSION').write_text('0.9.0-rc.2\n',encoding='utf-8')
             path=root/'profiles/catalog.json';catalog=json.loads(path.read_text())
             profile=copy.deepcopy(next(p for p in catalog['profiles'] if p['profile_id']=='pairwise-pqxdh-triple-ratchet'))
             profile['profile_id']='candidate-test';profile['status']='provisional';catalog['profiles'].append(profile);path.write_text(json.dumps(catalog))

@@ -164,7 +164,7 @@
       "model": {
         "model_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
         "specification_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
-        "standard_version": "0.1.0-dev",
+        "standard_version": "1.0.0",
         "explored_states": 1000,
         "claim_type": "bounded-model"
       }

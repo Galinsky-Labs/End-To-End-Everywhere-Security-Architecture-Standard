@@ -5,7 +5,7 @@
   "product_id": "example-messenger",
   "product_version": "1.0.0",
   "platform": "service",
-  "policy_digest": "sha256:161490485dd3030c2c8b65069f46e1de49adb9c2c43ff12f8405ac43bdd29f3b",
+  "policy_digest": "sha256:6b793d32171dc52023cad38ee4b89e8aa7234f5426fa7dcd4d04d3a9f74724a5",
   "assessor_id": "fixture-assessor",
   "observed_at": "2026-10-07T22:40:20Z",
   "report_refs": [

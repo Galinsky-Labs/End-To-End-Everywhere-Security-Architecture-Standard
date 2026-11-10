@@ -71,7 +71,7 @@ class IntegrationContractTests(unittest.TestCase):
         envelope["artifact_type"]="conformance-result"
         envelope["authority_path"]=None
         envelope["schema_path"]="schemas/conformance-result.schema.json"
-        envelope["payload"]={"standard_version":"0.1.0-dev"}
+        envelope["payload"]={"standard_version":"1.0.0"}
         envelope["payload_digest"]=integration_contracts.compute_payload_digest(envelope["payload"])
         envelope["envelope_digest"]=integration_contracts.compute_envelope_digest(envelope)
         errors=integration_contracts.validate_envelope(envelope,self.registry())

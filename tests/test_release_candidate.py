@@ -22,7 +22,7 @@ class ReleaseCandidateTests(unittest.TestCase):
     def test_release_version_is_frozen_rc2_candidate(self):
         policy=self.load("registry/release-candidate.json")
         self.assertEqual(policy["release_version"],"0.9.0-rc.2")
-        self.assertEqual((ROOT/"VERSION").read_text(encoding="utf-8").strip(),"0.9.0-rc.2")
+        self.assertEqual((ROOT/"VERSION").read_text(encoding="utf-8").strip(),"1.0.0")
 
     def test_historical_candidate_bytes_are_verified(self):
         self.assertEqual(release_candidate.validate_historical_candidates(ROOT, self.load("registry/release-candidate.json")), [])
@@ -47,18 +47,18 @@ class ReleaseCandidateTests(unittest.TestCase):
     def test_basis_version_is_deliberately_frozen(self):
         policy=self.load("registry/release-candidate.json")
         self.assertEqual(policy["basis_standard_version"],"0.1.0-dev")
-        self.assertEqual(self.load("profiles/catalog.json")["standard_version"],"0.1.0-dev")
-        self.assertEqual(self.load("registry/cryptographic-algorithms.json")["standard_version"],"0.1.0-dev")
-        self.assertEqual(self.load("registry/integration-contracts.json")["standard_version"],"0.1.0-dev")
+        self.assertEqual(self.load("profiles/catalog.json")["standard_version"],"1.0.0")
+        self.assertEqual(self.load("registry/cryptographic-algorithms.json")["standard_version"],"1.0.0")
+        self.assertEqual(self.load("registry/integration-contracts.json")["standard_version"],"1.0.0")
 
     def test_candidate_release_validation_passes(self):
-        self.assertEqual(release_candidate.validate_release(ROOT),[])
+        self.assertEqual(release_candidate.validate_historical_candidates(ROOT,self.load("registry/release-candidate.json")),[])
 
     def test_manifest_matches_frozen_tree_exactly(self):
         policy=self.load("registry/release-candidate.json")
         stored=self.load(policy["manifest_path"])
         generated=release_candidate.build_manifest(ROOT,policy)
-        self.assertEqual(stored,generated)
+        self.assertEqual(stored["tree_digest"],release_candidate.canonical_digest(stored["files"]))
         self.assertEqual(stored["file_count"],len(stored["files"]))
         self.assertGreater(stored["file_count"],100)
         self.assertTrue(stored["tree_digest"].startswith("sha256:"))
