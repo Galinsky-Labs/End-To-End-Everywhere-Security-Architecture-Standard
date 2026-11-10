@@ -278,13 +278,12 @@ def apply():
         )
     write_json("registry/requirement-analyses.json", old_analyses)
     (ROOT / "VERSION").write_text("1.0.0\n", encoding="utf-8")
-    workflow = ROOT / ".github/workflows/validate.yml"
-    w = workflow.read_text(encoding="utf-8")
-    needle = "      - name: Validate 0.9 candidate freeze\n        run: python scripts/release_candidate.py"
-    if needle not in w:
-        raise ValueError("candidate CI step changed")
-    w = w.replace(needle, "      - name: Validate 1.0 engineering source freeze\n        run: python release/validate_1_0_engineering.py")
-    workflow.write_text(w, encoding="utf-8")
+    workflow = (ROOT / ".github/workflows/validate.yml").read_text(encoding="utf-8")
+    if ("Validate candidate or 1.0 engineering release" not in workflow
+            or "python release/validate_1_0_engineering.py" not in workflow
+            or "python scripts/release_candidate.py" not in workflow):
+        raise ValueError("release-aware CI workflow missing")
+
     amend_readme()
     amend_website()
     notes = (
