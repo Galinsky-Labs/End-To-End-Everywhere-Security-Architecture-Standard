@@ -17,4 +17,7 @@ Coverage added after the 1.0.0 release is a non-normative overlay tracked by `re
 | post-1.0 batch 6 | certification lifecycle/evidence/attestations, confidence classification, advisory interoperability, vulnerability handling and disclosure | 156 |
 | post-1.0 batch 7 | crypto registry, supply chain, secure development, verification, server trust, telemetry, export boundary, assurance, conformance, formal verification, integration and related specs | 156 |
 
-**Remaining:** the rest of the 1,055 normative paragraphs, typed inter-requirement dependencies, and independently authenticated review records.
+**Coverage:** every distinct normative paragraph now has an authored analysis: 1,054 records for 1,054 unique requirement IDs. The extractor reports 1,055 paragraphs because two identical stems in `spec/formal-verification-profiles.md` ("Evidence MUST identify:") hash to one requirement ID, and the validator permits one record per ID.
+| post-1.0 batch 8 | normative language, terminology, observatory data/evidence, reference fixtures, research registry/promotion, rationale corpus, crosswalk, requirement provenance | 104 |
+
+**Remaining:** typed inter-requirement dependencies (`dependencies` is empty for every record) and independently authenticated review records (none exist; `review` is `null` throughout).
