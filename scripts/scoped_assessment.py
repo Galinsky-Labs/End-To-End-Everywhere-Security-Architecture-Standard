@@ -29,9 +29,12 @@ def standard_lock(root=ROOT):
         if release_path not in sys.path:
             sys.path.insert(0, release_path)
         import validate_1_0_engineering as final
-        manifest = load(root / "release/1.0.0-manifest.json")
-        if manifest != final.build_manifest():
+        # Normative content is bound to the immutable published 1.0.0 release;
+        # the maintenance manifest proves the evaluated tree only differs from
+        # it in non-normative tooling, tests and overlays.
+        if final.validate():
             raise ValueError("standard manifest differs from evaluated source tree")
+        manifest = load(root / final.RELEASE_MANIFEST)
         version = "1.0.0"
     else:
         policy = load(root / "registry/release-candidate.json")

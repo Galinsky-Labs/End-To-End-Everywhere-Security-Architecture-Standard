@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "repository": "neophilism/End-To-End-Everywhere-Security-Architecture-Standard",
+  "repository": "Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard",
   "updatedAt": "2026-11-10T01:55:14Z",
   "standard": {
-    "repository": "neophilism/End-To-End-Everywhere-Security-Architecture-Standard",
+    "repository": "Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard",
     "commit": "b137a3d1cb54900204ff13c7694ed00a50c00141",
     "basis": "production",
     "version": "1.0.0",

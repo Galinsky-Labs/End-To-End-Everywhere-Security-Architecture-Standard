@@ -1,6 +1,6 @@
 // Static, dependency-free Markdown rendering for the public standards reader.
 // Source documents are always loaded from spec/ during the build, never duplicated.
-const SOURCE_ROOT = "https://github.com/neophilism/End-To-End-Everywhere-Security-Architecture-Standard/blob/main/";
+const SOURCE_ROOT = "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/blob/main/";
 export function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>"']/g, ch => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"

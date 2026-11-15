@@ -32,6 +32,9 @@ jobs:
             python scripts/release_candidate.py
           fi
 
+      - name: Validate PR registry contract
+        run: node scripts/validate-pr-registry.mjs
+
       - name: Validate requirement analysis provenance
         run: python scripts/requirement_analysis.py
 

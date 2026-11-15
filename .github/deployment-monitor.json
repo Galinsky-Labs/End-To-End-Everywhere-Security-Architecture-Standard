@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "repository": "neophilism/End-To-End-Everywhere-Security-Architecture-Standard",
+  "repository": "Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard",
   "kind": "unclassified",
   "monitoring": {
     "mode": "inventory"
