@@ -3524,6 +3524,2828 @@
       "dependencies": [],
       "context_digest": "sha256:4a2614b426575a7737aaaf1b58a873add96f7e64a835a4e20f8eb74a44201f49",
       "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00143",
+      "requirement_id": "REQ-01d36c5a3dfc1a42ae5d4328c444f0bf2cfcb5df5b6b237a7457e788d1d5655a",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:c23b722dde894b84c4757955a2c83ba749833de78f961a585e05126e6f8f9b79",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A safety number is only useful if it represents the keys the system will actually use. Deriving snapshots from already-accepted identity state, rather than from whatever the service reports, prevents users verifying keys that are not the authorised ones.",
+      "threat_ids": [
+        "TM-DIRECTORY",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-KEY-CONSISTENCY"
+      ],
+      "evidence_expectations": [
+        "snapshot-derived-from-accepted-state-trace",
+        "unaccepted-state-snapshot-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:aa8b2648c45a75e2fe53ba29d7b4d20c1282a42b2823f693f4fe17541e0d02a8",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00144",
+      "requirement_id": "REQ-0bb28c74f374111a9d2bd436d6fae1cbfecfebcae071e1663ba9eddf0c506ab2",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:e32076ef13e638566e90d8e72d6704a1aedcde1f689cfb43c0430c6694e3019c",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Verification attests to a specific set of keys. Silently carrying the verified flag to a new subject would make a substituted key look verified, which is exactly the attack verification exists to expose.",
+      "threat_ids": [
+        "TM-DIRECTORY",
+        "TM-ACCOUNT"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "subject-change-clears-verified-status-test",
+        "status-migration-code-path-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:7ea66c1b3d775b71e733df8da47b73af24e90b08301b768a4db8abb0ecdcca0c",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00145",
+      "requirement_id": "REQ-129e6305d380fb46c8adaac7c3396cc7bc2d5e31374ac1fa649347e8759440ad",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:886601605ff0b652cfd917d8ef270f692206ddba9546b982d691a9958eeba874",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Safety numbers depend on a collision-resistant hash; a prohibited hash could allow an attacker to construct a different key set with the same displayed value, defeating manual comparison.",
+      "threat_ids": [
+        "TM-DIRECTORY",
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "prohibited-hash-selection-rejection-test",
+        "registry-lifecycle-check"
+      ],
+      "external_standard_ids": [
+        "NIST-SP800-131AR2"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:29ac681e754409c31d3d40fe1bb3ee164d77aac1abfb87ccac4ff78b784ccc43",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00146",
+      "requirement_id": "REQ-30bdda52b27bd5b6d39249d964ec60d097b9362d42e7b36f6215b4daccf19116",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:1bc5d78b931a7745543b190f885210f116f25b9181ed3697828989d0ddae668e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "If the numeric and QR forms were computed from different inputs, users could successfully compare one while the other covered different keys. A single subject digest guarantees both forms verify the same thing.",
+      "threat_ids": [
+        "TM-DIRECTORY"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-KEY-CONSISTENCY"
+      ],
+      "evidence_expectations": [
+        "numeric-and-qr-from-same-digest-vector",
+        "divergent-representation-detection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:6fac2e4b75d3ab999e9847774694ea354363bf6e0c5da2a81c43c6bc94dc485a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00147",
+      "requirement_id": "REQ-31c9296711cc81ff98708c568711c39e2419c025b5afde1e9d89508d014f56ab",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:94acc3ea2a29198befcce0fadb57f47bc8d6f3e781e73bc23622e5cbada44a64",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A verification record must let the product later determine exactly what was verified, how, and under which profile. Preserving profile, hash, identities, full digest, displayed values, method and explicit confirmation makes invalidation decisions and audits possible.",
+      "threat_ids": [
+        "TM-DIRECTORY",
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "verification-record-field-completeness-validation",
+        "record-reconstruction-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:627da63b7f0c2f3edaee665bfc2d1f3a4b6f84316123f28989f3d8b134f8f1bc",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00148",
+      "requirement_id": "REQ-4bdd05935ee923eb4d4506f964eebb23c44a25b4bb80653ba5eeb5528b375357",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:402b1ce0084b414b5a4eeb166b8f973963bace5c263ae496c2d7c851c48e9532",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Messages queued before a recipient's identity changed were authorised against the old keys. Re-evaluating them before delivery prevents content composed for a verified peer being sent to a possibly substituted one.",
+      "threat_ids": [
+        "TM-DIRECTORY",
+        "TM-ACCOUNT"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "queued-message-reevaluation-on-identity-change-test",
+        "risk-policy-documentation"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:3187a9abb2cdd64f016416bb21567486595a6ce663d49e17c232a6e9b8d96e3d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00149",
+      "requirement_id": "REQ-511a3551bd61bc609b38d2d89b974e05eeaac58e3d7e70ebbb371a3d137c5cc9",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:f741998f5b8584f69b7a4b3f6e2c4ee857fcf97f684fe3449de50c99cc72c252",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Verification is a unilateral act by one user. Implying that the peer also verified would give each side false confidence about the other's assurance; only explicit end-to-end synchronisation may share that state.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "local-only-verification-state-test",
+        "no-implied-mutual-verification-ui-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:a72fe584ffd3e6d011b6959857899d363f70a6c872858825d0af3614e73cb6a8",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00150",
+      "requirement_id": "REQ-6396ea9825d62f1a3ef151fd6e00d57d8fce82fb0b216978a6f6d4789d2d52e8",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:7082e7777055d00a544056f5355db8a1820fe578b213a954a088ebda6b9ca2d8",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Stored verification is only valid if the subject has not changed since. Recomputing the canonical subject from current accepted state before relying on the record is the check that detects intervening key changes.",
+      "threat_ids": [
+        "TM-DIRECTORY",
+        "TM-ACCOUNT"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-KEY-CONSISTENCY"
+      ],
+      "evidence_expectations": [
+        "subject-recompute-before-use-trace",
+        "changed-subject-invalidation-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:d75c470260a753634b22c9f9ebca72c3d06c995b4b3654caae10fe1b766f09f4",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00151",
+      "requirement_id": "REQ-7326506b02c19dd7e119eace43f4e8920a44a3c23bb74cd10b884eec6a3eef42",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:ce4dcf78c6e531a571ff9acc6a62c74955f1a990a2a240cdeed2a948dedea4e6",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "If the two parties used different profiles their subjects would differ and comparison would always fail, or worse, implementations might reconcile differences loosely. Requiring the same pinned profile makes the comparison well-defined.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "profile-equality-check",
+        "mismatched-profile-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:ae92679edb513d113b83ef571b67fe5e2478b85781aa83098dd103af69ab76ff",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00152",
+      "requirement_id": "REQ-852c27305c10c4b4290dc5e1d5fade4bb09744426bd913268cbdc328df7afa35",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:d248eecff8cd9ef707d1cce736da20f49906905bb93665899f3e211ae8f9a18b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A precisely specified, versioned QR format with canonical content ensures scanners interpret payloads identically and cannot be fooled by alternative encodings. The prefix and fields bind version, profile, hash, identities and full digest.",
+      "threat_ids": [
+        "TM-DIRECTORY",
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "qr-payload-golden-vectors",
+        "alternative-encoding-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e7d69bcf46318f2505e298d39559653e8f31be7c42913aa6d63c70dcef3be9c4",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00153",
+      "requirement_id": "REQ-8955ffeaedf12276912ac79b6a4e34f68397d22ad5a047161b09a5941241e8c0",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:1746bcee4a3e84519ec637890f174f5ad3b1f4eccb019defd8eef0e8230b4922",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A key list from the service that has not passed device authorisation could include attacker-injected keys. Treating it as a snapshot would let users 'verify' a man-in-the-middle configuration.",
+      "threat_ids": [
+        "TM-DIRECTORY",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "unauthorised-key-list-snapshot-rejection-test",
+        "authorization-precheck-trace"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:d4c6bfad813b8d50b6d04a6a9df1f50483c155014e4110683d085d3e7213ad3e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00154",
+      "requirement_id": "REQ-8b02923c75ac7a109a7774efced8acff66eb53c4fc7f3d63a8a7fa48c56883b5",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:0a48bf37c29b803a886d3c47323a43a905a3a731a62ecb669cae38357c022570",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Key transparency proves directory consistency, not that the account belongs to a particular person. Representing it as real-world identity proof would mislead users about impersonation risk.",
+      "threat_ids": [
+        "TM-ACCOUNT",
+        "TM-DIRECTORY"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "ui-wording-review-for-kt-results",
+        "identity-claim-absence-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:a3b0ae714cc8722daf4a3f1eb74bbb99a567919c9e3d9ea3e26d964c2c160632",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00155",
+      "requirement_id": "REQ-8ff95c8fd0d961bc023af7dd3b201e147b1674f28f400b5a39fb54be8ca67a19",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:d89bc5f3e48a24e1520804b4d82b082561a46175b88fc2adf0e7dd11104222a2",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Verified status asserts that the current keys were compared out of band. Once the verified subject changes that assertion is false; keeping the badge would hide a possible key substitution.",
+      "threat_ids": [
+        "TM-DIRECTORY",
+        "TM-ACCOUNT"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "subject-change-drops-verified-badge-test",
+        "stale-verified-state-detection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:91157c889207228ed91e212e4b57b93955e7616af2ed5d94ea43b7927b745c1b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00156",
+      "requirement_id": "REQ-a07fcb383ea360c96fbff7c0d32eefe6c5446c293e10302b948cd1ae516683dc",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:c8128ea6a10f556f306dcf1ec81b119f68ae3bda495a927b937b00837955872c",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "These demonstrations cover deterministic subjects, consistent representations, pinning, malformed-input rejection, explicit confirmation, invalidation on change, stability across authorised subordinate changes and refusal of server-created verification. Each targets a distinct failure that would make verification either useless or misleading.",
+      "threat_ids": [
+        "TM-DIRECTORY",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-KEY-CONSISTENCY"
+      ],
+      "evidence_expectations": [
+        "demonstration-item-test-mapping",
+        "server-created-verified-record-negative-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:4913ab8e3672ad74f77875a1cf5fe97043bdf7de61d4cd39131bc74a13224b27",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00157",
+      "requirement_id": "REQ-aaf914ca2e91ddb690c347e80a0ea9661610aba171a7403627be9ab8973d7a22",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:5083421e8ca4d9ac9e5b66bf028a300de40f97d5f14663459d27a2c7598d37df",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Displaying a code is not verification; the security comes from the user actually comparing it. Recording verification only after affirmative confirmation prevents accidental or automatic 'verified' states.",
+      "threat_ids": [
+        "TM-DIRECTORY"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "confirmation-required-before-record-test",
+        "auto-verify-path-absence-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:2490473e65da883e4105b06db14608bcd315f0e5cb15ef38a7aa89ec0d5d9e71",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00158",
+      "requirement_id": "REQ-aeb2c4f5539cc969d73a600b04d416f326904480409aca7d5a1170c32edc04a1",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:f96ff3588dcc634b45c675ce52f65d5525c5ae6afd0d0d15204a9456b6eb398e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "After a subject change, the previous comparison no longer covers the current keys. Invalidating, surfacing the change and requiring a new comparison ensures users cannot be silently moved from a verified to an unverified peer.",
+      "threat_ids": [
+        "TM-DIRECTORY",
+        "TM-ACCOUNT"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "change-visibility-ui-test",
+        "fresh-comparison-required-for-restore-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:576a6039583b42ffc50c65ec16963b1d21d9162fd8beda6d4cdb184328f4a0d8",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00159",
+      "requirement_id": "REQ-baee4a44b586e9b3d69f44b628649ee8c7b8b3c59969de22e5df05dbcaf656c9",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:bde62256ce0ea0ee2ce0e21bcf8858a8bbec28fa7927ad20aeee026dc633f493",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Comparing codes over the same service being verified lets that service alter both sides. An independent channel (in person, trusted call) is what breaks the service's ability to man-in-the-middle the comparison.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "out-of-band-channel-guidance-in-ui",
+        "in-band-only-comparison-not-recorded-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:f5c87c0e750f8f6850402ae7f6ccf1d2b5d5fec263417cd0ccee355bb87b46f3",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00160",
+      "requirement_id": "REQ-bd401e102a52687971dc71091e31167ccc13755428b5cf2d534439c05ec3bb6a",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:4571c145a10ae406e141cf304589b397d7331f166c3b85fe73ea9e762d7ce982",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "If invalidation is not persisted atomically before use, a crash or race could restore the old verified status and let content be sent under stale trust. Durable persistence makes invalidation irreversible except by re-verification.",
+      "threat_ids": [
+        "TM-ROLLBACK",
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "crash-during-invalidation-recovery-test",
+        "persist-before-use-ordering-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:debba722a0eaab31ad437e3ee757ce992a1452c40569ec96eadf0d3cd6fbedd1",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00161",
+      "requirement_id": "REQ-cc00483944838b861ad1c77e452572eee162b87dd02445054dabe03241b6d167",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:2208d22d9d77602d4c4e875e70f1b81d8b27d04b9399cb5d700f227639bfd92b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "An attacker might rotate a key away and back to the original. Automatically restoring 'verified' when the old digest reappears would let such a sequence bypass the user's attention; restoration must be a new explicit comparison.",
+      "threat_ids": [
+        "TM-DIRECTORY",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "key-return-does-not-restore-verified-test",
+        "new-record-required-for-reverification"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:0680c1e2878b780bf91980afe2bc9e32968dc73ff2a2fec5a1ab467cbb684390",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00162",
+      "requirement_id": "REQ-de3e627421bccb0c278184fb8b72c0ff490a229cc3db945da11ef9613997e104",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:465ee105491e330ee348c56ceaf888858308d736eda7934218231f7b8b5e7577",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The hash determines collision resistance of the safety number. Selecting it from the registry ensures a reviewed, lifecycle-managed algorithm rather than an ad hoc choice.",
+      "threat_ids": [
+        "TM-DIRECTORY"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "policy-hash-registry-membership-check",
+        "unregistered-hash-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:f17026d3d08c50b2bfc5171184e36332444a33b541407bd2ac6d23645cf616bb",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00163",
+      "requirement_id": "REQ-e2fb261da336ffc5ddfab3c702d6d80ef2833cc74a58598c0f58094b171432d7",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:7ed00153576c2e63142754f9758b0f49b71ac1e3b7fde38cae5b0d85f9160855",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "In device-set verification, any change to the active keys alters who can decrypt. Every such change must alter the subject and invalidate prior verification so that injected or rotated devices cannot inherit trust.",
+      "threat_ids": [
+        "TM-DIRECTORY",
+        "TM-ACCOUNT",
+        "TM-DEVICE-PHYSICAL"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-KEY-CONSISTENCY"
+      ],
+      "evidence_expectations": [
+        "device-add-remove-rotate-invalidation-tests",
+        "subject-digest-change-on-device-set-change"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:09f0fd42fea2483db3c7128bfaf52b4b47773c5297e9eebdff7a9d5ae7e27ac7",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00164",
+      "requirement_id": "REQ-e448d447a0a67341ea819a72c99b47084db8020da1be885e011eb5131e443d6a",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:220518b9c898064efd345b27c5126ec960df63d303145f507dab520f808e7515",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "If the server that might be substituting keys can also declare that the codes matched, verification provides no protection against that server. The match decision must rest with the users' independent comparison.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "server-asserted-match-rejection-test",
+        "match-decision-local-trace"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:13ea197df6ec0ea9a1393235beb96d0aab87962489d116f920bebe6d769190b1",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00165",
+      "requirement_id": "REQ-e481394e4b0421bf99523cd8f9f7537fc5b9cd1ae5935695873c39ca99036d2a",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:f96557db20aeae9800aa0bddb9adb4ed161f1c368c40c05a366b8811aaadfa68",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Lenient QR parsing allows crafted payloads that display as valid while encoding different identities or digests. Strict rejection of unsupported or unexpected content prevents scanner confusion attacks.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-DIRECTORY"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "malformed-qr-fuzz-corpus",
+        "unexpected-field-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:bd5e5538313e52e4e7d9ae4a2e7faf7f243208ef820cf9bfe3f2d37c59521752",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00166",
+      "requirement_id": "REQ-e70c4d5e4357420da873b4784296df202cc4058c9dbc3c7d118b71805eefa4d0",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:2b581eacc601ca46b117d86e886166c9898f9f7aff69962e079bff994fcbdb6b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Two parties must compute byte-identical subjects to compare them. Canonical sorted UTF-8 JSON without insignificant whitespace removes encoding ambiguity that could make honest comparisons fail or permit two encodings of different data to collide in interpretation.",
+      "threat_ids": [
+        "TM-DIRECTORY"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-KEY-CONSISTENCY"
+      ],
+      "evidence_expectations": [
+        "canonical-json-golden-vectors",
+        "cross-implementation-byte-equality-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:d7ff21e3bb4392aa3b6fe128b7e35662f5bc26c4c5f64065b5ed848ca8d16551",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00167",
+      "requirement_id": "REQ-f3e30f2238780cc9b128dc9c43506974381cea00e490cfe07520cca438cc160d",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:1fe2a3477327fbecf4798aba597087d7af50ef026ebc841356c655962860786b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The account root anchors all device authorisation. A changed root means a different authority now controls the identity, so prior verification of the old root cannot carry over.",
+      "threat_ids": [
+        "TM-ACCOUNT",
+        "TM-RECOVERY"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "root-change-invalidation-test",
+        "root-subject-binding-vector"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:1735787ba96a14043543626bd08fb3f2dcf932c4a616c4e38c7a6ec82af16419",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00168",
+      "requirement_id": "REQ-f85fb9f53c36e76217a0d8e864e2332d7c98687a58654acad57bee0747c0f007",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:153d580d15d7aec86b57f67fd01f43da90e868bf0c8180d8ad088afc3b07129c",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Automatic transparency evidence and a human out-of-band comparison carry different assurance. Keeping them distinguishable stops automated checks from being presented as stronger, user-performed verification.",
+      "threat_ids": [
+        "TM-DIRECTORY"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "verification-method-field-separation-test",
+        "kt-success-not-recorded-as-manual-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:167d34346938a2f87a180fb506b3e3da83a1d279bf76ee5bfeae271d8fdeb8f1",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00169",
+      "requirement_id": "REQ-fd964e8b4bb28d18fa803c3c8c17f0ee3ea6c1d81aaefb02075e0c1ee8bc396a",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:f4f8982e4c12a0c525709bc50fc605efb4d8a85b017c3b5524bf96e12043b2cf",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Presenting QR and numeric forms as different checks would confuse users into thinking one is stronger or that both are needed. They encode the same subject, and the UI must reflect that equivalence.",
+      "threat_ids": [
+        "TM-DIRECTORY"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "ui-equivalence-wording-review",
+        "same-subject-both-forms-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:5fd34a2fff8a93f94ac81b7ab4a3bf3fea053cbc9590341fb8f518d99114aa38",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00170",
+      "requirement_id": "REQ-fdeb77a8b11aef1c6c663fa8b80515cf12fc0490d5eae727210e2ce23b0d77e4",
+      "document_path": "spec/key-verification.md",
+      "text_digest": "sha256:7664ac9df1c4b39b6d8ea8551cb14a3cd02fd6663896fab49d0b8c1e54f045b6",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A domain separator prevents subject digests being confused with hashes from other protocols; version and profile fields prevent cross-version collisions; sorting the parties makes the subject identical from both perspectives so each side sees the same code.",
+      "threat_ids": [
+        "TM-DIRECTORY"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "perspective-independent-subject-vector",
+        "domain-separator-presence-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:220ff444e62966e0ed2f3a8c02a1ab4a1f51a38800d40ca5a16faeb66d20ad48",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00171",
+      "requirement_id": "REQ-0c0d203c4c614342de70d99472ee116a7e84d461f942e5b52f0a2d45ed256727",
+      "document_path": "spec/identity-device-architecture.md",
+      "text_digest": "sha256:a482d36a78eef8d7a7e8ad1f6779e7ed52643abff89d69955ef24ba79242093d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Rotation must be observable and ordered: generation plus one detects skipped or replayed rotations, and permanently retiring old keys prevents an attacker who stole a retired key from having it reinstated.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-ROLLBACK-RESISTANCE",
+        "SP-KEY-CONSISTENCY"
+      ],
+      "evidence_expectations": [
+        "generation-increment-validation-test",
+        "retired-key-reuse-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:32d956ff41bfdcff3bc218596bc3a47bc03d268674978415d6a0597f7377b98e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00172",
+      "requirement_id": "REQ-12101fe4223d19020a51bfe65187f3a21c8dc57575a8f91ec160354f80257036",
+      "document_path": "spec/identity-device-architecture.md",
+      "text_digest": "sha256:54cf0c6280b91a681e2e0d93d7208e5d7e00990b2a516a44536ed70cac085789",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "If the service held the account-root private key, it could authorise devices on its own and defeat end-to-end encryption. Keeping the root client-controlled ensures device authorisation reflects the user's decision.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY",
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "root-key-storage-location-evidence",
+        "service-side-root-key-absence-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:5a320e6bb1be8f0d6c2ea237c4f601cf8cd29acaf0a9263d008afdda0fe04bc2",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00173",
+      "requirement_id": "REQ-1d9c6321cd5601cf26fccc3d58141b0b0df03adae59b335e282e8b35e6f5bd86",
+      "document_path": "spec/identity-device-architecture.md",
+      "text_digest": "sha256:1cf8a9788432c55ca05d26fc56f2e3325a9d7e9e7e1131526de431c23066817c",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Sequence and preceding-state hash checks make the identity history a hash chain, rejecting forks and replays a peer can see locally. The text notes that global split views still need key transparency, preventing overclaiming of local checks.",
+      "threat_ids": [
+        "TM-ROLLBACK",
+        "TM-DIRECTORY"
+      ],
+      "security_property_ids": [
+        "SP-ROLLBACK-RESISTANCE",
+        "SP-KEY-CONSISTENCY"
+      ],
+      "evidence_expectations": [
+        "mismatched-prev-hash-rejection-test",
+        "sequence-gap-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:cf6020d9ff52ccf20896d88173a596cf1167c11af2f092680d81cb3297d70527",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00174",
+      "requirement_id": "REQ-29c13d386e857f81debcad5a6c9e9a95c2998467fef4faa71100a33dddd7bb2e",
+      "document_path": "spec/identity-device-architecture.md",
+      "text_digest": "sha256:19d5315abc402481684014ca4fe6845786d6b8f2092d8e0ebe1f02cbf40c5e51",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Distinct device and key identities let each recipient be authorised, revoked and verified individually. Reusing identifiers would let a revoked device's identity or key be confused with a new one and inherit its trust.",
+      "threat_ids": [
+        "TM-DEVICE-PHYSICAL",
+        "TM-DIRECTORY"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY",
+        "SP-KEY-CONSISTENCY"
+      ],
+      "evidence_expectations": [
+        "identifier-uniqueness-validation",
+        "reused-identifier-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:2f33754486afd5421eb063a933ce87210a5f09d20acb6a72c2e08fc21d41d15b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00175",
+      "requirement_id": "REQ-331695d33173ee650a09ef1a6c73b022e83a73728b8f98a066a99b1e3a510612",
+      "document_path": "spec/identity-device-architecture.md",
+      "text_digest": "sha256:67b39f9f9002d5b0798ad812f22116045fc7e3c33297153f5883a3a6a5f47a04",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A recovered or replacement endpoint is a new cryptographic party possibly controlled by an attacker who abused recovery. Automatically inheriting peer verification or group membership would let that attacker receive content without peers noticing.",
+      "threat_ids": [
+        "TM-RECOVERY",
+        "TM-ACCOUNT"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "recovery-does-not-transfer-verification-test",
+        "no-send-before-membership-acceptance-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:cd9fe0edb051969666056c7f4bab55e2bbb78a6b5e45e91dead8f79eee9e64ae",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00176",
+      "requirement_id": "REQ-3a1a9f178fe7b015b7c043af5d037ae76b8f2431a8e2537bdf8175c14e9e6cb3",
+      "document_path": "spec/identity-device-architecture.md",
+      "text_digest": "sha256:d1c25c436dbabddad2bea3c5af2aec4bdc6ed7f1fcd9ad7b3676d0fb68be0768",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "When every device is lost there is no cryptographic authority left, and service-side recovery paths are exactly what attackers abuse for account takeover. Requiring products to choose and disclose an explicit recovery contract makes the resulting trust trade-off visible.",
+      "threat_ids": [
+        "TM-RECOVERY",
+        "TM-ACCOUNT",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY",
+        "SP-RECOVERY-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "selected-recovery-contract-disclosure",
+        "service-reset-not-cryptographic-authority-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:b1a4c73e6ad2b1c161a608808e8f79ed1c619750c18bc486fb033b974a7b32d8",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00177",
+      "requirement_id": "REQ-4b60fd3a3082d9c7ae9e7b12579ef94b603f4e26626a5ce1a6ffb6adc1230616",
+      "document_path": "spec/identity-device-architecture.md",
+      "text_digest": "sha256:333372814694400fcbc460c3c5e402fee1731da01c77934c1a0988967177b331",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The authoriser field is meaningful only if each signature was checked against a key authorised in the exact preceding state. Populating it earlier would let unverified or stale authorisers appear valid; the note limits the reference evaluator's claim.",
+      "threat_ids": [
+        "TM-ACCOUNT",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "authorizer-signature-verification-test",
+        "stale-authorizer-key-rejection-test"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC8032"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:e85d961bb608d0c95232aff125b0ca65faa499234432670bb6d5d4498456e1d0",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00178",
+      "requirement_id": "REQ-4e150977818a46fdd7a422e09c1bef1a26c952e88b41750b5b2c3293fc1e6fec",
+      "document_path": "spec/identity-device-architecture.md",
+      "text_digest": "sha256:bf792e1584e8922dc6d98fe3c91b80dbafcb261f2d682aa9df6cd13b8d8a0749",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Caches of device and membership keys can outlive revocation. Each profile must define how revocation removes the device from future protected state, otherwise cached keys keep encrypting to a revoked device.",
+      "threat_ids": [
+        "TM-DEVICE-PHYSICAL",
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "cache-invalidation-on-revocation-test",
+        "profile-revocation-procedure-documentation"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:540e84d0573e784b31d45ca4239a3f8b1876be9f31933cd3fc91717035326f43",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00179",
+      "requirement_id": "REQ-59f57a683cd48252c383559200986deeac5d0ee011a335667095fd75422421b0",
+      "document_path": "spec/identity-device-architecture.md",
+      "text_digest": "sha256:5df1f2440f8eeedc70a8314bc51f62f1bdf849f0d7dc14186ed0b6f207d9b28d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Conformance requires a pinned profile, common invariants, fail-closed parsing, refusal of server-only authorisation and both positive and negative transition cases. These together demonstrate that device management cannot be subverted by the service or by malformed input.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-ACCOUNT"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY",
+        "SP-KEY-CONSISTENCY"
+      ],
+      "evidence_expectations": [
+        "valid-and-invalid-transition-fixtures",
+        "unknown-field-fail-closed-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:d70d7b08b982dd07379f49f8ea7a6224be797ecef6fe2f6a3ce0b32dab44e315",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00180",
+      "requirement_id": "REQ-5cbd7438b42545c48f14c61df286c235859c01925bd058d4ca3383f74df24266",
+      "document_path": "spec/identity-device-architecture.md",
+      "text_digest": "sha256:284d5575288e537bf79792f38b03082c7e7569e29bd37ea64a8716665182b240",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Exact sequence and current-state hash bind each event to a single predecessor, so the identity history is linear and tamper-evident; replays, reorderings and forks fail validation.",
+      "threat_ids": [
+        "TM-ROLLBACK",
+        "TM-DIRECTORY"
+      ],
+      "security_property_ids": [
+        "SP-ROLLBACK-RESISTANCE",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "replayed-event-rejection-test",
+        "fork-event-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e8204c9fcb1acf4177c55b5b992ba59f419214d3cf5040f9e0775f784633b6e6",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00181",
+      "requirement_id": "REQ-6604d996c4166c3c57bb2663e95461b1a58d956bb6f9ac4ec4f7e735dd08a82b",
+      "document_path": "spec/identity-device-architecture.md",
+      "text_digest": "sha256:d59981c5f1d6aeca16a5258e74b45bc03cccd9726fd1dd9a0cecd1ec182054fb",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Recovery creates authority from outside the normal device chain and carries different risk. Making it distinguishable lets peers and policies treat recovered identities with appropriate scrutiny rather than as routine enrollments.",
+      "threat_ids": [
+        "TM-RECOVERY",
+        "TM-ACCOUNT"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY",
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "recovery-event-type-distinct-test",
+        "peer-notification-on-recovery-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:1f828eb577d9282a1d7d3b4f69ddd45d161a5c7d56a5678f107eb61a3d2af53d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00182",
+      "requirement_id": "REQ-66744170f2b91d5774f0488a41525cf668a2a9d6ccf59c1501176485f66617a7",
+      "document_path": "spec/identity-device-architecture.md",
+      "text_digest": "sha256:6daeb9b53cf465dd3c2ef786853c028e019539c3aa087644e6d9211f75ae7c5e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "These channels are controlled by the service or by third parties such as email and telephone providers and are frequently hijacked. Allowing them to satisfy cryptographic authorisation would make SIM-swap or support social engineering sufficient to add devices.",
+      "threat_ids": [
+        "TM-ACCOUNT",
+        "TM-CREDENTIAL",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "password-reset-cannot-authorize-device-test",
+        "support-action-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:f4b1f8754ea40237ae5e2fedfdc37843eb92b130c267a3283c2b92e9d6344dbc",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00183",
+      "requirement_id": "REQ-690176a76a9a46c08258e55b57710d0bfadb4fc0f1bad7e2f60bce5dbf2a50b6",
+      "document_path": "spec/identity-device-architecture.md",
+      "text_digest": "sha256:2e43c9753967c3c9a4a04af690209f4adc5785cc3275226c3618a36000a82c23",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "If ordinary flows could leave zero active devices, the identity would have no remaining authority and would be forced into weaker recovery paths. Keeping at least one active device preserves the cryptographic chain of control.",
+      "threat_ids": [
+        "TM-DOS",
+        "TM-RECOVERY"
+      ],
+      "security_property_ids": [
+        "SP-AVAILABILITY",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "last-device-revocation-rejection-test",
+        "active-device-count-invariant-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e72c3b74a808ef6a9a6687d2e7599b795931fc7445b1de8d5cef07ab4437b51f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00184",
+      "requirement_id": "REQ-8765613f5b2ec8fedb09cfc2ce4d0ef58cd7af6fde1ac464725c5c6f57f70f2d",
+      "document_path": "spec/identity-device-architecture.md",
+      "text_digest": "sha256:dba38e6e528ca9bd2c18b1d7c7b1edd0cefde92cd11b4272f26e73d3bfb496f0",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Enrolling exactly one fresh device at generation 1 with distinct, never-used keys keeps every device's key history unambiguous and prevents enrollment from smuggling in a reused or shared key.",
+      "threat_ids": [
+        "TM-DIRECTORY",
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-KEY-CONSISTENCY",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "enrollment-generation-one-check",
+        "shared-signing-agreement-key-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:0d4f0090951491aeb89e1eb861ab52a1d689728e51a206d67fe432f0a3fe7ae6",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00185",
+      "requirement_id": "REQ-a3a09f3ec1156adf399894e8fe877d51cc7f7ebc28b4750c0c20b57a67bc0695",
+      "document_path": "spec/identity-device-architecture.md",
+      "text_digest": "sha256:342e909b132c85cd5e45de5b986ff92e88a82d1d4100be7c1b000e56271ff568",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Duplicate identifiers or fingerprints create ambiguity about which device a key belongs to; reused retired keys reinstate possibly compromised material; wrong-role or prohibited algorithms break cryptographic assumptions. A consumer must reject all of these to keep state well-formed.",
+      "threat_ids": [
+        "TM-DIRECTORY",
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-KEY-CONSISTENCY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "state-consumer-rejection-matrix",
+        "wrong-role-algorithm-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:688037ef6aaa3f1cf10e8213b2dc179deec352f96e35e5353e3deb2ac61fda7e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00186",
+      "requirement_id": "REQ-a3d7d12d9ec75f4d37bd28282e1c076f259c3add16664f19fe9c418c9d9f5ae9",
+      "document_path": "spec/identity-device-architecture.md",
+      "text_digest": "sha256:4ab45867329e67de1e89015bbd6c295fbdafa5b95e96cdfafb51b1fe7b6a438a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Service accounts serve operational purposes, but service credentials are held or resettable by the provider. If they alone could authorise a recipient device, a compromised account or insider could add an eavesdropping device.",
+      "threat_ids": [
+        "TM-ACCOUNT",
+        "TM-INSIDER",
+        "TM-CREDENTIAL"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY",
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "service-session-only-enrollment-rejection-test",
+        "authorization-requires-device-signature-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:1651aa7d88848e74838e9a0ce150db73f1212345bde2db0cf96654fc2f0717d0",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00187",
+      "requirement_id": "REQ-a6663c169eb0cddbcd0b4f6220a024d53a3b63abede804db3f8fd3aacb734195",
+      "document_path": "spec/identity-device-architecture.md",
+      "text_digest": "sha256:34830e47ac596681780a79622d3dcf6e977cda6974462f9cf49332958898d542",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Requiring another active device for rotation or revocation prevents a single stolen device from locking out the owner or rotating keys unilaterally, while still letting a sole device rotate its own keys and preventing it from revoking itself into an authority-less state.",
+      "threat_ids": [
+        "TM-DEVICE-PHYSICAL",
+        "TM-ACCOUNT"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY",
+        "SP-AVAILABILITY"
+      ],
+      "evidence_expectations": [
+        "cross-device-authorization-test",
+        "sole-device-self-revocation-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:29529a749184046421096bcbfeaefc334f65c1158afaaa762d0411361008b476",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00188",
+      "requirement_id": "REQ-a719b71a4473a430944b8a3c869d91be720c13d8512f7701cdf6a90ec2610f8d",
+      "document_path": "spec/identity-device-architecture.md",
+      "text_digest": "sha256:400dbeb22c9a50f8abf82be10bc6524f6f06d98d6531c459b40188875b81ec5a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "In the device-chain profile authority lives only in active devices; without a root key, enrollment must be approved by an existing active device so that new devices cannot appear without an authorised party's consent.",
+      "threat_ids": [
+        "TM-ACCOUNT",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "enrollment-without-active-device-approval-rejection-test",
+        "authorizer-active-status-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:56f5f8f26146057fd8957bcd029e55088eb6d686b74200c66112750e1e342533",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00189",
+      "requirement_id": "REQ-a99f35f67319dbdf7061d25e11cb3c1c728d012a9dd0e76797462220a922a7fa",
+      "document_path": "spec/identity-device-architecture.md",
+      "text_digest": "sha256:f9daa0992a227bdb260ef6260bb9db32e21c054652bd74f8dfc79d6fdf55e210",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Identity keys must use reviewed algorithms with lifecycle management. Restricting choices to registry identifiers and constraints, and defining no new primitives, keeps identity security grounded in analysed cryptography.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN",
+        "TM-QUANTUM-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "registry-algorithm-membership-check",
+        "lifecycle-status-enforcement-test"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC8032",
+        "NIST-FIPS204"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:0640b4318d7ee61e37c151cc8a2d3973dbd748533b5350c92096846f20095542",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00190",
+      "requirement_id": "REQ-ac9a69848ce154c54ed5f8a7b87515432119b2a0abf5560ed67c570be7a1618f",
+      "document_path": "spec/identity-device-architecture.md",
+      "text_digest": "sha256:165e00e5da413f05a784cd2b8b06e2ac983aa990633e361ebc559fd37294b9ae",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Recovery that changes the device set bypasses ordinary device-approved enrollment. Governing it by the recovery profile ensures its stricter controls and disclosures apply instead of the ordinary rules.",
+      "threat_ids": [
+        "TM-RECOVERY",
+        "TM-ACCOUNT"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY",
+        "SP-RECOVERY-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "recovery-path-uses-recovery-profile-check",
+        "recovery-as-enrollment-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:4ffad0b81bd3b4e9adaae15bd076b318d73052abd248f1d4e69ee0e6cc76f712",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00191",
+      "requirement_id": "REQ-ae5b769e7a40052115c7f51e14da8fbfd78924253d26d252652af08babece040",
+      "document_path": "spec/identity-device-architecture.md",
+      "text_digest": "sha256:f79d7c1ed6d5ac039362e25d75abf3d8549cf980e314001ca2f681c34ab80067",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A revoked device is untrusted; allowing it to authorise later transitions would let a stolen device re-enrol itself or others, and keeping it as a recipient would continue leaking content to it.",
+      "threat_ids": [
+        "TM-DEVICE-PHYSICAL",
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY",
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "revoked-authorizer-rejection-test",
+        "revoked-device-recipient-exclusion-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:bb4ab22126808926bba46cbae10d44961c1b487375f9e90a361064eb71a7cfd6",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00192",
+      "requirement_id": "REQ-c9367730b7590876622c6337845e04562b910929e74f8cf41812ec52937694b0",
+      "document_path": "spec/identity-device-architecture.md",
+      "text_digest": "sha256:de927cd73de186a51878476ab6e748cd4990bcd7544641f551c7b8cab6e26eb7",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "This is the central E2EE property for device management: no non-recipient party, including the provider, can grant itself decryption capability. Without it, all content protection reduces to provider honesty.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY",
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "server-unilateral-device-add-negative-test",
+        "ghost-device-detection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:650d7f117fecfecbfdaa22f86c17b6feb9805363deadcfeddd154e2d0bad653b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00193",
+      "requirement_id": "REQ-cfdb4006e797f0e445e70beaec7c33bbdd26bf8f4b5279ba18cbd1c2895a0792",
+      "document_path": "spec/identity-device-architecture.md",
+      "text_digest": "sha256:266b93911131453f6b8917bda6ff950a0422867caf01d6e5c7c044e756b65bff",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A service can present a fabricated or stale identity history. Endpoints must validate against retained local state or transparency and fail closed on revoked authority or inconsistent history; waiting periods are friction, not cryptographic proof.",
+      "threat_ids": [
+        "TM-DIRECTORY",
+        "TM-ROLLBACK",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-KEY-CONSISTENCY",
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "forked-history-fail-closed-test",
+        "delay-not-accepted-as-authority-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:78788855cb8dca035c9860b6653ea341b93546af7ac0394cee90c0157ebc3156",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00194",
+      "requirement_id": "REQ-ea6740ca91d650ba4f69544cc8321934e3300e3986f4c0f8c8189501973b65f8",
+      "document_path": "spec/identity-device-architecture.md",
+      "text_digest": "sha256:b4682b50767b9221d4c15e6b929e72127ae04231628c142401188a65e297c779",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Binding identity, event, subject device, sequence, previous-state hash, new keys and verified authorisers into one authenticated event prevents any component being swapped or replayed independently, giving each transition an unambiguous, verifiable meaning.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-ROLLBACK",
+        "TM-ACCOUNT"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "event-field-binding-tamper-tests",
+        "authorizer-set-verification-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:3c781cdecf5852dec21310b611acea0da2ddfdcbd99d11152018b342e2505f5d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00195",
+      "requirement_id": "REQ-2d0d4f94b1e20f14e5e2f54053ff007745600b40bcf5280541a5b9eb34f09b3e",
+      "document_path": "spec/negotiation-downgrade.md",
+      "text_digest": "sha256:54cd79a06a80a07d6eb23a9aa49b7a503b99e85ed06c303b40ddfda10457db21",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Replaying an old negotiation could reinstate a previously acceptable but now superseded version, suite or authorisation. Treating repeated contexts as fresh would let an attacker resurrect stale decisions, so replay must be refused where it affects security-relevant selection.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-REPLAY-RESISTANCE",
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "replayed-negotiation-context-rejection-test",
+        "freshness-binding-trace"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:08ed59481ca80235a83f8ff71bdb5f7777dbf19e5d442d4c28829a424ba58e12",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00196",
+      "requirement_id": "REQ-353a371e4f0436c9ffbc6295bfa82c9c7c984fd10610533040409d190163b030",
+      "document_path": "spec/negotiation-downgrade.md",
+      "text_digest": "sha256:accb563a8e6ce05020b3aff57c8906e84250d7fb5264d6c03c68569fbbc14618",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "An attacker in the path can easily cause errors. If errors led to a successful but weaker connection, interference would become a downgrade tool; failing closed makes interference cost availability rather than security.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-DOS"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "error-injection-no-weaker-success-test",
+        "fail-closed-code-path-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:b04d2f48849fabd6c0a976896490e19b25269b55c4e2f72a650c4ff0551a5e31",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00197",
+      "requirement_id": "REQ-356784fbbcf52778e705f6e870877c57633a514eaeb57600d9058bb5020fddfe",
+      "document_path": "spec/negotiation-downgrade.md",
+      "text_digest": "sha256:381b267558061016380169e88ebe765162a10362e781ad70723dfe48ab1bdef6",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Pinning the registry version and an explicit suite set fixes exactly what may be negotiated, so both peers and assessors know the acceptable options and a peer cannot introduce suites the policy never approved.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "policy-registry-and-suite-pin-validation",
+        "unpinned-suite-offer-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:5b6a7a69b4dc2086744842677b2013c81d0ba998e76eb4c88358302b725b2b1f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00198",
+      "requirement_id": "REQ-37d5fe3cf137f763c7949d52b9a93fd9f7429d4846ecf13f5a9aeddf84428b4f",
+      "document_path": "spec/negotiation-downgrade.md",
+      "text_digest": "sha256:488b1e5d36c3c56b555f6d5a7ad3a5609994ac7625c3fcd6acd15cac5dd11e9d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Any downgrade-sensitive field not covered by the authenticated transcript can be altered in transit without detection. Failing when coverage is incomplete prevents a partially authenticated negotiation from being trusted.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "transcript-coverage-check-per-field",
+        "uncovered-field-tamper-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:be16d72272cdc9ffa25ef6b7212b46e9fd6e5d174c6cc6c9f179ea3fae083bfa",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00199",
+      "requirement_id": "REQ-453a063e3502e4a3aae37a45c20938d81176535f3eb7119463601db5698b4960",
+      "document_path": "spec/negotiation-downgrade.md",
+      "text_digest": "sha256:7f3ab89f255c9787c59c73d0b5c42fa6e94a90efb6203399954cf5f1ec6be723",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Aliases, provider defaults and floating references can resolve to different algorithms over time or across libraries. Requiring exact identifiers ensures that a suite pin means the same construction everywhere it is evaluated.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN",
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "alias-and-default-rejection-test",
+        "exact-identifier-resolution-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:f8ab1beabc661644efa4578eb3b3ea2b6af065a5e1a145adf1ab0dec6e1dfb42",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00200",
+      "requirement_id": "REQ-463a7a9462bf288851b1d4ab3b51eb39ad2b01a8c4684eb35a9ad30fd32849f9",
+      "document_path": "spec/negotiation-downgrade.md",
+      "text_digest": "sha256:7e07d7721779a7ede0b149d29c677d82faf43f9ae5b7573a74cc4799059a11bc",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Supporting strong algorithms is irrelevant if an attacker can force the weaker ones. Downgrade resistance is a property of the negotiation mechanism, so the claim must be earned by negotiation behaviour, not by the algorithm list.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "claim-evidence-references-negotiation-tests",
+        "algorithm-list-only-claim-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:42533b9070fe7be2e02a3e2d2a4175231a97e8f24b3585f31d0cc9f51cd70c23",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00201",
+      "requirement_id": "REQ-59b0849e4b18f6aea9631118d6a7a676afc68c77ea2f6c4c423249d775f578f8",
+      "document_path": "spec/negotiation-downgrade.md",
+      "text_digest": "sha256:6c7e9f289e7ae22ea6c2a6585c5c84c1919c4f8dedabcf8d7a8e36789bb01407",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Weakening policy to find common ground is precisely what a downgrade attacker wants. Surfacing incompatibility instead keeps policy authoritative and makes the condition visible for deliberate administrative action.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE",
+        "SP-AVAILABILITY"
+      ],
+      "evidence_expectations": [
+        "no-common-suite-fail-closed-test",
+        "incompatibility-condition-surfaced-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:de79b77d25bcd1611432589648205052f8ed3ed7b7aec214c20bfcd68971ff43",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00202",
+      "requirement_id": "REQ-5c3fe2a3da05ba5dad68567042966f19c66fba683fde1ab167186c0068f3ecb3",
+      "document_path": "spec/negotiation-downgrade.md",
+      "text_digest": "sha256:0400cf8eb19df6634feb4c1dc2f69e8e3daa25c184f575d39f60f2aeffc03aad",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Freshness must make each negotiation unique and bound to its participants. Protocols may use other mechanisms than paired nonces, but only if they provide equivalent uniqueness and authenticated binding, preventing cross-session replay.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-REPLAY-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "freshness-mechanism-equivalence-argument",
+        "identical-nonce-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:7e0c46bbf54b3e05a1fc2c0d4b2977eaedb6feaf3895b7ea3c17838732850744",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00203",
+      "requirement_id": "REQ-5e2fcc965a4a95575463a3378ba9f6e3750837f7d2cc50d644baa46e5155ad4b",
+      "document_path": "spec/negotiation-downgrade.md",
+      "text_digest": "sha256:2e801ddca00955fe48653928063d3dda11e468786e8fca25f6d16801cb92af0b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Version strings do not reliably encode security order (e.g. '1.10' vs '1.9', or vendor suffixes). Inferring order from comparison could select a weaker version as 'highest'; the explicit policy order must be used.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "lexical-order-trap-test-vectors",
+        "policy-order-source-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:40f58db7c9df0a4c1eb7d0fa8605bb5a5ea6c54c89b4512296afe95198d92024",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00204",
+      "requirement_id": "REQ-62d09a8ce99ea2257b409f0f1b4a46d6a3106ca400c172de97fb0d5a72a5820f",
+      "document_path": "spec/negotiation-downgrade.md",
+      "text_digest": "sha256:62a753bd327d8db0b95fd644976124afc666fdd9ac9f5f110991ec3c66634269",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Protocols may authenticate more fields for their own needs, but removing a baseline field reopens the specific tampering that field's binding prevented. Policies can extend, never shrink, the baseline.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "baseline-field-presence-validation",
+        "field-removal-policy-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:abe8724973241ad82229717a189f8e954b3e8314c04a615213e531a2db511e61",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00205",
+      "requirement_id": "REQ-7421f980c8b80eef609c6330b733333a806e85ec79dbe963ee88a9f1b0daded4",
+      "document_path": "spec/negotiation-downgrade.md",
+      "text_digest": "sha256:2a4c1cb1cbb5c83e74e3a7757c67c17443c13a6c19edebbf918cb9dcdbabc328",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "If an intermediary could shift the effective profile set without producing a distinct authenticated outcome, both sides might believe they agreed on stronger profiles than were applied. Each profile set must map to its own authenticated result.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "profile-set-bound-in-result-test",
+        "intermediary-profile-substitution-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:39d193218e4da12934d46d73d24bc8bd5817c2da1d867a2dc42e15904d5b9a22",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00206",
+      "requirement_id": "REQ-765bb40868daaa98bc8d0bc0dcdc13f9ccee457964e1ce2b4078480a19d97705",
+      "document_path": "spec/negotiation-downgrade.md",
+      "text_digest": "sha256:15f24cd3fcb8a1fa8856799d02ccf0c611d6a12aa942d44c2d81de5f43dd2016",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Administrators legitimately change policy, but such changes carry accountability. Distinguishing them from automatic fallback ensures weakening is always a recorded human decision and never disguised as negotiation.",
+      "threat_ids": [
+        "TM-INSIDER",
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "policy-change-audit-record",
+        "automatic-fallback-absence-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:cc3c0b1b3912a2874216e39107f10e815960a55e9d44b818494909bcc8b1be0b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00207",
+      "requirement_id": "REQ-786e6a8c27bcab2517ad938a4add46860b5c91faa28a7b7fd4ccddc68a8b1399",
+      "document_path": "spec/negotiation-downgrade.md",
+      "text_digest": "sha256:72d35862c949b2a6b665fad8ffc660658a6772eb593134a0338cf5e39b587af5",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A minimum version exists to exclude versions with known weaknesses. Negotiating below it whenever nothing better is shared would make the floor advisory; failing enforces it.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "below-floor-only-offer-failure-test",
+        "minimum-version-enforcement-trace"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:b09374830b9e7cdd913faac3e4aeb36a59f27a8bbe444a8ac453de281927655c",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00208",
+      "requirement_id": "REQ-7a1e7bf28926c82817cb698e296c6e9c94b56b42dd1674949ac747c3618b01c5",
+      "document_path": "spec/negotiation-downgrade.md",
+      "text_digest": "sha256:fa7db46480f75c8dcd9f25307fa7e5ee05d11a06f666c9d6bf59ae49979f4af7",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Each demonstration targets a specific downgrade vector: floors, highest-version choice, suite pinning, transcript coverage, registry binding, fallback suppression, adversarial downgrade attempts and replay. Requiring them prevents a product from claiming negotiation safety while testing only the happy path.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE",
+        "SP-REPLAY-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "negotiation-demonstration-test-matrix",
+        "adversarial-downgrade-harness-results"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:2a29d489f6b4685665661903c2080bd2342f3d3baa69aa85598c590b6e959a3d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00209",
+      "requirement_id": "REQ-7ffbfa41b0291742d7799682f49f4a8c16c3426d1dc061b34bac96b4098062d0",
+      "document_path": "spec/negotiation-downgrade.md",
+      "text_digest": "sha256:bb01f738520fbf666c41436944164697917e92193fe8c06b917251145822abff",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Binding the exact effective profile set ties the connection's security claims to what was actually evaluated, so no party can later assert that different, stronger profiles applied.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "profile-set-digest-in-transcript-vector",
+        "profile-set-mismatch-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:8a3f24d8b31c9ffd816edf440adad8ffd492936f90254d1cc74a173a9e869e82",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00210",
+      "requirement_id": "REQ-876d5dd9f459571a0743876213c5bb56d572b3b9334a5014a69acb0f9e2f0e0e",
+      "document_path": "spec/negotiation-downgrade.md",
+      "text_digest": "sha256:6c8e44868bf540b840a34b167e665e36f98a3606b976f3c9b27c042f493df265",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "An explicit oldest-to-newest order and minimum version give negotiation an unambiguous definition of 'stronger' and 'acceptable', removing reliance on heuristics or string comparison.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "policy-version-order-schema-validation",
+        "missing-minimum-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:581857c315f403cd1887d02629165349ed94a5d637c35795267490889a89f054",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00211",
+      "requirement_id": "REQ-92f9ef073b03fe6bdaef3c0c27ec7dc93cc9ef538d3cf81d9c1f8b4a5c6c224c",
+      "document_path": "spec/negotiation-downgrade.md",
+      "text_digest": "sha256:8c183a8cd1e9e79eb3210e518f2a8647e66b4dcc80f5cc6e8e42b25b272909f7",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Selecting the highest mutually supported version prevents an attacker or lazy implementation from settling on an older version both sides could have avoided.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "highest-mutual-version-selection-test",
+        "stripped-offer-detection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:40ea91f555b7fe1356d45acf0a8e582d3cc31a6a585d474fe573442717a9f21c",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00212",
+      "requirement_id": "REQ-ab817894587566780e9d848d7f7fd82f63e852ca6f12776a0b94c72bf364fffa",
+      "document_path": "spec/negotiation-downgrade.md",
+      "text_digest": "sha256:193704c45ce90777c4c46f4bfd5b27e1a8462f5c5716377e677f193a66903226",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Cryptographic agility is needed for migration but historically has been the root of many downgrade attacks (export ciphers, version rollback). Stating that agility must not enable downgrade frames all other negotiation rules.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-QUANTUM-HARVEST"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "agility-mechanism-threat-analysis",
+        "migration-path-downgrade-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:d4cf084c3f0fcb6332bde603b030885f89e3d8f763c9b96b92031f2571cadd62",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00213",
+      "requirement_id": "REQ-b659e13726fdaee6be3a0b70e9bc7063484f545742e3dce037143845aa14d878",
+      "document_path": "spec/negotiation-downgrade.md",
+      "text_digest": "sha256:e3f4732b761b2c36847fb6c1227842d4f6dda9552a221dc7fa812ab5c755ed80",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The listed rejection conditions make the reference validator detect every evidence pattern that indicates a downgrade or replay: non-highest or sub-floor versions, unpinned or non-mutual suites, pin mismatches, unauthenticated fields, attempted fallback and bad freshness.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE",
+        "SP-REPLAY-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "validator-rejection-fixture-per-condition",
+        "validator-acceptance-only-for-clean-evidence"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:0509d13dcc0b781ae5ba955c29899b5e96d8a5d4eb2e5aa47d3f605afdfa6e76",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00214",
+      "requirement_id": "REQ-ba6c2889f01b8a9a3847ce2fa34c893cd6f74cb95776a2b882d997025ee860c4",
+      "document_path": "spec/negotiation-downgrade.md",
+      "text_digest": "sha256:1e3abfe7be96ec5981937596db4ad8d5b1fb20aa577a671c7ab7be1b25206efc",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Choosing a suite that one party did not authentically advertise means either tampering occurred or the selection is unilateral. Requiring presence in both authenticated sets ensures the result is genuinely mutual.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "non-mutual-suite-selection-rejection-test",
+        "advertised-set-authentication-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:388164629f27509b766f6163abb027ab2e98b8431cba4c5aae1769c433683a22",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00215",
+      "requirement_id": "REQ-c1b0e62875d489da3d5b0da78ea60d8d2762f0e7685007fa6ff6b26c731134fa",
+      "document_path": "spec/negotiation-downgrade.md",
+      "text_digest": "sha256:1ad98d7bd190876b9c9e36224ff495d255764767747ef8058f769e1350f82af0",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Each listed retry behaviour is a known way a failure becomes a downgrade: lowering the floor, dropping strong versions, adding weak suites, changing profiles or registry, or disabling binding. Forbidding automatic retries along these axes prevents attacker-induced failures from weakening security.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-DOS"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "retry-behaviour-negative-test-per-axis",
+        "retry-offer-equality-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:3d0a82b7109c264ead97b526199f9e00c3cf00282a81671e740aa3980b0dbc1b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00216",
+      "requirement_id": "REQ-c486a4a11cadfb7a06d4bc755da905cc7ff8fc09f19598f0c7539231a0fccfa4",
+      "document_path": "spec/negotiation-downgrade.md",
+      "text_digest": "sha256:f3d9b9055bd8f1dcda859f2b6e42209a3ea1ac6953923b1f8ab8635da17d19c3",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Connection success is not a security goal that overrides policy. An endpoint accepting anything weaker or different than its pin to make a connection work would let any peer dictate weaker terms.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "non-pinned-parameter-acceptance-rejection-test",
+        "policy-enforcement-at-accept-trace"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e1870f6b50b96c572e6bc0456bef076c6302b84e74a55cf58bd8a6f263fccc05",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00217",
+      "requirement_id": "REQ-cf69129e5749500c85782a8ec6c4cbfee5c48fd3217766b761e1415c9269e3ef",
+      "document_path": "spec/negotiation-downgrade.md",
+      "text_digest": "sha256:7fbbc97306e435a6f4f048391945d7aa7dc5d17ba9f2ea8bba4cb44b669713af",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Advertising, selecting or accepting an unpinned suite at any step widens the attack surface beyond policy. Enforcing the pinned set at all three points closes every route by which a non-approved suite could be used.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "unpinned-suite-advertise-select-accept-tests",
+        "offer-construction-from-pin-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:951e71ea663370913c5bbc3fb08aab492dce70ff69f74f4752cd26d1d1b0e56c",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00218",
+      "requirement_id": "REQ-d49b121654133e2dbff16636f48936c1fd8a42169de65cdbbce7f19993996b13",
+      "document_path": "spec/negotiation-downgrade.md",
+      "text_digest": "sha256:4b6c683d91feeeec19ef93ba544d27f2617e39a064ad8ced136bd5ba15597917",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Without protocol-level freshness, an authenticated transcript from an earlier session could be replayed to reproduce an old outcome. Binding to freshness makes every negotiation result session-specific.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-REPLAY-RESISTANCE",
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "cross-session-transcript-replay-test",
+        "freshness-value-in-transcript-vector"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:287dfeca1462493335962a2009265f567ba84dbcacbfd08b0640654e0f005afa",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00219",
+      "requirement_id": "REQ-d4af21ec9a41358ad704eba27c268c3e2cc605a40dd3abc9b68db9937d3f5bf4",
+      "document_path": "spec/negotiation-downgrade.md",
+      "text_digest": "sha256:e04bbda350ef4b0405236997c1f9d711aa3fbad275886e65576e3c3faeb332c9",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Ranking suites by strength would embed contestable judgements and could push deployments toward unsuitable choices. Leaving ranking to later profiles while keeping pinning and transcript binding mandatory preserves downgrade resistance without false precision.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "no-implicit-strength-ranking-in-validator",
+        "profile-defined-preference-binding-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:511b4a29dfe3a03b3b6787e8839a5e0cc12d11b0bd7e07cb159daa9ca01621d3",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00220",
+      "requirement_id": "REQ-ee22ea2bd93e0ab26445906f1cf675b31787ce9124cf54cdce5b3a95b478cbd6",
+      "document_path": "spec/negotiation-downgrade.md",
+      "text_digest": "sha256:9c2203472652d7b3c3bccd305fe4b978a758b0797d79aec2545a3440fba4900b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Binding the complete offered and supported sets, policy, protocol, registry and selections before application traffic lets each side detect any modification of the other's offer, which is how version-rollback and suite-stripping attacks are caught.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "transcript-baseline-field-vector",
+        "offer-stripping-detection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:77ba2d1674779832938c28fdac0246b0b4f292a4699c3bbf819f2ebf1f19a2b7",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00221",
+      "requirement_id": "REQ-01fd239d8451e95fffc66bed801cfb0340c19fccc8ad5345f025cbefdf8d7b32",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:cae26d096420457201369aa21c1978c5834f52784cd42f20de39e914b3bc93b6",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "ALPN selects the application protocol carried over TLS. Accepting an unpermitted protocol enables cross-protocol attacks where a client of one service is redirected to another endpoint sharing the certificate; restricting to policy-listed protocols prevents that confusion.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "unpermitted-alpn-rejection-test",
+        "alpn-policy-allowlist-validation"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC8446"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:689f5825f5266d4d2edcb97d61dac867bfc0d7778c33d530a0fa7bfd26f941b1",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00222",
+      "requirement_id": "REQ-0d0dbdea95a9ba3ea07e90987d58f9808239441157f3a8f1c382a68f3f987f37",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:e4e5fd4e9372d91fdc7ac813abf4dd1eaaf0ad8955f32e21f810b0ed9791b9a2",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "TLS 1.2 and earlier permit non-forward-secret key exchange, weaker transcript protection and known downgrade issues. Restricting to TLS 1.3 removes those legacy modes from the attack surface.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-NET-PASSIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE",
+        "SP-FORWARD-SECRECY"
+      ],
+      "evidence_expectations": [
+        "tls12-handshake-refusal-test",
+        "version-negotiation-capture"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC8446"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:7e44ca7daa1e69152a0b123af7ff3e61707be98c7435056c4a3c32bae01572d0",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00223",
+      "requirement_id": "REQ-0da3e8b6c539dcff61c72502e9facf21ac4d8b4a5cb634239c34aebd34c2a65c",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:f795ffe603ff4de55d712aef4b8695b21ec606599ab77a31680b97f0c1904fbd",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Without chain validation to a configured trust anchor, any self-issued certificate could impersonate the server and the TLS channel would be open to man-in-the-middle interception.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "untrusted-chain-rejection-test",
+        "trust-model-configuration-evidence"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC8446"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:42306b42e7af7d102f86faf3d95cb1113e13379f5fc975e430d5788b6066605a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00224",
+      "requirement_id": "REQ-0f47b892e1ebc95c56d10e223e637ecd901951fb2ac220f911a420b96cbd2ef0",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:eb6e3bb5e34939510c5043a89b9b34536488c3bc74f7da4197f22db5837f563c",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The Common Name is an untyped, legacy field and certificates may contain names unrelated to the intended service. RFC 9525 requires typed subjectAltName identifiers; CN fallback allows certificates never meant for the service to be accepted.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "cn-only-certificate-rejection-test",
+        "san-matching-implementation-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:2ef99d7b59194cb0fa02bb9efb1e648681cca4440384d9581943b6798e903781",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00225",
+      "requirement_id": "REQ-0f6798e1e0bf98a36086d112978e750c397a9d83f8c55a39254b6828978f1eee",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:958a30efac410421cab7c72e0e891747ca747a34edd55886cec77970e7590e31",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "0-RTT data is replayable by a network attacker and lacks full forward secrecy. It is only safe for operations explicitly analysed as replay-tolerant with defined replay protection and early-data rejection handling, so a documented application profile must exist before enabling it.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-REPLAY-RESISTANCE",
+        "SP-FORWARD-SECRECY"
+      ],
+      "evidence_expectations": [
+        "early-data-operation-allowlist",
+        "replayed-0rtt-duplicate-effect-test"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC8446"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:fbd71ba70bd206c7a07e1fcea23c36da7c17399ad63bc6deba429896fbd11116",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00226",
+      "requirement_id": "REQ-13ec3c70beb3ec94ee7638879d63f47eff846a44841a904cd1754aac99feb458",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:97bf6450e453c50b1725a1bdf2585facb57dcb3e078dca377c7f8be115221bb7",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Exported traffic secrets (e.g. SSLKEYLOGFILE) let anyone with the log decrypt captured traffic. Production must disable export unless a governed diagnostic mode defines authority, audit, protection, retention and restoration.",
+      "threat_ids": [
+        "TM-INSIDER",
+        "TM-ENDPOINT-STATE",
+        "TM-NET-PASSIVE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "key-log-export-disabled-in-production-check",
+        "diagnostic-mode-audit-record"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:527e27b149c53c271dead201efb800dba4eed2ba64bd35043ded7423dfabb54a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00227",
+      "requirement_id": "REQ-1dd273435c9a47eb6bcde04748aef43a91f9ec84e311accfb03ae395e851cde0",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:b11c524b1d5dea94c306ec7d95549ed0b31a3e5a9a9560660842a8c228c7d799",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Each demonstrated item corresponds to a transport property: version, mode, offered and permitted groups, hybrid requirement, obsolete-group exclusion, suite, fresh key share, ALPN and certificate validation. Enumerating them stops a successful connection being taken as proof the secure configuration was negotiated.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-QUANTUM-HARVEST"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE",
+        "SP-PEER-AUTHENTICATION",
+        "SP-PQ-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "handshake-evidence-checklist-per-item",
+        "negative-handshake-test-per-item"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC8446",
+        "NIST-FIPS203"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:3c06bcf4b1241758854f322eb04332e9116e7f0a483451a16e2fb28b0443d831",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00228",
+      "requirement_id": "REQ-1e0d4f17a564bbba9262b5aadad2457eeeae6288d2cbd87c71b96d8407e6b6ae",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:a71f4e51d6eff0276c0d2e877cc9c57396792870759b768666fbb0617f1b35ee",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Transport security protects hops; application E2EE protects content from the service. A transport component that terminated or weakened the E2EE layer would expose plaintext to infrastructure, collapsing the two layers into one.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "transport-layer-sees-only-e2ee-ciphertext-test",
+        "no-e2ee-unwrap-in-gateway-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:a84de67fc0aec132f75dcd97a50296695739dc60a4b7f768300d087f24e9c324",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00229",
+      "requirement_id": "REQ-24ad036624fba827f42c0cbcbfad79ad871281c8816cd82feff14344cf16920e",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:e788dbfb07aaba85af46690ea23db29b3694f02d777d4c247c037f8a4b9233e7",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Session resumption can skip the original key exchange. If a resumed hybrid session used only classical key agreement it would lose PQ confidentiality while still claiming it; the hybrid group must be renegotiated on resumption.",
+      "threat_ids": [
+        "TM-QUANTUM-HARVEST",
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PQ-CONFIDENTIALITY",
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "resumed-connection-hybrid-group-capture",
+        "classical-resumption-claim-rejection-test"
+      ],
+      "external_standard_ids": [
+        "NIST-FIPS203"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:ab47dd33017d2de3a5c80ff07ecff5d5672048b745ab6a263562a4374cde65e0",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00230",
+      "requirement_id": "REQ-27b41483f88e182c394b60417293329fd34083fa15433303487af57b80764f6a",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:51d2603faf167406a0ba696c6628c31c3cbc063328e3a925fa89eaf43771e18c",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A terminating proxy decrypts traffic, so TLS through it is not end-to-end between users. Calling it E2EE misleads users about who can read their content.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "product-claim-wording-review",
+        "termination-point-architecture-diagram"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:d9ac5bb78f2ab78942351a59ebf63de07a68cea6106f64997b93a87d66ee32d5",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00231",
+      "requirement_id": "REQ-31dd14038edc962db1750e61f66ff3eb8eb6b2f5b14b5ec47d4b844904fc849e",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:cb14f012b08c4df36c3bb178c4e9a7058439dac2a1dcf386a29e5fa171a01fb4",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "psk_ke resumption reuses the original secret and loses forward secrecy if the PSK leaks. psk_dhe_ke adds fresh ephemeral agreement, keeping resumed connections forward-secret.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE",
+        "TM-NET-PASSIVE"
+      ],
+      "security_property_ids": [
+        "SP-FORWARD-SECRECY"
+      ],
+      "evidence_expectations": [
+        "psk-ke-only-resumption-refusal-test",
+        "resumption-mode-capture"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC8446"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:326c8e5bf8d6ee677254bfa7633d5287afdcb855e8f02b078ce1ff3d56a01bf4",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00232",
+      "requirement_id": "REQ-48dd32d79a17fc82c48fbb8986069d5f59e4a6de761556837d985b2324f8c39c",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:418bccd043fc20853a03601fb34d7cd0e7fe86f6d879b3de9726170ccbc09d0d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Mutual TLS is meaningful only if the server requests, the client presents, the chain validates and the identity is authorised for the role. Missing any step leaves service-to-service calls accepting unauthenticated or unauthorised clients.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "missing-client-certificate-rejection-test",
+        "unauthorised-client-identity-rejection-test"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC8446"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:21a7a2d5f9e3bbcf5ee334ecea8952614bf46629fb457430a9338c47dd98ad50",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00233",
+      "requirement_id": "REQ-4b36ff3e298073b8a8b4f67cfe767015746a7061fb24e23613c532ff8d6ba45f",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:656a58ec89f8ce9c2aab7a613acd45b42f04312bb80810bf2b782ea71ce79b6f",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "If a hybrid-profile endpoint ended up on a classical-only group but still reported hybrid conformance, monitoring would show PQ protection that was not present. Silent continuation is how downgrades go unnoticed.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-QUANTUM-HARVEST"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE",
+        "SP-PQ-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "classical-group-negotiated-reports-non-hybrid-test",
+        "conformance-report-group-binding"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:3cd8c1fbe708c8aed092188110a2c54b50d48edac559dea49a07ad1dc8c19c8f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00234",
+      "requirement_id": "REQ-4cbefd631d70b043deb2c30854be9af542f05249ed75781032c5dd5e7284cfcd",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:ccf6801db13cf6ea6f0dedaf54f25c270fc7d0ee6038bb53c763ebeb718ddb7a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Pinning can add protection against mis-issued certificates but causes outages and lockout if keys rotate without a plan. Permitting it only with a rotation and recovery design avoids trading a security gain for an availability failure.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-DOS"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-AVAILABILITY"
+      ],
+      "evidence_expectations": [
+        "pin-rotation-procedure-document",
+        "backup-pin-presence-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:a9877c95e2be52db783371b59491d542b49194e7241ece501b9e08ed40271513",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00235",
+      "requirement_id": "REQ-5ab9882b6307ebd9eb6181fc2fa3c7b8eb8c991fdfaa3521e35d6a655c8f0efb",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:53841e6448db3f22dd0b4ae8aaa368474d4b02ea08c1428ff57f47e030c2ac89",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Falling back from hybrid to classical on failure lets an attacker who blocks large ClientHellos strip PQ protection. The hybrid profile must fail instead of continuing under the same claim.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-QUANTUM-HARVEST"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE",
+        "SP-PQ-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "hybrid-failure-no-classical-fallback-test",
+        "middlebox-drop-simulation"
+      ],
+      "external_standard_ids": [
+        "NIST-FIPS203"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:c63880cbbe2b9ce1e0062edf1af4de6877b6821d750596c3202d530a79733fdf",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00236",
+      "requirement_id": "REQ-5d0935dd33a838fd880ad45c95ab569abd138e43110d807fcbbf162bb099826d",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:5a19f78695a0d376e73b8d28dcba59827bf3beb1a5b4842de69967a4452b2daa",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Replayed early data could repeat a payment, permission change or destructive action. Advising against 0-RTT for these operation classes keeps replay risk to idempotent, low-impact requests.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-REPLAY-RESISTANCE",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "sensitive-operation-0rtt-rejection-test",
+        "early-data-route-classification"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:08d8bb4caeabe528b4d16d0ac4c99b974c74ac09d4ccd0e2b25f781733ff43fc",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00237",
+      "requirement_id": "REQ-6b64300667168bcf8e901930ced7a2fac65098a4409343606dcc798d664ee8f8",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:b821abfd1a32702991306abe13763be5c30b8c54059f822fd258855b0f2eabbe",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "QUIC with TLS 1.3 per RFC 9001 provides the same handshake security as TLS over TCP. Permitting it lets deployments use QUIC without defining a separate security profile, while the same pinning and claims apply.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-DOS"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-AVAILABILITY"
+      ],
+      "evidence_expectations": [
+        "quic-version-and-tls-profile-capture",
+        "quic-transport-parameter-validation"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:c33ecafa07e6fe7f86c55810b78ae32118eadaee5a09677cbd6cf3cdb763e077",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00238",
+      "requirement_id": "REQ-70756904a3aa8c3bde067f45f42faf4b0adf786dc50b6f842e55dbf9b144c368",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:aefca8e496dbfaba5ff4d872c5ad75f90635ffe00d4880778cd367ba198af2c3",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Inside a mesh, network location is easy to spoof or reach after lateral movement. Exposing the cryptographically authenticated peer identity lets authorisation decisions rely on who the peer is rather than where traffic came from.",
+      "threat_ids": [
+        "TM-INSIDER",
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "authenticated-identity-header-propagation-test",
+        "location-only-authorization-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:ac081760ee2c9850336534c3e471df714de9a0285dfe4db7a46b00b3c44f083b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00239",
+      "requirement_id": "REQ-8646098987e06de73746d92aba88b2eab7e2dd7686aef5d76e2a907e56fa5701",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:a109d5fa1a2fddabf43e4da90759ba104017395d90f1997d7fa3e3d9904f07ad",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Even where an intermediary legitimately terminates TLS, it must not gain access to E2EE-protected content unless it is itself an authorised endpoint. This keeps infrastructure outside the content trust boundary.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "intermediary-payload-inspection-shows-ciphertext",
+        "authorised-endpoint-inventory"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:fc660c091c97081f4ae297f3ed3a0e8d3e4d8228edfbc8e1c61a75471d8bef8f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00240",
+      "requirement_id": "REQ-95606d4d68df8ebafbf0ae68c7caa6539a81965b9c1057505d7891fd819e8ff5",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:d28d0064cc5052a579005abb009e79aba2411670dafc6d10d1dfa85411ba8060",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Any negotiated parameter outside policy indicates misconfiguration or attack. Failing closed on version, suite, group, ALPN, trust model or authentication mode deviations prevents connections from continuing on unapproved terms.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "out-of-policy-parameter-failure-matrix",
+        "policy-enforcement-hook-trace"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:43eed9d013643da5d53e20b4711f0566db74ce0bc3106a5a44d07e70e17987f7",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00241",
+      "requirement_id": "REQ-95f484c6900152e343953ca19214ce9ccc254b43cbc0727550f2f23705ab400e",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:58eafbbbc2bf347f027dbd332ab02138b08f41c202e3c4f6fe9fc689fee2bd94",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A valid chain proves the certificate was issued by a trusted CA, not that it was issued for this service. Without matching the expected service identity, any valid certificate for any domain would authenticate the connection.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "valid-chain-wrong-identity-rejection-test",
+        "reference-identity-match-trace"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:4d1cc7a39f790ed6f9ca1d0ee83bc0913908b4ea540774bd284d4b4079dde7eb",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00242",
+      "requirement_id": "REQ-9888c22b02a50603e085ea6727bb49969adfe4e070aa0aaf6fee26d86360368d",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:a729fde5cf7a903bc127ab040d5f070fc294d39b05a3ed8ef2e0137bd30ab53a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Resumption reduces latency and load and is safe in TLS 1.3 when combined with fresh ephemeral agreement and the other resumption rules. The permission is conditional on those rules rather than unconditional.",
+      "threat_ids": [
+        "TM-DOS",
+        "TM-NET-PASSIVE"
+      ],
+      "security_property_ids": [
+        "SP-AVAILABILITY",
+        "SP-FORWARD-SECRECY"
+      ],
+      "evidence_expectations": [
+        "resumption-mode-policy-check",
+        "ticket-lifetime-configuration"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC8446"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:464781ea4f3ff153b4d1ecd2a048923dce977633eca941cd39f2441163251da5",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00243",
+      "requirement_id": "REQ-9ad1e0c5799299d12254a6b2d50c1254c215df2f462653f6f79fa93cba2951fb",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:34f78151efa63e49da02ba0ce7da95e39f83ad04db8b37e339bdaef46a8b65ea",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Requiring ALPN makes the application protocol an authenticated part of the handshake, preventing cross-protocol redirection and protocol confusion between services sharing infrastructure.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "missing-alpn-rejection-test",
+        "alpn-in-handshake-capture"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:17f3d686508f7dd9e8743c38a3b40d8ef50c16c35cc1fde41d29b8292e64ae4a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00244",
+      "requirement_id": "REQ-a798f426bd73324210b099b2888b8d08da90c21c23d82beb1473afa817db1ca6",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:a4e2b1975baac9de22d20807d839b1dad7c07b44090a5fafc0b26db838d903d1",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "RFC 9525 defines how to match typed service identifiers and when wildcards apply. Following it avoids the historical inconsistencies in hostname verification that led to certificate-acceptance bugs.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "rfc9525-matching-test-vectors",
+        "wildcard-edge-case-tests"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:1ad71fd9e3894795dabb4265f59058a2e1ab2d79fc55d20546bd42be2f5230ea",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00245",
+      "requirement_id": "REQ-a80c3389abccd8fa191125cb294f716e8b540745516efa376c5f232ffa9296bd",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:42e3270a6dbb27129e93948bc3b10b1e8723326a978f537f99144f4c0b28d0c4",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Identity verification needs a precise reference identifier derived from the intended service. Constructing it from user input or redirects without care lets attackers steer clients to accept certificates for other names.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "reference-identifier-construction-review",
+        "redirect-host-mismatch-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:77ed70132cf02dc5359339154360063fd4807af85fefcc2b4a45a9e714b78e3f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00246",
+      "requirement_id": "REQ-afb3e95b0f1313fc9d96c4b6290a5b2b5952215187b9b7566cfad1970a5a1748",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:3b23aedca33882503162fd2022779b597955ed0437319cdcda1955b65c03fe1a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Reusing an ephemeral key share links connections and means one key compromise exposes multiple sessions, weakening forward secrecy. Fresh key shares per connection keep sessions independent.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE",
+        "TM-METADATA",
+        "TM-NET-PASSIVE"
+      ],
+      "security_property_ids": [
+        "SP-FORWARD-SECRECY",
+        "SP-UNLINKABILITY"
+      ],
+      "evidence_expectations": [
+        "key-share-uniqueness-across-connections-test",
+        "key-share-cache-absence-check"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC8446"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:3b73befcb2d1593eec6d0b6cb6aa0f3335252ba441d9f464b9a9617dbfc64e05",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00247",
+      "requirement_id": "REQ-c382db7354c271785950d070a207b9fb4307ae3f2543eb446ac0fd045b27480e",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:23e1aada6acc6229eae3d89f8097b6299adef3d088a177ccdbc522402c0c3885",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Hybrid TLS groups protect key exchange against harvest-now-decrypt-later, but server and client authentication still use classical signatures. Claiming PQ authentication would misstate protection against an active quantum attacker.",
+      "threat_ids": [
+        "TM-QUANTUM-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PQ-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "hybrid-profile-claim-set-excludes-pq-auth",
+        "claim-validator-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:c02d77c7cf3f11ecb37f17c8cfb437be7dd43e2a25d180483cc2ebf2c18759bd",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00248",
+      "requirement_id": "REQ-c42182965b709b21c8d87864615bdfecd96b7d49d4377cfcada068a8d7d4dd90",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:b295fc9052ac6c84f74fc1096d6ec9c9f5bcf923943904404fbf23adb905aa40",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A profile named hybrid is only meaningful if the connection actually used a hybrid group. Requiring negotiation of a listed group ties the claim to observable handshake behaviour.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-QUANTUM-HARVEST"
+      ],
+      "security_property_ids": [
+        "SP-PQ-CONFIDENTIALITY",
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "negotiated-group-capture-for-hybrid-claim",
+        "non-hybrid-group-claim-rejection-test"
+      ],
+      "external_standard_ids": [
+        "NIST-FIPS203"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:80fcaafb6743b9d626d3b24f3f3484488888c955b0173ebed196f610d12f4409",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00249",
+      "requirement_id": "REQ-c4c3388405a5748ba0acc250905d05dd8d2a3940607af806d17de8c7cbf5b817",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:e221fdc2ff072228b65723efffdd504e46a07b68fe24c993b78a76707a62006d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Chain validity, service identity and platform CT enforcement answer different questions, and passing one must not imply another. Evaluating them independently, without CN fallback, and without over-applying public CT to private PKI, keeps each check precise.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "independent-check-results-in-evidence",
+        "private-pki-ct-scope-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:64309c29967a588c3ee5fe0092176b53abb195389542b0c59b624543fd08fdec",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00250",
+      "requirement_id": "REQ-ca5279fb3bd729f461ce602e31f60f71c0636a1c26aee189bfaa1424c810df91",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:8602569f3992d79f291cc2617fb65b28bb006e5aa4d41752c11e1e6e70516cea",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Hybrid key shares enlarge ClientHellos, which can exceed QUIC amplification limits or path MTU and cause failures. Planning for the size prevents availability problems that might otherwise pressure operators toward classical fallback.",
+      "threat_ids": [
+        "TM-DOS"
+      ],
+      "security_property_ids": [
+        "SP-AVAILABILITY"
+      ],
+      "evidence_expectations": [
+        "large-clienthello-path-test",
+        "quic-amplification-budget-analysis"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:1e7e2db3de0a8432b97db1ea63d97b2c0c02c3e9093742ed768d09f137bd6808",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00251",
+      "requirement_id": "REQ-cf4a6e36bd5afbff51e28bbe976d338a1be82aa88a3dc77280860a383153778e",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:24020202745a46b8296a5a5d30bd0240186c8b9a0574a2d5d218c975eb43c21a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Documenting group sets and preference lets assessors check which key exchanges are possible and whether the preferred group matches the claimed security level.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-QUANTUM-HARVEST"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "documented-group-configuration",
+        "runtime-group-set-matches-documentation-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:71c39c206c01cc6ed0624bf899941e02cee68cd54540d024eb8907c592f6b816",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00252",
+      "requirement_id": "REQ-d6ee0cea3b0ae7c75f1cd02033cdc6d3678c7212007e5538ca331b4ee9ef31fa",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:e603c51bcc4b83e587e396089b32da4b9bfa90f2802fb28aca4413e9945901ad",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The traditional profile uses only classical ECDHE, so recorded traffic remains vulnerable to a future quantum computer. Prohibiting PQ confidentiality claims prevents overstatement.",
+      "threat_ids": [
+        "TM-QUANTUM-HARVEST"
+      ],
+      "security_property_ids": [
+        "SP-PQ-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "traditional-profile-claim-set-check",
+        "pq-claim-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:1a6da49e441efe992b7e98c7c45031aacf8489b9b1260318423b8711df9669d1",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00253",
+      "requirement_id": "REQ-de7c852ce633e3e640c1797482726e53448962dfb03c753870c5dec195bfa0d8",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:38a64c8b69b88e18788d790da3690d88e476f5d14522debaec136f8430e65219",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A certificate valid for several services lets an attacker redirect a client of one service to another endpoint that accepts the same identity, enabling cross-protocol attacks. Service-scoped identifiers and ALPN limits contain that risk.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "certificate-service-scope-inventory",
+        "cross-service-redirection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:b0b244c5468ed4c8ae482818ed1ad4dc98c808bd3e57f7c452756b77b516e533",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00254",
+      "requirement_id": "REQ-deaab0f0fb1b640af6b2788f2604ffc9af45361593d6ee9ef78867c5b155d631",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:4c1e6cd17568f561b44ab6ce52590eb1bfec786d5ee675377c82874af46489d9",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "ECH has several states with different privacy implications. Treating a failure as permission to drop ECH lets an on-path attacker trivially disable it; required ECH must reject unprotected fallback and only follow authenticated retry or disable paths.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-CONFIDENTIALITY",
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "ech-required-plaintext-fallback-rejection-test",
+        "authenticated-retry-path-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:1ee3a4b916851100d189b26e79025e03797c8a180f374f5eeadf08348325fbf5",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00255",
+      "requirement_id": "REQ-dff533978e30bf32579c4e140028b836c4335d99c7b64899183af2f1138a512b",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:5fb1d317f36c459526428f0ba64da1da16205378862f9b621e3a6489ac0a15b3",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Without a replay-safety profile no one has decided which operations tolerate replay. Keeping 0-RTT off by default prevents accidental exposure of non-idempotent operations to replay.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-REPLAY-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "0rtt-disabled-default-configuration-check",
+        "early-data-rejected-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:237f986dac6aaaefbae9d901fe3934ce634e6095e49d44a602818af34a87df8f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00256",
+      "requirement_id": "REQ-e52250057bfadc249be0de943e210c98c9c8489f0f9c37727b3f7dd0362af64c",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:a6bddfec0801232e23eaa0a47b9d13f91af817dbf8692a74e03bf0add666db59",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The pre-standard Kyber draft code points used an earlier, non-final algorithm and are not the reviewed ML-KEM constructions. Negotiating them would give an unreviewed and possibly incompatible PQ claim.",
+      "threat_ids": [
+        "TM-QUANTUM-HARVEST",
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-PQ-CONFIDENTIALITY",
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "obsolete-draft-group-rejection-test",
+        "offered-group-list-inspection"
+      ],
+      "external_standard_ids": [
+        "NIST-FIPS203"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:e126c66c2d451641349e563d5e0f7e8922ffff24cd2e0c93f92a09b8787f6f25",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00257",
+      "requirement_id": "REQ-e6c26358c3269bdeb709204471aac6aa647ee0cf659c2272da644a9ff828e20d",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:3635dee92d223a0dfdbfe62611bdbadf91010799bbdbb2f23c97c9c06ca73375",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Draft-Kyber and final ML-KEM groups differ cryptographically; treating them as equivalent would carry claims across constructions. Migration must move to the RFC 10024 groups explicitly.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN",
+        "TM-QUANTUM-HARVEST"
+      ],
+      "security_property_ids": [
+        "SP-PQ-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "migration-plan-to-mlkem-groups",
+        "old-codepoint-equivalence-rejection-test"
+      ],
+      "external_standard_ids": [
+        "NIST-FIPS203"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:ac80962abc99d4deebe8d4091cbcfdad3d5d1e0264a27df03c03dbd75c407381",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00258",
+      "requirement_id": "REQ-f449dedcaccea0b84dcf685b6bd2517cc28e5b19a97aff64308e6398e2af4d38",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:9f267acbadc63d6b9162aaadaf1c75685b3c805eccdf29b2e03098ae8d348dcd",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "If a private trust anchor could be delivered over the connection it authenticates, an attacker could supply its own anchor. Independent authenticated provisioning breaks that circularity.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-SOFTWARE-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "trust-anchor-provisioning-path-documentation",
+        "in-band-anchor-install-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:81e008fa217e088e39aa3c4094cc5b2588dde749010737c1467d4796892c4632",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00259",
+      "requirement_id": "REQ-f5b57427501bb65413f64c479a89bd074e13185637cee44a463fd46a254b0147",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:c84c24e0eedfaee4ade7fe863674e4f7b2a4cc30e0a672f1fbb0bc2e29a1c240",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Some service-to-service paths need cryptographic client identity. Permitting mutual TLS as a policy option lets deployments require it where client authentication matters, subject to the mTLS rules.",
+      "threat_ids": [
+        "TM-INSIDER",
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "mtls-policy-configuration",
+        "mtls-enforcement-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e21d6fc58285f27c4fd8c7aefc3f391a46bf5bd558d2852592ed340ae7cc62ba",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00260",
+      "requirement_id": "REQ-f874ab381a5bed87290ec7d75947b64e8a63511976b598a4dd0c84885b418f12",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:a6816cc7c3b85100d1c2297a9e15dfe7332360bcb5873af08f1a04bd7253e3a9",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "ECH hides the inner SNI but not IP addresses, DNS, timing or outer fields. Describing its scope accurately, and noting that the reference checker does not prove deployed behaviour, prevents privacy and assurance overclaims.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-NET-PASSIVE"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "ech-privacy-scope-statement-review",
+        "platform-observation-evidence-for-ech"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:8edbdd151f4da975273d6d61de95d48b33203472c81828f366a8ebdf96624180",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00261",
+      "requirement_id": "REQ-fd462d6ab710e707bc6a5d640163aeef1e5326e45a7872e608b83767df14d16f",
+      "document_path": "spec/transport-security.md",
+      "text_digest": "sha256:2ba74c39986d44347a18ad9373e0c7b90f96d67dec28cc51d1fadc1e7f94bdba",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Expired or not-yet-valid certificates may belong to revoked or retired keys. Enforcing the validity period limits the window in which a compromised certificate can be used.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-CLOCK"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "expired-certificate-rejection-test",
+        "not-yet-valid-certificate-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:3dc183a83cb210aa935205471ffc73d283c082051b3c7adf747e31e75684d388",
+      "review": null
     }
   ]
 }
