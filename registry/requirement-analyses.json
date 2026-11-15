@@ -22340,6 +22340,2338 @@
       "dependencies": [],
       "context_digest": "sha256:62809cb0de7b62329430e0e6d316a24167db4916915098da3ebabe056757b540",
       "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00951",
+      "requirement_id": "REQ-19ebb057b2b0e38afe4364bdefea0a22e5d5da64e8a25fa2409dda62a963bab7",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:b466c4e0f538181ff0009d342be81c3ae39df43eb5d2c16eda82014077385a38",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Individually permitted options can conflict or omit dependencies when combined; conformance must be evaluated on the complete configuration.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "whole-configuration-evaluation-test",
+        "permitted-but-invalid-combination-fixture"
+      ],
+      "external_standard_ids": [
+        "IETF-BCP14"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:21ac12c3efd119739360fb5112e060a76b92f171bfb52c7cc421273173c18875",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00952",
+      "requirement_id": "REQ-1fa71acd999989f3125ff3a8b328e111ca5ffb804f5171a17555271c7a2b37af",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:1a6c343e9108c194efb11090a4514fc65215d90afa1bc0c3d4a7fe9ed682f61a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Deviating from SHOULD is allowed only with documented reasons and consequences, so conformant products still disclose weakened areas.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "should-deviation-record-check",
+        "undocumented-deviation-rejection"
+      ],
+      "external_standard_ids": [
+        "IETF-BCP14"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:5c2a167efc9191888fc8a464f47ba2cea69e489532868c8286018e8051a56098",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00953",
+      "requirement_id": "REQ-222051138c890acf2456419033ce7d4b1737d1fa019dad93e69a57e34a739730",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:b869f90f723e0e4508ef9b18a7a8fd8cc259bf3f833a486bf6512db6a093b30e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Hiding alternative architectures in undocumented implementation choices prevents assessors from knowing which security model applies.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "explicit-architecture-profile-check",
+        "undocumented-choice-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:309261309307dad7370f89cad649d9dce609fe9b1624c2c741383ff188328fcf",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00954",
+      "requirement_id": "REQ-27dda0696979cc7524dfe33e55084e28154ac425faa1e644905284818140c4ac",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:f76dd6066be7d3c1d1351769b061c1a29086e0e1ee89aceec5496078de205604",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "SHOULD signals a strong default with legitimate exceptions; defining it precisely keeps deviations justified rather than casual.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "keyword-definition-reference",
+        "deviation-justification-check"
+      ],
+      "external_standard_ids": [
+        "IETF-BCP14"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:1b8e46f64f3d4867d3e409b9c81d9603c85408be341a794e329239edf4a1c5aa",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00955",
+      "requirement_id": "REQ-283f762dc2cf1e040b848f51ccc53e6df27e1cba0269a0c0fbb3b72fc8b4cbbf",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:3738363f7fa6fb21ca1a34470f9f7b560a592ce21eb9739226b742c5829af02a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "MUST NOT defines absolute prohibitions within scope; making them unconditional prevents profiles quietly allowing forbidden behaviour.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "prohibition-enforcement-tests",
+        "scope-statement-check"
+      ],
+      "external_standard_ids": [
+        "IETF-BCP14"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:2480aeafc53db7838ee87b5dab36fd416e495d8a843179ef1252bebe39c92d65",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00956",
+      "requirement_id": "REQ-35900fe734c58af353bf21696fb70f0cfb89bc57a6c2ac29bc9fab9de439d979",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:54a2d56c5650155394eae2da99901209d581df21f04eb7030a56278bda507133",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Silently picking one of two conflicting requirements hides a specification defect and may choose the weaker rule.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "conflict-detection-test",
+        "silent-choice-absence"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:1d6dc549af78c26307b43190a1dc125bb3bded11fd15a7e270686c978a935209",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00957",
+      "requirement_id": "REQ-3909929cec44128e0fbd6f3ef82c6ed11879790033f8c71abf1509d2feb45fdd",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:d6d0add4af987c2e03b84b443b220f233a26dfbd151569405105433064894335",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Until a conflict is resolved, no configuration can satisfy both requirements, so it cannot be conformant.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "conflicting-configuration-nonconformant-test",
+        "resolution-record-requirement"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:14471bc9003330433f34b26cc25c10c7ddf9effcde4db407f29797f9b542bd61",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00958",
+      "requirement_id": "REQ-3c1dcf24f2eaa40bd1cc58ee7233baf2164d6f5d80f58851ac922e8e0a4407f0",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:779e47b1a134bb20c7bdcd0cf28e20374157666118389badc102bc87ad95c2c7",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Negotiated optional behaviour must be integrity-protected and meet each peer's minimum, otherwise negotiation becomes a downgrade path.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "negotiation-integrity-test",
+        "below-minimum-selection-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:662ed50c2ff7fa0e603ee49187fe5671e87e722f368b44f9f13d69b8c28e57ca",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00959",
+      "requirement_id": "REQ-42991ab8e75a7f4e981f3fd2d9d392bd03855098e8e0f039705f96c6e057b0ba",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:c5b7e9fd0519b91750eb557c3e14b469f1dd9febf0e487ccae7773b3d7c042da",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A claim must name version, profiles, capabilities and assurance level so readers know exactly what was evaluated.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "claim-scope-field-check",
+        "unscoped-claim-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:1eeb1aaa16127de57ac7bc4e3e7e25fa2559f0ed8e52a595f92c33a564943911",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00960",
+      "requirement_id": "REQ-49d24c4eb71cc8174e7c2896ca526c0269a30ab60c9e1b925696f923441490be",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:6fce4cd19f53592ef45740172063d3c7ae35e07532cae06770f8d61fee36fc58",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "If external specs could change E2EESA meaning after publication, a published version would not have stable semantics.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "external-spec-version-pin-check",
+        "moving-reference-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:cbf83c56433b97150a9541ec31f0853578cc3739e7b96134849256ea246f782a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00961",
+      "requirement_id": "REQ-4dac0d4a022604b30e60457632da0e2d6da8d75668ad848a8f8f727296338f9c",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:a722cfdaa987c821d5ed9538e0c316bfd866acec3c44b7109582b39df171690a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Experimental material in the repository is not endorsed; presenting it as recommended misleads adopters.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "experimental-labelling-check",
+        "recommendation-claim-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:798cd7ac5e6da7831f858a8666f014bca89b2834656746e6933af27acfc0e030",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00962",
+      "requirement_id": "REQ-4fa66bb6d0e91b2c45d570fc24b1e1dbeb0fe9792b6a1b42c5294615b1844851",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:fcfdfbac5293b5559ac0ba64394f5b6006cc458e93f15e8a8584d219e84893df",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Explicit labels let resolvers and users identify experimental profiles and require opt-in.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "experimental-label-presence-check",
+        "unlabelled-experimental-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:900403eafb31ee71e988ddeb49290665651abf440900b842f45caed7966d2641",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00963",
+      "requirement_id": "REQ-56ce21449c9e45dcef988003aeaa5696b2c52e6d55cc9a47d7e1a8ce34eb463a",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:8679f71bc9a4db5e0d7ffde51ee4ca742fe00a5826e5e222030f406938d7012e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Optional features that weaken invariants or claimed properties would make the claim false whenever the option is enabled.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "option-impact-analysis",
+        "weakening-option-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:dba95b9133405c3344a8022bbd9856efdf55b425976cf6da039b5816ca14177e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00964",
+      "requirement_id": "REQ-58bf12bbf0b3ae79e660caaeca639f6103d2b46616d4c3b9ba85dd91a6e98cae",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:81e37c305b8fae6185f4ddad96bea8eb3bf568a3d69fade6fae9431892cecfae",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Documenting the deviation, reason, consequences and mitigations lets assessors judge whether a SHOULD deviation is acceptable.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "deviation-record-field-check",
+        "incomplete-deviation-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e9721c7c66eb332c25ce475c71e705bbb5ca6288bfa9b56137a19d2a7c0afe46",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00965",
+      "requirement_id": "REQ-72ee59fa09ecbb2e3ed6d729cc74aeac85f6a11af07d4552a8e0d0c7fe2aaee0",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:fc62b69c8c56c6def2e16883ba831acd5059b04268c7f22298d05752689c38c5",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Minimum claim content ensures every conformance claim can be checked against a specific scope and evidence.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "claim-minimum-field-validation",
+        "missing-field-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:15cb1a0af135cd012674a685d9a5db0efc492e59c1033923fc8b56306cf2689b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00966",
+      "requirement_id": "REQ-95e336175e97d16a641acae6509fa524e9ddbb66f85d537d6374b20ad742a6d3",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:916c10ce2f38fdcff728410ba266ad17dc3609264dbdee7c499bd380a9157506",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Shared terminology does not extend a requirement's scope; interpreting it elsewhere would impose or relax rules unintentionally.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "scope-bound-interpretation-check",
+        "cross-scope-reuse-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:608043dc92246d64a6d5705179ebcfbf90b670670b9a906fb3f257bff398af2d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00967",
+      "requirement_id": "REQ-a47d787ec5207f1fdd2904a09a9412a01d4be57b12e6b7d9d699344345ff9aae",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:95fad95f484d26b2ce6e0c66014142260473642837cadba5a8837a0fc5906972",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Using BCP 14 keyword semantics gives requirement words precise, widely understood meaning.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "bcp14-boilerplate-check",
+        "keyword-capitalization-lint"
+      ],
+      "external_standard_ids": [
+        "IETF-BCP14"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:608b563bede34a1508b1a616b6868a4db94dc507d68eda1cc5033ef06b2396f2",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00968",
+      "requirement_id": "REQ-a69e0db3b3c8ae4a2d88a2a89e1d76a4c6d06af4d5a0ecd0bf67ac07d3e57209",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:4d90e7c3d35f7626ff209413b20e8b9b6ac05bb2180a0f79de3d399a69800d00",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Defined resolution paths (errata, profile choice, new version) keep conflict handling explicit and auditable.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "conflict-resolution-record",
+        "resolution-path-validation"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:4d8024e6842a1e64e5b5acec03d37bc8e1c0dc65c877323fa3070dcb0f43047e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00969",
+      "requirement_id": "REQ-b16a89d327700692ace9759ff14d46060bea0a365a1696797a04d4b3423b2b0b",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:0026ee5e9b241003b3bd9453745ebbbcf9560b7a49d1d906183a69f2e30ef930",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Drafts change; marking them provisional prevents treating unstable specifications as settled.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "provisional-label-check",
+        "draft-reference-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:7b72758937b40e0846a1e8cdc5bc859fd84352fe9729fd4dad16172054efc8d3",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00970",
+      "requirement_id": "REQ-ceb45707aaa5e8fbe6b3ea315467a1c73985e1271cb4b0ba5a8bf16c9b295807",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:faa479b92d61d9e5f34213e24bb104ca84050b88fcb31e851a0bfa9d071ac07e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Requirements without scope cannot be tested or applied consistently.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "requirement-scope-check",
+        "unscoped-requirement-lint"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:cfa823f780ae76bdbd87cdb6d4a81fb92b3cca7a449187e781981bbbd55778d0",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00971",
+      "requirement_id": "REQ-cf38bf4b2e2b750ff688287f2e6ea667e2ae061850ebe78f7645a478e5c39324",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:350e466bd89570943433a4b8739ef3a393b64485b9df595dc631660888daaad5",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Violating an applicable MUST or MUST NOT means non-conformance; this keeps mandatory requirements mandatory.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "violation-to-nonconformance-mapping",
+        "must-violation-test"
+      ],
+      "external_standard_ids": [
+        "IETF-BCP14"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:0833098d0be3ab5f66fc5238b320043511ae2cfae80c43c9a7d3cda8e3b80231",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00972",
+      "requirement_id": "REQ-d5af6c4c3e24252238c92ff2d782ec08d9e31764b61e8e20162ffe39617f7715",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:60437adb67049b735897c5e33c6fe2c4d76031530d5120d5e29854f0ae24aed8",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "MUST defines unconditional requirements within scope so conformance has a fixed baseline.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "mandatory-requirement-enforcement",
+        "scope-statement-check"
+      ],
+      "external_standard_ids": [
+        "IETF-BCP14"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:549f17eb4ad3cd9192ca7a34f755cfec6fcc4184e505f5fab383ae0979151d1c",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00973",
+      "requirement_id": "REQ-dde8ab306ab11dd4dd89c41dc974104c58eb32a4a8263842f5e76e8488828af4",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:25e3b9ab25cc05f7134b2fd2d8a01f960c0ec89f7d7739b0b94870bdd34160bb",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Configurable behaviour can be set insecurely; validating configuration before treating it as conformant prevents misconfiguration passing.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "configuration-validation-test",
+        "unvalidated-configuration-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:8ff917d4fec1a9e38e84b248a059e64a915456b7395299bb4e25e02e63c1b66a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00974",
+      "requirement_id": "REQ-e0011d9c5bbf3f30a0a0fd2074504d5a80221aba890cced91c8ef3238671de68",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:51e3a23d17395d2c456e522e01120426f981e1228b6d20b0975c95c3a36add5b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Generic 'E2EESA compliant' claims hide which profiles and levels were evaluated, misleading users.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "generic-claim-lint",
+        "scoped-claim-requirement"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:a7ae1f0deffac9ed2ea27919842d6756d3bf1cd5c3874620f815c9e37041b321",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00975",
+      "requirement_id": "REQ-e60704d4c990e1853cfed54b718730da4a6ececd1b66a6f26e7ae5301e58d458",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:e62b9647140fc59413fb0d5b29be9b0b32f5e5f8804e6d270f9241ef0edf2af7",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Invariants are security guarantees all profiles share; making them optional would remove baseline protection.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "invariant-optionality-check",
+        "profile-redefinition-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:77434e285afcb947a25442d42567b14828fe3080a53639765e884ef279856877",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00976",
+      "requirement_id": "REQ-e6315abfeeee9fba56a7588d9ba7d07c060f810cd55529c989b7319b42486579",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:6f35bdd18815a77a51fa5e6524a6371976be4ac7c222b764ed7bb3a3ebf113a9",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Strengthening SHOULD to MUST lets profiles tighten requirements for higher-risk contexts.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "strengthening-allowed-test",
+        "profile-requirement-diff"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:556161ac1414bd093e0fccb1fea8762fa8608fba40055cb9aa10ab561ea422f8",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00977",
+      "requirement_id": "REQ-fafca1c11b9262d8b57df8aee01bc4e71df9a73cf3c79590ba955de61ed2c93f",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:dd0b4146d0dff2a25757ba82c14e9c8db002def7aa8deaed7517763aea050e1b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Identifying external spec versions makes dependencies precise and reproducible.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "external-version-identification-check",
+        "unversioned-reference-lint"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:f52aa32dc17ed98cdba1895ccdac43b711ecefc0345788de7bfa27d4a2dbad18",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00978",
+      "requirement_id": "REQ-fe1d0116cd1e584528f59b1f122e146cb5e4e99c3ae444abd51f62299f7f4f48",
+      "document_path": "spec/normative-language.md",
+      "text_digest": "sha256:d3fa12b051761d32380e954e426cfc104a25f71e2adad5e622cb26701fe660fc",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "MAY marks genuinely optional behaviour, distinguishing it from recommendations and requirements.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "keyword-usage-review",
+        "optional-behaviour-test"
+      ],
+      "external_standard_ids": [
+        "IETF-BCP14"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:b60a25160d578c0505d14b6a7ba7c7a8928c2247c980862ebe5b7326fcd12b99",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00979",
+      "requirement_id": "REQ-045763a9c92d20e1260e534004cfb4620553ff2e9d893c13094f29676fbc5570",
+      "document_path": "spec/terminology.md",
+      "text_digest": "sha256:48f98928a652fdbade6ca4e0cb4d18c320fcd26ff5ba2a6afefdbee975f6c9da",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Defining E2EE as non-recipients lacking routine technical capability to obtain content is the core boundary all profiles rely on.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "service-capability-analysis",
+        "non-recipient-access-negative-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:b4e1576a991009479844390c9d4ca381304946b25bbdee34167e148a0da33543",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00980",
+      "requirement_id": "REQ-06fe92dda4a00d8a07f5151bc68cf9fc90c91c1306b1aa9dad13c7f958e87cdf",
+      "document_path": "spec/terminology.md",
+      "text_digest": "sha256:a2970701d4476f38ba3dc329884e23dafcc5b045321a6d3d8efd2701d2921a30",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Invariants are requirements no profile may disable, giving a security floor across configurations.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "invariant-registry-check",
+        "profile-disable-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:4d69c5e7bbf63592ab9d9edcc54ede19564fe08e79b861a8d7b2f5676a123efa",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00981",
+      "requirement_id": "REQ-1134bc35d8082c7566db687e2876221175834854037faae807153d409188b4c7",
+      "document_path": "spec/terminology.md",
+      "text_digest": "sha256:47caeb82e37b7e2c17ef609e0b0ab9e59ef4853536e54866afc9470913fa3a03",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Using loose readings of defined terms (e.g. 'encrypted' or 'private') would let profiles weaken their meaning.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "term-usage-review",
+        "redefinition-lint"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:6d28d22b76cba104a876283a2eea577588305a1d7668f74c7b0aa42c6eea9bda",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00982",
+      "requirement_id": "REQ-2025ed5b3c5128710699a2d3f2c0cc6864405cb57587c1d8c40e66fd88f59858",
+      "document_path": "spec/terminology.md",
+      "text_digest": "sha256:b20717c2ef1e91f226d3c6aba068b1ae7f3b027ccae7a6e38edbd4d4fb6b4447",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Multiple endpoints per device (e.g. app profiles) must be modelled separately for authorisation.",
+      "threat_ids": [
+        "TM-DEVICE-PHYSICAL"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "endpoint-vs-device-model-check",
+        "multi-endpoint-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:48d8d2db7e1fc66766de4c2424e51ec70585ceed319b2b879ab120ddf719870a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00983",
+      "requirement_id": "REQ-25224b106151770379be920b813e71cf7d99b4058304d1dc9e41b2d955d6685d",
+      "document_path": "spec/terminology.md",
+      "text_digest": "sha256:4cdf3a31e59d56516e7eb084071307355e59f9cc0d8c96d087a2097cb5354a39",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The prohibited state means the mechanism must not be selected, giving a clear exclusion rule.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "prohibited-selection-rejection",
+        "lifecycle-definition-reference"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:44f9e5d914d1bbc760e5460701915fbdcf54255e4840fc41bff12a8e9e15e14f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00984",
+      "requirement_id": "REQ-2f2be00ca3e015eecdc5207e75d0aa0cb67f20202a640fe0eb710d789ddd3d8b",
+      "document_path": "spec/terminology.md",
+      "text_digest": "sha256:d64b7c1540258e6a0a02a8cb9000187145cfaab816a5f183aec0096d99b79cd8",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Backups have different keys and storage than live channels; their security must be evaluated separately.",
+      "threat_ids": [
+        "TM-BACKUP"
+      ],
+      "security_property_ids": [
+        "SP-BACKUP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "separate-backup-evaluation",
+        "channel-to-backup-inference-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:720a39d33623c70e10ac2b5ec3011f2b8791017482ee52528853245c1e772d18",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00985",
+      "requirement_id": "REQ-32c90a661531442939617af38c9d3664ca1577986ccca6e9f636b54c2b893a63",
+      "document_path": "spec/terminology.md",
+      "text_digest": "sha256:0844038779650e117a262d0704ca47863a1dbb4a7b034e6055619924dec91b45",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Later profiles may add terms but silent redefinition would change the meaning of existing requirements.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "term-addition-review",
+        "redefinition-detection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:7317d4f2dd281dc73fb4fe946fc7d35f7ccb33a482092d14071392bd2670d28a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00986",
+      "requirement_id": "REQ-545513dca593c2204ace70747f274dfcf6092d2f9b4d7ce13792dda5d7d7b642",
+      "document_path": "spec/terminology.md",
+      "text_digest": "sha256:9aebfc30badfae52987218ddb8ae0600c4bf02ed1ff812ba0dbea3c4f23d5829",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Deprecated mechanisms should not be newly deployed and should be migrated away from.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "deprecated-new-use-warning",
+        "migration-plan-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:9d96c81ef91fe1778984121c42354471ea0c86fcda1934c0706d58c27fba56ac",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00987",
+      "requirement_id": "REQ-68dcfec0fd8f2f5373777bddbfe02b62f024d6bad5d59c6c2e0f99e272470838",
+      "document_path": "spec/terminology.md",
+      "text_digest": "sha256:38c425364b16fa45a0f721b5523a3f27b4fde80495b070d1523ee048dcdbb6da",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Forward secrecy claims need the covered compromises and communications so their scope is clear.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-FORWARD-SECRECY"
+      ],
+      "evidence_expectations": [
+        "fs-scope-field-check",
+        "unscoped-fs-claim-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:14373656b8a32d50b22514913b88bc98a069f84b9ac9174994a94ae544b929c4",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00988",
+      "requirement_id": "REQ-814ca96685116a5c335d4b004d298703533a817514008e6cfb48b856e939bad8",
+      "document_path": "spec/terminology.md",
+      "text_digest": "sha256:59dfa6daab0a8ed41ebf24a15afe5fcddbe6b742f2cd0025978f4202c3190a62",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Software outside the trust boundary is not assumed to see plaintext or keys; designs must not rely on it for secrecy.",
+      "threat_ids": [
+        "TM-ENDPOINT-LIVE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "trust-boundary-diagram",
+        "outside-boundary-access-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:562764ff999de1b1b061aca040defc567d25b6b8344f36082ca1a03ebadda3bb",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00989",
+      "requirement_id": "REQ-865dd9d24a7fe848a311b1ef758655277cf9272590828cea296c74c44aa11733",
+      "document_path": "spec/terminology.md",
+      "text_digest": "sha256:862d966f61aa1dd282be65c2d2688257fae13aa58777cc99c2b90aca65621315",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Explicitly classifying fields as content or metadata prevents sensitive data being treated as unprotected metadata.",
+      "threat_ids": [
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-METADATA-MINIMIZATION"
+      ],
+      "evidence_expectations": [
+        "field-classification-inventory",
+        "unclassified-field-lint"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:c3b75b7bd787bbac366fb71b78ced63ca210793fd978cb74861e46fd61248eed",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00990",
+      "requirement_id": "REQ-869fe27fbbf6a39ec0e71b9c2ae24328406b65ea91e1fca1400bd7396a465b78",
+      "document_path": "spec/terminology.md",
+      "text_digest": "sha256:a79bb7b98edf8fec2ed255c7c0ac6bc26570318b9c4be2f4630d7d044bed59c6",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Server-side encryption leaves the provider able to decrypt; calling it E2EE misleads users.",
+      "threat_ids": [
+        "TM-SERVICE-READ"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "claim-wording-review",
+        "server-key-analysis"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:2bf94340394454d6c07da4bccd7ae03be81d412daebd811afb8348f4e1c357a8",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00991",
+      "requirement_id": "REQ-8cb529d2614de23221c4ef962fd8d288255c754dd43d542057ce46949cef8d58",
+      "document_path": "spec/terminology.md",
+      "text_digest": "sha256:e2ca52759589bae45b9338c8b981dc1eae62904d19e409ba4a3c6622dee19890",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Distinguishing client and endpoint clarifies where cryptographic trust lies versus general software.",
+      "threat_ids": [
+        "TM-ENDPOINT-LIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "client-endpoint-model-check",
+        "terminology-usage-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:ea6376e4c866e1fb971cea2efbea25194f95e78da87c282466c5f6f8625609db",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00992",
+      "requirement_id": "REQ-afaa4e5e81214b00d5ac998357af337c1bcc1046d23a2c5d3835254f84f79a3d",
+      "document_path": "spec/terminology.md",
+      "text_digest": "sha256:59cb549dbd57c3868bb344fc370d6e24f9f200bb34e49c9f752f0d95a9b4c9d1",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Different compromise types have different consequences; conflating them produces inaccurate threat analysis.",
+      "threat_ids": [
+        "TM-ACCOUNT",
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "compromise-type-separation-check",
+        "impact-analysis-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:c8cff3ab1fff780777d27f1a3d150abdc5221e1991772ebbb2c8cd5e11edc817",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00993",
+      "requirement_id": "REQ-d154014fcc72b3c3be639384516a2228b334e04c8b97a6cba85d8b3919ee5c47",
+      "document_path": "spec/terminology.md",
+      "text_digest": "sha256:39164941bc6d0b9c9a8f3d4b9d3f0dd2ce35b506e4bdfe1b4a1f53add153c4f5",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "PCS cannot protect while an attacker controls the endpoint; misreading it would overstate protection.",
+      "threat_ids": [
+        "TM-ENDPOINT-LIVE"
+      ],
+      "security_property_ids": [
+        "SP-POST-COMPROMISE-SECURITY"
+      ],
+      "evidence_expectations": [
+        "pcs-claim-scope-check",
+        "live-control-exclusion"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:88da3a70d672a04cd1e1ef8c736f8836ce5e2230e4a1eeac6516c19829375f67",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00994",
+      "requirement_id": "REQ-f4ef509796f6d55224618026f60e960dea95ef9167328c8cbddfe8c7fd57c1b0",
+      "document_path": "spec/terminology.md",
+      "text_digest": "sha256:dfafe7cdf8c9cdaf77b9614545f246c0619ae2eb2e1ab60501fbeb28459bbb6b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Experimental mechanisms are present for research, not production endorsement.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "experimental-state-labelling",
+        "production-recommendation-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:70a6cc6b85f1326298660717e5bca9a1be831ee5479f72d8adc6fa5c7f99e0b3",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00995",
+      "requirement_id": "REQ-096854e2742ac7236e0a7da5409a289a0032ab6dc8d70ca11abd3f73bede12b9",
+      "document_path": "spec/observatory-data-architecture.md",
+      "text_digest": "sha256:89667c567d6a964842d118931fdbf7bca5799ddde2b3d31a83b2f21394c89a0e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Projections are derived views; allowing them to be rebuilt keeps canonical evidence the sole source of truth.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "projection-rebuild-test",
+        "evidence-identity-stability"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:db9d8b60e47cdf70e275a7cead07cd6829c958dfda6bd72b17dd23437d67a9ee",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00996",
+      "requirement_id": "REQ-24a52be637abfca49217bc45c956123ca556975aa548cc2769e3793e978a088d",
+      "document_path": "spec/observatory-data-architecture.md",
+      "text_digest": "sha256:0624f44b3573d358b9229c81d21b0335e54b4214fd4ee925b8c8f75a17d5e626",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Destroying and rebuilding projections at any time demonstrates they hold no unique data.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "rebuild-from-canonical-test",
+        "projection-only-data-absence"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:6c713569a82cd4deb5d7b32e60fe4ace8fd7e847b0d9c9bde43bd0633929ad09",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00997",
+      "requirement_id": "REQ-252f27a1d2efc43c26d44b3f250f0adf7ee22f88e9aeb9db8a4622b8b28e79a1",
+      "document_path": "spec/observatory-data-architecture.md",
+      "text_digest": "sha256:c4281433ddbd8fd0ac3f9ce69de878ce0c912d14445606e6a387138a121411df",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Paths can change or be reused; content digests uniquely identify evidence.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "digest-as-identity-check",
+        "path-swap-detection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:42d7f185f6ef81d219a107c83e0b2f5af28321d782fc7c53ca98523c65d21156",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00998",
+      "requirement_id": "REQ-2f7e072f2287d6aedf2bba3a6f9fc1b100d2055ad3eef9e0eae22d4b3a318852",
+      "document_path": "spec/observatory-data-architecture.md",
+      "text_digest": "sha256:d7ca158edfddac4b1ef6a94af58fd9a204892507f07a481c7afb8d820d293a36",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "If a derived store were the only copy, losing or altering it would destroy provenance.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "canonical-copy-existence-check",
+        "projection-only-evidence-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:25109491a37e17f46a5f65b5ad224e7ee4e65fdbf4840ffe9a7b45fa5595c679",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00999",
+      "requirement_id": "REQ-3f21a1237cfadf37ea70bf36b3c318920e56de940537b59064b1783d706ecf4a",
+      "document_path": "spec/observatory-data-architecture.md",
+      "text_digest": "sha256:748931d0c2e7608e295e606cfd6fb040717aac001b3e5c4780567540e839ca99",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Deterministic rebuilds let consumers verify projections against canonical evidence.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "projection-digest-reproducibility-test",
+        "version-pinned-rebuild"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:50f7d527ae6ae519a524f965b9461a7c5045f2a0caf2e0bbde9b4e798f91cddd",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01000",
+      "requirement_id": "REQ-69c9313b8662ebaf41c41df7c5d9a9503e14c772a4d96ea3bb6710453c1a6b22",
+      "document_path": "spec/observatory-data-architecture.md",
+      "text_digest": "sha256:b36dee877f2a7f76381f803b8570f7982e7939773a80e85f37621c121f0f9112",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Consumers need to know which evidence revision a projection reflects to judge freshness.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "projection-source-revision-field",
+        "traceability-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:7b8d7f2c41602f6f297e16468cc2ba7adcd12d4beb75379c82c95442487f44af",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01001",
+      "requirement_id": "REQ-7ed90f33947a36ed260ba7314047242d2b5a17b5bfc06a8d0a72bb4de85016ca",
+      "document_path": "spec/observatory-data-architecture.md",
+      "text_digest": "sha256:8c6af95134d8efb028ee46d55dc5f88e2e39f6aa3cd2e1cdc607de4772dab47b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Asynchronous projection updates keep ingestion atomic and fast; staleness is tracked separately.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-AVAILABILITY"
+      ],
+      "evidence_expectations": [
+        "async-update-staleness-tracking",
+        "commit-independence-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:6e12fb0e7451960778c2b9b00bf2f9b87f6ced4ac21213873c76d0fbbe7a8ac3",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01002",
+      "requirement_id": "REQ-8f8ef0c80335d04049df64b820dd1866450da3f582bcb5144ec607404b27bda4",
+      "document_path": "spec/observatory-data-architecture.md",
+      "text_digest": "sha256:074b15650f28372d240900571403168177c66093f57496975c96bd57f5a92d97",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Recording source bundle digest and projection version ties each projection to exact inputs and logic.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "projection-binding-field-check",
+        "unbound-projection-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:6bed4bc46516c01cdfa47dc85ef6743a9c40bd4751c55b0be8e097779a6dee10",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01003",
+      "requirement_id": "REQ-9750b2e2b45df30ba93f42ca875979beac6b03b4c0e93a0adaed11d9ab48c675",
+      "document_path": "spec/observatory-data-architecture.md",
+      "text_digest": "sha256:b475315e192d7fb84ee85acce66a9bae444f5cb9b074ac7f6abf70efb69d4c86",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Atomic ingestion prevents partial bundles that would present incomplete evidence.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "atomic-ingestion-test",
+        "partial-bundle-absence"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:860d2a78e1cca64196343536f3665c3503e2e37707ed6c40791553eb4b499873",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01004",
+      "requirement_id": "REQ-9ba2811101899540fe3d52e76039da2a42a9282e6b19490b165af636eea16d24",
+      "document_path": "spec/observatory-data-architecture.md",
+      "text_digest": "sha256:701b3dfc8df1f7afcae3015aebc0e99a4374274adc26e90e5b586097000300de",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Stale or mismatched projections must not be shown as current, preventing outdated views being trusted.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "staleness-detection-test",
+        "current-label-gating"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:4622d4645d9fc0493760e51dfb5ece2722ebaa568e70bb9bdee4a0dbdebc685a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01005",
+      "requirement_id": "REQ-d3aae8075cb1d6e29f6c9a479fc24ac5f21590bdf55bc7eb7b33e55f1d26395d",
+      "document_path": "spec/observatory-data-architecture.md",
+      "text_digest": "sha256:545efaef5e575aea0385177fd4ca80894bb39cb2ffd83c0de81fc119a3d4abc6",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Other relational databases are fine if they preserve integrity, atomicity and append-only guarantees.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "equivalence-property-checklist",
+        "alternative-db-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:a2167ccd08432152b168fefe58dc1eb29271b87b4a8faab54f56f820bf640f8d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01006",
+      "requirement_id": "REQ-e8914a871fab92c6e979af8407568a127093479988e6fb55e581d686e2707dfa",
+      "document_path": "spec/observatory-data-architecture.md",
+      "text_digest": "sha256:659207b4c27c680ef19193fc05efabd32cf6e1b272ced6e05ab07237d7a0052c",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Mutation-denial triggers enforce append-only canonical evidence, preventing in-place edits.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "mutation-trigger-test",
+        "update-rejection-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:fc7d4d538ce0185897e75ca6e5ffccc06d861c4bcc02144dbde4a0efe1139b47",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01007",
+      "requirement_id": "REQ-23ffcf96bc4e2e647970345e2ea81b7905b713de1d5e1b702d37c73a4fef238d",
+      "document_path": "spec/observatory-evidence-model.md",
+      "text_digest": "sha256:c746466d4aa4fa26c94a63c5ba756035d5311c5f5873059fb7281efa613e3d6c",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Activities ending before they start indicate corrupted or fabricated provenance.",
+      "threat_ids": [
+        "TM-CLOCK"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "activity-time-order-check",
+        "invalid-interval-rejection"
+      ],
+      "external_standard_ids": [
+        "W3C-PROV-O"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:6596e0c32f31401868ce2352e0d589f79745bb3ee04875dbd1d1112a268b2f85",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01008",
+      "requirement_id": "REQ-66713705590f2b000c354e946e675cb89a8ee7a33178d3c22fe179476126dd99",
+      "document_path": "spec/observatory-evidence-model.md",
+      "text_digest": "sha256:c3c8fe818e8ad37c893d1418898834d12fb1a95a32051f5e229575f2bdff57d9",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Recording tool versions allows reproduction and assessment of acquisition reliability.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "tool-version-field-check",
+        "missing-version-warning"
+      ],
+      "external_standard_ids": [
+        "W3C-PROV-O"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:906d55773eb698d65ebe0c044e7d3e80f5e4958ef8d3f3e8e14d65fa18c20c92",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01009",
+      "requirement_id": "REQ-6975f679bfb859f243929c474ac8c115f93c69360ac679bb9e09eaa1d0655686",
+      "document_path": "spec/observatory-evidence-model.md",
+      "text_digest": "sha256:b337a1fad155e16764bc0e78af998f4f7899478fbf1f4e990387206d7d259c60",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The listed validation failures (dangling references, cycles, missing citations, digest mismatches) each make provenance unreliable.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "validation-failure-matrix",
+        "per-condition-test"
+      ],
+      "external_standard_ids": [
+        "W3C-PROV-O"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:fa4777af168d0024cef7feed072112f381100ac57611db5b96b5bad317e17544",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01010",
+      "requirement_id": "REQ-82d045196f22afbebe27d173da9e2b0be648aa976de7ac0cdf326f2b7df07653",
+      "document_path": "spec/observatory-evidence-model.md",
+      "text_digest": "sha256:a6bd57a16f688e14a7a1d6908614fc89e7112afedd31b04307db092deae4cfa7",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Revisions as new entities with acyclic links keep history linear and tamper-evident.",
+      "threat_ids": [
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "revision-acyclicity-check",
+        "cycle-rejection"
+      ],
+      "external_standard_ids": [
+        "W3C-PROV-O"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:80356aa69ea4ef26b497374c1ee81ef2c795688aad1cea3b1ad9da778c2ebaa2",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01011",
+      "requirement_id": "REQ-8575dfc9cbc8088c2ff8185d0cc42d029ad064d4cfcedb26562876861582927d",
+      "document_path": "spec/observatory-evidence-model.md",
+      "text_digest": "sha256:357b15a0829feef7aa4e5d32e9501cbef3955e4dcb1e8ccdbf3423c714e5516d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Linking each revision to its predecessor's digest forms a hash chain that exposes rewritten history.",
+      "threat_ids": [
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "predecessor-digest-chain-test",
+        "broken-chain-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:6b93d07ab61248f48091dff7944664c1d4fad00ce512e61bbe63e9f6cae661d8",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01012",
+      "requirement_id": "REQ-95dcfe880e5bbfbe703bcc8f6e06c30c28c06607af51a1b52089429099767f75",
+      "document_path": "spec/observatory-evidence-model.md",
+      "text_digest": "sha256:061dfb6cd9dd5ad968014765789f4cde26c8f5943847cc12cc75365186dffb34",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "An event without a citation cannot be traced to or verified against any source, so it could be fabricated without detection.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "citation-presence-check",
+        "uncited-event-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:7411ee002eab3776c784ab2b0a27a21b0dca5f851b74b34a7752d1edcc57f5d1",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01013",
+      "requirement_id": "REQ-970b4e5f00c74c6e6102fa7d1e27eb63e79876a18c098e52f63cfc5245255546",
+      "document_path": "spec/observatory-evidence-model.md",
+      "text_digest": "sha256:101e657bfae3941c7abdc3f6734916b5c8922057137437df48fd243eeb001113",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Different anchoring mechanisms (timestamps, logs) give complementary assurances and may be combined.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "multi-anchor-support-test",
+        "anchor-type-validation"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:0a0767609f512ee4f4b48f9019f1e70376c0a81b03ea963177488ccdb3599eb4",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01014",
+      "requirement_id": "REQ-9eb55ae84dab031a0a2666e53828f57f5729814e2d7d0d00b005168c6d6510e1",
+      "document_path": "spec/observatory-evidence-model.md",
+      "text_digest": "sha256:639d016c01da568ee4306d71a14a8b0ab12e717cacbadb0f7f0a81ca8a0dce2b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Source snapshots with URIs must come from acquire activities so their origin is recorded.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "acquire-activity-link-check",
+        "orphan-snapshot-rejection"
+      ],
+      "external_standard_ids": [
+        "W3C-PROV-O"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:459b630cbfa2db2c2ae15e264fb35aec615956f3437b83ea49b63f8c345b8582",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01015",
+      "requirement_id": "REQ-abc217bcd2cae8837c5aa7a1369f4c1b722c5a04f789fc357aaec907c12145da",
+      "document_path": "spec/observatory-evidence-model.md",
+      "text_digest": "sha256:8160cea4dfa1924a91e9fd6958378407588df2355dc5673c133dc2313f67a7f5",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Derived entities must use prior entities so derivations are traceable to inputs.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "derivation-input-check",
+        "inputless-derivation-rejection"
+      ],
+      "external_standard_ids": [
+        "W3C-PROV-O"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:4a35e56e1626fd305b2b2dc76dc59a2a9237f5b182f4c1c556be44568a01ca6d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01016",
+      "requirement_id": "REQ-bc013c173ee368eccf903d0e5d6a16c3002722d2139ad0d41b6b9aef3739dafa",
+      "document_path": "spec/observatory-evidence-model.md",
+      "text_digest": "sha256:1d07bb787b30fd1e5c31c38216e980cabc608ee322cd8fb3f0c659baee116d45",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Staying within RFC 8785 for the constrained schema keeps canonical digests interoperable; broader claims need full JCS support.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "jcs-compatibility-vectors",
+        "general-jcs-claim-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:7065e1e600d1cc23acb39beedc96b812537d5bfbe1fdd6b5756c834bf3d0689a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01017",
+      "requirement_id": "REQ-cd5c944be6c069c235e467b65bd629900a3b27673b887b1d0b8ea3b4ac748e18",
+      "document_path": "spec/observatory-evidence-model.md",
+      "text_digest": "sha256:25c098baf3a7a1a0f39d12d1dfda0a3ff30979f44acd1afdf6fc5420ab0b9c90",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Verified anchors must record verifier, method and result so anchoring claims can be checked.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "verified-anchor-field-check",
+        "incomplete-anchor-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:d1b43cbddc10bd771008e1b14871b7f14ce666f38cf2d7e9f6262307eec137b9",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01018",
+      "requirement_id": "REQ-dcc0b488abcef0dfa7fad12896fbd791ea6d502d60de6012cef499eee056319d",
+      "document_path": "spec/observatory-evidence-model.md",
+      "text_digest": "sha256:668db5455161364b6d61a689bf7dd515d068779c134915592e03a8445c07ddf6",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Rewriting content while keeping identity would let evidence change silently.",
+      "threat_ids": [
+        "TM-INSIDER",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "in-place-rewrite-detection",
+        "digest-identity-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:f87c95ccee01d86624ae84ad797d262c2ea8084cdaf4de655e28bd28e8d36d71",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01019",
+      "requirement_id": "REQ-f5922cbd7ce305325631e85007acdc89da193181bba8827fe47f838cbe7697d7",
+      "document_path": "spec/observatory-evidence-model.md",
+      "text_digest": "sha256:fa01ece501ece68ae6394f3c8da32695ffcc4f781f475415ab594269f7dc7b20",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Incrementing revision numbers by one makes gaps or replays detectable.",
+      "threat_ids": [
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "revision-increment-check",
+        "gap-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:806c4d34a5d923d8abe052ff592991774af55e74e656c46e7e7bb3b39cfa38e6",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01020",
+      "requirement_id": "REQ-12656011d69bbe57d06a4e2670c0c0c602fbac10ac403bf57053204e3be5c022",
+      "document_path": "spec/reference-fixtures.md",
+      "text_digest": "sha256:d3e6ebf0fddc6920c1538bfa68daab0d69eade8a76f3e55acc9885ce36f3af23",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The solver's first solution is chosen only for determinism; describing it as better would wrongly steer adopters toward it.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "solution-ordering-labelling-review",
+        "preference-claim-absence"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:a07eff1d0fccb3531f3704d235ba90407059ff05b246d46eb52e3077eb2d7086",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01021",
+      "requirement_id": "REQ-36cf80b7c61567df43d25f29706294d0b738ac5b4da3340c41ad232ae4882313",
+      "document_path": "spec/reference-fixtures.md",
+      "text_digest": "sha256:982208f958775baa86a6be5cc0641f5d40851b7ac20b8d116d2a9ea72c849e57",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "One fixture entry per profile ensures every catalogued profile is covered by reference tests.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "fixture-manifest-completeness-check",
+        "missing-entry-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:64c15f23ca050db7c101b4727f68e7decc21837431b3c97ab3fafce557226c57",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01022",
+      "requirement_id": "REQ-3767841fba8bbebb25cb27923c3fce2dfcb168330d68e52a187ba77d06499723",
+      "document_path": "spec/reference-fixtures.md",
+      "text_digest": "sha256:b23e8e0c2e58f2216eec6f8b47e73502318301e84f079e7bb65b3a7c5e5fad78",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Production-eligible families need positive fixtures so valid configurations are demonstrated, not only failures.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "positive-fixture-presence-check",
+        "family-coverage-report"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:2e7271e4accf50ecb5ba4dd1e87784036a3583ab35c7e5bf744c13f1f3eb4a0a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01023",
+      "requirement_id": "REQ-7fccb92a9ca159c2c2731b42e682cc6cf99acb90ebf1b3a01baf3f256cf9ee61",
+      "document_path": "spec/reference-fixtures.md",
+      "text_digest": "sha256:a936e65633893862190260f189900bb20aba1a3886438ffab54b60a30f36cd69",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Pinning an experimental profile must be rejected so the solver cannot produce production configurations with unvetted profiles.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "experimental-pin-invalid-request-test",
+        "solver-mode-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:213a731283fbac91245b48bc2531724e4f846d371d430c1121831953ab654230",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01024",
+      "requirement_id": "REQ-84a7c640745574f03d2e06a1a7cf3c3aeb35f3297f841ed85f17ecf5adcb8331",
+      "document_path": "spec/reference-fixtures.md",
+      "text_digest": "sha256:03c78bce11ac2efdf5d6562f1af7b95f2fcdce5d83c7127f3e8daff2efba0ea2",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Prohibited profiles must be rejected even during migration to avoid reintroducing broken mechanisms.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "prohibited-pin-migration-rejection-test",
+        "lifecycle-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:6689e3878720f2b806651920723df6f9e18e3c222a8f23afdc06ba3767ac2311",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01025",
+      "requirement_id": "REQ-9839c7823615da199779b7a981f3900148c60cafdb3c69fc0d3c2b4cd0910414",
+      "document_path": "spec/reference-fixtures.md",
+      "text_digest": "sha256:eaac661b34b54660743764293bc2e8ecd5d34eb1ad9f261c675cae8de87f5135",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Provisional profiles need exact Candidate promotion state before use in Candidate mode, preventing unpromoted profiles passing.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "provisional-without-state-rejection-test",
+        "promotion-state-lookup"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:61ad121f8c3f60f6c34731111c3c096e6b3c11018ea6dc73a48ac8f4b8a42d87",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01026",
+      "requirement_id": "REQ-cd9d6919839062c17ac354a9bf83fb5324df56aba414c42fbefb142a8e18dfae",
+      "document_path": "spec/reference-fixtures.md",
+      "text_digest": "sha256:8bdc0dabee05375799fde32dc990f7c1cb4b4b0de85d9b54111ece105a5b63d1",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Valid fixtures must satisfy resolution, bindings and expected outcomes so they serve as trustworthy positive references.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "valid-fixture-criteria-check",
+        "fixture-regression-suite"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:2f077d550043d9343a8bd4b8e4f55625df0903388934c49127ac23ad321189fe",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01027",
+      "requirement_id": "REQ-9d6df79f0a843796237e14edb8d5c94b5bed79ba8b4d155ca0c32c4f76b86634",
+      "document_path": "spec/requirement-analysis-provenance.md",
+      "text_digest": "sha256:7a6bcd2e07d39074388d242e0a6dfd3e667042b7d59c5087eae797820c561833",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Analyses must become stale when the paragraph or its supporting registries change, otherwise outdated rationales would still count as current.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "context-digest-staleness-test",
+        "text-change-invalidation-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:c1eb45be5ae63c0eb0f0999103dc09612d287b6a98c85ecb0aca0887289bcc2c",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01028",
+      "requirement_id": "REQ-ae2c4f9fcc2c5faf56fcbf6cb4ff75adffcc068d927bb31af281da98df73116e",
+      "document_path": "spec/requirement-analysis-provenance.md",
+      "text_digest": "sha256:eca857a2eb172347c8b7e9d2dc5790c54d4e46b8e2e8b28c7add7363fb213367",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Coverage must separate projections, authored analyses, recorded reviews and authenticated reviews so counts are not inflated by weaker categories.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "coverage-category-separation-check",
+        "inflated-count-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:d5cabd1e819eb731498a688345f3630cbffed4c28ef0cdfd2cec7c436ad3f803",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01029",
+      "requirement_id": "REQ-b60403bab724e07c88d0616c6fafd7ba7d24858060a3c0c4e2ab19c9da57ebf9",
+      "document_path": "spec/requirement-analysis-provenance.md",
+      "text_digest": "sha256:abf05b96995191eeb04a64db718dc225eace464426534f58755f67d4d0a59e39",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Stable logical IDs let analyses be tracked across text revisions independently of content-derived requirement IDs.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "logical-id-stability-test",
+        "duplicate-logical-id-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:48ada22fb64a734cc03cd5dc7eaa0cdbb3be7d42d22037acc5c3c5ff1bf9a81e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01030",
+      "requirement_id": "REQ-bca8daaff38349f278f29c6166ffe347dc198e08ffa0a4de3d77bc49e3df8524",
+      "document_path": "spec/requirement-analysis-provenance.md",
+      "text_digest": "sha256:0ba2328e4d2a3ba355217c8a9ab1689af9e75dbccd041cb148f25a50a6d703ca",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Authored analyses are not reviews; a review must bind the exact authored context and come from someone other than the author to count.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-NON-REPUDIATION"
+      ],
+      "evidence_expectations": [
+        "self-review-rejection-test",
+        "review-context-binding-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:ab31cdf085c8cefc0179aac8b715747845ee8b87a72ef9b877bd83d17941bc41",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01031",
+      "requirement_id": "REQ-0e64031aede49ae0e7a89e7c9354287d4dd408d0363ffd9eb173aaa966e480a8",
+      "document_path": "spec/research-production-promotion.md",
+      "text_digest": "sha256:b3ac7793413bd7e5682d9980d9ee671936bf1f554aa276b0b489d0482c915d71",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Every experimental threat, property and component must be reconciled so promotion does not silently drop or invent security concepts.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "reconciliation-disposition-check",
+        "unreconciled-item-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:7104021da0ad2d45c633d0863fa18358d25b20daf60f708338da4df22b8f9b31",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01032",
+      "requirement_id": "REQ-5ed08f78a66a7631d6e660f3123f39988ba6c0a8568cf846a72708763f84d8e9",
+      "document_path": "spec/research-production-promotion.md",
+      "text_digest": "sha256:2a1808104be445a23916cfed1bdd10b4516a0829857c16f32f1363225b3a1467",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The promoted profile must pass the production validator, ensuring research entries meet production schema and rules.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "projected-profile-validation-test",
+        "validator-failure-blocks-promotion"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:be713fb67163b1e1587d978057f2efcc4cde05f2e79eff3632062b8c19434012",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01033",
+      "requirement_id": "REQ-5f692f7deab892cfd1db0f2a678a960272a5c5c9c0e8b1001f95adac5d6d1d8f",
+      "document_path": "spec/research-production-promotion.md",
+      "text_digest": "sha256:84e952abb53082b804a83cbd5382a78a75c2472c3e90dfd29e369e9344061354",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Promotion-critical hypotheses need supporting experimental outcomes; unsupported hypotheses must not become production assumptions.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "hypothesis-outcome-check",
+        "unsupported-hypothesis-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:54429b7e311cea437c55c268eaefb0a4a70795dcebeee765e40c419159fde138",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01034",
+      "requirement_id": "REQ-6ec838356e24bbe46e77271fafec5f8c5c59ed3c34cd91c51320f55b450a5b72",
+      "document_path": "spec/research-production-promotion.md",
+      "text_digest": "sha256:afc73fbec7ab1e52163bf86ebc6b62918e092f3b883f5a422c19601d0eb35b6a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Promotion requests must carry the listed bindings (source entry, target catalog, evidence) so the decision is traceable.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "promotion-request-field-check",
+        "incomplete-request-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e71b3fce42a3c67936d2fdabea49e03626cdf883c021f16e5b4b6dfb621982aa",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01035",
+      "requirement_id": "REQ-055d514a4e4c67560f9cb44bb0201dcfc42b299d9d764f52f72357af153f7814",
+      "document_path": "spec/research-profile-registry.md",
+      "text_digest": "sha256:1fa8ea79e1a73a084f3edcfce2c7ba45c75b91441bf3d2336ef7b5c160895076",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Content-addressed evidence bundles make research provenance verifiable and immutable.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "evidence-bundle-digest-check",
+        "missing-provenance-rejection"
+      ],
+      "external_standard_ids": [
+        "W3C-PROV-O"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:f625f4916f94e0190c030b68c5f3b5a2d98c19c015985fe4d18ff6e99ea8193c",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01036",
+      "requirement_id": "REQ-14c93731e10d41609668859ead78849b7c0714c578f21cc8531a8a4f65831e0a",
+      "document_path": "spec/research-profile-registry.md",
+      "text_digest": "sha256:0b991f083dd0fced881c82ab6e8fbebddeb63a7f47d27480769dc86cf5f3046a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Research implementations are not production-ready; marking them prohibited for production prevents accidental deployment.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "production-use-prohibited-flag-check",
+        "flag-false-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:7631cb9940dc4bf58b49bf7e7ddb703384d8918ef04b54030d59d5df09ef2f8b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01037",
+      "requirement_id": "REQ-25263065027ef69d4157a3630c621bd0c23035489c7d354eaf4f8d8ad9e042c8",
+      "document_path": "spec/research-profile-registry.md",
+      "text_digest": "sha256:133283681907f493303f7ac0cf84df5414bfc63e74701f655e8a0e2034694833",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Treating research entries as selectable profiles would let unvetted designs into production configurations.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "resolver-research-entry-rejection-test",
+        "catalog-separation-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:22aab27bbdbf3eb29d96b4d68aaa2bed8a732a957e30773210cb6de6676e7b14",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01038",
+      "requirement_id": "REQ-35fcaf7713aec762ef2ce5a14b8884029a699e1342313bccd81c103db3bf30dc",
+      "document_path": "spec/research-profile-registry.md",
+      "text_digest": "sha256:cc214c45a0eaa21f68a33955d648e305adaa24ea3de786bc7ce90c3c1feb4bb5",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Hypotheses must be testable or reviewable so research claims can be evaluated.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "hypothesis-evidence-path-check",
+        "untestable-hypothesis-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:100c86fb68d713a85d31308e09a6e4a5720fd3e01df62ef28c0a02c92c6b10c1",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01039",
+      "requirement_id": "REQ-4a12100978850e7fad2c7a4e5246d243a42f0da3f178db730356c29b14373eb9",
+      "document_path": "spec/research-profile-registry.md",
+      "text_digest": "sha256:99d7bf6a197b5423c68dc1947a5a913cc241cea96feb11c3265edadb1adef390",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Mutable URLs can change or disappear; content-addressed provenance is required alongside them.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "mutable-url-only-rejection",
+        "content-address-presence-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:5d6036fec4fdd99bd145f50f5ff50da8849003268b1229eef39ed75daef8caf6",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01040",
+      "requirement_id": "REQ-4d37e11d076a64771fa0f16a2eb3b136e50d59c5922067df038f91ae381389bb",
+      "document_path": "spec/research-profile-registry.md",
+      "text_digest": "sha256:42946eb3a4af74c712bbde49815f4af3ecb3a81fff4c13d48bc870df27889500",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Later revisions must link to predecessors and record changes so research history is auditable.",
+      "threat_ids": [
+        "TM-ROLLBACK",
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "revision-linkage-check",
+        "history-preservation-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:c25d365c98f563bb47aace5400d1765e89c1f35b36597389c319e4ede903d9bc",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01041",
+      "requirement_id": "REQ-6f7bb98ccb569c51c356a99d14dcec70fab0ca1dc8bb2c078b73f643f1c32a6f",
+      "document_path": "spec/research-profile-registry.md",
+      "text_digest": "sha256:a17b6cb7932f6f459df7192cb33b3f0ddb56157308b676ea5a90e280487c3c17",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Requiring limitations and open questions keeps research entries honest about what is unknown.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "limitations-record-check",
+        "empty-limitations-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:8429e53cd493facffe1adc3d546af68fe63045ada97b899015af0f76b3c4ec8a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01042",
+      "requirement_id": "REQ-7b46b4091882826cf843523d4bc402ae2944752c39dc83d3e0b435927a6abbba",
+      "document_path": "spec/research-profile-registry.md",
+      "text_digest": "sha256:c1a441f71eb9ff735925fdfab46440b7e56ec41192f78b365c248c3a163a3367",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Required fields (identity, hypotheses, provenance, status) make research entries complete and comparable.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "entry-field-completeness-check",
+        "missing-field-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:0def53d5660a87f51bf25565473249dd7ac285289528d3a81cc642c11c3d1ee6",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01043",
+      "requirement_id": "REQ-c3aed2598f420cdfc8fea2acf0bb143f55eebdd85500f7c49064fc5e24c849c9",
+      "document_path": "spec/research-profile-registry.md",
+      "text_digest": "sha256:5d797821189cf757f2d73626851f3640edb92540c55cbceba844b20dc60bfc8a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Experimental component IDs distinguish research components from production ones.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "exp-comp-id-format-check",
+        "namespace-separation-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:705edf2f9c7763355b5150b3a80947e0cf4565cec8b08cddccbd738df25e2af5",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01044",
+      "requirement_id": "REQ-c56b52fc46388c565226cb1ee2b80b302cd1b1f9b746d2b4c04aa5cdb3d5a809",
+      "document_path": "spec/research-profile-registry.md",
+      "text_digest": "sha256:3afa0db924e007432072b6760c8d0190692aaf0313865259cf8d09d8831482f1",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Reusing existing family IDs eases later promotion and comparison with production profiles.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "family-id-reuse-check",
+        "family-mapping-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:9e4f27a26e8cf36ab3994fe61149e4ef6f30755e91a98d6eb0b320f61b16440b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01045",
+      "requirement_id": "REQ-e0e5dd199d5f1a03c015a15f0e7e57137eb83e672aad2a314b6940517f3ecde7",
+      "document_path": "spec/research-profile-registry.md",
+      "text_digest": "sha256:63747e899bc6538eae146f16d4765e9f0bf4774d5d8d0483bc7e68858c721aa8",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Exact algorithm IDs prevent research entries referring to ambiguous or unregistered algorithms.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "algorithm-id-registry-check",
+        "unregistered-id-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:fbe76554fa006a1f23216322bfe8d5f03bd17e3ef2e585a87fda6f989060b16a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01046",
+      "requirement_id": "REQ-223ab733e4bd7b9b40b394ee90001ad1e185a7e925515e69db5e74b30f96f626",
+      "document_path": "spec/security-rationale-corpus.md",
+      "text_digest": "sha256:a71eb0b468040ba34f600bd4a019a12e51c7f8550ace10a8d71573b3fd0e926a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Exactly one rationale per requirement prevents gaps and conflicting explanations.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "rationale-coverage-check",
+        "duplicate-rationale-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:2e3c847d31c99a38135737cc76b86d35511ee782c138cb467c344c05439fd123",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01047",
+      "requirement_id": "REQ-29e07e5cfc6e8d1e72d09967ab1c01197c5cff8835703f17183574adbb9e7e6d",
+      "document_path": "spec/security-rationale-corpus.md",
+      "text_digest": "sha256:052158dcee6c75ad3c8d61b025362652b2315c99adcd289ff843eb7530993073",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Threat IDs must exist so rationales refer to defined threats.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "threat-id-registry-check",
+        "unknown-threat-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:ca196dc558f5629795ce2784a6d4359c4fb6af139366d0668e6dde2bc5800ea7",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01048",
+      "requirement_id": "REQ-37f309575f079e88e7da5397e53e268dc2f492e5f8f28eafc78645db145ed203",
+      "document_path": "spec/security-rationale-corpus.md",
+      "text_digest": "sha256:d1f1c518f342bc5781f5aeed1b2072985f010920aaffe4965259772a8624f70a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The rationale corpus must not overstate equivalence to external standards beyond what the crosswalk established.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "equivalence-claim-review",
+        "stronger-claim-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:88d19f5dc9340d64e8e98a4cbc96481a4f91ba5d73b396d0ba5566db5d7e841c",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01049",
+      "requirement_id": "REQ-a7a7fd2f0e71548893c8c38e942f6f5ba5d1e167cce1886d37d065fe72a8b118",
+      "document_path": "spec/security-rationale-corpus.md",
+      "text_digest": "sha256:5110f2f1ad4847a619d72402ef95afb88b39da3ba200b528a4d84e81430b8796",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Property IDs must exist so rationales refer to defined properties.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "property-id-registry-check",
+        "unknown-property-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:f9ad2c3bea0fbeaffe82c7adcc91d650e3fe0c6c3135dd32462ab901aa7b1726",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01050",
+      "requirement_id": "REQ-c4d4cbea0ce65069ff4c822424627f673e55581fbea7c839f5d35914792f0df2",
+      "document_path": "spec/security-rationale-corpus.md",
+      "text_digest": "sha256:71dfea4e18b268ec153f326a8d78da2e76f4c5faa1247a41e7ece0beaa6186e9",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Full coverage ensures every requirement has a documented rationale.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "coverage-percentage-check",
+        "missing-rationale-detection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:c5d8dfb6def3999508d9085c4f87ccbbf530cba24490338eccf0857fe5bc77b0",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01051",
+      "requirement_id": "REQ-e76cef8956a65e592995b9fdc950bf0f449f6762bbaa9d3a11068710be10a9b7",
+      "document_path": "spec/security-rationale-corpus.md",
+      "text_digest": "sha256:0c8bd6c8022d6bd506a975f26c2be946fd1e7fb754b0aa2cd870cb316d27fd40",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Evidence expectations make rationales actionable by stating how compliance would be shown.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "evidence-expectation-presence-check",
+        "empty-expectation-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:55fba00345faad7ba7e9473547e0eecb15234125a06cd2b64e100fc1b30d5610",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01052",
+      "requirement_id": "REQ-1b7be0e97205f66f69caaac23b406b52c6e64149abf14d3b537a7d1d95701743",
+      "document_path": "spec/standards-crosswalk.md",
+      "text_digest": "sha256:1bc3ab37646554f2424fc68b297a8ad9d8e7df41ea9c50881be0b528129c6001",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Extracting exactly one requirement per BCP 14 paragraph gives a complete, stable inventory for coverage and traceability.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "extraction-completeness-test",
+        "duplicate-extraction-check"
+      ],
+      "external_standard_ids": [
+        "IETF-BCP14"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:70cf2258828cd232cfc322ceeb0b0662162075404cb21c9574464a9af5e4701f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01053",
+      "requirement_id": "REQ-62e57de56322cb53242fb382707f32d8f04e068a4382a224da878297c3c1d654",
+      "document_path": "spec/standards-crosswalk.md",
+      "text_digest": "sha256:6396894f88e037ce2cbe5d3182ddba73a37c7ef9708d73c2501620b7cffb6562",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Crosswalk mappings show relationships, not certification or equivalence; using them as such would overclaim.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "crosswalk-claim-scope-review",
+        "certification-claim-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:360e223d02676aeac89244eb653a7b4b76f24d2c36ed20cac80838db1f018fe1",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-01054",
+      "requirement_id": "REQ-ba3d93c137ea00e6cd4d8c26bc7bbe82078841c202a333ac1e7792e8aac9d631",
+      "document_path": "spec/standards-crosswalk.md",
+      "text_digest": "sha256:6b6ebcbea6ad7fbb6a06b53f6a9015ae7b1aa0eb266a6371798041666a2df6a5",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Explicit rationale for each mapping lets reviewers judge whether the relationship is justified.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "mapping-rationale-presence-check",
+        "implicit-mapping-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:7be51b715e58c77032c81fc1603aba4d29af8855a71523d9545f66a72d85d0bc",
+      "review": null
     }
   ]
 }
