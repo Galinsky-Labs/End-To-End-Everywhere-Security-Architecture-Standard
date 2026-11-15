@@ -6,12 +6,14 @@
   "normative_content_changed": false,
   "external_certification": "not-claimed",
   "external_review_status": "pending",
-  "individually_authored_requirement_count": 21,
+  "individually_authored_requirement_count": 142,
   "normative_requirement_count": 1055,
   "changed_since_release": [
     ".github/workflows/deployment-monitor-contract.yml",
     ".github/workflows/validate.yml",
+    "README.md",
     "registry/prs.json",
+    "registry/requirement-analyses.json",
     "registry/roadmap.json",
     "release/validate_1_0_engineering.py",
     "scripts/crypto_registry.py",
@@ -61,8 +63,8 @@
     },
     {
       "path": "README.md",
-      "size": 3032,
-      "git_blob_sha": "6968f4003d51a9c372f62d93f1e71aaa4cf2b41b"
+      "size": 3205,
+      "git_blob_sha": "bbf079c9b6762bcaee29d0ec44e433939cbb0409"
     },
     {
       "path": "SECURITY.md",
@@ -1936,8 +1938,8 @@
     },
     {
       "path": "registry/requirement-analyses.json",
-      "size": 26510,
-      "git_blob_sha": "2eb5b4040d582c669114ccabb6952a6bacd3351c"
+      "size": 165382,
+      "git_blob_sha": "527e8b384dece3a113aae044ca677d05075885b5"
     },
     {
       "path": "registry/research-profile-registry.json",
@@ -3990,5 +3992,5 @@
       "git_blob_sha": "6d83ea02d7cfb5a1c9f67e7a94f4b80df3f256f4"
     }
   ],
-  "tree_digest": "sha256:6225cdab21d8ae56032dc0b486903cb3f3b17610d8f0457a319ccefa291f8334"
+  "tree_digest": "sha256:bd32e0cba9f9db3416e3dc0421d104137ed881ecb5a35270a761547cef441525"
 }
