@@ -9559,6 +9559,2631 @@
       "dependencies": [],
       "context_digest": "sha256:817f2d74ae3b87fbfd66b3a4197c00de92a55890b430cbf13325c3ed0059801a",
       "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00398",
+      "requirement_id": "REQ-03c55dfd427c7177f24b5b391a920caf41a23fd32090b46eb76db574df7d1f8d",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:6e06c8a66ceafa497637787c426db10782d1c3a17547cc2dae3d480b63384556",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A hardware token only bounds key exposure if no other usable copy can exist. Cloning, admin duplication, backup objects or vendor recovery each create an extra copy that an attacker could target; documenting them reveals whether 'single-device' protection is real.",
+      "threat_ids": [
+        "TM-HARDWARE",
+        "TM-INSIDER",
+        "TM-BACKUP"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-RECOVERY-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "key-copy-path-inventory",
+        "clone-and-backup-export-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:4827ec1c58c97a0aedea9628e59beca073c46a8f6342a46fa05a2ad53b715ee6",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00399",
+      "requirement_id": "REQ-054542ed3a50aae39c0a345208680bd67cc507e1c7fb97dc3f695d19eef86ae6",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:d5fe00ff34087a47dec8967e002dcc8f8a47c6edc5696a5603720f2ba0b6326d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Keeping the previous vault generation helps recover from a crash mid-write, but an attacker could present it to roll state back. It is allowed only when the product can tell genuine crash recovery from rollback within its policy.",
+      "threat_ids": [
+        "TM-ROLLBACK",
+        "TM-DEVICE-PHYSICAL"
+      ],
+      "security_property_ids": [
+        "SP-ROLLBACK-RESISTANCE",
+        "SP-AVAILABILITY"
+      ],
+      "evidence_expectations": [
+        "crash-vs-rollback-discrimination-test",
+        "previous-generation-retention-bound"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:c22061f0a532d6c03de86b9c21bd2f46ae005a1f335f2acf736a8bdf53f354fc",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00400",
+      "requirement_id": "REQ-0b71bf80f5599702a244e5fad0685bad3e639e1e8e2af8d6c5ffcd8cdd762506",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:64fcebad7c2bc4580c8ec5723f5d8f0f734c497fb698214c066e9d00f29af837",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A torn write could leave a vault that partly authenticates or is unreadable, causing loss of keys or acceptance of corrupted state. Atomic replacement guarantees each committed generation is complete.",
+      "threat_ids": [
+        "TM-DOS",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-AVAILABILITY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "power-loss-fault-injection-test",
+        "atomic-rename-or-journal-implementation-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e24f2768ee50fa2d3261d5ee3c48f87356a3758de76135221dea4a362dee661d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00401",
+      "requirement_id": "REQ-0c6c351f4f97e0367717332633226be77cc516ba9064872e49fc2e6452fbf236",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:54e29e190074b571885d9fa6dcbed6375afed7800ff7c4be7b6f88480c29807b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "These baseline rules ensure every storage profile, hardware or not, encrypts with an approved AEAD, authenticates before use, tracks generations, never exports or syncs the raw root key and never leaves plaintext secrets at rest. They define the minimum below which no profile is acceptable.",
+      "threat_ids": [
+        "TM-DEVICE-PHYSICAL",
+        "TM-ENDPOINT-STATE",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-INTEGRITY",
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "baseline-control-checklist-per-profile",
+        "plaintext-at-rest-forensic-scan"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:323eabc593611340108820133300173313e9ac1f029f67d3dc0c30ae67067035",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00402",
+      "requirement_id": "REQ-1007a4ac07296d1f0f162f3f91cde1405708fad3d2f811ba8c69c7321e679f2c",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:15026c3649d593dc5486a1051de4cce4b41036001ee7ac7080e945af078fc5e9",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The software profile may opportunistically use hardware, but because it is not required, no hardware-dependent property is claimed. This prevents opportunistic use being presented as a hardware guarantee.",
+      "threat_ids": [
+        "TM-DEVICE-PHYSICAL",
+        "TM-HARDWARE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "software-profile-claim-excludes-hardware",
+        "opportunistic-hardware-labelling-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:728a9b093e78990d4d960ebd70bdb278b93f37d88840017bc925e53564567107",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00403",
+      "requirement_id": "REQ-1b1fc6f47512cfe427a58b8ef11f50667426794f49c0711d38f9dd4e9020e147",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:24fa93b8a7311a34f4647590ed8b23fb6e0e47029263d3256d81e95bbe3de239",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Encoding use restrictions (purpose, algorithm, auth requirement) in the keystore means even compromised application code cannot use the key for other operations, narrowing the impact of an app-level compromise.",
+      "threat_ids": [
+        "TM-ENDPOINT-LIVE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "keystore-key-purpose-attributes-evidence",
+        "disallowed-operation-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:debc2bd9dd05551f4af971e506d5a9efdb07a35c8f6d3bf0d940088442e03ce7",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00404",
+      "requirement_id": "REQ-1d2a6cdeb70423033de0b05cb43577e59dadbd42000649fe24d07ef5c7139766",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:6c2b2600030c562dc8b3f1c9b43bdf9b0bcbcf65b72626993bb6c7d5e5e3a52d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The Secure Enclave only performs certain operations (e.g. P-256 ECDH/signing); other secrets sit outside, encrypted. Documenting the split shows which secrets enjoy enclave protection and which are exposed to OS compromise.",
+      "threat_ids": [
+        "TM-HARDWARE",
+        "TM-ENDPOINT-LIVE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "enclave-operation-and-external-state-inventory",
+        "enclave-boundary-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e60583845ce8eb258f8711349ce0a200a3f1bec6a78ffd73053b24d6bb21a08b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00405",
+      "requirement_id": "REQ-21b5be0515b861f39c3f93eb69cd6dc41cce292348018cd5ca0b5869af22014d",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:ff423e20482f3e57b5748bb205ca61cd22e9513fa98f2e5a172698aa6059cb36",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The rollback anchor must move forward with the vault; otherwise an old vault would still match the anchor and rollback could not be detected.",
+      "threat_ids": [
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "anchor-increment-on-generation-advance-test",
+        "stale-vault-anchor-mismatch-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:f15cf89585737d52185e7b06fd2a719a059f098331725be987a1496449188e7d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00406",
+      "requirement_id": "REQ-227d5bdefff9ded4523c4b4a85e14268083212df7a11055a366eb9910d71eed0",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:01d6403f864994294c379bfb034456cc892c99e3a8308d7c09be99c33d3b6322",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Storing an exportable private key in the Keychain is very different from having the Secure Enclave generate and hold it. Only the latter provides non-exportability; using the wrong API would silently drop the hardware guarantee.",
+      "threat_ids": [
+        "TM-DEVICE-PHYSICAL",
+        "TM-ENDPOINT-LIVE",
+        "TM-HARDWARE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "secure-enclave-token-id-api-usage-check",
+        "exportability-negative-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:5f037985b41fff2f7c9b0a9f8fc0be13add0d30088a955f7c4225ee321d91eaf",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00407",
+      "requirement_id": "REQ-2eb5229c990182292d65fccd081c791a9bc4b7cd924c48eddb69db6e070820cf",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:502462ec5185206b2cfef08117972fddf35a21d0748e7a48b7e0a22be56d5a1c",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "On Android, requesting hardware backing does not guarantee it; devices may fall back to software. Inspecting the actual key security level prevents claiming TEE or StrongBox protection the device did not provide.",
+      "threat_ids": [
+        "TM-HARDWARE",
+        "TM-DEVICE-PHYSICAL"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "key-info-security-level-inspection",
+        "software-fallback-detection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:b2d7d0cd2f35e9323dbd76ba6b5c0c3adc5c3a5d8252be20b5da5eb95135b3c1",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00408",
+      "requirement_id": "REQ-316546db057579bd047f88971ab23e43133779e4779bc5e2c63efa0588fbb784",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:879c65369058b4e95990f05530b585470d67cbdb20f1c6ccfcb5abb6459afdb1",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Local authentication gates reduce misuse by someone holding an unlocked or stolen device. Allowing policies to require them lets products match local-access threats to usability needs.",
+      "threat_ids": [
+        "TM-DEVICE-PHYSICAL"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "local-auth-policy-configuration",
+        "unauthenticated-sensitive-operation-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:b842678dfbc77e774d2c95e08ba708ebaa4da95763322a5ee51293608fba51ce",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00409",
+      "requirement_id": "REQ-33db8d720a7432a08f53b293d5749c7f38753f249b923c20ced314b98c1c5c25",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:17e547444e946b6ec0c4e3d632d71835949d51cf0f37d0cebd5b792f8a252124",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Without an anchor, an attacker who restores an older vault copy cannot be detected. Claiming rollback resistance in that configuration would be false.",
+      "threat_ids": [
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "anchor-mode-none-claim-rejection",
+        "rollback-demonstration-without-anchor"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e7a6f2c006c9596aff4e4a4696bdb222dbad8a3879fe69bd6a05fc36b7b75ef1",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00410",
+      "requirement_id": "REQ-3ff4d43430ce44b5f123fde93e06c8396e28620871fa42cd0b9fda706090bd96",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:7240e76e8d1131d1a12ad62a0b4f7a582399257756e7c9675164a7d11c53ae26",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A hardware token used without PIN or presence lets malware on the host use it silently while plugged in. Requiring explicit authorisation per sensitive use limits that abuse.",
+      "threat_ids": [
+        "TM-ENDPOINT-LIVE",
+        "TM-DEVICE-PHYSICAL"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "token-pin-or-touch-required-test",
+        "silent-use-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:03839aba9d4b550896d2f592e5db5302371ac2641f2371d5e8caf18c01078de0",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00411",
+      "requirement_id": "REQ-406699a33adc052f7c487aebebc5c9396437f0cca41187c502c739e0ca5217e2",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:5c9d1da9679ce7570e419422a4d54451ca3ac373d624c63423a2d53629e2b533",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Key attestation proves properties of a key in a security module, not that the app, OS or user is trustworthy. Over-interpreting it would let a compromised device pass as healthy.",
+      "threat_ids": [
+        "TM-HARDWARE",
+        "TM-ENDPOINT-LIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "attestation-claim-scope-review",
+        "compromised-os-with-valid-key-attestation-analysis"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:2ac599729fd03a6c0d7f99126e4423c83bde8520378893aa1255977276b6e578",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00412",
+      "requirement_id": "REQ-44666acb8f7e10adfec8c5d42b391ec08d12cf15d24afd0c85ddfc9a359d4b1d",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:1717bf9a36679f7217ea1f59deb9ab461300b7dc3fd2a880b0ebab178cd33ca4",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Policies may accept weaker storage on some devices, but evidence must show the profile actually used so that assessments and users are not told a stronger boundary is in place.",
+      "threat_ids": [
+        "TM-HARDWARE",
+        "TM-DEVICE-PHYSICAL"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "selected-profile-in-conformance-output",
+        "weaker-profile-selection-audit"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:7a0c669b03b1edbcf4986cdbd1c938b91863c254a6a53ed9cdd3b6d8f4003494",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00413",
+      "requirement_id": "REQ-44c119d5cabd4566cc75311fd502ea0ce04fa66a247dd08cf71f988d208119f3",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:334de0d5c9f86dd20d7fd15e87c1bcbd41a9f3e7f24bc0912dd680ffaea56dab",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The vault is only as strong as the key protecting it. Binding its protection to the selected profile ensures the advertised boundary (software, TEE, enclave, token) actually guards the vault key.",
+      "threat_ids": [
+        "TM-DEVICE-PHYSICAL",
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "vault-key-protection-path-trace",
+        "profile-boundary-verification"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:d6852e17859932cc08b07143d686cd2bbf877a093bcbfbed06026a4b2353c0bd",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00414",
+      "requirement_id": "REQ-47525545d559c8b434d7e41cb85a82ff597a20ca7166f10d4a9a09dd32bf8d2f",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:b929aa5be263fe87d0b92e4ce4e89c6125589b3dfa56209b15959511f7c579cc",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Backing up vault ciphertext is safe only if the backup cannot also obtain the key that decrypts it. Shipping the raw root key with the ciphertext would make the backup provider able to read all local secrets.",
+      "threat_ids": [
+        "TM-BACKUP",
+        "TM-SERVICE-READ"
+      ],
+      "security_property_ids": [
+        "SP-BACKUP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "backup-payload-key-absence-check",
+        "backup-profile-permission-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:329fdfc3d149b248ca2d08ea108f6c1a2e15c45c674d37929f9f759f853b6380",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00415",
+      "requirement_id": "REQ-49aa9949ebfbfdea3aeca5985647de983a3a910cd9dc4d2af8f146a12c77b976",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:aa820102366e4bdb1a2e44e73f780a9400bfe43a3b02f0e1dbaeae976bb9da5a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Creating or importing the root key as non-extractable within the token's model ensures it cannot later be read out by host software, which is the property hardware tokens are used for.",
+      "threat_ids": [
+        "TM-ENDPOINT-LIVE",
+        "TM-HARDWARE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "token-key-attribute-inspection",
+        "extraction-attempt-negative-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:4b27b809c138ff2a007b509ffc359687477c52e3d230aaa4fcc4be5d18652954",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00416",
+      "requirement_id": "REQ-59a69d1fce5c2fa482d24b8d0bb72a139d1f6445346533fc66b047f6f5d48f8d",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:edbe0750f648fbfbc9361c1d1c0e9983504ee6daf35b68520371411ed98a940e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "If any required protection cannot be established and the implementation continues anyway, users get a weaker boundary under a stronger label. Failing closed keeps claims tied to reality.",
+      "threat_ids": [
+        "TM-HARDWARE",
+        "TM-ROLLBACK",
+        "TM-DEVICE-PHYSICAL"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "missing-boundary-fail-closed-tests",
+        "no-silent-degradation-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:4b9c70cc4e0ee6242d74671d7b9b23fcd42e1dda99a085be550eee8500571695",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00417",
+      "requirement_id": "REQ-5fd4b3e21c7700efa0213d50d8b18b360655354cddf9bd41c1c2aba168e1d1e5",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:315b0d48508835dbf0f33fb11fd9f65ab912a246075da2847d5a7c8d27a8ebea",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Platform keystores behave differently across OS versions and vendors. Testing and documenting the chosen platform's real behaviour prevents assumptions copied from documentation from standing in for evidence.",
+      "threat_ids": [
+        "TM-HARDWARE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "platform-behaviour-test-report",
+        "os-version-matrix"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:52e58138d1c8779a458475e9fcb581ec3ee1f07f1d930dec25836c56a3a71dea",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00418",
+      "requirement_id": "REQ-606768357dd0abe9c7e40e0832d7a3de8684b6692bf0e0f2827b2f5c563f4fee",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:112003f07c9369bd6f2a97d48d845f414a12ef4a84274c83068b115fc0d5a02a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Ratchet and session state change constantly and cannot all live in hardware. An authenticated encrypted vault with a 256-bit key gives that state strong at-rest protection while hardware guards only the vault key.",
+      "threat_ids": [
+        "TM-DEVICE-PHYSICAL",
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "vault-key-length-check",
+        "vault-authentication-tamper-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:0347e2b5e96b88e0ef24467cafe82c07d5006c600967046af5e403614b860b9e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00419",
+      "requirement_id": "REQ-64ac989e1912d44353e9dea74b769b316fc029a03b9dfcd6092fccd8a49bfdd6",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:0c2acc912854f79eb0c0daa6da9328f1bc219b5ea9195e9a8a06d078ae164fd7",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The root or wrapping key is the high-value secret; if it can leave the hardware boundary, an attacker with temporary access can copy it and decrypt the vault offline later.",
+      "threat_ids": [
+        "TM-DEVICE-PHYSICAL",
+        "TM-ENDPOINT-LIVE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "non-exportable-attribute-evidence",
+        "export-attempt-failure-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:b00d15a5f794d2cda750ae64b1397688405178c3daa5b641102373d3baebe5ba",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00420",
+      "requirement_id": "REQ-6adb1a67c95d057e7d74a7346ee0d79e72fffd8395d868a31bd7724981bb3024",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:6d3ff30e1caa16bdab79026e92837e81899fe4fe7b88c04d7b4ef7d51cf5ceb0",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Hardware may prevent copying a key yet still let malware use it while the device is unlocked. Distinguishing extraction resistance from use-authorisation abuse prevents non-exportability being mistaken for protection against live misuse.",
+      "threat_ids": [
+        "TM-ENDPOINT-LIVE",
+        "TM-HARDWARE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "separate-extraction-and-use-claims",
+        "live-use-abuse-scenario-analysis"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:c428fe320ffffaf0b20e1968f0d30aa0b68dc9f302a543ca6911681b5758744a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00421",
+      "requirement_id": "REQ-759dbcba725cc187713a48c4869ffae477cd648711f027bc12e42c3990f01f86",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:b3e6a09c7c6518e7c1cb6de66011e3f93fb13cc514caf1aa8c835825c6931284",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Keeping only the root key in hardware and using it to unwrap a software vault gives hardware protection to the most valuable secret while allowing flexible protocol state handling.",
+      "threat_ids": [
+        "TM-DEVICE-PHYSICAL",
+        "TM-HARDWARE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "key-hierarchy-diagram",
+        "root-key-hardware-residency-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:5013d8af3199eae675d2212617cbaa28e4d06cfa8a5b464cafc4638f31ebb448",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00422",
+      "requirement_id": "REQ-790c4f783802ddd55ccc12b2db367a059ba45bd3fb0162a12a7febca933742e3",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:1d5317c06a6ce401dbbe236967a2e996f8a01b49431a441ae1a3fe3738edd8ba",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Attestation can be forged or stale unless the full chain, security level, key attributes, app binding, firmware version and revocation are checked against policy. Partial checks accept emulators or revoked devices.",
+      "threat_ids": [
+        "TM-HARDWARE",
+        "TM-DEVICE-PHYSICAL"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "attestation-field-by-field-policy-comparison",
+        "revoked-and-emulated-attestation-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:6457b34449909a65bf5077662ce69999e79470e0ef67381c95fe031b4331c222",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00423",
+      "requirement_id": "REQ-7aecb15799a58b8b628811edefd8827a65387e5b0d23ec12633613983694aab4",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:fd6afd20b9ca374f9b4fd9e789ca929933510857e759038042b0428ac360be0b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Syncing a raw root key turns a per-device secret into a shared one held by the sync channel and every device, so compromise of any of them exposes all vaults.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-BACKUP",
+        "TM-DEVICE-PHYSICAL"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "sync-payload-root-key-absence-check",
+        "per-device-root-key-distinctness-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:a883b6f679dfdabff62702eec27b3e42bd42ab7f85717faac8ffe7f4705743a7",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00424",
+      "requirement_id": "REQ-81ef446b4c61373a48b159eeaa048040e800996700f6544353f62e84fc05d682",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:da4c32ebceae7de2dc457ca1a7cf6414a35776bd89bc5d31daeb3014ce37543d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Trusting attestation without validating chain, security level, key properties and revocation lets attackers present software keys or revoked hardware as trusted.",
+      "threat_ids": [
+        "TM-HARDWARE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "attestation-chain-validation-test",
+        "revocation-list-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:b5a10ee3bc48ba5c03d23ab1b60c816aa247de2a375a921dc47f35bf56c48a61",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00425",
+      "requirement_id": "REQ-835cb7db406b5a807ea1f2c08f30bd06bc34a767d098073e06a41824e3284a2a",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:695be9d4da6b93f66910d80cc12ccdbf7469561c86ee6191685f9b92f6228af3",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A TPM NV counter lives outside the vault and cannot be rolled back with it, making it a suitable anchor when correctly authorised.",
+      "threat_ids": [
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "tpm-counter-authorization-policy-review",
+        "vault-restore-counter-mismatch-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:c5496ebddcdc0f6f5a73b78af7654cba4292f966287ca1302797df8dc2c5568c",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00426",
+      "requirement_id": "REQ-852465fe0ed8a92f10da0e917cdf11fe34f242f5fa00280d5d1010392ce6ccf6",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:03cfea2d91696ecef28750a84717a6e47d91a304fb6a1c4defc629bccec35038",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Keys can be invalidated by biometric changes or OS resets. Silently escrowing or exporting the root key to avoid this would destroy non-exportability; recovery must use the defined recovery or reauthorisation flows.",
+      "threat_ids": [
+        "TM-RECOVERY",
+        "TM-SERVICE-READ"
+      ],
+      "security_property_ids": [
+        "SP-RECOVERY-CONFIDENTIALITY",
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "key-invalidation-recovery-path-test",
+        "silent-escrow-absence-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:bdc2914370f0aeda66c757a2ff55078312dcf96e5fe9db5880570ead156e938d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00427",
+      "requirement_id": "REQ-8771ece5ed5b41a5ae22ddc371a4d19842877ed3dd1a7b0157c29f90b9ce33d4",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:f2b9ce7ef43fba2c8d0286cd283ad19cf086317d667e7e39788b59b5edb9125a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The software profile has no hardware boundary, so claiming isolation or non-exportability would misrepresent how easily an attacker with device access can copy keys.",
+      "threat_ids": [
+        "TM-DEVICE-PHYSICAL",
+        "TM-ENDPOINT-LIVE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "software-profile-claim-set-check",
+        "hardware-claim-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:0e69e167f853b8fa29c3a32057a3f7eae990e547eddefea8dc0280263401a047",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00428",
+      "requirement_id": "REQ-8b54ee5ee1e57b6c4268184208af93ae337c0cbcbcc38252466d5bedca92d945",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:8ce4976276187c719aa6f685f44a373ba7fe8b803e3779e93a162c2c6a879953",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Silent fallback from requested hardware to software is a downgrade that users cannot see. The profile must not be claimed when the stronger boundary was not obtained.",
+      "threat_ids": [
+        "TM-HARDWARE",
+        "TM-DEVICE-PHYSICAL"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE",
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "fallback-detection-and-reporting-test",
+        "claimed-profile-vs-actual-boundary-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:022091c23589a73c19fbfb5576961725106a2c1dc50195ce390d6987c4baceeb",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00429",
+      "requirement_id": "REQ-8c38cd2c0071b50074b9d9ab4c8a2ec5e26193fa27c709cdca4c7dc7a5aa2693",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:1aae371cd2d01af78f5bab41843d1ac31bd5627c342ee8917975548ec054dca6",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "TPM keys can be created with attributes that permit duplication or with weak authorisation. Correct attributes and policy are what prevent extraction through normal interfaces.",
+      "threat_ids": [
+        "TM-ENDPOINT-LIVE",
+        "TM-HARDWARE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "tpm-key-attribute-inspection",
+        "duplication-attempt-failure-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:14fcf96f99a4dfec8c448fd96fcfa45bbaea66b96a7deeb00afd4d93a1146923",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00430",
+      "requirement_id": "REQ-93230d71b3094a862996c9c3a9c7d17421532ec9a63d91b977175cee8a4854fe",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:b56fe97dceada37ab2bfa3814229205dca77c441379696daae643748909ed057",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Copying a hardware key into app memory exposes it to memory scraping and crash dumps, negating the hardware protection. Using operation handles keeps the key inside the boundary.",
+      "threat_ids": [
+        "TM-ENDPOINT-LIVE",
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "handle-based-operation-code-review",
+        "memory-dump-key-absence-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:ada2ae87ff157bf52a72e24321fd3e76572b86394b7a751c5ad775a0b2378fff",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00431",
+      "requirement_id": "REQ-9a0d8910628ba835ca3f53ffe2afee2c4f091ac40cfce14079906b51b774612b",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:989ec56f0fef2097a0e76ff4f47274ac09f41a089231a67c289b2e0543381ab7",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Long-lived identity and recovery keys are most damaging if misused from a stolen unlocked device. Requiring recent unlock or authentication for these operations narrows that window at acceptable usability cost.",
+      "threat_ids": [
+        "TM-DEVICE-PHYSICAL",
+        "TM-RECOVERY"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "recent-unlock-requirement-configuration",
+        "stale-unlock-operation-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:451014a573cfc3af81c468e51ad3d0dd8dba1006c52313483386ff7f4ff9890a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00432",
+      "requirement_id": "REQ-a5f1e8b4dcdf4622003f4caf228f79c278254c0d45f736c3457172d68a15e4cf",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:452ae0946831078f475405821f0e3bedc82f34c2dcf7e63506aef40286d765db",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Argon2id below RFC 9106 floors makes offline guessing of passphrase-protected vaults cheap. Enforcing a recommended floor sets a minimum attacker cost for stolen vault files.",
+      "threat_ids": [
+        "TM-DEVICE-PHYSICAL",
+        "TM-BACKUP"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-BACKUP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "argon2id-parameter-validation",
+        "below-floor-configuration-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:eaec9b9bc748a96a9fe6844dac2873a5e3f6f09470cd4f60d366b2e5b482386c",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00433",
+      "requirement_id": "REQ-ae67522b56ca5ba9b53efb31537474c47eed165abf7416f77088bc41036589eb",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:34860cc9e35ec4287f6c755f11775c3dda3a59dccca5443f7eee538fbfee1d6c",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Users may assume a KDF makes any passphrase safe. Documenting that Argon2id only raises guessing cost prevents a weak passphrase being mistaken for strong protection.",
+      "threat_ids": [
+        "TM-DEVICE-PHYSICAL",
+        "TM-CREDENTIAL"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "passphrase-entropy-limitation-documentation",
+        "user-facing-strength-guidance-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:9cbb43312dff934f23e2e8cdbc58da8faaaba9ce3c75607cbac6607c80ef4ac5",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00434",
+      "requirement_id": "REQ-b46d867065dc68f0158dd625ea765484f32289c895432c20b2c527fae69c8a57",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:36609095b97ada5775a385bd0b5aa2ed2d6ff1a22217dd9eecfddf2d939f8cd1",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Monotonic generations give every durable change a position in an ordered history so the rollback anchor can detect an older vault being restored.",
+      "threat_ids": [
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "generation-monotonicity-test",
+        "non-increasing-generation-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:d18927321a4b8c2158e02cd66e0c0ffaddb781d34d2f643cbd2763a6c9d6b999",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00435",
+      "requirement_id": "REQ-b9097b4cf1d370c6ba84c9ee6e0c64fdb81d017768ab53044ffe88372b7111d2",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:70b0f6eef622603ac136e0719db4bc792e32781a1dfde04f64bc7db076125c5d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Storage claims involve many separable mechanisms (profile, AEAD, non-exportability, real security level, attestation, auth policy, authenticated load, rollback, rotation). Demonstrating each avoids a claim resting on configuration intent rather than observed behaviour.",
+      "threat_ids": [
+        "TM-HARDWARE",
+        "TM-DEVICE-PHYSICAL",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "storage-demonstration-checklist",
+        "per-mechanism-negative-tests"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:29dd3461598c65e8567f6cd9bb0b60e9b0863f9f8a495e5bc463e2c4535bbc70",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00436",
+      "requirement_id": "REQ-bb85e2761bce944c8d04dd565e27522370c3f975b51e80119f0e0b23ee77e7a0",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:412b5a841108f5bd2cacf8ede68d100fe260c014e299a9e83d94585b1a119398",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Synchronising vault backups changes who can decrypt them and how recovery works. Tying this to the recovery profile ensures backups do not create an unreviewed recovery path.",
+      "threat_ids": [
+        "TM-BACKUP",
+        "TM-RECOVERY"
+      ],
+      "security_property_ids": [
+        "SP-BACKUP-CONFIDENTIALITY",
+        "SP-RECOVERY-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "backup-sync-recovery-profile-mapping",
+        "sync-decryptability-analysis"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:67c1fd5cdb96328363b79c59098857d5569a47a2153210417f46450d1585bd4e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00437",
+      "requirement_id": "REQ-ca46c4274f202749fbe905f792c256fc3c081e422fce119723995f0f1f9db969",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:e3de875ee3460ef1cbad4954ffe99dd1ffeea52440fc783c133b50f5ccb21922",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Any code running in the app process (including malware via injection) has process access. If policy requires explicit user presence, treating process access as presence would let such code bypass the user.",
+      "threat_ids": [
+        "TM-ENDPOINT-LIVE"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "user-presence-check-independent-of-process",
+        "background-invocation-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:4d0f2bb1120e84de20d377716081fb295f7f88f58c65246ad0697e02f4372fd9",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00438",
+      "requirement_id": "REQ-ccd33c5348418cad4228ff0e1bc1a1e2e77a28dade41e65fee3f5ee72989a1e8",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:16e5c8177d77ecd6cdc30b793be3a7d3752c629bd310dc745e1a53fc87a54f1e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Invalidating the old key before rewrapping could lose the vault; rewrapping first preserves availability. Emergency handling may deliberately destroy access when compromise risk outweighs data loss.",
+      "threat_ids": [
+        "TM-DOS",
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-AVAILABILITY",
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "rewrap-before-invalidate-ordering-test",
+        "emergency-destructive-path-documentation"
+      ],
+      "external_standard_ids": [
+        "NIST-SP800-57P1R5"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:159179e4269e0087ad0963c2a74e449a5f9eddbd94afd9c2615a98c9358e8836",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00439",
+      "requirement_id": "REQ-d1279c1078027ea096fd47d7a4a630ce91c9a8805eb0d12049080d9e67282551",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:c84c29bfd4d1214a4377326064543ca26c4dfb5eba430d4651d49784abb43c8d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Per-device root keys mean a compromise of one device does not expose the others and each device can be revoked independently.",
+      "threat_ids": [
+        "TM-DEVICE-PHYSICAL"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "per-device-key-generation-evidence",
+        "cross-device-key-independence-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e914918ec047149cc31d1e4c237dbf05b3af6fd36ba3fa50554617a68328a015",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00440",
+      "requirement_id": "REQ-d40ca32bdc5a13c9b324a162e86690c30b23e05025e1f44a1987c544074bf00c",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:015440ecdfd04cc18f2073317a9518d81d1e3af8b38de176c92f8d20deb36cdc",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Android TEE and StrongBox provide hardware isolation when attestation confirms the security level. Accepting verified evidence for either lets products use widely available TEEs without overclaiming StrongBox.",
+      "threat_ids": [
+        "TM-HARDWARE",
+        "TM-DEVICE-PHYSICAL"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "attested-security-level-check",
+        "tee-vs-strongbox-labelling-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:5cede9aa94c7aa01230e49f35f2a338ff6ef256f939092824b3fa2de9d6c12d5",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00441",
+      "requirement_id": "REQ-ddb5a29697e96e0bedc051b846eb8a13879ba94efb456f4656f65df9185efbc0",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:074ea80671718f8798b9d6c82e58285058b20fc4fcc5b8eeafc5590af1f52cf4",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Each trigger (suspected compromise, failing attestation, auth-policy change, ownership reset, platform migration) means the old key's trust assumptions no longer hold, so continuing to use it would carry forward an invalid boundary.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE",
+        "TM-HARDWARE",
+        "TM-DEVICE-PHYSICAL"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-POST-COMPROMISE-SECURITY"
+      ],
+      "evidence_expectations": [
+        "rotation-trigger-detection-tests",
+        "rotation-procedure-documentation"
+      ],
+      "external_standard_ids": [
+        "NIST-SP800-57P1R5"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:981de7d8ea05aa5b3c5030681dc6d0105c5d94d6d045705d743c627cc62a250e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00442",
+      "requirement_id": "REQ-deee8b1528aff0d13eab350d828d4ee25775856e9d7ccb44ff228268e5d87008",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:8dada95dda87d5fbaded87dda9abf13fcd8e7b97d528420112f9f364a72928c2",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Secrets leak via copies, dumps, swap, logs and temp files far more often than via cryptanalysis. Avoiding these paths reduces exposure to forensic and crash-report collection.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE",
+        "TM-DEVICE-PHYSICAL",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "crash-dump-secret-scan",
+        "log-redaction-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e5cbecb20ae9e81bb54f8a96e8dfa298b17d8bd3289b4cc718d03f7d1aeeed62",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00443",
+      "requirement_id": "REQ-e0cc14fd265c774c56d1b34536ce6a1c90c0fe93d5683909c9aff52476be8e9f",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:718281d9becb1571f7bc110ed0da9cd3da50fa69dcc035b807e6d70b48e7f081",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "StrongBox, TEE and software differ greatly in attack resistance. When fallback occurs, evidence must reflect the boundary actually achieved so users and assessors are not misinformed.",
+      "threat_ids": [
+        "TM-HARDWARE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "fallback-boundary-reporting-test",
+        "evidence-security-level-field"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:c9f478e889a2629b90460377fb750bbfab7419a40ea7fae99af876e6f9de581c",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00444",
+      "requirement_id": "REQ-e78c2090c43c08b00fbea342967d5da59f28bd0e40b181e9343ba91017154bcd",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:6c5c02951e69417cfdec6d86514ab4533ddf6c57c6611c1eacf73e852fb867a8",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Sealing to PCRs can prevent use under tampered boot states but adds fragility across updates. Making it optional lets deployments choose it where the boot-chain threat justifies the operational cost.",
+      "threat_ids": [
+        "TM-ENDPOINT-LIVE",
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY",
+        "SP-AVAILABILITY"
+      ],
+      "evidence_expectations": [
+        "pcr-policy-documentation-if-used",
+        "firmware-update-unseal-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:c44352de211b55015a575ce3cf1bd688ba8b30a726a79fef5f391fda00cd1478",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00445",
+      "requirement_id": "REQ-e963171cd911ada77755146b7fe5d254d7155a412a0bf8b378906ae9f083159c",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:9d1377f93b81994f2394a499ea952665bd2749a9830205d184ba61268d1e3e69",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "For token-bound profiles, making the vault unusable when the token is absent is a deliberate security property, ensuring device theft without the token does not expose secrets.",
+      "threat_ids": [
+        "TM-DEVICE-PHYSICAL"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-AVAILABILITY"
+      ],
+      "evidence_expectations": [
+        "token-absent-vault-unavailable-test",
+        "user-facing-availability-warning"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:b4080cea3c1cfa7238fb29735178c17069891b1fa85a0b68b8b41fffb55203f3",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00446",
+      "requirement_id": "REQ-ebbe996606949c5d4aaf471079462bc8f569cad9a662a114782440fcc723b860",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:82feeaccc333b60355bfdc3762511dddc9d76da7203e59e3f0c8f55dd55f4ebd",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A hardware profile is only established by authoritative evidence of the boundary and key attributes; without verifying it, the implementation is trusting its own request.",
+      "threat_ids": [
+        "TM-HARDWARE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "attestation-or-platform-evidence-verification",
+        "unverified-boundary-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:934efe8e583a923e3004d483b61e585343ab4823acffdf9bde2d514506f43bb2",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00447",
+      "requirement_id": "REQ-ed37fcb5891ccfc5f5c71d5e5a44bee262461fa608d143799bfbb808fb3fc039",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:851448afa3072c5f68ebb8f42c86e9702669967e8f1d1dd85c532922abc62ccf",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A generated unlock secret with fewer than 128 random bits can be brute-forced offline from a stolen vault. 128 bits places guessing beyond practical reach independent of the KDF.",
+      "threat_ids": [
+        "TM-DEVICE-PHYSICAL",
+        "TM-RNG"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "unlock-secret-entropy-check",
+        "csprng-source-verification"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:c36f95c389bde1a77af0217c68229ef5d401f6b59d9a54410aad37e2cf119a41",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00448",
+      "requirement_id": "REQ-eec61a8ecc0d2d1eef3280bc6eef80948ea891c57e5cad5d49dd432a5c3485d5",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:41cdce4177fbac4e1e3ab53b70297d92ea02047d113ef3cce6c43f121c77b9d2",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Some APIs accept non-exportable flags but ignore them on certain devices. Verifying the platform actually marks the key non-exportable ensures the property exists rather than being assumed.",
+      "threat_ids": [
+        "TM-HARDWARE",
+        "TM-ENDPOINT-LIVE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "post-creation-attribute-verification",
+        "export-attempt-failure-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:143a779d76c4a686a198b91fe8b2dfe27d29f1137bc016e46d152cec277605a1",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00449",
+      "requirement_id": "REQ-f608257b1ea149be97710f3574bbcca701278ca30c3e61ef6c9c80da8e0f8a1c",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:cab8d11aae1131a766053e91994c4f3f1c07bfb5b42c4b5c38c003aafb734bf0",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "If a superseded key remained usable after rotation, an attacker holding it could still decrypt or produce valid vault data, defeating the purpose of rotating.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-POST-COMPROMISE-SECURITY"
+      ],
+      "evidence_expectations": [
+        "superseded-key-unusable-test",
+        "rotation-completion-check"
+      ],
+      "external_standard_ids": [
+        "NIST-SP800-57P1R5"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:b4930e58c9ad463bcaf88a27b5cfad1c2255980c7dc06b091918deef62aad296",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00450",
+      "requirement_id": "REQ-f63b5b5a4de6d27446fb183ce7114c0b96f1053c514e206404a465a4200ef2ab",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:c5df2a5557086b7513ef8ec116b9c77a56113a68b0c93dfd32ecdae341dfb867",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The longer plaintext secrets sit in ordinary memory, the more chances memory disclosure, swapping or dumps have to capture them. Short lifetimes reduce that window.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE",
+        "TM-ENDPOINT-LIVE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-FORWARD-SECRECY"
+      ],
+      "evidence_expectations": [
+        "zeroization-after-use-review",
+        "memory-residency-measurement"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:980a14db74abe7ac782eaf59a4f4469b2ac5235694d3d5e74e7bc36c6b4d02d2",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00451",
+      "requirement_id": "REQ-f6e8e2e61ba053716f49cdc6809c9029f23c55165503c60102a13a24fbfd09c8",
+      "document_path": "spec/secret-storage-hardware-protection.md",
+      "text_digest": "sha256:16ce39429efc39b6b5167ee11292b3f17b38b8f5756468d5bce0d6dfa311323a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "If the anchor is stored alongside the vault, restoring an old disk image restores the old anchor too, and rollback goes undetected. The anchor must live where vault rollback cannot reach it.",
+      "threat_ids": [
+        "TM-ROLLBACK",
+        "TM-DEVICE-PHYSICAL"
+      ],
+      "security_property_ids": [
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "anchor-storage-location-analysis",
+        "disk-image-restore-detection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:c7142e1a1b388968da505e47906726bc2186de887f1d363c63f1a964e2f6396b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00452",
+      "requirement_id": "REQ-02ef397589aebb19186d40dfc9aaae9becd2a6ea3b4924f968f6bc19a8db9fdc",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:082dceaefa84278f204604d52f3075c6ee04de44edf04855c57dde3262d3ea9d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Client-side AEAD encryption under the generation BDEK is what keeps backup content unreadable and tamper-evident to the storage provider; server-side or unauthenticated encryption would let the provider read or alter history.",
+      "threat_ids": [
+        "TM-BACKUP",
+        "TM-SERVICE-READ"
+      ],
+      "security_property_ids": [
+        "SP-BACKUP-CONFIDENTIALITY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "client-side-encryption-trace",
+        "registered-aead-selection-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:190d2e91a1d22710bfbaf35f09b70490d32a1f6588e8f052faf61bf1d610ce2c",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00453",
+      "requirement_id": "REQ-0d27559461bd65b732638b4bc17b7c026becc6809ad31b7cccc89633f993afa3",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:542c08d3e10759bfbf46f0e31a375117d36483ad1f20f32eeea2f86a33f8d616",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "An attacker or storage provider could offer an older backup that lacks recent revocations or contains superseded keys. Comparing against the latest authenticated generation detects such rollback.",
+      "threat_ids": [
+        "TM-ROLLBACK",
+        "TM-BACKUP"
+      ],
+      "security_property_ids": [
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "stale-backup-generation-rejection-test",
+        "latest-generation-source-trace"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:ab05d5d823b13846e329797ae09b6a05f8d7fe33249f3332ebcaa5e1f96d710d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00454",
+      "requirement_id": "REQ-0dc27366ff8467df5f0253e338c386aa93672b662b046b110c26396870569823",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:4797ba14859b41e7f6dd86b7d5854a685d08626e7eee09e551c2cd06d07b4777",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "In hardware-assisted recovery the hardware only releases a wrapping secret; if it saw the user secret or unwrapped BDEK, a compromised HSM operator could recover backups alone.",
+      "threat_ids": [
+        "TM-HARDWARE",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-RECOVERY-CONFIDENTIALITY",
+        "SP-BACKUP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "hardware-request-payload-inspection",
+        "layered-envelope-design-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:2e6aca32223b266cafa2f5d4e827b287d74e88e55ee32ac8aca024d54053016b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00455",
+      "requirement_id": "REQ-11d89ca46a7fbaa006fd27151496df74b7be90bf7416bbbe453089d6462f0ec3",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:71c6d42927da164c5f1fca7a636a8b9d315f1dddbe44858b752c60c666fb8978",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Recovery must keep the service outside the content trust boundary. Receiving restored plaintext or the unwrapped BDEK would give it full access to the recovered history.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-RECOVERY"
+      ],
+      "security_property_ids": [
+        "SP-BACKUP-CONFIDENTIALITY",
+        "SP-RECOVERY-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "restore-traffic-capture-shows-no-plaintext",
+        "service-side-key-absence-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:f7ad95f579c435f680eb250657bb561cdd113d36eb5e6dc89a28f885dff8385c",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00456",
+      "requirement_id": "REQ-1272a98272ab0521a1e23ce0a242e969e7d313ba2a249178504a3daf8b8e6ca5",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:094c8d950812ce8870bc59a3c69e920322f1b560438455756b86281c5a920048",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Without the exact Argon2id and HKDF parameters, a later client cannot reproduce the derivation and the backup becomes unrecoverable; storing them also documents the attacker's guessing cost.",
+      "threat_ids": [
+        "TM-DOS",
+        "TM-BACKUP"
+      ],
+      "security_property_ids": [
+        "SP-AVAILABILITY",
+        "SP-BACKUP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "kdf-parameter-persistence-check",
+        "cross-version-restore-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:c5055fe53078ccc3e8ec43cfd25c13f1381d651bb63f63fea54900932be4a2b9",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00457",
+      "requirement_id": "REQ-1cb98beb1401b01fdbc0e851d99db60e8f2fb4f9192cf2ccc7065753a8f3c3e7",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:ee8dfb4e3ee758585b7ce8bec25ce29058c4730a6c83b439f5ebc8aa37db7f91",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A fresh 256-bit random BDEK per generation ensures each backup has an independent, unguessable key, so compromise of one generation's key does not expose others.",
+      "threat_ids": [
+        "TM-BACKUP",
+        "TM-RNG"
+      ],
+      "security_property_ids": [
+        "SP-BACKUP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "bdek-length-and-freshness-test",
+        "csprng-source-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:85097cc53dfc9b1be42d1ce89475b7384f6b32fdcd934bb7267947f92d500b19",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00458",
+      "requirement_id": "REQ-248135072c760eb5602ccd960be66b0696c44c6ae61347de2f5844240bc7bde9",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:e6fe6267eb396009880f7fe3b0f32cf9e4957d413f64293acb03150a6ed2d69e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Passphrase-protected backups are vulnerable to offline guessing once copied. Following usability guidance improves passphrase quality, and documenting the weaker boundary sets correct expectations.",
+      "threat_ids": [
+        "TM-BACKUP",
+        "TM-CREDENTIAL"
+      ],
+      "security_property_ids": [
+        "SP-BACKUP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "passphrase-guidance-in-ui",
+        "offline-guessing-documentation"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:6dcb14f527e6906559e49373c7d83a5e2009d71a865c9239f4e356b9611d85d6",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00459",
+      "requirement_id": "REQ-288bd0b1057d8c4ae2d172d919e65143343c34cd507fe2ebab61da1b3afbaa68",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:456c350cd7eb6e331736bf74574221bb9efbc9ef923b23fca75f11e1d2ce1cac",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Backup security spans many mechanisms (profile, algorithms, key freshness, manifest binding, no server key access, no secret upload, KDF parameters, rollback checks, device authorisation). Demonstrating each prevents a working restore being mistaken for a secure one.",
+      "threat_ids": [
+        "TM-BACKUP",
+        "TM-SERVICE-READ",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-BACKUP-CONFIDENTIALITY",
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "backup-demonstration-checklist",
+        "per-item-negative-tests"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:8a5be1984867b98dd9f90a1b8b40017135d09579afd03293169985fdff129e92",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00460",
+      "requirement_id": "REQ-28a00ab78bc8ba5a6dbbf46f289da89ce1208c909b848cdde7724f681de15879",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:7fd99bae8cf5f6f9215ca53c16f10d5527bda262b6615144b3a9cd7aa6880a76",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Reusing a BDEK across generations links them cryptographically and means a deleted generation's key still decrypts newer data, defeating rotation and crypto-erasure.",
+      "threat_ids": [
+        "TM-BACKUP"
+      ],
+      "security_property_ids": [
+        "SP-BACKUP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "bdek-uniqueness-across-generations-test",
+        "bdek-identifier-tracking"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:b0bc8060fc2fcf21973977682691ce5301e310751b2a78ba7b98e226b88b073f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00461",
+      "requirement_id": "REQ-2adf5df2d99aba11088314d9bc989f129a923c56e0c7d6e301367e4382654a3d",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:25889dec6a3cd6fcddf28a0000b9b302010d583fee388ae9d8f35995e477e5fb",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Any of plaintext, recovery secret or unwrapped BDEK lets the service decrypt the backup. Keeping all three away from it preserves end-to-end protection for backups.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-BACKUP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "service-received-data-inventory",
+        "upload-payload-inspection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:0681e500c3dc0522e777f5265c1c0e20d98df6e9f2ba1dbc4440d4edf1bb372a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00462",
+      "requirement_id": "REQ-2b4cae8d99a60743a7d246a375e50b66565ddb200c63fa143b8d2427a2a693f5",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:a39820cf48045f06363f285fabf3b0eb8de7e3d270f23eb2fd2ad4b33bdd03d4",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Authenticating identity, profile, generation, algorithm, key id, object list and format prevents a provider from swapping objects between backups, mixing generations or downgrading algorithms without detection.",
+      "threat_ids": [
+        "TM-BACKUP",
+        "TM-SERVICE-ACTIVE",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "manifest-field-binding-vector",
+        "object-swap-detection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:1fdd542ff6cf5eabb474810c15603fa6ed428de79cd40118ab567e00c759b36b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00463",
+      "requirement_id": "REQ-434c46b580b61d9a81a32873a16e39d7a6eba86fb1be6d048496f4ac6603df0a",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:eb568a4d3185fafad2c7a7ac46dd50c81a12691422af8e1277e65111b90c996f",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Derived keys and plaintext staging buffers left in memory can be captured by later memory compromise. Prompt erasure reduces this residual exposure.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-BACKUP-CONFIDENTIALITY",
+        "SP-FORWARD-SECRECY"
+      ],
+      "evidence_expectations": [
+        "buffer-zeroization-review",
+        "memory-residue-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:8cfd06292ad9da6a68eaa1cdc26ccd39e01cd08f416904894a2522ecbbb06bae",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00464",
+      "requirement_id": "REQ-5a44fd2886c7e3a321b25ea59123d36f6739a5f3e75d07b43e75155ec4be6bbd",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:5d83fb1aa729c9ccc7ce4639d2f129c4fa9f6056eb88fe46baa87a6249413b27",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Monotonic generation numbers make rollback detectable, and tying full replacement to a new generation guarantees BDEK rotation on each replacement.",
+      "threat_ids": [
+        "TM-ROLLBACK",
+        "TM-BACKUP"
+      ],
+      "security_property_ids": [
+        "SP-ROLLBACK-RESISTANCE",
+        "SP-BACKUP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "generation-monotonicity-test",
+        "replacement-rotates-bdek-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:bf4751fead11d3b649c01bebd566f1df99247c80ece61a614efd8f7fbe2fa604",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00465",
+      "requirement_id": "REQ-5f06b5cc4f3f92658c4d35305c82a5dbe0f157e7b1f7755d9f349dd8111adbdd",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:0f97c3d335776b135d18c53d09e522553ebf0f56ef45db18799c0c5452f2ec52",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Undetected changes to identity, generation, algorithm or object set would allow cross-account restores, rollback or downgrade. The authentication construction must make such changes cryptographically detectable.",
+      "threat_ids": [
+        "TM-BACKUP",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "manifest-tamper-detection-tests",
+        "aead-associated-data-coverage"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:898e5a854059a014a2ca5a5805d6c92b17be0c68e331fcd56beb1861a2dbd750",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00466",
+      "requirement_id": "REQ-62d0b7f62cbd76f9476f26ef7c4492ecde2ef47026f6b9192cd376c4c5f2eebd",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:11fb534f7c43d878a3ad3b0ddbe7efbd940c9d02c8bd00b076d789bd602abde3",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The recovery secret is the only barrier against offline guessing of a stolen backup. Argon2id v0x13 with ≥16-byte salt and RFC 9106 floor parameters ensures each guess has substantial memory and time cost.",
+      "threat_ids": [
+        "TM-BACKUP",
+        "TM-CREDENTIAL"
+      ],
+      "security_property_ids": [
+        "SP-BACKUP-CONFIDENTIALITY",
+        "SP-RECOVERY-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "argon2id-parameter-validation",
+        "salt-length-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e0cd0a08ec07c3cd44d33eb1d46fc2492c7da1ff8b527878353096519b60270d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00467",
+      "requirement_id": "REQ-6357bab7a77c8aabda938394b74c5f5d9e1520dbae360a8224798553dc918ba3",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:4b84d939abb2f37c46475c43f8248266c445430651ba21dfc27e594224eaea89",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Multiple replicas of one wrapping key fail together and are not a threshold scheme. Claiming threshold recovery for replication would overstate resistance to a single compromised operator.",
+      "threat_ids": [
+        "TM-HARDWARE",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-RECOVERY-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "threshold-claim-absence-check",
+        "replica-architecture-description"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:5f8beeaccaa4bea2d1790c9d0794ca0cbf81d9e2992a79a6b422d761a911d766",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00468",
+      "requirement_id": "REQ-6575e9a357120d8f992f22a7851d8865a537c8e6b0be7b27e29def01f2a0ec21",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:c73e5b15fe10fe5748e741f949a2f2dfe5bc01e578dde5b73e4740234b4e14a1",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Checksums help users transcribe codes correctly but are deterministic from the secret; counting them as entropy would overstate resistance to guessing.",
+      "threat_ids": [
+        "TM-BACKUP",
+        "TM-CREDENTIAL"
+      ],
+      "security_property_ids": [
+        "SP-RECOVERY-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "entropy-accounting-excludes-checksum",
+        "encoding-design-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:7a4717dd52eecb33bc3b2915266f6debec6a2cb347318c216e56f41628a65b09",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00469",
+      "requirement_id": "REQ-7a8b461ded21a596d09a345d2f5a8ac3cf1311a2749e9071d36d35ba0dccb26f",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:f8b09701905cd4c5beacef4d385e8366fe5056c717266c5b894f630a6b9518d5",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Restoring a stale generation could reinstate revoked keys or deleted data. The normal restore path must refuse it; any deliberate historical access goes through a separate export feature.",
+      "threat_ids": [
+        "TM-ROLLBACK",
+        "TM-BACKUP"
+      ],
+      "security_property_ids": [
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "stale-generation-restore-rejection-test",
+        "normal-path-generation-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:430cd37bc1385c43efa069ca2037b68cb652594bd673ec79454538bf9c43d147",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00470",
+      "requirement_id": "REQ-7d142a5d45128160db8281675cf7149be98a7f48feb13132e2566fe1b04739e6",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:50f69cd8debca4851cfc96ea05aa6cc5e245e7e76cae981b5336e74d414ad13d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Backups and recovery are common back doors around E2EE. No non-recipient (storage, recovery service, hardware operator) may alone be able to recover plaintext, preserving the E2EE property for stored history.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-RECOVERY",
+        "TM-INSIDER",
+        "TM-HARDWARE"
+      ],
+      "security_property_ids": [
+        "SP-BACKUP-CONFIDENTIALITY",
+        "SP-RECOVERY-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "non-recipient-recovery-capability-analysis",
+        "single-party-recovery-negative-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:3dc45e05c76dda487279210a2fb1d7ee6c5a14560b98a4faa30448e491fa493d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00471",
+      "requirement_id": "REQ-7d5b7ad0304163f3cb1ed0047a2dd8e2d8bcb7ec4e8d9172a11e5e97eedbee18",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:31dceafbe158d51c88892b7046e50be85a3cf30a24371c01ee07b68487817718",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Releasing restored plaintext before the manifest is authenticated lets a provider feed unverified or substituted content into the client, which may act on it before detection.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-BACKUP"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "manifest-verify-before-release-ordering-test",
+        "tampered-manifest-no-plaintext-release-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:6ac44cbccd6933b5c6f79351f3afd46f68715de6587b5967d8fcc8f5042c2d5d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00472",
+      "requirement_id": "REQ-7d88e6d93ea5d49534a2115b0090daf10d85018bfb698e93310f8e2c4c1d0ded",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:00f989c9b4830da849a1377595c3f5eca6388eb5b3e8dfb2720600c920544bc1",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Users may prefer a memorable passphrase. It is permitted, but only with the documented weaker offline-guessing boundary and Argon2id protections.",
+      "threat_ids": [
+        "TM-BACKUP",
+        "TM-CREDENTIAL"
+      ],
+      "security_property_ids": [
+        "SP-BACKUP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "passphrase-mode-documentation",
+        "passphrase-mode-labelled-in-evidence"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:dd2632dfce34aa9cff7511b1d5925dc61793fa598ffe6732b1cf2042b0c32b0c",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00473",
+      "requirement_id": "REQ-8078c7061a45a002019c1dc9b0d3e82ff7c5230b5418ab9d56bc00b179d1c8bd",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:71c63472f573c07f22dd2c86eeacde3b060ea12b25cd6946f36a8ce1acaafc28",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "E2EE backups can become unrecoverable if secrets are lost. Products must document this rather than quietly adding server-side recovery that would undermine confidentiality.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-DOS"
+      ],
+      "security_property_ids": [
+        "SP-BACKUP-CONFIDENTIALITY",
+        "SP-AVAILABILITY"
+      ],
+      "evidence_expectations": [
+        "failure-mode-documentation",
+        "no-hidden-server-recovery-path-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:96d5b727a6de60dd209407a8f8e8e5f0c1a78092542c5b47370be39cbe732359",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00474",
+      "requirement_id": "REQ-84f0d088d1e7c05d41d4650e0f56b37d42df2f97e245b2aaf753138ee7a31756",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:dab027fd58d7f8375916e7efeadb762d0c5b94af054eff31632e5948e2343563",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "AEAD nonce reuse under one key can break confidentiality and allow forgeries. Nonce construction must satisfy the selected AEAD's requirements across all chunks and objects.",
+      "threat_ids": [
+        "TM-BACKUP",
+        "TM-RNG"
+      ],
+      "security_property_ids": [
+        "SP-BACKUP-CONFIDENTIALITY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "nonce-uniqueness-test-across-chunks",
+        "nonce-construction-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:175cfaeae514316cd6ff032068e35d79eeca3d53613a1f69c86d278c0edfaa05",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00475",
+      "requirement_id": "REQ-8c317867b7d537c00a41aa5bfd498d78b4cc7e3674927e040bc3af5c5ccf2a6b",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:2006b1eefa44576e93762d1dd64d685e61a5345abeb0eb86b76b08f7e8d88974",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Backups still reveal sizes, timing and account linkage to the storage provider. Implying metadata confidentiality would misstate what encrypted backups hide.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-SERVICE-READ"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "backup-claim-set-excludes-metadata-confidentiality",
+        "provider-visible-metadata-inventory"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:0577c8a818ed953c74bf67b8eba6c74818117a0cd0ace7ccc99911fddc795e00",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00476",
+      "requirement_id": "REQ-9aebb8983c3f90a4fc6f950316eec218adedce5a34985e52bed4fe67998f66e8",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:75e24becbc42d8ab1a0ae5202a03f2214833a4f6fd024c1f4b32fbcbb2462734",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Because content is client-encrypted and authenticated, the storage location need not be trusted. This permission reflects the design goal that providers hold only ciphertext.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-BACKUP"
+      ],
+      "security_property_ids": [
+        "SP-BACKUP-CONFIDENTIALITY",
+        "SP-AVAILABILITY"
+      ],
+      "evidence_expectations": [
+        "untrusted-storage-threat-analysis",
+        "provider-data-inspection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:98e2af9f8eef21f49f36acf5253f37ffb528ca7800e8032a172f98afa5bd5483",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00477",
+      "requirement_id": "REQ-9ecfe3671ecad4a9f4b55bc5eb9ad446b8293ded2d1db78c53578c8adc978e3f",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:d10af19882e15c26134a0156c4a50cc7c0bf482d99f26ffd16b51cb697667f10",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A generated recovery secret with at least 128 random bits resists offline guessing even if KDF costs are reduced, giving a strong baseline independent of user behaviour.",
+      "threat_ids": [
+        "TM-BACKUP",
+        "TM-RNG"
+      ],
+      "security_property_ids": [
+        "SP-RECOVERY-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "generated-secret-entropy-check",
+        "csprng-verification"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:aadeb9151ba5007f709724e4ff87f2bc75ce15b44b4254e1324e1f6de4b9f7b2",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00478",
+      "requirement_id": "REQ-a693bd6dcc85dd6ccfeb98d66ab9624f63954a5a0c2e552c21e0c3b1e472b34f",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:b9b1739d6a621ca40ca3fcb88560bd063bedcc35647d7f21b2a658a09d254e2b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "If the service alone says which generation is latest, it can present a stale one as current. The client must have an independent source such as local state or authenticated recovery state.",
+      "threat_ids": [
+        "TM-ROLLBACK",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "independent-latest-generation-source",
+        "service-reported-stale-generation-detection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:ee38669a35d42399023edf0040795188ee101034fbd598d9e859c99ddd2b5d64",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00479",
+      "requirement_id": "REQ-b1780ec80dd37e0f22e269b4e4e6a01a7ae77aeacf31f836384d9ce8af210147",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:1a1cf0d391881f034302f39664a038930e2dff082aa668a8dc90a66b97ee60e7",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Possessing the backup secret should not be enough to become a trusted endpoint; otherwise an attacker who obtains it could add a device. Device authorisation must already exist before history is released.",
+      "threat_ids": [
+        "TM-RECOVERY",
+        "TM-ACCOUNT"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY",
+        "SP-RECOVERY-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "unauthorised-device-restore-rejection-test",
+        "restore-does-not-enroll-device-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:162bac7ea2427e6c5d937ad0642daaaeee30c638524ed18d761c754433a7913f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00480",
+      "requirement_id": "REQ-b2648719d68b74084f8b96c8b0510d9adaa0578ba3ac230e3f4169548035d9e6",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:3bec337d61284977f33f09e53da6dccb3c01fc47220a4f589f51cc02f6afb233",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "An unwrapped BDEK held by the storage service lets the service decrypt the backup directly. It must only ever be stored wrapped.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-BACKUP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "storage-object-inspection-for-bdek",
+        "upload-payload-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:0a6c792fcbf7a5bb72c16127f51c4a08de2fe07f7d354eba12eddf549f329abb",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00481",
+      "requirement_id": "REQ-c864dc441c79f1cde5a612638829ebffe74974cab69ba44d71bb6855af8a047e",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:5ba2d25e3dfbbe911337b05f40a408965387815eeec47b1759a775e5edeb40cb",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A user-chosen passphrase typically has far less than 128 bits of entropy, even with Argon2id. Claiming equivalence would mislead users about how easily stolen backups can be cracked.",
+      "threat_ids": [
+        "TM-BACKUP",
+        "TM-CREDENTIAL"
+      ],
+      "security_property_ids": [
+        "SP-BACKUP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "claim-wording-review",
+        "passphrase-vs-generated-secret-distinction"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:6d06a6a4c7c35abbb5fdee3b21e09119ca10077ef2035b5ad02f3aea8ff50dc1",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00482",
+      "requirement_id": "REQ-d7598e067dca0f3baa4d5d72562009b573ce5557c79be1c8aadcbe66e8b937cb",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:cec0aa893b3971e3d556e2e3d6332ced539de15f208b5fa015cf7562f54384fc",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A server-restorable history that remains decryptable after all endpoints lose keys means the server effectively holds decryption authority, which contradicts end-to-end encryption.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-BACKUP-CONFIDENTIALITY",
+        "SP-RECOVERY-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "server-side-decryption-authority-analysis",
+        "all-endpoints-lost-recovery-negative-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:aec45c6d43656223e374800748757a9044dcfbab8c9664192cde1a834369e9d2",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00483",
+      "requirement_id": "REQ-e6b05e33cf323d5b58e3e4b881f90164703a136660eab2b5b9139150c625f483",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:373f4b75327fe5d5a0b91a986667f8522e3a7932354e08ecb759fff0fade2a79",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Recovery material kept for a deleted generation can still decrypt any surviving copies. Destroying it supports cryptographic erasure.",
+      "threat_ids": [
+        "TM-BACKUP",
+        "TM-DEVICE-PHYSICAL"
+      ],
+      "security_property_ids": [
+        "SP-BACKUP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "local-material-destruction-on-delete-test",
+        "retained-material-inventory"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:8c8b0c788e09ca9942593131de375a828018341a71250afbc6d45f67cc55794f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00484",
+      "requirement_id": "REQ-ed128703f2132c5641e91c8eb2c1048c01ac683e48e6b72d2f6c0ac4a23e5626",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:29e1621589d6373e1f0d7622cd7d71a388e8bf960f8526ea50a3887cd1e4289d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Using raw Argon2id output directly as an AEAD key risks cross-use with other derivations. Domain separation through HKDF gives a key bound to the recovery-envelope purpose.",
+      "threat_ids": [
+        "TM-BACKUP"
+      ],
+      "security_property_ids": [
+        "SP-RECOVERY-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "hkdf-info-string-check",
+        "derivation-vector-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:1c47854351ee61fa13df4d6773fe73473d15c539f3f005f5dde0d18a737e89d9",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00485",
+      "requirement_id": "REQ-f40d3e1813c56549c0c6afefe7246af7ace7dcc74587d656895502948dfcf316",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:5a48a0d6fcbbf5bffc130a7526bd0483cd3157f14d727585b1f572ec0037ecd1",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Crypto-erasure only works if every copy of the key is destroyed. Stating which replicas, hardware keys and user secrets are assumed destroyed makes the erasure claim verifiable.",
+      "threat_ids": [
+        "TM-BACKUP",
+        "TM-HARDWARE",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-BACKUP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "erasure-assumption-list",
+        "remaining-copy-inventory"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:c351954e8da3cf40962259ba2dbafbd9ee6c3ddf3602e1cd35f163089d7d93dc",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00486",
+      "requirement_id": "REQ-f697ec66ea8a877417707060006d3236ec1650a6fdc227f38d04ee85e0e83ab6",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:ca6da2335928781351b43527792bd10f997378c479a37210620ab7d41df1264d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Hardware-assisted recovery is only stronger than a server secret if the wrapping key is non-exportable, its lifecycle and boundary are documented, attestation is verified, and release requests are authorised and rate-limited.",
+      "threat_ids": [
+        "TM-HARDWARE",
+        "TM-RECOVERY",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-RECOVERY-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "hardware-attestation-verification-test",
+        "release-request-authorization-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:968c230d5d42407b1061cce45b3618e5326f52c835642342beb2254799e753ab",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00487",
+      "requirement_id": "REQ-fcec539010ce157e4e361202fadc8c6489533cf4ab6bbeeafafd1713c9ef2ec9",
+      "document_path": "spec/backup-recovery.md",
+      "text_digest": "sha256:f3c3b1958004c4c3424bc926465291b75685373cc33e1a26909cadb93ac02ff6",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Historical export is legitimate but carries rollback risk. Keeping it separate and preventing it from rolling security state backward stops it being used to reinstate revoked keys or states.",
+      "threat_ids": [
+        "TM-ROLLBACK",
+        "TM-BACKUP"
+      ],
+      "security_property_ids": [
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "export-feature-separate-ui-and-api",
+        "export-does-not-modify-security-state-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:0a7aa9a7c52f3c4390c53deb1463a5bc6f19d07dde826c6303d04c159fdbe3d7",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00488",
+      "requirement_id": "REQ-0cd95abe2ebd4f4a8f5bd572bee0c8d23f496c60124ce4c272f7f07034d43f17",
+      "document_path": "spec/attachments-file-encryption.md",
+      "text_digest": "sha256:98edaad66288d1b053f9e381364b630130e2e021c3567fdd582f1c4176a43a25",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A fresh random 256-bit key per attachment makes each file's protection independent and prevents confirmation-of-file attacks that deterministic or convergent encryption allow, where the service learns whether a user stores a known file.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-METADATA",
+        "TM-RNG"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-UNLINKABILITY"
+      ],
+      "evidence_expectations": [
+        "per-attachment-key-freshness-test",
+        "identical-file-different-ciphertext-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:3d027e7c0a7f7d53a392e8681182aa2ca00d106af71e26c7ed2e071f18d77abc",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00489",
+      "requirement_id": "REQ-1631c43c0ce227f36ebd7a8809da2e8a76a2afab4ec88702572329ed352a748f",
+      "document_path": "spec/attachments-file-encryption.md",
+      "text_digest": "sha256:ab6a4244a5217e30816b5c39f0d9f191cd943a67f97e43286a64c6a603306a51",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Giving new members historical attachment keys on join would expose files shared before they were present, violating join confidentiality unless an explicit history-sharing action authorises it.",
+      "threat_ids": [
+        "TM-ACCOUNT",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "new-member-historical-key-absence-test",
+        "history-sharing-explicit-gate"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:ed99804b35a4bc3e33f26ad238d9f31aaba14b2c9fbfc91d864de7c4d2cb0135",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00490",
+      "requirement_id": "REQ-21da8178f38618fe750e08cc44f96201fdf220bf45cb3d7d47a542dc38ba5979",
+      "document_path": "spec/attachments-file-encryption.md",
+      "text_digest": "sha256:4a55b404ba8799748bd22d042469fd6f8692abac029691cf7dd0da7cb33612fe",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Removed members must not be able to open attachments sent afterwards. Excluding them from new attachment-key distribution enforces removal confidentiality for files.",
+      "threat_ids": [
+        "TM-DEVICE-PHYSICAL",
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "removed-member-key-distribution-exclusion-test",
+        "post-removal-download-decrypt-failure"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:1fbef638693ddb8074a05a2e24b0737bbd3fe6486c9bf50a6d64167ac874aa45",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00491",
+      "requirement_id": "REQ-2aef4f912c50ef495e1a6b15883a74d77c32abb01d6f958ddbd49e3bef71913f",
+      "document_path": "spec/attachments-file-encryption.md",
+      "text_digest": "sha256:7977e2e866a178fe04e8761496ab816a3b02912235dcddce48b3df05d047775b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Attachment security depends on precise mechanisms: fresh keys, exact manifest digest, correct chunking, exact nonce construction, AAD binding, verify-before-release and E2EE-only key distribution. Each must be demonstrated since any one failing breaks confidentiality or integrity.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-SERVICE-READ"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "attachment-conformance-vector-suite",
+        "chunk-tamper-negative-tests"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:39ff725ebd4894bf4e343fd39f25e28579ab34542fa055fec37cc39a34dd6a65",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00492",
+      "requirement_id": "REQ-470b216b99578ef956a79e715a1bdb4030e510df946711fd694c78f93a1df3b7",
+      "document_path": "spec/attachments-file-encryption.md",
+      "text_digest": "sha256:e1a2a859f8bdbef1d7b09205570d5168057e13a116c764dc70c7d0cc657c0c1b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Filename, media type, plaintext hash and key are sensitive; if storage required them, they would leak to the provider. Keeping them only in the E2EE private manifest preserves attachment metadata confidentiality.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION",
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "storage-api-field-inventory",
+        "private-field-absence-in-storage-metadata"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:dff460167957d0aaeaf987e65d6d120e62c2f8060dab6060bdef608d46feef94",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00493",
+      "requirement_id": "REQ-499ef929b47e5f53342cd634084cb541ea6f946168bff894e82d86f0e0844870",
+      "document_path": "spec/attachments-file-encryption.md",
+      "text_digest": "sha256:014e5afbef00a53dfa40a5ad27e8a155e83997083e60532492a015f13c04f2d0",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Independent chunk handling enables resumable and seekable transfers for large files; it is safe because each chunk is authenticated against the manifest, which must be obtained first.",
+      "threat_ids": [
+        "TM-DOS",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-AVAILABILITY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "resume-and-seek-test-with-authenticated-manifest",
+        "seek-without-manifest-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:d9877d0fcf571882d2697ca1c74804c06f93d49e0cf10472877e3a3df77228a7",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00494",
+      "requirement_id": "REQ-5c39853a80935ffd6496e4955dcf08dd1f320db7d5bc4abcdbedd91eee8a4f42",
+      "document_path": "spec/attachments-file-encryption.md",
+      "text_digest": "sha256:df5451c39ceae7b8019c1e10629ca9bb9bba890ab69d6d7448a0605d953eb8ee",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The storage service is untrusted; it holds only ciphertext. Delivering the key and manifest solely inside authenticated E2EE messages to authorised devices ensures only intended recipients can decrypt.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "storage-received-data-inspection",
+        "key-delivery-path-trace"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:9c68c5a0db9f4e0f835131fdf75607e97292e6f9826791f52883ed864cc2f694",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00495",
+      "requirement_id": "REQ-667dcf7b10045426ea232008a8cf65e735723771c688b0affcd3d70443ad587c",
+      "document_path": "spec/attachments-file-encryption.md",
+      "text_digest": "sha256:271b90d883827b110daded4f018d7157d3e1043a88b1f37d34e07256f5c5d1bf",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Uploads abandoned before a parent message is sent would otherwise accumulate indefinitely, wasting storage and retaining ciphertext and metadata longer than needed. Bounded cleanup limits both.",
+      "threat_ids": [
+        "TM-DOS",
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-AVAILABILITY",
+        "SP-METADATA-MINIMIZATION"
+      ],
+      "evidence_expectations": [
+        "orphan-upload-ttl-configuration",
+        "orphan-cleanup-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:8a2afca5d1ff6d35f247ff6156e6730edd3aea58411331be67f26d7f0db3a3c0",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00496",
+      "requirement_id": "REQ-6b66d1aad9018b78100561124967f7e60f14c3ba94cdafa63498708049dc9483",
+      "document_path": "spec/attachments-file-encryption.md",
+      "text_digest": "sha256:2da88917e1243fb99411ce60414c6c8cad174461bdc3ad67d660d1fcd23ada82",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Users expect deletion to remove stored copies. Requesting removal from primary storage and known caches per documented rules makes deletion meaningful while being honest about retention limits.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION"
+      ],
+      "evidence_expectations": [
+        "deletion-propagation-test",
+        "retention-rule-documentation"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:90c40325fb67871b7c437ea6e2bb2882d5b5c05280f2e1093039a719fef221ed",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00497",
+      "requirement_id": "REQ-741083210a1a11b8a59883abf06155d63ce2e08decd06ab780de9e07cfd286e2",
+      "document_path": "spec/attachments-file-encryption.md",
+      "text_digest": "sha256:a06e2942f60698ae1e77319eb347ff470957b710d11eccbc32cf957339096417",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Bounded chunk sizes keep per-chunk memory and AEAD limits reasonable, and exact sizing for all but the last chunk prevents ambiguity that could enable truncation or extension attacks.",
+      "threat_ids": [
+        "TM-DOS",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-AVAILABILITY"
+      ],
+      "evidence_expectations": [
+        "chunk-size-bounds-validation",
+        "non-final-short-chunk-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:eb81bff96fe1aa47379b6dcbc127966b4e62e433ecd2e985c6128f0d32494073",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00498",
+      "requirement_id": "REQ-74b15bbdb163ce74c0e3cbb1325bda9d9af21feb43333d599e4129d547c34f08",
+      "document_path": "spec/attachments-file-encryption.md",
+      "text_digest": "sha256:28fd143bd4ec4ef204ac3fc752b0c87c91672911b60030055ea5c4303ae93d24",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "URLs, query strings, CDN metadata, logs and analytics are all routinely visible to infrastructure and third parties. A key appearing in any of them would let those parties decrypt the attachment.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-INSIDER",
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "key-in-url-and-log-scan",
+        "push-payload-inspection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:5fe060c1c5e5e2960c3fcfe10ac1d7c8993262fbad5ade6047e4000f30c3e450",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00499",
+      "requirement_id": "REQ-86bf68e75f62462ed055769321587f8780d86e905a7ed0cbdc3a6d9feb01bbb1",
+      "document_path": "spec/attachments-file-encryption.md",
+      "text_digest": "sha256:51d2b1b0381441ed3a5fda71eec898bc40bff56028313dcc5c940863c71bf97d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A malicious storage service could reorder, swap or cut chunks to alter the file. Requiring validation failure in all these cases ensures the recipient never accepts a modified file.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "reorder-substitute-truncate-tests",
+        "validation-failure-reporting"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:3c93a7988c906d3b0305fe636e0e0e62c5e824186daa251912fadd356dab0fa3",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00500",
+      "requirement_id": "REQ-939265fa1afe3e154858f7a5e84b6f5f6d84dad63662802b8923aa13233fbc30",
+      "document_path": "spec/attachments-file-encryption.md",
+      "text_digest": "sha256:f55d7bffd1776440237b9def624b9729fb46ae28b666e4ad65b32cc9f577bc0e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "An exact chunk-count formula lets recipients detect truncated or padded files; the zero-length special case avoids ambiguity for empty files.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "chunk-count-formula-test-vectors",
+        "zero-length-file-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:0f334874f47369277dbd001de689b889fd287a034faf50cd94e694e095bd1490",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00501",
+      "requirement_id": "REQ-9d1dd0ca5d5e0cd96d630caa9056541d615eccfc70d175c84786925f9f783c49",
+      "document_path": "spec/attachments-file-encryption.md",
+      "text_digest": "sha256:cf0237f15bf2a13f866d8544697c436846d5865fcb5e4916d11ed06017179b29",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Once a recipient holds a key or plaintext, the sender cannot force its deletion. Claiming global recall would mislead users about the effectiveness of 'unsend' or expiry.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "recall-claim-wording-review",
+        "post-receipt-revocation-limitation-statement"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:9a07cd4a03d2fc57676a4ad5768f42f81f49657ca788a63f4be40e5f7a05ad91",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00502",
+      "requirement_id": "REQ-a9c282a253d9a2bb649ab513f5225f72490e70cf0a0183c66b073f1ea6371a36",
+      "document_path": "spec/attachments-file-encryption.md",
+      "text_digest": "sha256:9d42daf9d536ca56079e5668c7c2b949e5d0e9e761ba30ef5d2233135685b33f",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Per-chunk authentication proves each chunk is genuine but a whole-file hash check additionally confirms the reassembled file matches what the sender intended, catching logic errors in reassembly.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "whole-file-hash-verification-test",
+        "mismatched-hash-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:5fe6363515eabd7f32ffd06b6a90cc74c70ee457f3cda6d5fe23a2b0ce324c3a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00503",
+      "requirement_id": "REQ-b6ab5f08efe0baf68fd43e2ef1f8813eff570c95e21be1f1ebde80a9190c162f",
+      "document_path": "spec/attachments-file-encryption.md",
+      "text_digest": "sha256:83437db8f8ea2b5fb422007123c52f91952a67277d304fdeeb27dc66dce89f1f",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Thumbnails, transcripts and OCR output reveal attachment content. Uploading them unprotected or under the parent key reuse would leak content; they must stay local or be separate fresh-key attachments.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "derivative-upload-inventory",
+        "derivative-fresh-key-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:11c7072a1eedbb071b02edfcc73df03d048bcb47d3f1aca08b2a56529a8065a2",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00504",
+      "requirement_id": "REQ-bb79fac89df5ae9d8c67587b1e08f39ffd8bb05c7bf1ff6fa7aef6973f34823e",
+      "document_path": "spec/attachments-file-encryption.md",
+      "text_digest": "sha256:1640c0a8a5f904636a78ee2b9d8a96fd96248d2085f0be9c50b11a4fd85c1589",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Binding attachment id, manifest digest, chunk index, count and length into each chunk's AEAD ties every chunk to one position in one file, so chunks cannot be moved between files or positions.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "chunk-aad-field-vector",
+        "cross-file-chunk-substitution-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:6813cf6162e8fcf18ecdc650bf8b228ddbb04bf6caff9db470e2fc69291f18e9",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00505",
+      "requirement_id": "REQ-ce523800963e0d939b853c67838e29b604f8e9605ec9933e1d3beafcb2adf4b8",
+      "document_path": "spec/attachments-file-encryption.md",
+      "text_digest": "sha256:f533183173be9bf990321f7679271723a68111b3a09bb43c504d561dc541e083",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "These are the concrete attacks a storage provider can attempt with ciphertext alone. Requiring each to fail closes the gaps between per-chunk encryption and whole-file integrity.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "substitution-reorder-length-negative-tests",
+        "semantic-validation-coverage-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:b1d3be9165fa6e7f141766d04746662c493ebb3d39a65ea2f5d876117e242419",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00506",
+      "requirement_id": "REQ-e0e6c8f570a6e1274f4f58ce382470786372e1e5015c157fe5e1f578ec78fc9d",
+      "document_path": "spec/attachments-file-encryption.md",
+      "text_digest": "sha256:78a4f1005a6dc6414a187e2843c457dfee7c8b20f9881e27084ef17056cb4a3b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Parsers and renderers are a major attack surface; feeding them unauthenticated bytes lets a provider deliver exploit payloads. Authenticating each chunk before release keeps attacker-controlled data out of parsers.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-ENDPOINT-LIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "verify-before-release-ordering-test",
+        "tampered-chunk-not-passed-to-parser-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:bcd57381a18edae3a440367d069517c719300e9c7cf6e9b65fcae35453f7c51f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00507",
+      "requirement_id": "REQ-e2e58cb675dfaa0b34a95b0606c08ae1541fbf21f64c8dface647b9cf21dfacb",
+      "document_path": "spec/attachments-file-encryption.md",
+      "text_digest": "sha256:a1d8f81a8248902f8fbbc06646f24dc31822ba99f366f5c98014af6ed72f1889",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "If some manifest field were not covered by the digest, it could be altered without detection, for example changing the declared length or media type.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "field-mutation-changes-digest-property-test",
+        "manifest-digest-coverage-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:55ba6ba14e94e7eaa3714409af00fcc26b36286b062fc3c68c0543fdb1017acd",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00508",
+      "requirement_id": "REQ-e5704d84dfbc0d06f1d43fe1b20f8638552867aab8ff97167946ce77c1261ea9",
+      "document_path": "spec/attachments-file-encryption.md",
+      "text_digest": "sha256:9ed4be0f0b1bbdde24932a8989836b8d714bad92e31c5c2e7e99c31afbefd0e5",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Distributing the key to stale device state could include revoked devices or miss new ones. Using current authorised state limits decryption to the devices that should have access.",
+      "threat_ids": [
+        "TM-DEVICE-PHYSICAL",
+        "TM-DIRECTORY"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "current-device-state-lookup-trace",
+        "revoked-device-key-exclusion-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:180bf2875abc5f897b50f538f5fd6ba35157c377f129723e7bb31d709039aee8",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00509",
+      "requirement_id": "REQ-fc675a9924a2728c8a0520cc924523f6d740f436356838667361dbf90afb926c",
+      "document_path": "spec/attachments-file-encryption.md",
+      "text_digest": "sha256:88cf86fba162bdafc1f4b25c666d7ca09ad961e391cde50febd4bafe67d5ada8",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Delivering the key and manifest inside an E2EE message inherits that channel's authentication and confidentiality, so attachments are as protected as the conversation they belong to.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-MESSAGE-AUTHENTICITY"
+      ],
+      "evidence_expectations": [
+        "key-delivery-inside-e2ee-message-test",
+        "out-of-band-key-delivery-absence-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:689dd5462d6591f6f4c0020f42986f9d787f583ef4315a8e286c396ba41896a9",
+      "review": null
     }
   ]
 }

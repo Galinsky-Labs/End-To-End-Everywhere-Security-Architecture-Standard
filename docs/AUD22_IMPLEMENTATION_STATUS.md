@@ -12,5 +12,6 @@ Coverage added after the 1.0.0 release is a non-normative overlay tracked by `re
 | post-1.0 batch 1 | pairwise E2EE, group E2EE, key transparency | 121 |
 | post-1.0 batch 2 | key verification, identity/device architecture, negotiation/downgrade, transport security | 119 |
 | post-1.0 batch 3 | threat model, security properties, metadata privacy | 136 |
+| post-1.0 batch 4 | secret storage/hardware protection, backup recovery, attachment encryption | 112 |
 
 **Remaining:** the rest of the 1,055 normative paragraphs, typed inter-requirement dependencies, and independently authenticated review records.
