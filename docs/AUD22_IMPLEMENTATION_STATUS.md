@@ -11,5 +11,6 @@ Coverage added after the 1.0.0 release is a non-normative overlay tracked by `re
 | rc.2 freeze | key-change state machine, hardware recovery budgets, pairwise prekey lifecycle, push provider privacy | 21 |
 | post-1.0 batch 1 | pairwise E2EE, group E2EE, key transparency | 121 |
 | post-1.0 batch 2 | key verification, identity/device architecture, negotiation/downgrade, transport security | 119 |
+| post-1.0 batch 3 | threat model, security properties, metadata privacy | 136 |
 
 **Remaining:** the rest of the 1,055 normative paragraphs, typed inter-requirement dependencies, and independently authenticated review records.
