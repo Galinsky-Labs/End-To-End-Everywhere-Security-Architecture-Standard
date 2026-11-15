@@ -10,7 +10,7 @@
   "scopeNote": "The original 50 plan units and the later 26 upstream audit-remediation packages are separate approved work; provisional downstream ROLL slots are not counted as guaranteed PRs.",
   "schemaVersion": 1,
   "roadmapVersion": 1,
-  "observedAt": "2026-10-11T17:39:39.000Z",
+  "observedAt": "2026-11-15T19:22:25.000Z",
   "units": [
     {
       "id": "E2EESA-01",
@@ -654,7 +654,10 @@
       "id": "AUD-09",
       "title": "Key-change visibility and send/reverification state machine [OPTIONS]",
       "origin": "addition",
-      "prs": [],
+      "prs": [
+        63,
+        68
+      ],
       "dependsOn": [],
       "externalDependencies": [],
       "externalPrerequisites": []
@@ -663,7 +666,10 @@
       "id": "AUD-10",
       "title": "Endpoint export boundary and explicit disclosure paths",
       "origin": "addition",
-      "prs": [],
+      "prs": [
+        69,
+        75
+      ],
       "dependsOn": [],
       "externalDependencies": [],
       "externalPrerequisites": []
@@ -672,7 +678,9 @@
       "id": "AUD-11",
       "title": "Hardware recovery attempt budgets and attestation evidence [OPTIONS]",
       "origin": "addition",
-      "prs": [],
+      "prs": [
+        70
+      ],
       "dependsOn": [],
       "externalDependencies": [],
       "externalPrerequisites": []
@@ -681,7 +689,11 @@
       "id": "AUD-12",
       "title": "Recovery credential rotation and retained-copy semantics",
       "origin": "addition",
-      "prs": [],
+      "prs": [
+        72,
+        76,
+        84
+      ],
       "dependsOn": [],
       "externalDependencies": [],
       "externalPrerequisites": []
@@ -690,7 +702,9 @@
       "id": "AUD-13",
       "title": "Pairwise operational bounds and explicit strength policies [OPTIONS]",
       "origin": "addition",
-      "prs": [],
+      "prs": [
+        71
+      ],
       "dependsOn": [],
       "externalDependencies": [],
       "externalPrerequisites": []
@@ -699,7 +713,9 @@
       "id": "AUD-14",
       "title": "External protocol pins and PQXDH binding interoperability",
       "origin": "addition",
-      "prs": [],
+      "prs": [
+        77
+      ],
       "dependsOn": [],
       "externalDependencies": [],
       "externalPrerequisites": []
@@ -708,10 +724,15 @@
       "id": "AUD-15",
       "title": "Group update cadence and flow-specific quantum/PCS claims [OPTIONS]",
       "origin": "addition",
-      "prs": [],
+      "prs": [
+        93
+      ],
       "dependsOn": [],
       "externalDependencies": [],
-      "externalPrerequisites": []
+      "externalPrerequisites": [],
+      "priorEvidencePrs": [
+        79
+      ]
     },
     {
       "id": "AUD-16",
@@ -726,7 +747,9 @@
       "id": "AUD-17",
       "title": "Push-provider and response-correlation metadata models [OPTIONS]",
       "origin": "addition",
-      "prs": [],
+      "prs": [
+        74
+      ],
       "dependsOn": [],
       "externalDependencies": [],
       "externalPrerequisites": []
@@ -735,37 +758,66 @@
       "id": "AUD-18",
       "title": "Algorithm, external-standard, and version identity registry repair [OPTIONS]",
       "origin": "addition",
-      "prs": [],
+      "prs": [
+        93
+      ],
       "dependsOn": [],
       "externalDependencies": [],
-      "externalPrerequisites": []
+      "externalPrerequisites": [],
+      "priorEvidencePrs": [
+        80
+      ],
+      "contributingPrs": [
+        99
+      ]
     },
     {
       "id": "AUD-19",
       "title": "Parser isolation and client security boundary evidence [OPTIONS]",
       "origin": "addition",
-      "prs": [],
+      "prs": [
+        93
+      ],
       "dependsOn": [],
       "externalDependencies": [],
-      "externalPrerequisites": []
+      "externalPrerequisites": [],
+      "priorEvidencePrs": [
+        78
+      ],
+      "contributingPrs": [
+        99
+      ]
     },
     {
       "id": "AUD-20",
       "title": "Transport, external PKI, CT, and ECH profiles [OPTIONS]",
       "origin": "addition",
-      "prs": [],
+      "prs": [
+        93
+      ],
       "dependsOn": [],
       "externalDependencies": [],
-      "externalPrerequisites": []
+      "externalPrerequisites": [],
+      "priorEvidencePrs": [
+        81
+      ],
+      "contributingPrs": [
+        99
+      ]
     },
     {
       "id": "AUD-21",
       "title": "Requirement-level traceability infrastructure",
       "origin": "addition",
-      "prs": [],
+      "prs": [
+        73
+      ],
       "dependsOn": [],
       "externalDependencies": [],
-      "externalPrerequisites": []
+      "externalPrerequisites": [],
+      "contributingPrs": [
+        99
+      ]
     },
     {
       "id": "AUD-22",
@@ -774,46 +826,672 @@
       "prs": [],
       "dependsOn": [],
       "externalDependencies": [],
-      "externalPrerequisites": []
+      "externalPrerequisites": [],
+      "contributingPrs": [
+        94,
+        100,
+        101,
+        102,
+        103
+      ]
     },
     {
       "id": "AUD-23",
       "title": "Cross-implementation corpus and adversarial composition tests",
       "origin": "addition",
-      "prs": [],
+      "prs": [
+        93
+      ],
       "dependsOn": [],
       "externalDependencies": [],
-      "externalPrerequisites": []
+      "externalPrerequisites": [],
+      "priorEvidencePrs": [
+        82
+      ]
     },
     {
       "id": "AUD-24",
       "title": "SDK/integration contract and migration package",
       "origin": "addition",
-      "prs": [],
+      "prs": [
+        93
+      ],
       "dependsOn": [],
       "externalDependencies": [],
-      "externalPrerequisites": []
+      "externalPrerequisites": [],
+      "priorEvidencePrs": [
+        83
+      ]
     },
     {
       "id": "AUD-25",
       "title": "Source-backed public standards portal and assessor guidance",
       "origin": "addition",
-      "prs": [],
+      "prs": [
+        95
+      ],
       "dependsOn": [],
       "externalDependencies": [],
-      "externalPrerequisites": []
+      "externalPrerequisites": [],
+      "contributingPrs": [
+        59,
+        60,
+        61
+      ]
     },
     {
       "id": "AUD-26",
       "title": "New candidate freeze and independent-review handoff",
       "origin": "addition",
-      "prs": [],
+      "prs": [
+        95
+      ],
       "dependsOn": [],
       "externalDependencies": [],
       "externalPrerequisites": []
     }
   ],
   "pullRequests": [
+    {
+      "id": 5326178766,
+      "number": 103,
+      "title": "AUD-22: 112 requirement analyses (secret storage, backup recovery, attachments)",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/103",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-11-15T19:13:17.000Z",
+      "updatedAt": "2026-11-15T19:21:45.000Z",
+      "closedAt": "2026-11-15T19:21:45.000Z",
+      "mergedAt": "2026-11-15T19:21:45.000Z",
+      "headSha": "6732877ebbe56ca2913de136cc3d93525c017e72",
+      "baseRef": "main",
+      "mergeCommitSha": "b50ae1b2921d650f4ac64b827430620dcbd171c9"
+    },
+    {
+      "id": 5326117863,
+      "number": 102,
+      "title": "AUD-22: 136 requirement analyses (threat model, security properties, metadata privacy)",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/102",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-11-15T19:06:50.000Z",
+      "updatedAt": "2026-11-15T19:12:38.000Z",
+      "closedAt": "2026-11-15T19:12:38.000Z",
+      "mergedAt": "2026-11-15T19:12:38.000Z",
+      "headSha": "5f5db03e60e96a1241f8893670c8208fd60e795d",
+      "baseRef": "main",
+      "mergeCommitSha": "dded850f0aba6d5684cc5e5a18982ff4a1686dfd"
+    },
+    {
+      "id": 5326040873,
+      "number": 101,
+      "title": "AUD-22: 119 requirement analyses (verification, identity/device, negotiation, transport)",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/101",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-11-15T18:58:00.000Z",
+      "updatedAt": "2026-11-15T19:00:33.000Z",
+      "closedAt": "2026-11-15T19:00:33.000Z",
+      "mergedAt": "2026-11-15T19:00:33.000Z",
+      "headSha": "5d98ca7f4ad9ee7920b6c5d4601554ace0b65e55",
+      "baseRef": "main",
+      "mergeCommitSha": "522f1518cc3bb7d8d968cb8849894a1658d91380"
+    },
+    {
+      "id": 5326000637,
+      "number": 100,
+      "title": "AUD-22: 121 requirement analyses (pairwise, group, key transparency)",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/100",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-11-15T18:53:25.000Z",
+      "updatedAt": "2026-11-15T18:57:23.000Z",
+      "closedAt": "2026-11-15T18:57:22.000Z",
+      "mergedAt": "2026-11-15T18:57:22.000Z",
+      "headSha": "21205955d85f34ac7f2b1f2d1f4704d184ac8419",
+      "baseRef": "main",
+      "mergeCommitSha": "f62a9d428c15566d1b9d34dcd2c091a96f5030e4"
+    },
+    {
+      "id": 5325945605,
+      "number": 99,
+      "title": "Integrate AUD-18/19/20/21 fail-closed validator fixes from stale drafts",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/99",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-11-15T18:46:49.000Z",
+      "updatedAt": "2026-11-15T18:49:23.000Z",
+      "closedAt": "2026-11-15T18:49:23.000Z",
+      "mergedAt": "2026-11-15T18:49:22.000Z",
+      "headSha": "cf764b92ae06915c4c563d0feb9ae50aafe9d417",
+      "baseRef": "main",
+      "mergeCommitSha": "db80ea760d398f900ead34b5db92811744a2306f"
+    },
+    {
+      "id": 5325907650,
+      "number": 98,
+      "title": "Post-1.0 maintenance manifest; repoint repository identity to Galinsky-Labs",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/98",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-11-15T18:42:36.000Z",
+      "updatedAt": "2026-11-15T18:45:49.000Z",
+      "closedAt": "2026-11-15T18:45:48.000Z",
+      "mergedAt": "2026-11-15T18:45:48.000Z",
+      "headSha": "a5499ce6612024e4336e93ba6a4443bcd6f10182",
+      "baseRef": "main",
+      "mergeCommitSha": "62155f972e8a7a8c0569eee40da65c289e49affa"
+    },
+    {
+      "id": 5234415606,
+      "number": 97,
+      "title": "Mark released 1.0 engineering standard in Engine Room status; preserve separate pending security gates",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/97",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-11-10T01:56:54.000Z",
+      "updatedAt": "2026-11-10T01:57:52.000Z",
+      "closedAt": "2026-11-10T01:57:51.000Z",
+      "mergedAt": "2026-11-10T01:57:51.000Z",
+      "headSha": "28296f1a7bff8d9ac786db14f11c47d9a9178d68",
+      "baseRef": "main",
+      "mergeCommitSha": "dc3876f884ef6ba4c94014bb8071cecd4d2269a3"
+    },
+    {
+      "id": 5234385063,
+      "number": 96,
+      "title": "Publish E2EESA 1.0.0 stable engineering standard (source-bound; not certification)",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/96",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-11-10T01:54:07.000Z",
+      "updatedAt": "2026-11-10T01:55:14.000Z",
+      "closedAt": "2026-11-10T01:55:14.000Z",
+      "mergedAt": "2026-11-10T01:55:14.000Z",
+      "headSha": "226339833fdf82a21ea4137260885f34c3339a9d",
+      "baseRef": "main",
+      "mergeCommitSha": "b137a3d1cb54900204ff13c7694ed00a50c00141"
+    },
+    {
+      "id": 5234261915,
+      "number": 95,
+      "title": "Freeze 0.9.0-rc.2 engineering candidate with audited evidence and CI portal checks",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/95",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-11-10T01:42:44.000Z",
+      "updatedAt": "2026-11-10T01:43:30.000Z",
+      "closedAt": "2026-11-10T01:43:30.000Z",
+      "mergedAt": "2026-11-10T01:43:30.000Z",
+      "headSha": "86dbec8ffe9a864b2a7c221645e02187df5aa1e0",
+      "baseRef": "main",
+      "mergeCommitSha": "8d2b4d38f5f171660a39ee30791aad7e58a09709"
+    },
+    {
+      "id": 5234088905,
+      "number": 94,
+      "title": "AUD-22: 21 source-bound requirement analyses across four high-risk areas",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/94",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-11-10T01:24:58.000Z",
+      "updatedAt": "2026-11-10T01:27:47.000Z",
+      "closedAt": "2026-11-10T01:27:47.000Z",
+      "mergedAt": "2026-11-10T01:27:47.000Z",
+      "headSha": "da4e2e0230e414de254f9b075992b47970ec84a8",
+      "baseRef": "main",
+      "mergeCommitSha": "37a40a337e367ad0deaddee5fa1661c2a69563ec"
+    },
+    {
+      "id": 5232255834,
+      "number": 93,
+      "title": "Integrate six security remediation PRs and fix cross-language CI",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/93",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-11-09T22:29:42.000Z",
+      "updatedAt": "2026-11-09T22:30:36.000Z",
+      "closedAt": "2026-11-09T22:30:36.000Z",
+      "mergedAt": "2026-11-09T22:30:36.000Z",
+      "headSha": "c9b966ef0c2c604104261d2d6f3480f7ba007539",
+      "baseRef": "main",
+      "mergeCommitSha": "541c6d20e9d7ab1b4516b4606fefa71e580c294b"
+    },
+    {
+      "id": 4941659418,
+      "number": 92,
+      "title": "Integrate Development Deployment Monitor (inventory-only)",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/92",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-10-20T19:58:30.000Z",
+      "updatedAt": "2026-10-25T09:50:19.000Z",
+      "closedAt": "2026-10-25T09:50:18.000Z",
+      "mergedAt": "2026-10-25T09:50:18.000Z",
+      "headSha": "e79b1e50ef57091af7f4d51dd742164b819b892d",
+      "baseRef": "main",
+      "mergeCommitSha": "c4bec1e080e57c8a5fe44e45f30369f56def8b1a"
+    },
+    {
+      "id": 4913399346,
+      "number": 91,
+      "title": "AUD-23: Cross-implementation corpus and adversarial composition tests",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/91",
+      "state": "closed",
+      "draft": true,
+      "createdAt": "2026-10-18T22:31:09.000Z",
+      "updatedAt": "2026-11-15T18:47:03.000Z",
+      "closedAt": "2026-11-15T18:47:03.000Z",
+      "mergedAt": null,
+      "headSha": "8fb8df3e87f0c94e493be1c60a32dc386ad7d5b8",
+      "baseRef": "main",
+      "mergeCommitSha": null
+    },
+    {
+      "id": 4913389986,
+      "number": 90,
+      "title": "AUD-21: Requirement-level traceability infrastructure",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/90",
+      "state": "closed",
+      "draft": true,
+      "createdAt": "2026-10-18T22:29:35.000Z",
+      "updatedAt": "2026-11-15T18:47:11.000Z",
+      "closedAt": "2026-11-15T18:47:11.000Z",
+      "mergedAt": null,
+      "headSha": "855fe9843c747885cf304ae94c756b5ed0dc6541",
+      "baseRef": "main",
+      "mergeCommitSha": "e5d927e6c29e7bce2b221450ab50d4d6c65a69d3"
+    },
+    {
+      "id": 4913384019,
+      "number": 89,
+      "title": "AUD-20: Transport, external PKI, CT, and ECH profiles [OPTIONS]",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/89",
+      "state": "closed",
+      "draft": true,
+      "createdAt": "2026-10-18T22:28:34.000Z",
+      "updatedAt": "2026-11-15T18:47:09.000Z",
+      "closedAt": "2026-11-15T18:47:09.000Z",
+      "mergedAt": null,
+      "headSha": "160ec68ae5d63459cfa8f812e241cc6edf44e68d",
+      "baseRef": "main",
+      "mergeCommitSha": "2d766eb4d27f19b373d47ab5c81b6f2223d9aaee"
+    },
+    {
+      "id": 4913377268,
+      "number": 88,
+      "title": "AUD-19: Parser isolation and client security boundary evidence [OPTIONS]",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/88",
+      "state": "closed",
+      "draft": true,
+      "createdAt": "2026-10-18T22:27:28.000Z",
+      "updatedAt": "2026-11-15T18:47:07.000Z",
+      "closedAt": "2026-11-15T18:47:07.000Z",
+      "mergedAt": null,
+      "headSha": "793ba78ff2ceaa2e84d96922c8b4dbe7c47b2fbc",
+      "baseRef": "main",
+      "mergeCommitSha": null
+    },
+    {
+      "id": 4913370829,
+      "number": 87,
+      "title": "AUD-18: Algorithm, external-standard, and version identity registry repair [OPTIONS]",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/87",
+      "state": "closed",
+      "draft": true,
+      "createdAt": "2026-10-18T22:26:25.000Z",
+      "updatedAt": "2026-11-15T18:47:05.000Z",
+      "closedAt": "2026-11-15T18:47:05.000Z",
+      "mergedAt": null,
+      "headSha": "574cfaac0047e3b69b2e97ab4a74a63bedd84512",
+      "baseRef": "main",
+      "mergeCommitSha": "f0957ed079928d4aa3bf2c66c1b422c8014a3b91"
+    },
+    {
+      "id": 4913363201,
+      "number": 86,
+      "title": "AUD-17: Push-provider and response-correlation metadata models [OPTIONS]",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/86",
+      "state": "closed",
+      "draft": true,
+      "createdAt": "2026-10-18T22:25:10.000Z",
+      "updatedAt": "2026-11-15T18:47:01.000Z",
+      "closedAt": "2026-11-15T18:47:01.000Z",
+      "mergedAt": null,
+      "headSha": "cb5ecf9ec3dbe6a1463648577857d58baef5e498",
+      "baseRef": "main",
+      "mergeCommitSha": "18634c0ef0d1d31e8e63bc7a47e79373474bd838"
+    },
+    {
+      "id": 4913355794,
+      "number": 85,
+      "title": "AUD-15: Group update cadence and flow-specific quantum/PCS claims [OPTIONS]",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/85",
+      "state": "closed",
+      "draft": true,
+      "createdAt": "2026-10-18T22:23:59.000Z",
+      "updatedAt": "2026-11-15T18:46:58.000Z",
+      "closedAt": "2026-11-15T18:46:58.000Z",
+      "mergedAt": null,
+      "headSha": "de95e8703e0b43fcb43878e4806f447696822775",
+      "baseRef": "main",
+      "mergeCommitSha": null
+    },
+    {
+      "id": 4913343453,
+      "number": 84,
+      "title": "AUD-12: Recovery credential rotation and retained-copy semantics",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/84",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-10-18T22:22:05.000Z",
+      "updatedAt": "2026-10-19T18:25:19.000Z",
+      "closedAt": "2026-10-19T18:25:18.000Z",
+      "mergedAt": "2026-10-19T18:25:18.000Z",
+      "headSha": "eeb7ef37134cda6c0e11bd2c970a01a5202c489f",
+      "baseRef": "main",
+      "mergeCommitSha": "1f70df5fd4bfbc0f1c3fdb1918c6b6ade9cc7228"
+    },
+    {
+      "id": 4909534152,
+      "number": 83,
+      "title": "AUD-24.1: explicit source-preserving migration and identity replacement boundaries",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/83",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-10-18T13:37:25.000Z",
+      "updatedAt": "2026-11-09T22:31:13.000Z",
+      "closedAt": "2026-11-09T22:31:13.000Z",
+      "mergedAt": null,
+      "headSha": "94785851e55073cfdd12eea63f3b31fa76b0806b",
+      "baseRef": "main",
+      "mergeCommitSha": null
+    },
+    {
+      "id": 4909515092,
+      "number": 82,
+      "title": "AUD-23.1: independent Python and Node canonical group-update digest vectors",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/82",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-10-18T13:34:35.000Z",
+      "updatedAt": "2026-11-09T22:31:09.000Z",
+      "closedAt": "2026-11-09T22:31:09.000Z",
+      "mergedAt": null,
+      "headSha": "c7b73ac85ada0bc25340ee64c090790b2af77d71",
+      "baseRef": "main",
+      "mergeCommitSha": null
+    },
+    {
+      "id": 4909499523,
+      "number": 81,
+      "title": "AUD-20.1: enforce scoped PKI identity, CT applicability and authenticated ECH downgrade checks",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/81",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-10-18T13:32:18.000Z",
+      "updatedAt": "2026-11-09T22:31:04.000Z",
+      "closedAt": "2026-11-09T22:31:04.000Z",
+      "mergedAt": null,
+      "headSha": "a89a7ead9b21acdb02eff3569b5c621e13e43082",
+      "baseRef": "main",
+      "mergeCommitSha": null
+    },
+    {
+      "id": 4909474347,
+      "number": 80,
+      "title": "AUD-18.1: construction-specific hybrid confidentiality and lifecycle boundaries",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/80",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-10-18T13:28:32.000Z",
+      "updatedAt": "2026-11-09T22:30:59.000Z",
+      "closedAt": "2026-11-09T22:30:59.000Z",
+      "mergedAt": null,
+      "headSha": "0bd95012726b02abcbcb5457b4ecdc24a51a0023",
+      "baseRef": "main",
+      "mergeCommitSha": null
+    },
+    {
+      "id": 4909428462,
+      "number": 79,
+      "title": "AUD-15.1: applied group commits, epoch anchors and conservative PQ security claims",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/79",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-10-18T13:21:40.000Z",
+      "updatedAt": "2026-11-09T22:30:55.000Z",
+      "closedAt": "2026-11-09T22:30:55.000Z",
+      "mergedAt": null,
+      "headSha": "f76967328c24fbf71f3d0aa220b7779e9a858f2e",
+      "baseRef": "main",
+      "mergeCommitSha": null
+    },
+    {
+      "id": 4909408582,
+      "number": 78,
+      "title": "AUD-19.1: fail closed on malformed group membership and message evidence",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/78",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-10-18T13:18:37.000Z",
+      "updatedAt": "2026-11-09T22:30:50.000Z",
+      "closedAt": "2026-11-09T22:30:50.000Z",
+      "mergedAt": null,
+      "headSha": "de17934aac56b5fb6b0a6d7dd4334820945f82d3",
+      "baseRef": "main",
+      "mergeCommitSha": null
+    },
+    {
+      "id": 4909383513,
+      "number": 77,
+      "title": "AUD-14.1: pin PQXDH wire binding and reject key, ciphertext and protocol substitution",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/77",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-10-18T13:14:49.000Z",
+      "updatedAt": "2026-10-18T13:16:24.000Z",
+      "closedAt": "2026-10-18T13:16:24.000Z",
+      "mergedAt": "2026-10-18T13:16:24.000Z",
+      "headSha": "ee3771c2d29178047f7ab8eed309fa0b2ceb1ac3",
+      "baseRef": "main",
+      "mergeCommitSha": "194c7bbcba64735e29624e888906b735e8987863"
+    },
+    {
+      "id": 4900801923,
+      "number": 76,
+      "title": "AUD-12.2: enforce strict positive-integer backup limits and no malformed-input crashes",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/76",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-10-17T14:16:18.000Z",
+      "updatedAt": "2026-10-18T13:10:56.000Z",
+      "closedAt": "2026-10-18T13:10:56.000Z",
+      "mergedAt": "2026-10-18T13:10:55.000Z",
+      "headSha": "728901ac935e621bf24c897beafd1fcb672c4556",
+      "baseRef": "main",
+      "mergeCommitSha": "7180dc454fb04652fe70c14a871b2c45d7dd45df"
+    },
+    {
+      "id": 4900776047,
+      "number": 75,
+      "title": "AUD-10.2: block protected-content conformance without source-bound egress evidence",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/75",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-10-17T14:13:06.000Z",
+      "updatedAt": "2026-10-17T14:20:51.000Z",
+      "closedAt": "2026-10-17T14:20:51.000Z",
+      "mergedAt": "2026-10-17T14:20:51.000Z",
+      "headSha": "5d08e1c02bd0ce6cf55f0abbda794b9cdc184aa1",
+      "baseRef": "main",
+      "mergeCommitSha": "418f4170272581a222e518043baa50b9c0ddbe1e"
+    },
+    {
+      "id": 4900746037,
+      "number": 74,
+      "title": "AUD-17.1: split push delivery modes and reject metadata/correlation overclaims",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/74",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-10-17T14:09:35.000Z",
+      "updatedAt": "2026-10-17T14:13:54.000Z",
+      "closedAt": "2026-10-17T14:13:54.000Z",
+      "mergedAt": "2026-10-17T14:13:54.000Z",
+      "headSha": "f0d1f7fbcb715659fb0dd6d1c654b4793bb13678",
+      "baseRef": "main",
+      "mergeCommitSha": "e9a0c96ba30b4fabd43032692cae44a81bcd2d95"
+    },
+    {
+      "id": 4900703091,
+      "number": 73,
+      "title": "AUD-21.1: exact requirement analysis identities, stale-context rejection and review provenance",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/73",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-10-17T14:04:09.000Z",
+      "updatedAt": "2026-10-17T14:11:02.000Z",
+      "closedAt": "2026-10-17T14:11:02.000Z",
+      "mergedAt": "2026-10-17T14:11:02.000Z",
+      "headSha": "ed25eea3c0581d595768ef9578bcd8b9ccf14370",
+      "baseRef": "main",
+      "mergeCommitSha": "852befb94c8bff2dc624df79fde8cc9e1f7bd0e7"
+    },
+    {
+      "id": 4900668260,
+      "number": 72,
+      "title": "AUD-12.1: bind authenticated backup rotation to fresh key and negative-decrypt evidence",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/72",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-10-17T13:59:39.000Z",
+      "updatedAt": "2026-10-17T14:10:29.000Z",
+      "closedAt": "2026-10-17T14:10:29.000Z",
+      "mergedAt": "2026-10-17T14:10:29.000Z",
+      "headSha": "9b314bc7450045671708142e254630cee3fadf1b",
+      "baseRef": "main",
+      "mergeCommitSha": "e5003f79ebdce4f24d73cae5479926be78fe213f"
+    },
+    {
+      "id": 4900646337,
+      "number": 71,
+      "title": "AUD-13.1: enforce pairwise prekey lifetimes and precise PQ strength selections",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/71",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-10-17T13:56:36.000Z",
+      "updatedAt": "2026-10-17T14:08:36.000Z",
+      "closedAt": "2026-10-17T14:08:36.000Z",
+      "mergedAt": "2026-10-17T14:08:36.000Z",
+      "headSha": "c757a0b8308027d7c0d6695e6825b0e6e7287b7f",
+      "baseRef": "main",
+      "mergeCommitSha": "084a6fa90af8fe9533ad74564727764a8f830d77"
+    },
+    {
+      "id": 4900605287,
+      "number": 70,
+      "title": "AUD-11.1: authenticated recovery attempt budget and nonrollbackable counter model",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/70",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-10-17T13:50:54.000Z",
+      "updatedAt": "2026-10-17T14:08:16.000Z",
+      "closedAt": "2026-10-17T14:08:15.000Z",
+      "mergedAt": "2026-10-17T14:08:15.000Z",
+      "headSha": "ebcb3f420186a0763c11598abdee9aa05b7db2f0",
+      "baseRef": "main",
+      "mergeCommitSha": "3d7d69aceb5a5a60522afb7e44e992d5abf7ad14"
+    },
+    {
+      "id": 4900572738,
+      "number": 69,
+      "title": "AUD-10.1: guard protected endpoint exports and recipient-bound metadata",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/69",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-10-17T13:46:24.000Z",
+      "updatedAt": "2026-10-17T13:51:38.000Z",
+      "closedAt": "2026-10-17T13:51:38.000Z",
+      "mergedAt": "2026-10-17T13:51:38.000Z",
+      "headSha": "0e06290bea55096cc9fab89c40916103a4cb5f88",
+      "baseRef": "main",
+      "mergeCommitSha": "a73c0f6ceabb260787eec189fd844643850cddba"
+    },
+    {
+      "id": 4900478056,
+      "number": 68,
+      "title": "AUD-09.2: reference key-change journal, notices and send policies",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/68",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-10-17T13:33:37.000Z",
+      "updatedAt": "2026-10-17T13:45:24.000Z",
+      "closedAt": "2026-10-17T13:45:24.000Z",
+      "mergedAt": "2026-10-17T13:45:24.000Z",
+      "headSha": "46570482860e60d290a6f6eb80940f2a0580a404",
+      "baseRef": "main",
+      "mergeCommitSha": "25d1c784348168bd222db10afbb84986a0d0b38f"
+    },
+    {
+      "id": 4848544207,
+      "number": 67,
+      "title": "Standardize canonical PR registry for Boardroom and Engine Room",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/67",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-10-13T19:43:02.000Z",
+      "updatedAt": "2026-10-13T21:26:24.000Z",
+      "closedAt": "2026-10-13T21:26:24.000Z",
+      "mergedAt": "2026-10-13T21:26:24.000Z",
+      "headSha": "3e22e915c44b0c3c7afb6fe7ae3143a454ba7fa9",
+      "baseRef": "main",
+      "mergeCommitSha": "d916938cb6b0e6569edfde88555984ddacb96021"
+    },
+    {
+      "id": 4848048122,
+      "number": 66,
+      "title": "Owner policy: proceed with AI security review; defer external audit",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/66",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-10-13T18:59:43.000Z",
+      "updatedAt": "2026-10-13T19:09:01.000Z",
+      "closedAt": "2026-10-13T19:09:00.000Z",
+      "mergedAt": "2026-10-13T19:09:00.000Z",
+      "headSha": "10d68941875a1bb57ccc04d5a2c83ef8bb55042e",
+      "baseRef": "main",
+      "mergeCommitSha": "1149e629ebbac271a313eaee0532ac330d3ccb4d"
+    },
+    {
+      "id": 4830069890,
+      "number": 65,
+      "title": "Track E2EESA implementation, full testing and independent expert review",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/65",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-10-12T13:25:28.000Z",
+      "updatedAt": "2026-10-12T14:22:59.000Z",
+      "closedAt": "2026-10-12T14:22:58.000Z",
+      "mergedAt": "2026-10-12T14:22:58.000Z",
+      "headSha": "0b415e45064ef2731ce48780e3a93050225760a1",
+      "baseRef": "main",
+      "mergeCommitSha": "0bb46022e729883d39b482ea115dfd6b45a1ac20"
+    },
+    {
+      "id": 4824272550,
+      "number": 64,
+      "title": "Fix Engine Room reporting: map original E2EESA milestones to real PRs",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/64",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-10-12T02:38:40.000Z",
+      "updatedAt": "2026-10-12T02:38:49.000Z",
+      "closedAt": "2026-10-12T02:38:49.000Z",
+      "mergedAt": "2026-10-12T02:38:49.000Z",
+      "headSha": "a817c2d66e8736cb927167807b01486eaa4134b8",
+      "baseRef": "main",
+      "mergeCommitSha": "8441335f359c6e446f9bfe8b959f9606ce341409"
+    },
     {
       "id": 4813187747,
       "number": 63,
@@ -1012,32 +1690,32 @@
     {
       "id": 4787167614,
       "number": 50,
-      "title": "PR 50: E2EESA 1.0 release readiness and promotion",
+      "title": "Integrate E2EESA 1.0 release tooling (not a release or certification)",
       "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/50",
-      "state": "open",
+      "state": "closed",
       "draft": true,
       "createdAt": "2026-10-08T12:59:36.000Z",
-      "updatedAt": "2026-10-08T13:39:57.000Z",
-      "closedAt": null,
+      "updatedAt": "2026-11-10T01:57:16.000Z",
+      "closedAt": "2026-11-10T01:57:16.000Z",
       "mergedAt": null,
       "headSha": "d314d0f145aa6b44969588b80041b7c613af11ef",
-      "baseRef": "pr-49-independent-expert-review-fixes",
-      "mergeCommitSha": "4f23429b0ecae644e67826a39f447305ddcf2bf8"
+      "baseRef": "main",
+      "mergeCommitSha": "f3cb90dae0c21b69ad72f64866a2f93c2b8ae7b0"
     },
     {
       "id": 4782759880,
       "number": 49,
-      "title": "PR 49: Independent expert review fixes",
+      "title": "Integrate independent-review tooling (external attestations remain pending)",
       "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/49",
-      "state": "open",
-      "draft": true,
+      "state": "closed",
+      "draft": false,
       "createdAt": "2026-10-08T06:26:53.000Z",
-      "updatedAt": "2026-10-08T13:35:34.000Z",
-      "closedAt": null,
-      "mergedAt": null,
+      "updatedAt": "2026-11-10T01:35:07.000Z",
+      "closedAt": "2026-11-10T01:35:07.000Z",
+      "mergedAt": "2026-11-10T01:35:07.000Z",
       "headSha": "6477870d972fcfb6c3c9e3d4a8fea86edf0dde05",
       "baseRef": "main",
-      "mergeCommitSha": "f9a6e68b4788854c25c87df7d3d4a42a37ffc68c"
+      "mergeCommitSha": "bc370236edac31185483b55f68afed991647006c"
     },
     {
       "id": 4782718274,
