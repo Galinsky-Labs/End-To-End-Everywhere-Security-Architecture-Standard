@@ -6346,6 +6346,3219 @@
       "dependencies": [],
       "context_digest": "sha256:3dc183a83cb210aa935205471ffc73d283c082051b3c7adf747e31e75684d388",
       "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00262",
+      "requirement_id": "REQ-070140609172739380f49dd56d2ab53a8075f6484006d41d39dba44fb24423b0",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:c6afa62cf2382c2785cb68d295922f688eade10cde9ba6e1e80f310a1a0029dc",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Phrases like 'secure against sophisticated attackers' cannot be tested or falsified and invite readers to assume protection against everything. Requiring the structured declaration instead forces each profile to say which adversary capabilities it actually withstands.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "profile-declaration-schema-validation",
+        "vague-adversary-phrase-lint"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e01f26f4d5a5b7c00b4438d8870a086ec89eaba0ab2f5dbf5d9489765dd91c42",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00263",
+      "requirement_id": "REQ-12c03b06506a4aad9708bee269605dd27ad4f320f8934c10b3ea40235b4988bd",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:8b12d1972b6ff61f47f05dbe5b98b68d9ce48775e878c4b1899fd5a55f91db06",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Availability depends on service and network cooperation that E2EE cannot force, unlike confidentiality and authenticity. Requiring availability claims to be defined separately prevents a cryptographic guarantee being read as a delivery guarantee.",
+      "threat_ids": [
+        "TM-DOS"
+      ],
+      "security_property_ids": [
+        "SP-AVAILABILITY"
+      ],
+      "evidence_expectations": [
+        "separate-availability-claim-section",
+        "availability-claim-without-definition-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:26c73bfaf5cf1d6497ab5123be10bad3d628316a100fbaa5a2039ed513f2fa2f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00264",
+      "requirement_id": "REQ-1537fcabcbbf478275e8e8d1ad0533f5ee7a846365d29195da7b59d66bc0da80",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:8977dd31c94c6acfdbe6dde9a479d92cdee0d86530c8c008cda76f01ec3cd5a4",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Whether the OS, keyboard, accessibility services, plug-ins or backup agents are inside the trusted endpoint changes what a compromise of each exposes. Stating the boundary lets readers know which local components could read plaintext without breaking the claims.",
+      "threat_ids": [
+        "TM-ENDPOINT-LIVE",
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "endpoint-trust-boundary-diagram",
+        "privileged-component-inventory"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:0ebd9d32a2731f1945cc5801afe0bac2dcbfde062ba0b8a2f3b4461dbe2418a8",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00265",
+      "requirement_id": "REQ-18bceec111548d9a651f9a8bd0b969608494c705c72fa9d465e71e6e78565abb",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:c0b185f1ada9452f775ce650e298f452973f901efc15bc25016ea0a7d2202a83",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Recovery, backup and secure-hardware mechanisms create secret copies or release paths outside the live protocol. Their compromise can expose keys or history independently of message encryption, so they must be analysed on their own rather than borrowing the protocol's claims.",
+      "threat_ids": [
+        "TM-RECOVERY",
+        "TM-BACKUP",
+        "TM-HARDWARE"
+      ],
+      "security_property_ids": [
+        "SP-RECOVERY-CONFIDENTIALITY",
+        "SP-BACKUP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "recovery-backup-hardware-compromise-analysis",
+        "claim-inheritance-absence-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:699a2dae45c9bff83e0070b8aeecdab26fae710d938d174f4de769f29cf91377",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00266",
+      "requirement_id": "REQ-1a379884eff52473032a77d0f9a93740591e91753a28c425aba2519db96254d3",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:0f5d5d647378db9cdd04845c2885b636919df35773d78217132867319664086d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The baseline deliberately excludes some threats (e.g. coerced users, compromised OS). Profiles may add narrower controls, but they rely on extra assumptions such as attested hardware; stating them keeps the added protection from being overstated.",
+      "threat_ids": [
+        "TM-ENDPOINT-LIVE",
+        "TM-HARDWARE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "additional-assumption-statement-per-control",
+        "non-goal-coverage-claim-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:bef9b32b844afe93f45884c748de14e9a8385ebd5cfea42f378c54e389c39e01",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00267",
+      "requirement_id": "REQ-2ef6d35906f091587fea00cf1c395c55b8be187479c781020d8a58099e57af37",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:204c842fd093ca416bbc1913578b9870760f0e3b19cb92024856adb116f7883f",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Security analysis is meaningless without knowing what is being protected. The minimum asset list ensures keys, recovery material, group state, transparency evidence, credentials and signing keys are each considered, since compromise of any can defeat content protection indirectly.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE",
+        "TM-SIGNING-KEY",
+        "TM-RECOVERY"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "asset-inventory-per-profile",
+        "asset-to-threat-mapping-matrix"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:82518eead873b1eb8d924cd0500fc9bad70e83f741074541811120cf73bc5518",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00268",
+      "requirement_id": "REQ-34aacedb237554f2643c62b7d2e01293f267b3eb422a912e0a2f6d3a8030f7b4",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:d8e3c50157779011d91ff3e3074d960baf00b40503fc279b45d56c153a339583",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Real attacks combine capabilities, and several pairs (service plus network, account plus enrollment, directory equivocation plus selective service) defeat defences that each alone would stop. Requiring these combinations to be considered prevents profiles passing on single-threat analysis only.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-ACCOUNT",
+        "TM-DIRECTORY",
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-PEER-AUTHENTICATION",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "composite-scenario-analysis-table",
+        "combined-threat-test-cases"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:d4fad7ebf91fe8f4f70cec4c5a0148f6fbf080a264bf1a8b1837428118fa6f7f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00269",
+      "requirement_id": "REQ-3a2c75de8ba7b2f096fe1180d48f696f914a7b9aef7e74e27bea546ac8be8086",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:a6c797f5984b2318b1a47deda53ecdc6450293bec0ef6436ec36ec98ea1e4ce2",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Post-compromise security is only meaningful if it says when protection resumes (e.g. after a new DH ratchet step with fresh entropy and attacker loss of access). Without a defined healing event the claim cannot be tested or relied upon.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-POST-COMPROMISE-SECURITY"
+      ],
+      "evidence_expectations": [
+        "healing-event-definition-in-claim",
+        "healing-condition-simulation-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:5483bfdaeba42b066a9b34a5631257b03f4c4a37783fe4640a772fc4a04c4777",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00270",
+      "requirement_id": "REQ-3ef3e33773954d79cf255103e3652f624b9715a41265876f4d7ac1604398ac00",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:f48772e27f0f0ee996bc6831a19a13bcab1c72beda31fd6c35df104e09c81e09",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "E2EE exists to remove the provider from the trust base for content. A design in which the provider must behave honestly to keep content confidential is provider-trusted encryption and must not be labelled E2EE.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-SERVICE-ACTIVE",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "provider-key-access-analysis",
+        "malicious-provider-content-recovery-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:4d75b212f7fcdb1edad2580a661293676c942ac1d4535f272cc048f737ad5f73",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00271",
+      "requirement_id": "REQ-3f65bbb9b1ae84e578410871266aa45477e8b085d07499c85961947bf783e29f",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:0fbd2e196bacca09bf60251f9f273ee5ca03bb7aae4dd6036aabe243fce9cf28",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Encrypting message bodies leaves who-talks-to-whom, timing and sizes visible to the service. Representing content E2EE as metadata protection misleads users with relationship-sensitive threat models.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-SERVICE-READ"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-CONFIDENTIALITY",
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "claim-wording-review-for-metadata",
+        "metadata-visibility-inventory"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:5569f9fbd50b854968255d3bdea3698276d56ddc96916b35add2ba3eea134255",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00272",
+      "requirement_id": "REQ-41d43e993323e023a2fece72cf1bbe755ca7d0ae4caaf62124048b1089619c08",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:b36eb70fc3554182a9bf6236410c43f0ff5aaadfeb4b2835c5610088aeb50a00",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The same compromise has different consequences before, during, after-but-before-healing and after healing. Distinguishing these phases lets claims such as forward secrecy and PCS be stated precisely rather than as unconditional properties.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE",
+        "TM-ENDPOINT-LIVE"
+      ],
+      "security_property_ids": [
+        "SP-FORWARD-SECRECY",
+        "SP-POST-COMPROMISE-SECURITY"
+      ],
+      "evidence_expectations": [
+        "phase-specific-claim-table",
+        "phase-transition-test-scenarios"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:466a6ee5032335661302d7ef56f77597f628bad4e666e0faab30bd17bc5b05d4",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00273",
+      "requirement_id": "REQ-46a572360e3fa79cb2e5bdbbbe7f358818c1d288b89a665212debba311124188",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:fd2930f70d798783d08de8f930f7a5fdfee3bb7f33239012e76ec7d972bc91dc",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A product may protect key exchange with ML-KEM while signatures, backups or group keys remain classical. Treating 'post-quantum' as product-wide would overstate protection; it must be tied to specific mechanisms and threat models.",
+      "threat_ids": [
+        "TM-QUANTUM-HARVEST",
+        "TM-QUANTUM-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PQ-CONFIDENTIALITY",
+        "SP-PQ-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "per-mechanism-pq-claim-inventory",
+        "product-wide-pq-label-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:b26b2488ea0f1635b9d645f7a300c1f2317f923f43c096e095c4caf312a5ee7e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00274",
+      "requirement_id": "REQ-47b0aafa2b71df605ac3d54329c9aaf1b75bb9f6fc8961a09867a40eab5dfd3c",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:5adf55103aad988bbc31ce5267da9adfba9c3e74351f70e4917d5bf6d04fb06b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Backups are long-lived, often stored with third parties and protected by different keys or passwords than live sessions. A strong live channel says nothing about backup exposure, so backup confidentiality needs its own assessment.",
+      "threat_ids": [
+        "TM-BACKUP",
+        "TM-CREDENTIAL"
+      ],
+      "security_property_ids": [
+        "SP-BACKUP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "backup-confidentiality-separate-assessment",
+        "backup-key-derivation-analysis"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:a39a8ba39cbc2c4883375b1b26e7c0e9d454d68f06f725c2c50193397c7a8b92",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00275",
+      "requirement_id": "REQ-4b6a6c0f1c7a7eafe253f270c3dce5852c4aa71d5e64b6b8dae133218e93c1e6",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:2c32682a4a2427b49df54da7b5841cb747708e99711c2247534b3ac43e4de19e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Defences against two threats can interfere or share a weak point (e.g. recovery that resists account takeover alone but not with credential theft). Independent tolerance does not imply joint tolerance, which must be analysed explicitly.",
+      "threat_ids": [
+        "TM-ACCOUNT",
+        "TM-CREDENTIAL",
+        "TM-RECOVERY"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY",
+        "SP-RECOVERY-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "joint-threat-analysis-where-claimed",
+        "combined-scenario-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:be590a205ad9721ad265ba9a37cb5dd952237c854fa5f0c35ab25ca76f6348bd",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00276",
+      "requirement_id": "REQ-4e05895b278ee1edfb7bba3518aeac454762d805e6105ff6d4d06534b219672f",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:9b2481fadf2ef630d73ac7dd6b9966ae1039f2aaa4b08b1d9892c8d8c9c41199",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Products may hold assets beyond the baseline (payment tokens, location history). Allowing profiles to add them ensures analysis can cover product-specific valuables without changing the shared model.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "profile-specific-asset-list",
+        "added-asset-threat-mapping"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:4e66aeec5e59e1cbf4df7e60ae1f621b2a6f3c1f527b421eb6d2ab5a32ef1a51",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00277",
+      "requirement_id": "REQ-570a338fb6cc93e1fcb2bd5f27f8c7824123d602b2f3053df9e9263d26748c2f",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:2ac918c18103cb6a5d2cdb4176e24a7b9fb894cc5b4d6e657ab5b87e03e1fdc8",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Readers tend to assume a claim covers any threat not mentioned. Requiring silence to be read as non-coverage prevents conformance claims being stretched to threats the profile never analysed.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "claim-threat-coverage-explicit-list",
+        "interpretation-rule-in-conformance-output"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:06823d57689e45e5b9e26100a32034350f40f9c16a3d419785d774ef37870073",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00278",
+      "requirement_id": "REQ-5735109f03ab72f00e0436b895806b70ea882f888ea2eb172fbee6f596b1df93",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:96dd32c29045225522e0b42ecc804a407eadf398c716064776076035153ea538",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Physical possession attacks depend on whether the device is locked, whether keys are hardware-bound, whether erasure works and whether offline guessing is limited. Stating these assumptions defines what a thief with the device can and cannot recover.",
+      "threat_ids": [
+        "TM-DEVICE-PHYSICAL",
+        "TM-HARDWARE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-FORWARD-SECRECY"
+      ],
+      "evidence_expectations": [
+        "device-state-assumption-statement",
+        "locked-device-extraction-test-plan"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:02605e5402e8da6f2c39b3f8fcc61027c2f6ce30adf57291e272465fc011e586",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00279",
+      "requirement_id": "REQ-5a8d7f8f7eb5527fddd05ba08db4b37e0d970e909f49b666ee983f250873b591",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:02bfb3fb35af3f13588efde203c80e936c61adef8d642de21940b126fdaa6392",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Expiry, freshness and replay windows depend on clocks that attackers may shift. Profiles must state tolerances and what happens when time is wrong so that clock manipulation cannot silently extend validity or bypass expiry.",
+      "threat_ids": [
+        "TM-CLOCK"
+      ],
+      "security_property_ids": [
+        "SP-REPLAY-RESISTANCE",
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "clock-tolerance-documentation",
+        "skewed-clock-failure-behaviour-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:6d478576704b2e1d39af4ad4c0c490d5dffe351e5bcc654204a3f528fd7c6c14",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00280",
+      "requirement_id": "REQ-609a46c7a29c994e950957a600cd2ecf688574cccea5d0ad6a47a8d2a9c8a63b",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:4c1fc8cecc1dc547756332e1125ada216905851fb4a39a2f954314a2c266f377",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A compromised build or dependency can insert backdoors that defeat all protocol properties. Profiles must name the controls (provenance, reproducibility, dependency pinning) that detect, prevent or constrain such compromise.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY",
+        "SP-BUILD-PROVENANCE"
+      ],
+      "evidence_expectations": [
+        "supply-chain-control-list",
+        "provenance-verification-evidence"
+      ],
+      "external_standard_ids": [
+        "SLSA-1.2",
+        "NIST-SP800-218"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:62665e827b06f3ca14bb88f693c048952065d17ca4ec4f83e3f9d166433c343d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00281",
+      "requirement_id": "REQ-66e63d82c451d120f701d2668c5a250a3a762b483c48927ce321c9e35e6e5769",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:73ee04c0dfbf4e0996bb83e6cd8cd67a266e98c83698d974d5a18c1eda5c473f",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "When endpoint secret state is stolen, the exposure depends on which past keys remain and how long until healing. Forward secrecy and PCS claims must state this window and recovery behaviour to be checkable.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-FORWARD-SECRECY",
+        "SP-POST-COMPROMISE-SECURITY"
+      ],
+      "evidence_expectations": [
+        "exposure-window-statement",
+        "state-theft-simulation-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:de8a37dea8e328b81a45ffe95b4c2cd5607e48c8a42ff716c3d4f17d46ed99b2",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00282",
+      "requirement_id": "REQ-6cbfd823ab39ec5f2db26b62c0350b21043295394ca23e7dc0b37c0d5420be12",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:6966e30a1ebf27fafc626c53fa93d872ca3b5f35241964bf31cc762720471052",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "State-continuity guarantees such as one-time use, counters and verified status fail if old state can be restored. Profiles must explain how rollback is prevented or detected.",
+      "threat_ids": [
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "rollback-prevention-mechanism-description",
+        "state-restore-negative-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:2c7c898459ee469b37a23f9221ec0e930dcab8ffcd2b43aee2d1ada64d6ed3c4",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00283",
+      "requirement_id": "REQ-73b2b213ae46f7adeec7aacd189072a39155f71e79738632d2b915c8fdd5b16d",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:957b0aa9963b414c693abae70c4f3446c8a6fcb0d59d069f477f3dc903b6b0e3",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Different compromise classes give different capabilities and are defended by different mechanisms. Modelling them separately, unless a composition rule is defined, prevents one defence being credited against another class.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-SERVICE-ACTIVE",
+        "TM-ACCOUNT",
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "per-class-threat-analysis",
+        "composition-rule-documentation"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:9329c40bc4d3b2826163c3c33d8f012316bcc369b8d4c8e340ae7b45ce84d12b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00284",
+      "requirement_id": "REQ-7d5663afcd98b07333201d4aa819211723c7cf6dd12b1a803ff8b76da1fe639d",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:0b98fce133d5ec1cd167b343d5926067045878c3112c782fbd7d325d089e71b4",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A stolen password, session token and device key differ greatly in what they allow. Determining consequences by the credential's actual capability avoids both understating risk and treating all credential theft as total compromise.",
+      "threat_ids": [
+        "TM-CREDENTIAL",
+        "TM-ACCOUNT"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY",
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "credential-capability-matrix",
+        "stolen-credential-scope-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:db4d3860fe6f1fc14fbb91f5e610724c2e6569596987c5456d568d615b041796",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00285",
+      "requirement_id": "REQ-84a5de1f8d2c692cbf14c0540589a105b864cb8b62083a4b60c61ab504913553",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:c35cf1da54efbaf0f66c9bfff13c40a8e4a0f21af08c831906020d577eab9063",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Compromised recovery can range from restoring some assets to full identity takeover with history access. Profiles must state which outcome applies so users understand the real impact of recovery-system compromise.",
+      "threat_ids": [
+        "TM-RECOVERY",
+        "TM-ACCOUNT"
+      ],
+      "security_property_ids": [
+        "SP-RECOVERY-CONFIDENTIALITY",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "recovery-compromise-impact-statement",
+        "recovery-takeover-test-scenario"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:3476449feedc48a65dcb6eb5afcf4f3dec44017c2fb5a9770e47748dae12ebdd",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00286",
+      "requirement_id": "REQ-8e9505a15983a5a984470180ca6df7d07a1ec593e48b38eba7aed2868e1d0e22",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:88d207c77e1865d7190878df9fcde393dbadcfeba173b5e288cc5b67cbbe4620",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Some combinations change outcomes qualitatively, such as a malicious service plus selective directory views. Requiring credible combinations to be evaluated keeps analysis aligned with how real adversaries operate.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-DIRECTORY",
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "credible-combination-list",
+        "combination-test-coverage"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:ee74e0cd4a915c86b2176e7a8f932e8887404491f39895a29b72f649098a62af",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00287",
+      "requirement_id": "REQ-900d82a31736dc658359d37fe04275ec4e972d4bb3cbb773c8bc5e96a80458b0",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:35cfc5796e8c131c03ee5a822e5f7a51fdf260854649773d8174de4194a26b4a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "An honest service, an honest-but-curious one, a compromised one, an actively malicious one and one presenting split views require different defences. Stating which model applies sets the bar the profile must meet.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-SERVICE-ACTIVE",
+        "TM-DIRECTORY"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-KEY-CONSISTENCY"
+      ],
+      "evidence_expectations": [
+        "service-model-declaration",
+        "model-consistent-test-plan"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:5f4dad9945147fb97af8b9e34dee690c5fbe689058300c0b0008bbdd5ba8e5fb",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00288",
+      "requirement_id": "REQ-94c12a8d7cc80f3467c0588702d7ad93900ff35196bb4187f6a2fc53ba5b6929",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:985774be4d069c9cfaf3b8ca7b6d076c4ad491a17a8d550c5d6b538db287a65d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Against a malicious directory, some properties hold cryptographically while others need transparency, user verification or auditing. Identifying the dependency prevents claims that silently rely on a mechanism that is not deployed.",
+      "threat_ids": [
+        "TM-DIRECTORY",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-KEY-CONSISTENCY",
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "property-to-mechanism-dependency-table",
+        "undeployed-mechanism-claim-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:02e4959808dbcb08c95713700f9fc62762651a5d86421d441feba56cd4703fcd",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00289",
+      "requirement_id": "REQ-966d450bff80a57736b3d92fb2fb4787e29b9597b938e7e92eca819c0f9c95c6",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:c2c1fb4216027514e4ab503644de83cbc1355ebafa5b03988033f2da6d0685fc",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Harvested traffic encrypted before PQ deployment, or by classical-only paths, remains exposed. PQ confidentiality claims must say which historical data is protected so users do not assume old or out-of-scope data is safe.",
+      "threat_ids": [
+        "TM-QUANTUM-HARVEST"
+      ],
+      "security_property_ids": [
+        "SP-PQ-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "protected-historical-data-statement",
+        "classical-path-inventory"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:00ec06c6a528e4cc7911c5add6a4679e3193032313027b9fd509a1bad5664f7a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00290",
+      "requirement_id": "REQ-96bb8de1a3ed9a1086efacbaa19f6d4afd761e0b2ca42343c4ef396140e1d9fc",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:471544faebfd0d5bd341768b95e3255c1978d699a0739a74d5b49a8b3c0e73d1",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "When coverage of a high-impact compromise is unclear, assuming broad coverage risks users relying on protection that does not exist. Defaulting to the narrower claim is the safe interpretation until evidence establishes more.",
+      "threat_ids": [
+        "TM-ENDPOINT-LIVE",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "ambiguity-resolution-rule-in-claim-evaluator",
+        "narrow-default-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:77e87ac7a6b6824306844c7783d8377e2c308d7889e9c459c8f2fe61c8564d89",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00291",
+      "requirement_id": "REQ-a0de4a8642bfad6e6e33ba9fb1157170b8b6503172794feebed8c55225dba6ea",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:c0ae22aa949f797f443825a54b44c10d3a46128a81d6e1b70db0f59796958249",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "No protocol protects content while an attacker still controls the endpoint; PCS only applies after access ends. Distinguishing the two prevents PCS from being misread as protection during ongoing compromise.",
+      "threat_ids": [
+        "TM-ENDPOINT-LIVE",
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-POST-COMPROMISE-SECURITY"
+      ],
+      "evidence_expectations": [
+        "during-vs-after-compromise-claim-separation",
+        "continuing-compromise-scenario-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:bcbff49e027d7fe40eec0a17cf8a5a4c792b9cefd4b4b141ca7e3a66b9dc8af7",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00292",
+      "requirement_id": "REQ-a127b4c4e750f7d6fbf4af9dd06e83f775f883c9a1c7466264fcbba5dff037ed",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:cf22c25d97feb99bc75215468e0cd037ab240e4635a169cd052d84d3d8de1729",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Describing threats by capabilities and trust-boundary violations makes them testable and comparable; describing them by actor labels or motives does not tell implementers what to defend against.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "threat-entry-schema-capability-fields",
+        "label-only-threat-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:4875db8627d48181791788b6d10d2f0825a57da58a3e851fcebb88fa829683f7",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00293",
+      "requirement_id": "REQ-a35af48f727b18f8c55dbea8f4622e58174732798dc1c521f76a821dbc3d6203",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:35ac8dafb3a3fe89c9aee20569f58a8e88d7828456ce9c34d94ef1b56c70bd93",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Metadata includes many fields (contacts, timing, sizes, IPs) and observers differ (network, service, push provider). A metadata claim is meaningful only when it names the fields and observers it covers.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-NET-PASSIVE"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-CONFIDENTIALITY",
+        "SP-METADATA-MINIMIZATION"
+      ],
+      "evidence_expectations": [
+        "metadata-field-and-observer-list",
+        "uncovered-field-claim-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:8aa713e538af95fa7d14e12284cf4246d4751e5b800ac67c8b0660c0d7f570cc",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00294",
+      "requirement_id": "REQ-acc316f2beb89605a5ba5c439cbecd5e2a7d6fbc6c3a1f6363b2990505980eaa",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:4bc86fb8b54f237d18119972834b31ef95d5ae1c93c0015b2c7be7429b5b4b28",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Organisational policy does not stop a determined or coerced insider. Modelling insiders by their real technical privileges reveals what they can actually do, which is the basis for any meaningful control.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "insider-privilege-inventory",
+        "privilege-misuse-scenario-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:b2e567291188f3aae5f8899e3aa2477c777f78ab71e38dd837f57c8841a6092b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00295",
+      "requirement_id": "REQ-b00e261d605e11c2d72e5fdea0341854b13ea22f2826c2b88f0e6aa3d6aff409",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:2c430510299df54a315bc0b4c674984f919839d1018aaeb938cd99daf766845b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A system can be perfectly confidential yet trivially blocked. Conflating the two leads to either overstating availability or dismissing real confidentiality guarantees because delivery can be disrupted.",
+      "threat_ids": [
+        "TM-DOS"
+      ],
+      "security_property_ids": [
+        "SP-AVAILABILITY",
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "separate-claim-categories-in-model",
+        "conflated-claim-lint"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:a48d924b8bc4df5624a7ca87e8ce50369f20d77727b867d882c5bc598eb2bd1d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00296",
+      "requirement_id": "REQ-b56c4b652150dd4c67c0440af7cbac9c331d092e6f4ea8826ec549ed450c292e",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:1b6a957e8e7da4acee6c6d62d3f0c1574734adfd3af053f992cee125987b2ca9",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Service data access is the baseline threat E2EE addresses. If protected content were readable from service-visible state, the E2EE claim would fail its core test, unless the service is explicitly a recipient.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "service-database-content-inspection",
+        "service-as-recipient-disclosure-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:ce96ffce4e0ad8c1469728a754da802b960c36d54b13fb7386857cb6b8ac45a6",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00297",
+      "requirement_id": "REQ-b8d5cd5bb168164f24734e5f590e5c3cef0afc92253028cbff677dca9d8033be",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:ad2cf0f3af57b029adce31539373271e75b80e2a04a485f9b997792e2896b121",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Directory equivocation lets a service show attackers' keys to targeted users. A claim of resistance must name the prevention or detection mechanism, such as transparency or out-of-band verification.",
+      "threat_ids": [
+        "TM-DIRECTORY"
+      ],
+      "security_property_ids": [
+        "SP-KEY-CONSISTENCY",
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "equivocation-mechanism-identification",
+        "targeted-equivocation-detection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:8bbaa899dcd1bed30d0b14d389f2f31dc506f0e95747d0976b3aeffa555f672f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00298",
+      "requirement_id": "REQ-c6766de5335876473810115356d3effeaa9bb1f95ecf169b9172f4fae76c477c",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:ab3c54f9791b9d9c820c561ea58b0281388406b566863cf040ac1d9346cecd76",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "An attacker with live access to the endpoint sees what the user sees. Implying confidentiality survives this would be false unless a narrower isolated asset or boundary is defined that the attacker does not reach.",
+      "threat_ids": [
+        "TM-ENDPOINT-LIVE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "endpoint-compromise-claim-limitation",
+        "isolation-boundary-evaluation-if-claimed"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:2c1ffb177505bb9b285eba88a9395de9ae6b09700700cc2e9af7f340463274f7",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00299",
+      "requirement_id": "REQ-ccd6a73316d0d51ba80b8900388aa35921f7ad4c637ff829785fb77d2edf4699",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:17dfdf77d2a22cb825e1855e4d2cf1c3bd39ac62639f474865d1c91a17724e7f",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A properly signed but malicious update bypasses signature checks by construction. Resistance requires an independent control such as threshold signing, reproducible builds or code transparency, which the profile must identify.",
+      "threat_ids": [
+        "TM-UPDATE",
+        "TM-SIGNING-KEY"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "independent-update-control-identification",
+        "targeted-malicious-update-detection-test"
+      ],
+      "external_standard_ids": [
+        "SLSA-1.2"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:45a1576c015dbfa938673563a60054bb56dbdeb7fc8ce36a07f33769daca2eec",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00300",
+      "requirement_id": "REQ-ce01969e02dd72dda2c3777cfc64b0b4cde57395e57cf4c4291d14a0e14d8695",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:5526db0cf006e8a4a6ed41ea12409223c5e1135dd6d7d4874971e9d2fd4ee4b8",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Declaring scenarios out of scope is legitimate but must be explicit where users would otherwise assume coverage, so that exclusions are visible rather than hidden by silence.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-ENDPOINT-LIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "explicit-out-of-scope-list",
+        "user-facing-limitation-statement"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:046a4c5b7b1016d691ce9c3db179d78256af005c5ae323a373097ae561355d07",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00301",
+      "requirement_id": "REQ-d224b6993fbea8698a0f9af4b35ad0664b658b0a975e408fa06e695f53bd6181",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:edb62b835000e699b61e88450cb5f97bc1ab4b72be95e22b0314b7b139d59afc",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Weak or repeated randomness breaks keys, nonces and signatures regardless of protocol design. Profiles must state randomness assumptions and implementations must use approved CSPRNGs.",
+      "threat_ids": [
+        "TM-RNG"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "csprng-source-identification",
+        "rng-failure-handling-test"
+      ],
+      "external_standard_ids": [
+        "NIST-SP800-53R5"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:127864706df4db9fb743863066b711a18b939d1b54450ac7367f97867df32b96",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00302",
+      "requirement_id": "REQ-d33f89ba8516c167263ee27695c42588b4516b40883a6406e70c3fe955c905fc",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:7d717bf146a335b34a79e4d4574cb87538b736df95e66d57b421243ff1654d23",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Secure hardware can fail, be extracted or have firmware flaws. Profiles must identify which claims depend on it and how failure is contained, so a hardware break does not silently void unrelated claims.",
+      "threat_ids": [
+        "TM-HARDWARE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-RECOVERY-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "hardware-dependent-claim-list",
+        "hardware-failure-containment-plan"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:3e539c19b7dde4893582017100c8cf9b96802e85eb5ff5f42233085954280c29",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00303",
+      "requirement_id": "REQ-d61190dba13f6e748ae797c65cc0f5417c5fe872c8bd8c0019e774d113c6830f",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:47f55dc61d2b456d6c2de29ba6fe18db783b5653ef80edab861145907b9bf100",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "An active quantum adversary can forge classical signatures and break classical key exchange in real time. Protection requires PQ or hybrid profiles, and any remaining classical assumptions (often authentication) must be stated.",
+      "threat_ids": [
+        "TM-QUANTUM-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PQ-AUTHENTICATION",
+        "SP-PQ-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "pq-or-hybrid-profile-selection-evidence",
+        "remaining-classical-assumption-statement"
+      ],
+      "external_standard_ids": [
+        "NIST-FIPS203",
+        "NIST-FIPS204"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:66c9eed53017dc97d44721213c92918be389cf0e9db561ee77a9cf72b923f360",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00304",
+      "requirement_id": "REQ-d6b43470bf07116717b7dd1a5cfb8d6025134dd8efb355c50494caa3bd688d00",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:ca828b78996dadb51f6abf49c2f89add972982152504f258dacb4ec129848e17",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Hybrid constructions differ in whether both components must fail to break confidentiality, and authentication often remains classical. Stating per-property dependency and harvest consequences prevents a hybrid label from implying more than it provides.",
+      "threat_ids": [
+        "TM-QUANTUM-HARVEST",
+        "TM-QUANTUM-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PQ-CONFIDENTIALITY",
+        "SP-PQ-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "hybrid-component-dependency-table",
+        "harvest-consequence-statement"
+      ],
+      "external_standard_ids": [
+        "NIST-FIPS203"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:e3207f2149da8a222f67dd004584dd500e972ff671c8edb52600f5e05a71e7ff",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00305",
+      "requirement_id": "REQ-d88f67a9c8ea28ea3fe9dbf95301e1ef4cd246a59e06466055e8567d3439354c",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:99e3f74d8858deefcd9bbfb03595f8733a860c08c1440eef8ecfc7c67d302886",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Actor labels do not specify capabilities and are interpreted differently by different readers. Requiring capability descriptions makes the threat model concrete and testable.",
+      "threat_ids": [
+        "TM-INSIDER",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "capability-description-per-threat",
+        "label-substitution-lint"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:1fa718abba01c02da143a3c5b470e2cac900d45e7c4b2165eecd117d7e5f33b9",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00306",
+      "requirement_id": "REQ-e50896f0cb6919f28978819acb69680cfb7a723ff5908e3b6f51f818f1f93cc9",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:62cc1bbde236e04eb5479e68ea878ce391da5c841361f58b9d734c39cca8ce4b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Production profiles must make their security posture fully explicit: assets, threats, surviving and non-claimed properties, assumptions, recovery, composites and exclusions. Missing any element leaves room for readers to assume protection not actually provided.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-ENDPOINT-STATE",
+        "TM-ACCOUNT"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "production-profile-declaration-completeness-check",
+        "missing-element-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:f6b58177bf44a4a35ea4b87ed17d65cdc864ce1d020ac993a7bde0917c6815f1",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00307",
+      "requirement_id": "REQ-e72b61f36ae1315de4f960424c4c0df59d55a7b879dd30aa3dcca699ebe59a63",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:e2c66f587faf841ca1636294ed6b237a0c5787734c7341b8a510b8981e662808",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Passive observers can record transport traffic. Protecting content independently of transport secrecy means content stays confidential even if TLS is broken, terminated or misconfigured.",
+      "threat_ids": [
+        "TM-NET-PASSIVE",
+        "TM-SERVICE-READ"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "content-encryption-independent-of-tls-test",
+        "transport-stripped-capture-analysis"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:d11757a22929f752c32cc40a428c3bc4c916260b7c4a57616c59417e6b7433e2",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00308",
+      "requirement_id": "REQ-e7351564a6fe64b598a3b7eca8f090da4fed699112c55374a22e1fd2dcabc544",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:65464c0b21791d263aeb40a6dbdb1e1bc629fdf401bbc72c0af9594bf7dbb482",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Code running inside the trusted endpoint with plaintext access (malicious plug-in, compromised library) can read anything. Claiming protection requires a separately defined and evaluated isolation boundary.",
+      "threat_ids": [
+        "TM-ENDPOINT-LIVE",
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "in-boundary-code-claim-limitation",
+        "isolation-boundary-test-if-claimed"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:aded5f55726a989d9d25c648ca0e891b4a0633c0be93c718a030cce0fc8c839e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00309",
+      "requirement_id": "REQ-e741b6f84a2603a7a018db0ffbc49d97934b070d44d814ca61e7daf739f1b407",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:1188c96f7f28ea9721f958d70e9e214c6779b245caf71f489c48d42c9a5fa538",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "An active network attacker can modify, replay and downgrade traffic. Profiles must say how authentication, integrity, replay and downgrade resistance behave, since confidentiality alone does not address active tampering.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-REPLAY-RESISTANCE",
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "active-attacker-property-table",
+        "tamper-replay-downgrade-tests"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:883012c2464d6269215a5e1e0d04c11a8929d10ada9ac9d57170ec0123fadf3f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00310",
+      "requirement_id": "REQ-eedb9778bc1c047cb6869c7d1c596297ae3307ac5a0e194b1fc855c4a856a209",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:8c2594d2c0187e4f54537d1153c78b4c8e863dcaa0160d1ee147bc350168c3ea",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A claim without threat conditions is unfalsifiable. Tying each claim to the conditions under which it holds makes it testable and prevents it being generalised to other threats.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "claim-threat-binding-validation",
+        "unbound-claim-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:3555515a1b8cf5e600d27381078f10451d320c52e5bd1b7eab8460ec3b67b32c",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00311",
+      "requirement_id": "REQ-efe2718739fe3d42033b7969085c52bb06c5567c3391edc39847f7054687f07d",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:8148f6f887d3e85e4c6802acc70d89e314c4d9c4dc1d01bdce664ecd9d7ec54a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A compromised release-signing key allows trusted malicious updates. Profiles must describe rotation, revocation, thresholds, transparency or recovery so that signing-key compromise is containable.",
+      "threat_ids": [
+        "TM-SIGNING-KEY",
+        "TM-UPDATE"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY",
+        "SP-BUILD-PROVENANCE"
+      ],
+      "evidence_expectations": [
+        "signing-key-control-description",
+        "key-compromise-response-drill"
+      ],
+      "external_standard_ids": [
+        "SLSA-1.2"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:ed31f798c75a668fd41c067cbde75d122ed575278a08343e40b5f3d3df06f842",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00312",
+      "requirement_id": "REQ-f48cf06a5088def0183925e932a8fba5875e175bb0c3aa67f4f62ac731923e94",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:134607bfa4ef5813f4f5c88496e7e6027ef749f04a68e2d32596fe6f452313bb",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Account compromise impact depends on whether the account can enroll devices, replace keys, trigger recovery, restore history or change groups. Stating which actions it permits defines the real blast radius of a takeover.",
+      "threat_ids": [
+        "TM-ACCOUNT"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "account-capability-statement",
+        "account-takeover-action-tests"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e90d3bd943809a118faa7dc5105653e00d2409debcde40210a5962ef18112ea4",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00313",
+      "requirement_id": "REQ-f5928ade4d3024333a5624b908f511475578f6a70d36b54853421bd25e27350e",
+      "document_path": "spec/threat-model.md",
+      "text_digest": "sha256:cc0cfbe7746e4c85fc2ffe6128a9d11844a87a37625be3a75793f01491e159cc",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "In genuine E2EE, message keys live on devices, not in the account. Equating account takeover with key disclosure would both overstate impact and hide that the real risk is new device enrollment.",
+      "threat_ids": [
+        "TM-ACCOUNT"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-FORWARD-SECRECY"
+      ],
+      "evidence_expectations": [
+        "account-compromise-key-exposure-analysis",
+        "account-takeover-existing-message-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e55e040ff087b25fde7c2d9ac94ed0a3cda0a47de66adb558fd74c8a9581f7c3",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00314",
+      "requirement_id": "REQ-01e039d6d6442b01277764a50a4d98ae9249cef6270239783c7eec2468056d2f",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:66d6413935ffa98a0fae4cbfa9449cda19b3a0bf20d3eb0732edd16317d0e501",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A conditional claim with no stated condition is indistinguishable from an unconditional one and invites over-reliance. Requiring at least one condition makes the dependency explicit and checkable.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "conditional-claim-schema-check",
+        "empty-condition-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:aa16286b0a22e5274cd405b114835d2055a48b139deb07ea0821a85868c37ef0",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00315",
+      "requirement_id": "REQ-01ea81ef64dd4232ee0f0c2bb49b833cdf4fadad404babd610836a53a182656f",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:d7d66afc3155c9aec65d912f8e9c42926e7cc6f58e0b79bdd75dd92dcd10643b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Property definitions describe what could be claimed, not what an implementation does. Treating a definition as evidence would let products inherit properties by citing the standard without demonstrating them.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "evidence-requirement-per-claimed-property",
+        "definition-citation-not-evidence-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:0a555b24cb08457bb3fa7d096cbd386603f59c9a5b3e62146490bc1e08207910",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00316",
+      "requirement_id": "REQ-01fc45f0a0460aab9e8c86965eb2ae9db6202a8f12870aad7f10118afcfe082b",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:b4f523af098800ab85b07c3bf8ba7eeb7a3a754191ee2098c27fc872d4006626",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Deniability depends on what transcript or key material a judge sees and who could have forged it. Without naming the evidence and the simulating parties, a deniability claim cannot be evaluated and may be false in practice (e.g. when server logs exist).",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-DENIABILITY"
+      ],
+      "evidence_expectations": [
+        "deniability-evidence-and-simulator-statement",
+        "server-log-evidence-analysis"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:b130d04bac168def9ed88b938afc3ad53a9fd42cbc2635b4c9a44bf4b17ea769",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00317",
+      "requirement_id": "REQ-03f363a45c358a47880928c5194f367d1ab2cb94b7a056961fb0f5af1a6481a9",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:e6961a2becc9741234bc1fdb59eeb537c9feb3699d2835d6bf5af8c076f1180d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Machine-readable claims feed conformance tooling and dashboards; nonconforming structures could be misparsed and present claims more broadly than intended. Schema conformance keeps automated interpretation exact.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "claim-schema-validation-in-ci",
+        "malformed-claim-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:43226cd1425ab9444badf2275bfd51d0c8e27de7873ee60913cd09f12bf0681d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00318",
+      "requirement_id": "REQ-04849fd0d0d537a7d5708e0af059b59cf5737ce0ed1b89651de286649629a36a",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:7775c1750f7dc825dcae04db1c81a76bc24adcb69c4a9009cb6aa8bf2e1a123e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A property is meaningful only relative to a threat. Declaring the threat IDs for each provided or conditional property prevents claims that hold against a passive network observer being read as holding against a malicious service.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "threat-ids-present-per-claim",
+        "threatless-claim-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:14cba09a22359216d5b20ff69e0b96d2059090bd2cea655a94bfbebc6b9d99fd",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00319",
+      "requirement_id": "REQ-0c9cdb4b6ee3b4b96665a4caa32dbcea1dea2657b68c41d21fdc14ce4407f1d8",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:33aa77672693fcdfa7ac8b8fab8cbc415f6e09b3ed723df90cfcc76cb28ffb8a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Message authenticity shows who sent a message, not that the sending software was trustworthy. Interpreting it as proof of secure source code would conflate cryptographic origin with software assurance.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN",
+        "TM-UPDATE"
+      ],
+      "security_property_ids": [
+        "SP-MESSAGE-AUTHENTICITY",
+        "SP-SOFTWARE-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "claim-scope-wording-review",
+        "authenticity-vs-software-integrity-separation"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:dc54f755829753659a5aa5128d631845a11f52d940546c974ec26f23e4f1f5e1",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00320",
+      "requirement_id": "REQ-1469e8fed9465a40347d886343275da7ff349796799a3f539838598c2ade5fd3",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:a2ec084e3e62a95814b395bb54e55551eea4d7d6baf6004cd99886b5a392c596",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Availability depends on infrastructure and adversary capacity rather than cryptography. Scoping it separately prevents strong confidentiality guarantees being read as delivery guarantees, and vice versa.",
+      "threat_ids": [
+        "TM-DOS"
+      ],
+      "security_property_ids": [
+        "SP-AVAILABILITY"
+      ],
+      "evidence_expectations": [
+        "separate-availability-scope",
+        "availability-confidentiality-conflation-lint"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:2dcb5c42e60e50fb963983db8954b96f6e73db1d1b0e7547da517ba94c709e23",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00321",
+      "requirement_id": "REQ-173d146a4b09ade1f216630fa028aeada95a3d2d8c0142047c16e85673b50595",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:158dcfaafd5e972231b8ec5e3332b7669845f31bdbc7f7565d52843614315012",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A not-claimed property is an explicit statement of absence; inferring it from other claims (e.g. PCS from FS) would reintroduce exactly the overreach the marking was meant to prevent.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "not-claimed-inference-absence-in-evaluator",
+        "inference-negative-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:632c15e510d86b6d03db88eaa1c91ab7e887dc54af118098d999ac5707bb5b3b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00322",
+      "requirement_id": "REQ-1a3df96d6fe334c932f39a1762e94dd3f49fb07b08dcacd51288d04293b304ea",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:9b9b1eec69e91490fc283239d112b59062aa1f9f36911ff2e4703ee0ce54500e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Unknown threat or composite IDs indicate typos or private definitions that reviewers cannot interpret. Failing validation keeps every claim tied to the shared threat model.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "unknown-threat-id-rejection-test",
+        "registry-lookup-in-validator"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e269925a991d9f3ab841b76ad56e0a189222342afc318f4f949b32947becd20d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00323",
+      "requirement_id": "REQ-25bca8003aace5dd13ba14713befe5fa260f8ca783131ef465d305e0115e57da",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:40b3056b8f28213195c5da49acba5dbfb5d01285e15f5f6c95405378b006c78f",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Confidentiality is relative to what is protected and from whom. Identifying assets and intended recipients makes clear, for example, that attachments or previews are included and that the service is not a recipient.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-NET-PASSIVE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "asset-and-recipient-fields-present",
+        "recipient-set-vs-claim-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e470447a87cca175100b252dc15fe167096b438beb277300c29cb1d694c90dd9",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00324",
+      "requirement_id": "REQ-29eb58f6d5362de1fc7414c4a487f7dc507efdd96cf96c0ff86f5c06de75f0b8",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:7c50ea5a364b63d1eea3e832d05487aa9008b206c863801e5d841eee5561bed4",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Marking a property not-applicable without justification can hide a property that actually matters (e.g. claiming backups are out of scope while offering cloud backup). Scope information lets reviewers confirm the exclusion is legitimate.",
+      "threat_ids": [
+        "TM-BACKUP",
+        "TM-SERVICE-READ"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "not-applicable-justification-field-check",
+        "unjustified-not-applicable-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:83302ddf654031ef18403a348a7a15cf95adfc02d962364bab62118db7c5ef2c",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00325",
+      "requirement_id": "REQ-2cfb7dda1f3667529e8f08f2751c5da3901ac4f9107054a01ece801e851516ed",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:d0d48baf37d057072d9078592111e6d57e74135a7f4753f587bdcf016011def1",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Composite threats can bypass defences that work against each threat alone. Requiring separate assessment of compositions prevents over-generalisation from single-threat results.",
+      "threat_ids": [
+        "TM-ACCOUNT",
+        "TM-SERVICE-ACTIVE",
+        "TM-DIRECTORY"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "composite-status-declaration",
+        "composition-not-inferred-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:6d0e1a9883ae9fbb51baaa1ae6857570967824abd49a6a110a38205e9d99796d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00326",
+      "requirement_id": "REQ-2e93a8dfd777a7c254f0d991e58f5c611a8c7260819260e84d07d81a008d5fe2",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:f0b8b0bd011e8433b50725582d61eed2e3e627ae0d15acc5e60aaafda20bce0f",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Properties are related but not implied by one another (FS does not imply PCS; confidentiality does not imply authenticity). Forbidding derivation without an explicit normative rule prevents unearned claims.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE",
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "property-derivation-rule-registry",
+        "undeclared-derivation-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:a44a9b328f2f076eaebc81ddde79c874c7b40aa4ca1e004e8b646f151924fc1a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00327",
+      "requirement_id": "REQ-3459afb4bf4c194beafd03052850b900100c16003664b5b30714b3ae4fc148f3",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:c1a55ef645ca43220239cacada9a33f858b4b681bb2d01b2c70f9f236c90feae",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Forward secrecy depends on what was compromised, which secret leaked, which interval is protected, what the attacker retained, and what plaintext remains elsewhere. Without these, 'forward secrecy' cannot be evaluated and often hides backup or local-history exposure.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE",
+        "TM-BACKUP"
+      ],
+      "security_property_ids": [
+        "SP-FORWARD-SECRECY"
+      ],
+      "evidence_expectations": [
+        "fs-claim-dimension-completeness-check",
+        "backup-and-history-exclusion-statement"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:a4a5100069707421bd1fd2895c155d4bd9c55839c5ca80b2ecd080a81f0f5e23",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00328",
+      "requirement_id": "REQ-4464c851d8581df11aab41c9013c20b5c2d433aa2df5a8102ed1a6d02d14be7d",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:4c53a37716a68b1dece7285f23241802ad697a55ed4d967d3ad92774b8a3cb3c",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Integrity detection after content has been shown to the user or acted upon is much weaker than detection before use. Requiring the claim to state when detection occurs exposes designs that only detect tampering retrospectively.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "detection-timing-field-check",
+        "tampered-content-not-presented-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:2a589200d2523d0a667394e65e4aaa0eca5e76bcdcff8984044a0b19601a9460",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00329",
+      "requirement_id": "REQ-498395a2c60895a2ce55a69fcb994f7d5d886ba5430935209b2918fd03e8b876",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:93918b89664f333149f98570fad93cb690f89e0dd8798e1355dd0c8f337616bc",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A production claim must be self-contained and evaluable: property, scope, asset, threats, composites, phases, prerequisites, limitations and evidence class. Missing fields leave room for readers to assume broader protection.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "production-claim-field-completeness-validation",
+        "missing-field-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:0c3486640779129003bd23a6b7267bc8d6c3ffb725d28c756441bf795fa53e8e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00330",
+      "requirement_id": "REQ-587c02ecc6faf9aae8e934b1bf1b6817587a2698559dfb708a337fccc2352642",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:2b94cd65e3fe0e5eb644927af3ccee0cac0ed831d76bb6514bed0e6b7042bace",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Unlinkability depends on exactly which items must not be correlated and what side information the observer has. Without this, timing or IP data could link items while the claim still appears satisfied.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-NET-PASSIVE"
+      ],
+      "security_property_ids": [
+        "SP-UNLINKABILITY"
+      ],
+      "evidence_expectations": [
+        "linkage-items-and-auxiliary-info-statement",
+        "auxiliary-information-linkage-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:9a591fcd4977ba99da51733d8170e696c4f0fd0beea05a1976b93796f0feedde",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00331",
+      "requirement_id": "REQ-5e299b1cc680c5c7bbfdddc365f343cd11da71556391b34c74c4eeeb0b2a481f",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:b62ae77c010ef6ce88a28b48a3cf25b51717bfaba079e10797ae3e7da382da31",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Rollback resistance applies to particular state (counters, ledgers, checkpoints) via a particular mechanism (hardware counter, transparency). Naming both lets reviewers check that the mechanism actually covers the state.",
+      "threat_ids": [
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "protected-state-and-mechanism-identification",
+        "state-restore-detection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:d3653673bd10bbf2737181c27ce72c5e744064b753ca63af45e956657ff53a4a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00332",
+      "requirement_id": "REQ-5f7bad746b16b244fe90b262c1b7484cbf3c9905d57ff31a0a60298b6ced88e5",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:f64d245492bff90f103c448c4c3f1eafd767d897288378774c8cf213c274674a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Unsigned protocols can still produce transferable evidence through MACs with long-term keys, server logs or metadata. Deniability requires analysis of what a third party can verify, not just absence of signatures.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-DENIABILITY"
+      ],
+      "evidence_expectations": [
+        "deniability-analysis-beyond-signatures",
+        "transferable-evidence-inventory"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:523b8455b0e6de9fa95b4cc13ed1fdfb0701ffec06e476623f157a91b6206425",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00333",
+      "requirement_id": "REQ-68265092694146470946e8850669956d20a9cf112bc2b8efd32e2bc505c28d74",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:d0f92593a47bbcf50f10c1ddb9aa9546c63be1b5936dd720704097980da67637",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Where a composite scenario changes a property's outcome, silence would be read as coverage. Declaring the property's status for that composite makes the effect of combined threats explicit.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-ACCOUNT"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "composite-status-field-check",
+        "material-composite-missing-status-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:b26448e84952c9538f5f6153ca29aef82271ffadd87eb968dbbad29d1631a0a8",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00334",
+      "requirement_id": "REQ-68b793b8ce09b5be87a70dc625403bc51b5f96e648388f94bd9672d1577ac4ed",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:f87bd0d5f3263bd9c2b7b6b0faa334dc166deb0d98f1e7ad9dcd8700e8ca3eac",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Properties legitimately differ by threat (confidentiality against a passive network but not a compromised endpoint). Allowing per-threat status keeps claims honest rather than forcing all-or-nothing statements.",
+      "threat_ids": [
+        "TM-NET-PASSIVE",
+        "TM-ENDPOINT-LIVE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "per-threat-status-representation",
+        "mixed-status-claim-fixture"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:3c8c1c4367f6820a92c46ae80c9c9ab9a4fe3094ca7df10666c0b2bf99ab6b3c",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00335",
+      "requirement_id": "REQ-6952ce066256ed548fbdb553c738f2884c6461370d28c5c523ab7e7515f580ed",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:43efa587554eccd14802914f9df1518efb70e9b68d2a3519a01878c0b4174f8b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Recovery confidentiality depends on which authorities, secrets, services and hardware are involved and what history recovery can expose. Naming them shows whether, for example, a provider-held escrow can restore message history.",
+      "threat_ids": [
+        "TM-RECOVERY",
+        "TM-HARDWARE",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-RECOVERY-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "recovery-component-inventory",
+        "recoverable-history-statement"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:0b4b79734d66e7ff202ff070cee0907017d00d13a08c17420ed732d69351e1e1",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00336",
+      "requirement_id": "REQ-6a6e3e280fb1251cd9bf973c5f96ca0594db19aa8931f0d4122097478241121f",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:d09f854ca5813bc462b0c37b57cbe61ddb6d6974f79d2ec75ebfd84c94f0de85",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Message authenticity convinces the recipient of the sender but may be deniable to others. Treating it as transferable proof would misrepresent its legal or evidentiary weight unless non-repudiation is separately claimed.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-MESSAGE-AUTHENTICITY",
+        "SP-NON-REPUDIATION"
+      ],
+      "evidence_expectations": [
+        "authenticity-vs-non-repudiation-scope-review",
+        "transferability-claim-absence-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:4988a0bee94c4849bba0b7b792f3a0378725997ca9d93c751347f6a3568e3c89",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00337",
+      "requirement_id": "REQ-6d1fb0c218c6aeb9c366308a5afb83046d7c544a5254f1838f3416b2abb3e411",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:cb2fcd21efdb57e1d89c8a38d99e758ad51bed6ccb952ecb90dc9c57a85ed68c",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Claims often depend on assumptions outside the E2EESA invariants (honest hardware, correct clock, user verification). Enumerating them lets users and assessors see what must hold for the claim to be valid.",
+      "threat_ids": [
+        "TM-HARDWARE",
+        "TM-CLOCK"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "assumption-list-per-claim",
+        "missing-assumption-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:2bd9a855f8a2e314a383af91d7038c49f0dc4e07c07bf9b5d5eafdb77db0b1d7",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00338",
+      "requirement_id": "REQ-7347292e3fad7cbaf078b8e28e8d56d09c58e91b0f93802ba1568ec05b0f86be",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:2520cb4625310622d8cc7d156192124dbe8d8647acf8fff560b128d6c00ffec9",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "If a required dimension (e.g. exposure window) is missing, filling it with a default would invent a claim the profile never made. Treating omissions as unspecified keeps interpretation fail-closed.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "omitted-dimension-fail-closed-evaluator",
+        "default-assumption-absence-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:f52f822388c742f88e54ec049d47255f07af114ca978ea42e09dbaf5251e8708",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00339",
+      "requirement_id": "REQ-73d2eae8bf69cfbacb0c963be9bf72362f2d68763b23ca6c78e815842bf4e9ea",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:af66c61ff9914afdf1dad00e65ec57a89db5ce755cfc146be422d6f37b63f7b5",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Unknown property IDs cannot be interpreted against shared definitions and may hide invented or misspelled properties. Rejecting them keeps claims within the registered vocabulary.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "unknown-property-id-rejection-test",
+        "registry-backed-validator"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:ec6d79c932b2c2883e623036391dab89ca5f994e8466e9e9b739ac2eed78ee7d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00340",
+      "requirement_id": "REQ-8eb8abb8db7ed4244542caaa3a0ec0b86f7df841c7ce25c3064ccb58c00111e1",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:ff0379b48e5c1a793b6a000c8b5464dbf76ae70ff8be18fee0ddfa7ef3f3c1ee",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Limitations (e.g. no protection for previews, sparse PQ healing) are as important as the property. Recording them prevents claims being consumed without their caveats.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE",
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "limitations-field-present",
+        "material-limitation-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:68c318fde2abf7454eff52ba943918daaaee811f296db3ad33e0cd972a5d7388",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00341",
+      "requirement_id": "REQ-8f16dcfb3313bbeb2dcdd4ef2c76baa98d03b1e7b81d05dcffd7938945f2e777",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:bb1c11165e854cfe924f307e2dd4db2496385e7a0a59a5b31fd1e2365e6aea6d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Claims are bounded by their declared fields. Reading them more broadly, for example applying a device-level claim to the account or a steady-state claim to post-compromise, creates unearned assurance.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "claim-interpretation-rule-in-tooling",
+        "broadened-interpretation-negative-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:3ea5e560ee26ef4fdfc167b5ddbda1a525809a2b1728811e4a08008de9bd425c",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00342",
+      "requirement_id": "REQ-8fa9d937386ee7a22499ece0e65ba0cc26acdf2ea04b5555e8c566e176a6fece",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:f59dff9910bd1e80142a89d6e7fcb27128524efc79b12a3b08496a62028a39e4",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "'Metadata protected' is meaningless without saying which fields (contacts, timing, IPs, sizes) and what protection. The phrase otherwise implies broad privacy that content E2EE does not provide.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-SERVICE-READ"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION",
+        "SP-METADATA-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "metadata-claim-field-list",
+        "unqualified-phrase-lint"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:7b3bd3152f9c8bf2647a8440ec8ad5ec7a3b4df94bdf9635d604cb359d6e0d15",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00343",
+      "requirement_id": "REQ-a5332c90aa0775a0a3cbfdec667f41da0c44447747e11a9c3e8b491f76a02ebe",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:620d496c527a3ae35bb9ecf59afca21f9de50955fe989b252553eb540ab27b42",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "No system remains available against an adversary that can block all communication forever. Claiming general availability in that model is false, so availability claims must be bounded to realistic adversaries.",
+      "threat_ids": [
+        "TM-DOS",
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-AVAILABILITY"
+      ],
+      "evidence_expectations": [
+        "availability-adversary-bound-statement",
+        "unbounded-adversary-claim-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e6a322c111801665ed9d421ac8d94868ca4a20ff5f0f3424cf9e9ea6b777f6e9",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00344",
+      "requirement_id": "REQ-ac5ce3422993f3e12e3ec1a43ec50e516784ca9fd8f1dcba6410326705db7d5b",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:493956b290834dcacbb8e2eb5b3dac55c571554a076ccdcdcdd71577ac3aa97a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Signature checks stop unsigned tampering but not a malicious update the vendor signed. Stating whether that case is in scope reveals whether additional controls like transparency or reproducible builds are needed.",
+      "threat_ids": [
+        "TM-UPDATE",
+        "TM-SIGNING-KEY"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "malicious-signed-update-scope-statement",
+        "update-transparency-evidence-if-in-scope"
+      ],
+      "external_standard_ids": [
+        "SLSA-1.2"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:94b0f97a582d2f8f1d11c57ce9665a1dada9b7d723b8dbea31216da03b53aa66",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00345",
+      "requirement_id": "REQ-b21f0e9608bb53ccf32e1056b3eaa7ba3611dbcc973b46514c6da6186ee54e74",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:92479db1166f2839bbaf99d2c2fe8305044cfd43b61c8ea5e3c24a9761ec4ff7",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Properties like FS and PCS only make sense relative to a compromise event. Using defined phases makes it explicit when each property holds and avoids blanket statements.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE",
+        "TM-ENDPOINT-LIVE"
+      ],
+      "security_property_ids": [
+        "SP-FORWARD-SECRECY",
+        "SP-POST-COMPROMISE-SECURITY"
+      ],
+      "evidence_expectations": [
+        "phase-vocabulary-enforced-by-schema",
+        "phase-specific-claim-fixture"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e3b811816a130cad171d2caeb790d9ea5b4c0bc2bdb25a4b996f4950a06261de",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00346",
+      "requirement_id": "REQ-bb70758e548e01844f6a551ed918e840842a6a80e1aeec8e6a276fd0d640056c",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:7b42b1ce6df1427a26f4530b806730076f4a6bd424549efb38a5f0dfa58bb744",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Healing requires fresh secrets the attacker cannot see; while the attacker controls the endpoint it sees them too. Presenting PCS as protection during live control would be false.",
+      "threat_ids": [
+        "TM-ENDPOINT-LIVE"
+      ],
+      "security_property_ids": [
+        "SP-POST-COMPROMISE-SECURITY"
+      ],
+      "evidence_expectations": [
+        "pcs-claim-excludes-live-control",
+        "live-control-healing-failure-demonstration"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:43d8ad45c06ae64049958696240c4692aae220c79fbccfc98426f59ad958e175",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00347",
+      "requirement_id": "REQ-c103094f46cc5fb42c41651feb27aafcdc9af136eb910d0a60ed9d3df2a40520",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:2bde0323265e05cae23700e778a9a3c4342bc410b097096b4a2964b25867aa7f",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Key consistency applies to a specific object (key directory, group state, log) and may prevent inconsistency or only detect it later. Stating both determines whether users are protected before or after harm.",
+      "threat_ids": [
+        "TM-DIRECTORY"
+      ],
+      "security_property_ids": [
+        "SP-KEY-CONSISTENCY"
+      ],
+      "evidence_expectations": [
+        "consistency-object-and-mode-statement",
+        "detection-latency-evaluation"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:81df3cffb4ed8b8b339b3ed95b72abda8bf4f6f1d0b659fa126916f1c57c758a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00348",
+      "requirement_id": "REQ-c5968e7e528b066ff66539ca3fe7c98f99f6aa4ea55be9d809251ee6c4cf99d1",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:f7b522e57ecfd854884514303ab2388ffe90a47bdeea1efde0b081be804893e8",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Deniability and non-repudiation are opposites for the same evidence. Claiming both under the same scope is contradictory; separating scopes (e.g. deniable chat, non-repudiable signed documents) keeps each meaningful.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-DENIABILITY",
+        "SP-NON-REPUDIATION"
+      ],
+      "evidence_expectations": [
+        "scope-separation-check",
+        "contradictory-claim-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:8e3a287a083dfa58559bb6d475e8be13ddcdd23cc6da70cfe9ae906a654d677e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00349",
+      "requirement_id": "REQ-cb82613fdf8f942135a5de94e8b5ad9c5e0fbb6927991e824877ef7236b64f7a",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:2c95b2565cc38c4ff7212c9ab2f19014c39eff488fa6fb17a2376fb5344c8433",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Authenticating a device is not authenticating a person or account. Stating the principal granularity prevents a device-level guarantee being read as proof of who is using it.",
+      "threat_ids": [
+        "TM-ACCOUNT",
+        "TM-DEVICE-PHYSICAL"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "principal-granularity-field-check",
+        "granularity-overclaim-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:29e9d435c39aecdaec69d01fbb9c2519483caf2c0cb54cf35a131051c1ec4488",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00350",
+      "requirement_id": "REQ-cdbbe8880cd616673db190ef6d431cd1214b689490a471b7928b5f4ae2037ce6",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:0b92eb9f9f1a75219a32c4c03a4bbebff9535c9eb9bde254994f0a85fee7714d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Confidentiality against the provider must hold both when it passively reads data and when it actively deviates. Stating coverage of each makes clear whether an active provider (e.g. key substitution) is defended against.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "service-threat-coverage-declaration",
+        "active-service-attack-test-if-covered"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:aad8a2604abca8406ee2eacb732c51aa98841bb990f1aaf37dece4c6ea01b0d6",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00351",
+      "requirement_id": "REQ-ce29866328b6bbbe7881124421ad4092d3c737339e697a5dad3dc421b9af23f3",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:560b8edc0a791797dd610fee682e9c3514468d13de00c7e5455152b36c7a0ea2",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "An attacker with live endpoint access reads messages as they are decrypted; ratcheting cannot protect them. Claiming FS against live compromise because a ratchet exists confuses protection of past keys with protection of current plaintext.",
+      "threat_ids": [
+        "TM-ENDPOINT-LIVE"
+      ],
+      "security_property_ids": [
+        "SP-FORWARD-SECRECY"
+      ],
+      "evidence_expectations": [
+        "fs-threat-scope-excludes-live-compromise",
+        "claim-validator-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:728ccbb56d2d4bafa61941b0f83521ad33cab650bdbb9e6469577fe82825efdf",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00352",
+      "requirement_id": "REQ-d51b618e0acd3bc3987db727b16be8f53fc405802e14b3f657d3f63cfbce03ba",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:1862678911b1ab763faebdd266016dfdcd17bf40caeb67924fc870f541be38ac",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "FS and PCS are defined around compromise events; expressing them as steady-state hides the intervals in which they do not hold. Compromise-aware phases make their temporal limits explicit.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-FORWARD-SECRECY",
+        "SP-POST-COMPROMISE-SECURITY"
+      ],
+      "evidence_expectations": [
+        "fs-pcs-phase-requirement-in-schema",
+        "steady-state-only-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:9de0e5369d042a1c566c86b5366589673b605bc83e9d3e5f1a0dd631f263d3ab",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00353",
+      "requirement_id": "REQ-e0a4247a7c92624235b8a076450cf82c292d1aa2b49e04b3ee3c8dcf9a3ffde5",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:fedf094006e2ebb2a1b7f69278d0b5a097e1fbbd95e0d486b413f7f0cfb2689c",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Harvest-now and active quantum adversaries threaten different things, and a single remaining classical component can defeat confidentiality. Stating coverage and classical dependencies prevents partial PQ deployments being over-labelled.",
+      "threat_ids": [
+        "TM-QUANTUM-HARVEST",
+        "TM-QUANTUM-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PQ-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "quantum-threat-coverage-field",
+        "classical-dependency-inventory"
+      ],
+      "external_standard_ids": [
+        "NIST-FIPS203"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:5d6c44847017371a9d84e5c8c583c736d3c5ba53a23e8e3b9ff7e350843167dd",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00354",
+      "requirement_id": "REQ-eabf4140ffd323a839bfe866eca151ea130ffc2362ae80085e346c35d18c8e93",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:af7be2c2a072b122c2e512da9ae2e1b7c1a5cd42752beb5b0aee5d60dc8dfb1d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Minimisation is relative to which metadata and which observer. Without stating them, reducing logs on one server could be presented as broad metadata minimisation while other observers still see everything.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-SERVICE-READ"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION"
+      ],
+      "evidence_expectations": [
+        "metadata-class-and-observer-statement",
+        "observer-specific-minimization-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:4abd13042d628b4b1fafb5d60e9fb14ea3632584a763e5b451759a150b364b1d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00355",
+      "requirement_id": "REQ-ec61189d1093a79e0cbe0129a238c591e8a7d5f14c5929070e419541980d99bd",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:d1464f958e36d1854cc794e40d6b81c22db5f66734f7612dc387feb51fa0c9db",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Downgrade resistance protects a specific negotiated object (version, suite, profile) relative to a minimum policy. Identifying both shows what cannot be downgraded and who set the floor.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "negotiated-object-and-policy-source-fields",
+        "floor-enforcement-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:b2473a1bc28aee316b3095a52656625ca09ca74e7efc3b7a81b826a43d434634",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00356",
+      "requirement_id": "REQ-f158b500c03a02b1a9c0f7cb5e812c3ab964816d25f06366f1fb330f9e97115e",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:514a14f456a576368be9b7c7368198e3e65cb4ab6aa37b6200afe7db779abf3e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Backups use different keys, storage and access paths than live channels. Live E2EE says nothing about whether the backup provider can read history, so backup confidentiality needs its own analysis.",
+      "threat_ids": [
+        "TM-BACKUP",
+        "TM-SERVICE-READ"
+      ],
+      "security_property_ids": [
+        "SP-BACKUP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "backup-analysis-separate-from-channel",
+        "provider-backup-access-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:2d41dd0bb3c07cdb07bd495dcf0ee5be6179658a2335fe551b2e155237936dc8",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00357",
+      "requirement_id": "REQ-f3ca7c10d78ae9879771ad27454fc90a0d6e75f929b57cea8f7d406ae0973ab2",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:cde9795fae2cd3bd3236080778233215791241c4ad49e70b04bddccce98f7510",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Confidentiality against quantum adversaries does not prevent them forging classical signatures to impersonate peers. Keeping PQ confidentiality and PQ authentication separate prevents misinterpreting hybrid KEM deployments.",
+      "threat_ids": [
+        "TM-QUANTUM-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PQ-CONFIDENTIALITY",
+        "SP-PQ-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "separate-pq-property-claims",
+        "pq-auth-inference-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:dbe68259996ec3bcc03719943250914db80842572c125bb2d4613f1165a473d8",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00358",
+      "requirement_id": "REQ-f5ded0cabc7b5ca2d5dde18cb6bc8b03ecb2cb140319d5b77f452db0f447cd19",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:565c0954b32312565a65afc14c6e60a0f51edf6dd703d13943d1632b4ea7ff31",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "PCS is useful only if users know what heals, when, after how long, what honest activity is needed and what blocks it. Requiring these fields makes PCS claims testable and reveals conditions like idle peers or dropped messages that delay healing.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-POST-COMPROMISE-SECURITY"
+      ],
+      "evidence_expectations": [
+        "pcs-claim-field-completeness",
+        "healing-prevention-condition-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e82d6e5eb336f1e896a51704093f78fd25644a810e32402d1c1a620eb89b90d3",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00359",
+      "requirement_id": "REQ-fa54797f663416c7754857868c57a4ef683fb0081e9048e2ba46aac178c9b3b3",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:2c76b946482373e914feb20921297bf6e8dd4acdf5e596fd0fb218c1133b54d4",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Encrypting content leaves routing, timing and relationship metadata visible. Interpreting content confidentiality as metadata confidentiality would misinform users whose risk comes from contact graphs.",
+      "threat_ids": [
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-METADATA-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "claim-interpretation-separation",
+        "metadata-claim-absence-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:f27d877a11868dd5e8d9401b67f14bc46f6d780bd8d9d74db41123030842969f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00360",
+      "requirement_id": "REQ-fadd042459a8b4b2419ae0f599d90a700b05f690d7cf9f7d22be2cf734807f3f",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:e5b3c6908d8734a8f0311fafc308edbf149fb2b5b8089407fedd0fc8fb22115e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Marketing often rounds claims up ('military-grade', 'fully private'). Prohibiting broadening beyond recorded limitations keeps public statements consistent with the evaluated claim.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "marketing-copy-review-against-claims",
+        "limitation-preservation-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:a0befebdea89068d42d8576f6713b585197df3121dab9aacdfcc8e031f0dbd7e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00361",
+      "requirement_id": "REQ-fb0226c25da45ddad757e6641e2d005cb7a6b8f665ed7e3a9f07f431d9cfe207",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:f68e9c6abc535f614e08f7fec42c50244e597a0a20781279f810ad4f41c3333e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Non-repudiation requires evidence a third party can verify, a binding to a real identity and trusted keys. Naming these elements shows whether the evidence would actually stand up outside the conversation.",
+      "threat_ids": [
+        "TM-ACCOUNT",
+        "TM-CREDENTIAL"
+      ],
+      "security_property_ids": [
+        "SP-NON-REPUDIATION"
+      ],
+      "evidence_expectations": [
+        "non-repudiation-evidence-description",
+        "third-party-verification-procedure-test"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC8032"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:cfca5cabac7f55d3dc673461eb4db823bdaf4b383e168ece5dfd3e9178374d2a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00362",
+      "requirement_id": "REQ-fbcfcf1d9901baa71d378f51b064c517760da88b027d76a20e619c4e04f2b793",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:363ba0ddb8962297cc80e58f97caa8b75ce8ddf96f9fddebbf9f174bf37cf195",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A provided or conditional claim without a threat or asset has no testable content. Requiring at least one of each gives the claim a concrete subject and adversary.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "minimum-threat-and-asset-validation",
+        "empty-claim-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:3773f8181d468c9e62f344cc65952df743aa6c4f5386fb89ca5c162bd210899f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00363",
+      "requirement_id": "REQ-fe137f414614cc3d911a0ddedfd70e30d06b8b09830fb1ce38fe169500a71ad5",
+      "document_path": "spec/security-properties.md",
+      "text_digest": "sha256:8e5da332d3b2ed6b0e94698ab9deb1c3e1c0541da807d1362371ec5e617edf8a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Replay resistance must say what object is protected and how duplicates, reordering and rollback are handled, since these differ (out-of-order delivery is legitimate; duplicates are not). Otherwise claims may cover messages but not, say, group operations.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-REPLAY-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "replay-object-and-handling-statement",
+        "duplicate-reorder-rollback-tests"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:4f111d370c366fae2b19ef17016fd6f2fed670e4659656ee75cd45baf1d46348",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00364",
+      "requirement_id": "REQ-02d748b3d841c88bd336e7e05dc567fb6cef8e0f8b130ad23733d302445a528b",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:7880f0933028fe33503874ca2b28dbdd029515986f6513579939d1a8356911c0",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Sender-hidden credentials authenticate a sender to the recipient without the service seeing who sent. If they outlive device revocation, a stolen or revoked device could keep sending authenticated messages indefinitely; lifecycle must follow the identity architecture.",
+      "threat_ids": [
+        "TM-DEVICE-PHYSICAL",
+        "TM-CREDENTIAL"
+      ],
+      "security_property_ids": [
+        "SP-MESSAGE-AUTHENTICITY",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "revoked-device-sender-credential-rejection-test",
+        "credential-expiry-alignment-with-device-state"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:9290fb61184bd50e2885014c5c305a0f9029d30d4628e70e8e7526295f7864bc",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00365",
+      "requirement_id": "REQ-12a38c5d83fcb5f9723c06a75054c90c8a8f965fe3c003fd88586050ca9bcd13",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:87bb3b156752ce31d632d42361747c6f7d7cd3671679fec4d4bfae0251c78a18",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Calls use different signalling and media paths (TURN servers, ICE candidates) that expose IPs and call graphs. A messaging metadata result does not cover them, so extending it to calls would overstate privacy.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-NET-PASSIVE"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "call-path-separate-metadata-assessment",
+        "conformance-scope-excludes-calls-unless-evaluated"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:43b312db440f63077a15217f6a0193f7860015b8f82d9052c44b600337612cf8",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00366",
+      "requirement_id": "REQ-2a58168e6d6c8de2b32e6c38ee90467f7dbe44f80693ad53cc97a3849746dab7",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:4cfa94745ecaa934fb1bad99480eadb85b23ab25c54bdfb3337607a4b553ce19",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Each prohibited behaviour turns the delivery service into a surveillance system: durable social graphs, content-derived classifications, cross-service identifiers and over-retained routing data. Forbidding them limits what a breached or compelled service can disclose.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-METADATA",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION",
+        "SP-UNLINKABILITY"
+      ],
+      "evidence_expectations": [
+        "data-store-schema-review-for-relationship-records",
+        "retention-enforcement-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e46cc065f7b8d4dd19d05c70801252ea8ed2c6edd1179fbf76483266754c6556",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00367",
+      "requirement_id": "REQ-31c343826bb44824be666026ab08be4ac6a3c1fe7207082a0247c31eca08ce39",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:2c95bc60bfef9610ef2bee8b74e41a5711c2c8adacd89735e01da01dcbebce3e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Abuse controls are needed, but if they quietly required sender identity while the product still reported sender-hidden conformance, users would believe their identity was hidden when it was not. Any change of mode must be reflected in conformance.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-CONFIDENTIALITY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "abuse-path-mode-reporting-test",
+        "silent-mode-conversion-detection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:a77e40ac9e618e247bed2f2277a0e398255514807bfb1dbdacd55eb487f3b6b4",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00368",
+      "requirement_id": "REQ-37fcfbdb4d0fcbf6f30eb020e413126e4a2a5886b703b3b570fca1c677bf7622",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:deea2d5e17811634ad6f6a8bff8c07c61bc3c9a67b0ed0167b42549d01a72f8b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "OHTTP's privacy relies on splitting knowledge: the relay sees the IP but not the request, the gateway sees the request but not the IP, and the sender identity is inside E2EE. This only works if relay and gateway are administratively independent; otherwise they can trivially join their views.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-SERVICE-READ",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-CONFIDENTIALITY",
+        "SP-UNLINKABILITY"
+      ],
+      "evidence_expectations": [
+        "relay-gateway-independence-evidence",
+        "per-party-visibility-capture-test"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9458"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:f5c67cf050181e1eeb50ac1da30ce3fcb44d7e42d5927ced3d37291bc658efa8",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00369",
+      "requirement_id": "REQ-39c5983691278a1f8410edf2bcf6f930862a8d244f27a0acdd28e7f8d3e329d4",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:0e24496cdb414528e3819819c0c66afcbe54edbae114490c975fcf07e3b21b9e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "OHTTP encapsulation uses HPKE; using unregistered or weak KEM, KDF or AEAD choices would undermine the request confidentiality that the relay partition depends on.",
+      "threat_ids": [
+        "TM-NET-PASSIVE",
+        "TM-SERVICE-READ"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-METADATA-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "ohttp-hpke-suite-registry-check",
+        "unregistered-hpke-suite-rejection-test"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9180",
+        "IETF-RFC9458"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:a949b5217b24403ec0289b317290434e67db6f79e52c8ba4e7a6319eeb614a73",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00370",
+      "requirement_id": "REQ-3a1d48b06ab2f24127f3ff40e316b1edfb3370613ee763ea45fe6b4c95f1e818",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:35190d2a29ecab2ecabfe0e2f0ccc20298b14c347ee6cfd5850bb0d40d3e2cc5",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Delivery metadata that is never collected or quickly deleted cannot be breached, subpoenaed or misused. Minimisation is the baseline every profile must meet before stronger mechanisms are layered on.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-INSIDER",
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION"
+      ],
+      "evidence_expectations": [
+        "metadata-collection-inventory",
+        "retention-deletion-verification"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:11f4a306f620632a0bf6ff7f45c5e545d51e88ce690bc4b1766cbaf2c08117f4",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00371",
+      "requirement_id": "REQ-3f5d1cbae6500205a722fbeaf458f82ad2a1d1f47da69d469fb85b8b8c67e8d2",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:bfa049337ee729f1714e785519ea801c5529f2f086f02934ca3da1142569b4c4",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Headers such as Forwarded or Via, or relay-added pseudonyms, would hand the gateway exactly the client-identifying information OHTTP is designed to withhold, collapsing the partition.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-SERVICE-READ"
+      ],
+      "security_property_ids": [
+        "SP-UNLINKABILITY",
+        "SP-METADATA-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "relay-forwarded-header-inspection-test",
+        "gateway-received-header-allowlist"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9458"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:56d792037e5adb008e6194c3277289e9b4fe4c62874baddfad7d8526e33af5d4",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00372",
+      "requirement_id": "REQ-40a0c97259eaffcc4fee311087998c4d9dd805210736fcce9e6e121901646b01",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:efecaf57d9eb1151d59fb440b582e53855528d86c435621b48e4f9653ec24899",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "If an attacker can substitute the gateway key configuration, the client encrypts to the attacker, who can then read requests. Authenticating the configuration ensures encapsulation reaches the intended gateway.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "unauthenticated-key-config-rejection-test",
+        "key-config-integrity-verification"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9458"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:d7959acc8ec51148b53bdbb35b22da7e720dbc37a370b746c587589ce43464c3",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00373",
+      "requirement_id": "REQ-40b2e66fdca643ee9fd65e7d9eb1b334877586e3796f59e7cb1139fb29c16af4",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:215172202ad61e01dab5505b98292268813d5bf84788602a963a9d8f214ac355",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "When the service does not see the sender, only the recipient can authenticate it, and must do so from material inside the E2EE envelope; otherwise anyone could impersonate any sender to the recipient.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-ACCOUNT"
+      ],
+      "security_property_ids": [
+        "SP-MESSAGE-AUTHENTICITY",
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "forged-inner-sender-rejection-test",
+        "sender-authentication-inside-envelope-trace"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:718f5d88de9051ae15a34f51ce3126217bcf0f8a9b67415e06c72e6cb1190ddb",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00374",
+      "requirement_id": "REQ-41c30b38fcd2412a79b32bba2b5fffe07d12b2af5e44751febddd93a61bf9f08",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:f00f64f67f7f12364412b5c036ebc19a1205862bf4e27444e39ecb7d9fad03e6",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Under relay partitioning the IP address is the main link back to the person. Zero durable retention after completion means a later breach or legal demand cannot recover which clients sent which requests.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-SERVICE-READ",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION",
+        "SP-UNLINKABILITY"
+      ],
+      "evidence_expectations": [
+        "source-address-logging-disabled-evidence",
+        "log-sink-inspection-for-ip-fields"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:5878061010bb9d1d125b3ee2d9391d0501a19c2a62291336c7b55be9d09f4d00",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00375",
+      "requirement_id": "REQ-46299e4b6b654a81b6666028a0fe53b78a71b358f2a1e9059e6b934c26e45171",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:cab3b7dedb8850d0eddc01e0e3bc7be5b8db9ec6b7ec34e1beb8961ea00949b6",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Metadata claims are only checkable if each delivery records which profile applied and what was actually visible and retained. The listed evidence lets assessors confirm privacy behaviour rather than trust configuration claims.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-SERVICE-READ"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "delivery-event-evidence-schema-validation",
+        "evidence-vs-observed-behaviour-comparison"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:4630ff19f09a1d2429875810fd1e06e58a580da2fd12bdda8bf6d56261bb345e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00376",
+      "requirement_id": "REQ-48aa28345a8e50f95a7a2014712c4ac7c37d245cbeef3ca519c3947d0e4cb079",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:75645a5b43897577ed95be701ff36dd5896cc05bea17eba6d2a05cd86713a597",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Sender-hidden delivery still reveals recipients and timing to the service, from which relationships can often be inferred. Unqualified 'hides who is messaging whom' claims would mislead high-risk users.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-SERVICE-READ"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-CONFIDENTIALITY",
+        "SP-UNLINKABILITY"
+      ],
+      "evidence_expectations": [
+        "claim-wording-qualification-review",
+        "timing-correlation-limitation-statement"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:842aa6954eb108b900b231400d2990044846f63d835c9ce91d98a84bc0203b1b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00377",
+      "requirement_id": "REQ-49d0cf0d22bc30f3a597016c0d070e0464feaf2b516e5b19e3005c338b7fb8e9",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:ef7e0c698e25d00cfdb420f95d1698640b61f3d8e936457ddad97d998fd48268",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Operators need aggregate counters for capacity and abuse management. Permitting them only in forms that cannot reconstruct per-user histories balances operations against minimisation.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION",
+        "SP-AVAILABILITY"
+      ],
+      "evidence_expectations": [
+        "counter-aggregation-design-review",
+        "per-user-reconstruction-negative-analysis"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:ae7f8426a9be57ac7732a151eba3522e60d443676356bb52f916ddda47fb9a7e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00378",
+      "requirement_id": "REQ-4e76809b494a5a07b618dcc01b7121e601cb30030393ff80b81676955a0c6cc7",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:002744c89d25d77e03bc7a1ff061759631dcd925bcb3274c2d83cd85ad25ead7",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "These concrete bounds make the minimised-metadata profile testable: metadata and IPs deleted within 24 hours, no durable relationship records, and no service access to content. Concrete limits stop 'minimal' from meaning indefinite.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-INSIDER",
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION",
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "24h-retention-enforcement-test",
+        "relationship-record-absence-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:62e0f073836af45345a891b046d02977a6a4a9fb9ce0b2f96ddd2b3e7cdd31fe",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00379",
+      "requirement_id": "REQ-4fd7c88308d795a50e262371abf3673fbb9cf0cf4c1503006221cfcabed28b8b",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:044a0a454baa42a554f6d0d4204c74cbe5893fde1e304b51fc31d893136446ba",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Reusing an HPKE context with changed plaintext could leak information or cause nonce reuse, and lets the relay or gateway correlate retries. A fresh context per changed request preserves confidentiality and unlinkability.",
+      "threat_ids": [
+        "TM-NET-PASSIVE",
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-UNLINKABILITY"
+      ],
+      "evidence_expectations": [
+        "retry-fresh-encapsulation-test",
+        "context-reuse-absence-check"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9180",
+        "IETF-RFC9458"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:9a82951b373188f14d9e358979dfe2e34588c56e0484071dc9c924d880fbb6d4",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00380",
+      "requirement_id": "REQ-5133679ccee4317f783c8a3b6fd210a2f943322134688fc0f73a57e85ca0ba3b",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:76ccec1f6398df2d763d54b813ebec2c03c1d5a1ba1248b2042327a34eaffb38",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A global passive observer can correlate traffic entering the relay with traffic leaving the gateway, and colluding relay and gateway can join their logs. The relay-partitioned profile does not defend against either, so it must not claim to.",
+      "threat_ids": [
+        "TM-NET-PASSIVE",
+        "TM-METADATA",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-UNLINKABILITY",
+        "SP-METADATA-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "profile-claim-excludes-global-observer",
+        "collusion-limitation-statement"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:38269a6687e8d5f795e7ff58169079ca5af134c5aba5667f2ad01f63f8b4dcb2",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00381",
+      "requirement_id": "REQ-55e8f9f7cda77f519197d4b198ed2e4869d0dd114dda55036610e44459b0f385",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:20c84dd612cb99a188c1a3b430c6bf93df784e804f1a12671c269fa09e9ed55e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Selecting a metadata profile changes routing, not trust in content. If it caused plaintext to reach the service, relay or gateway, metadata privacy would be bought by sacrificing content E2EE.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "relay-and-gateway-payload-inspection-shows-ciphertext",
+        "profile-switch-content-protection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:28a293ebaa840c2a60920d8dcb693896e9742913b7b6a3df88efa2af524a8223",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00382",
+      "requirement_id": "REQ-623c35453d65b612306adeafbe5cd9b5ab780c049ad1c696b64ea04f4ad9bd9a",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:99a3dd4ec980b4e56b779150cf99a35845dbdf42d86e27d02b736681234dbd90",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "OHTTP and relays protect metadata in transit but are not end-to-end encryption between users. Replacing or terminating the pairwise/group layer would expose content to the gateway or service.",
+      "threat_ids": [
+        "TM-SERVICE-READ"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "e2ee-layer-present-under-metadata-profile",
+        "layering-architecture-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:5c8e1a959baace4d3ec4556eed8557e65a84ec56eb2f9cec384058ec1b12752c",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00383",
+      "requirement_id": "REQ-715c93d181f13e8be5b4de6f848b466929a6a1e114d226a72f1f8f34cf60c6aa",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:c5f8defd96796e3ede1eaf75b3c283b740a2cc47010dded86d815aed25393851",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Clients need the gateway key configuration. RFC 9540 or another authenticated channel may supply it, but a channel that identifies the client to the gateway would defeat the relay partition.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-UNLINKABILITY",
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "config-distribution-channel-privacy-analysis",
+        "per-client-config-fetch-identifiability-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:cd0c19afc5fc8a964f0ec8e9b32314187b2dc62f6feb785bca6b630022fdf328",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00384",
+      "requirement_id": "REQ-73518291ca7bbd157c86e009a7fe245503e543e665aef38317d3822ecfdcfae8",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:d67c6fc7ce0891d6e50e01bde37eae1d99bd626d59bc51455ffa2e9548c37b96",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The stricter minimised profile shortens retention to one hour and forbids relationship records. A shorter window reduces how much a breach or compelled disclosure can reveal about recent communication.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-INSIDER",
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION"
+      ],
+      "evidence_expectations": [
+        "1h-retention-enforcement-test",
+        "relationship-record-absence-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:48209c03284a625650e5509a2c920e07bc1fb2287f372e191a18831e736853c9",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00385",
+      "requirement_id": "REQ-8e8bb6be77fa382e354701a794093885099e22135862e6687b341805b628bca8",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:e431f4152e5f0bdb46a65bc1519159bae211d66c200409e8d4d44aaecb642efc",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "OHTTP does not itself prevent replay of encapsulated requests, and the gateway cannot see who sent them. Application-level replay protection stops a relay or observer from re-submitting messages to cause duplicate delivery.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-REPLAY-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "replayed-submission-rejection-test",
+        "replay-cache-scope-documentation"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9458"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:1f70fc164a8df29aed74b7d93bbbf8d3d690574798ea7509838deb5a4918587b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00386",
+      "requirement_id": "REQ-989228b915bfa82955d503ce8bff01f6eacb83caeaee8509382ef005f7383f9b",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:68b7d23168d756ea4343e8ca31f2c3e2adb6af7bd37c79936cb0b4073b9c1faf",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Sender-hidden credentials replace service-visible identity, so they must be verified by the receiving endpoint and tied to valid identity/device state; otherwise revoked or fabricated senders could pass as authorised.",
+      "threat_ids": [
+        "TM-CREDENTIAL",
+        "TM-DEVICE-PHYSICAL",
+        "TM-ACCOUNT"
+      ],
+      "security_property_ids": [
+        "SP-MESSAGE-AUTHENTICITY",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "endpoint-credential-verification-test",
+        "invalid-device-state-credential-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:0778cd96027edf67f21e93d3eb6971ec0761baf42ace8065dcd14db8ae149467",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00387",
+      "requirement_id": "REQ-9efaeb7278b014f2f46b0adb5cebc3be4a50598b04e027eeeac8c98d58bc1fe3",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:e98396de6545be61e9865fb82f0374336a6a03b38f94b335109ee4bcf34d0b17",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Padding buckets trade bandwidth and latency for anonymity-set size. Allowing deployment-specific choices, guided by the required anonymity set, lets products tune cost without abandoning size hiding.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-NET-PASSIVE"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-CONFIDENTIALITY",
+        "SP-AVAILABILITY"
+      ],
+      "evidence_expectations": [
+        "bucket-strategy-rationale-document",
+        "size-distribution-measurement"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:6e8c59c66e18215db92b045178efaedfbf074b32be41a79eecea97990925fbc5",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00388",
+      "requirement_id": "REQ-a5f5d59012d2506ce3703389983a4bcecbf8e1ff86825198148ca6820e397046",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:78887b9d6121e5c9e8cf7dc9fa07e899f0b5f2749ddb315f0473e03d96c49027",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The service must still prevent arbitrary parties from delivering to a recipient. Demonstrating authorisation without revealing the sender's account preserves both spam control and sender privacy.",
+      "threat_ids": [
+        "TM-DOS",
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY",
+        "SP-METADATA-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "unauthorised-sender-rejection-test",
+        "sender-identity-absent-from-request-capture"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:7ca1ed29f117c9cc2dcb94b115844a4fffff1eb712a38b5590a0aaa959dcb4fd",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00389",
+      "requirement_id": "REQ-a63583763e652ed6e41c3256770f2179c5edc2494c94f3b02bc14c572bec5216",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:8e587901d7611804edbb6573dd41810f30409e481e289ea02ce41b48a60eef09",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Abuse control usually requires knowing who sends. A recipient-scoped capability lets the service enforce authorisation and rate limits without learning the sender's account identity, reconciling abuse prevention with sender privacy.",
+      "threat_ids": [
+        "TM-DOS",
+        "TM-METADATA",
+        "TM-SERVICE-READ"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-CONFIDENTIALITY",
+        "SP-AVAILABILITY"
+      ],
+      "evidence_expectations": [
+        "capability-based-abuse-control-test",
+        "request-field-inventory-without-sender-id"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:af4875d782aebbd36a7cbc3189d8cf631c8840d4b018aee97e40d17ebccfa94e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00390",
+      "requirement_id": "REQ-a712b49ca30346c9624ad8f12dbe017f81d7a0d5d262013e03a07715583cc891",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:2b81320e8e4da21161e2909383b6eb7c0a2c197e91a38890221bda3e5b7a5d98",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Sharing per-request logs between relay and gateway would reproduce the joined view the partition exists to prevent, even if each party individually behaves correctly.",
+      "threat_ids": [
+        "TM-INSIDER",
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-UNLINKABILITY",
+        "SP-METADATA-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "log-sharing-agreement-review",
+        "cross-party-log-pipeline-absence-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:2948f5b824e45dce6084a2d37df33f25b3cd9591dd7acaa1dc501682cf72d3f3",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00391",
+      "requirement_id": "REQ-c1d028c3ac096ba1415067734e14854a91bcce4a8b88b1b9d17a7f8e7410d219",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:f39da2f398fa2c9dd2324b82f06b532c37711d28075900b40bb636688611ffa5",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A gateway could issue each client a unique key configuration and then recognise them by which key decrypts their requests. Rejecting personalised configurations prevents the key itself becoming a tracking identifier.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-UNLINKABILITY"
+      ],
+      "evidence_expectations": [
+        "key-config-consistency-check-across-clients",
+        "personalized-config-detection-test"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9458"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:483242cea0307946572d17f5da90cbca4fdc171a75ed2abb5f808a6083dc4afb",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00392",
+      "requirement_id": "REQ-cfa7a7f02a8927d1010bc30005f49c0561111d27f92dbcd44d25f72b66eee4b2",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:173e5ed01876d1a14a932badb107c33ff3c48ad59257023ffcacc1980cb3eb2b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Delivery capabilities stand in for sender identity, so they must not become a new identifier: recipient-scoping prevents cross-recipient correlation, avoiding stable cross-service use prevents tracking, rotation on block cuts off unwanted senders, and protection limits misuse.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-CREDENTIAL",
+        "TM-DOS"
+      ],
+      "security_property_ids": [
+        "SP-UNLINKABILITY",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "capability-scope-and-rotation-tests",
+        "cross-service-capability-reuse-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e595c3ff144d4c81a45c702d5f5c34611ec7a3ace2dd2e207589a798bc9f3760",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00393",
+      "requirement_id": "REQ-d868ecc556f0c4241b3303319ad37d432cdd4575b49fa558c2c5064d8c6963ea",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:e79654d5adbe451f743e39dcdc5c9fa329b27f1a590bee63a5b4822cc2bbd2bd",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "If the recipient trusted the service's claimed sender identifier, a malicious service could attribute messages to anyone. The credential must be verified cryptographically by the recipient.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-MESSAGE-AUTHENTICITY",
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "service-asserted-sender-rejection-test",
+        "credential-verification-trace"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:35bca6ecb11e8e168dc441b2d3f91be51211776406558b80c97f49e8bd06f889",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00394",
+      "requirement_id": "REQ-e7581cd467de1bf848a386ca597ddcc0e69bca7c841df8a4302fab4beb2ff0d8",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:51ef6c853b750f88f92de9cae51d43fc21f58929da9574436e0624e883e71963",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Abuse-specific routing or challenges can single out some clients, shrinking the crowd they hide in. Products must not claim unlinkability stronger than their actual relay behaviour provides.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-UNLINKABILITY"
+      ],
+      "evidence_expectations": [
+        "anonymity-set-impact-analysis",
+        "unlinkability-claim-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:c5f704cf46fbddd04772d1e50e5e96a18611f2b13cfddd57c5292a18645e83b1",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00395",
+      "requirement_id": "REQ-e7f13ac3802b13e882b960f2882fc689e09eaafcfe302069359f890369741500",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:e1f3bdc806b7514e9f538dd307745efe643f7adad8abb29341ccd48b20d559ef",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Replay detection can use various identifiers or time windows; the requirement is outcome-based so implementations can choose, but a replay must never trigger duplicate security-sensitive processing.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-REPLAY-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "chosen-replay-mechanism-documentation",
+        "duplicate-processing-negative-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:0e03f3b9d8737a11cfef709d4185c81d93e5feed3cb15a8702deef805cd457a9",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00396",
+      "requirement_id": "REQ-f7fdc9aff89975f8016b16c39176421f7007948a11b88b12aa8560efcac033e4",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:f5c7cca99202b8b23be0d7cdc70ec02c2028345c42ff15e2abf1475c15f31764",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Without a relay, the service sees the client's IP on every connection. Sender-hidden delivery hides account identity, not network location, and claims must not suggest otherwise.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-SERVICE-READ"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "profile-claim-excludes-ip-concealment",
+        "direct-transport-ip-visibility-statement"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:1c2da69515bfe7c659dc47bfa1ffadbd87201b78202ca2f1995d26f8903d7a78",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00397",
+      "requirement_id": "REQ-f8ab3a7ba2fd0fe2fab3c86f82fd6c641fe0bebf2f68e94fbf984a5312cbbfbe",
+      "document_path": "spec/metadata-privacy.md",
+      "text_digest": "sha256:b5dbac33d362125889f9b87eea6bb5160b86c1441fbcdef01b90987f02e0611d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Encapsulated request sizes can reveal message length or type to the relay and network observers. Padding to buckets reduces this side channel within the relay-partitioned design.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-NET-PASSIVE"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "padded-request-size-distribution-test",
+        "unpadded-request-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:817f2d74ae3b87fbfd66b3a4197c00de92a55890b430cbf13325c3ed0059801a",
+      "review": null
     }
   ]
 }
