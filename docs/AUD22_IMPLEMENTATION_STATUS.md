@@ -15,5 +15,6 @@ Coverage added after the 1.0.0 release is a non-normative overlay tracked by `re
 | post-1.0 batch 4 | secret storage/hardware protection, backup recovery, attachment encryption | 112 |
 | post-1.0 batch 5 | contact discovery, real-time media, profile configuration, native/web client security | 129 |
 | post-1.0 batch 6 | certification lifecycle/evidence/attestations, confidence classification, advisory interoperability, vulnerability handling and disclosure | 156 |
+| post-1.0 batch 7 | crypto registry, supply chain, secure development, verification, server trust, telemetry, export boundary, assurance, conformance, formal verification, integration and related specs | 156 |
 
 **Remaining:** the rest of the 1,055 normative paragraphs, typed inter-requirement dependencies, and independently authenticated review records.
