@@ -40,11 +40,18 @@ def source_fingerprint(root):
         rows.append((path, metadata + b"\t" + path + b"\n"))
     return hashlib.sha256(b"".join(row[1] for row in sorted(rows))).hexdigest(), paths
 
+STANDARD_REPOSITORIES = {
+    "Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard",
+    "neophilism/End-To-End-Everywhere-Security-Architecture-Standard",
+}
+
 def validate(root, status):
     require(type(status.get("schemaVersion")) is int and status["schemaVersion"] == 1, "Unsupported schema version")
-    require(re.fullmatch(r"neophilism/[A-Za-z0-9_.-]+", status.get("repository", "")), "Invalid repository identity")
+    # Galinsky-Labs is the canonical owner; legacy neophilism identities remain
+    # accepted so historical version-1 records still validate.
+    require(re.fullmatch(r"(?:Galinsky-Labs|neophilism)/[A-Za-z0-9_.-]+", status.get("repository", "")), "Invalid repository identity")
     standard = status.get("standard", {})
-    require(standard.get("repository") == "neophilism/End-To-End-Everywhere-Security-Architecture-Standard", "Wrong upstream standard")
+    require(standard.get("repository") in STANDARD_REPOSITORIES, "Wrong upstream standard")
     require(re.fullmatch(r"[a-f0-9]{40}", standard.get("commit", "")), "Pin an exact standard commit")
     require(standard.get("basis") in ("development", "candidate", "production"), "Unknown standard basis")
     datetime.fromisoformat(status["updatedAt"].replace("Z", "+00:00"))

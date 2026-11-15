@@ -19,7 +19,7 @@
     },
     "repository": {
       "type": "string",
-      "pattern": "^neophilism/[A-Za-z0-9_.-]+$"
+      "pattern": "^(Galinsky-Labs|neophilism)/[A-Za-z0-9_.-]+$"
     },
     "updatedAt": {
       "type": "string",
@@ -34,7 +34,10 @@
       ],
       "properties": {
         "repository": {
-          "const": "neophilism/End-To-End-Everywhere-Security-Architecture-Standard"
+          "enum": [
+            "Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard",
+            "neophilism/End-To-End-Everywhere-Security-Architecture-Standard"
+          ]
         },
         "commit": {
           "type": "string",
