@@ -34,7 +34,7 @@ Security-sensitive changes are made through reviewed pull requests. Controversia
 
 **E2EESA 1.0.0 is the owner-authorized stable engineering edition of the implementation-neutral architecture standard.** It is published from a validated, immutable rc.2 source candidate. Conformance to the standard requires independent scoped product evidence; this publication alone does not certify any product. External expert review remains pending and is not falsely reported as complete.
 
-Audit v2 normative/reference-tooling work is recorded in registry/audit-remediation.json. Optional PQ MLS research and completion of individual requirement-level rationales are tracked separately; at the source rc.2 freeze, 21 of 1,055 paragraphs had individual analysis and no externally authenticated review. Failed security tests or demonstrable vulnerabilities remain genuine reasons to withhold affected conformance claims.
+Audit v2 normative/reference-tooling work is recorded in registry/audit-remediation.json. Optional PQ MLS research and completion of individual requirement-level rationales are tracked separately; at the source rc.2 freeze, 21 of 1,055 paragraphs had individual analysis and no externally authenticated review. Post-1.0 AUD-22 progress (non-normative overlay; current count is reported by `python scripts/requirement_analysis.py`) is tracked in `docs/AUD22_IMPLEMENTATION_STATUS.md`. Failed security tests or demonstrable vulnerabilities remain genuine reasons to withhold affected conformance claims.
 
 ## End-to-End Everywhere progress
 
