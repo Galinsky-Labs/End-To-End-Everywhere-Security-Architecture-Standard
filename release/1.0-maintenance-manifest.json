@@ -14,12 +14,20 @@
     "registry/prs.json",
     "registry/roadmap.json",
     "release/validate_1_0_engineering.py",
+    "scripts/crypto_registry.py",
+    "scripts/parser_boundary_reference.py",
+    "scripts/requirement_analysis.py",
     "scripts/scoped_assessment.py",
+    "scripts/transport_security_engine.py",
     "scripts/validate_e2eesa_status.py",
+    "tests/test_crypto_registry.py",
+    "tests/test_parser_boundary_reference.py",
     "tests/test_release_maintenance.py",
+    "tests/test_requirement_analysis.py",
+    "tests/test_transport_security_engine.py",
     "website/markdown.mjs"
   ],
-  "file_count": 790,
+  "file_count": 792,
   "files": [
     {
       "path": ".github/workflows/deployment-monitor-contract.yml",
@@ -3003,8 +3011,8 @@
     },
     {
       "path": "scripts/crypto_registry.py",
-      "size": 8873,
-      "git_blob_sha": "95164a4bd327eabd73de0b043c2f240e6e86982d"
+      "size": 9193,
+      "git_blob_sha": "6a3797bbdabf437c82b755cd61d70e5194501371"
     },
     {
       "path": "scripts/deprecation_migration.py",
@@ -3117,6 +3125,11 @@
       "git_blob_sha": "d817259b7688f6e33441bc99462c25427329c923"
     },
     {
+      "path": "scripts/parser_boundary_reference.py",
+      "size": 2089,
+      "git_blob_sha": "4ac0147a56eee81300d0a52fe7e727bf0cfb281f"
+    },
+    {
       "path": "scripts/pki_ech_policy.py",
       "size": 6535,
       "git_blob_sha": "8c9a2e276df2e95c31d0d0d2420d5b501a97929d"
@@ -3168,8 +3181,8 @@
     },
     {
       "path": "scripts/requirement_analysis.py",
-      "size": 11300,
-      "git_blob_sha": "fa7bfb592173af20037070509ccaecaff180d0c9"
+      "size": 11437,
+      "git_blob_sha": "1b3c3e9698d03bfeb876d8d2da55cc305fab308d"
     },
     {
       "path": "scripts/research_profile_registry.py",
@@ -3228,8 +3241,8 @@
     },
     {
       "path": "scripts/transport_security_engine.py",
-      "size": 25073,
-      "git_blob_sha": "878a3f027c154af202ba6ff8916c805ffa716724"
+      "size": 25380,
+      "git_blob_sha": "c57fa62f11fb930a0777b29bdc85d99ace8f46c1"
     },
     {
       "path": "scripts/validate-pr-registry.mjs",
@@ -3658,8 +3671,8 @@
     },
     {
       "path": "tests/test_crypto_registry.py",
-      "size": 3233,
-      "git_blob_sha": "04eb27b0e8db423b6b44bc4a4b95a568406ceb31"
+      "size": 3953,
+      "git_blob_sha": "2cb62edd0638eaf2596adfe140e78913e074d974"
     },
     {
       "path": "tests/test_deprecation_migration.py",
@@ -3787,6 +3800,11 @@
       "git_blob_sha": "31f558429764b8c823539e84c9c82c4efadae402"
     },
     {
+      "path": "tests/test_parser_boundary_reference.py",
+      "size": 1945,
+      "git_blob_sha": "f1fad9a9140595c21f3909f0b59fbe2a7adccedf"
+    },
+    {
       "path": "tests/test_pki_ech_policy.py",
       "size": 3858,
       "git_blob_sha": "194ee120bee8f187d77f686bbd2ee566d66ea96a"
@@ -3843,8 +3861,8 @@
     },
     {
       "path": "tests/test_requirement_analysis.py",
-      "size": 6297,
-      "git_blob_sha": "a26966ddc52397ab688d00f20698eee87448a787"
+      "size": 7084,
+      "git_blob_sha": "9cd6e9ec01b2c37817ebbea1a36c5372a08ab938"
     },
     {
       "path": "tests/test_research_profile_registry.py",
@@ -3908,8 +3926,8 @@
     },
     {
       "path": "tests/test_transport_security_engine.py",
-      "size": 11344,
-      "git_blob_sha": "d208e4022f4ecc60803fd398375220663d3087f7"
+      "size": 12000,
+      "git_blob_sha": "a715c6900581ab5a1c64158063c429ab7e951571"
     },
     {
       "path": "tests/test_validation.py",
@@ -3972,5 +3990,5 @@
       "git_blob_sha": "6d83ea02d7cfb5a1c9f67e7a94f4b80df3f256f4"
     }
   ],
-  "tree_digest": "sha256:563464da6a7b4cf5cb9a0f0d13dd9c4ccaa1e4a5f6b5fd8cb89ca4d12ac66962"
+  "tree_digest": "sha256:6225cdab21d8ae56032dc0b486903cb3f3b17610d8f0457a319ccefa291f8334"
 }
