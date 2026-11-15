@@ -12184,6 +12184,3054 @@
       "dependencies": [],
       "context_digest": "sha256:689dd5462d6591f6f4c0020f42986f9d787f583ef4315a8e286c396ba41896a9",
       "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00510",
+      "requirement_id": "REQ-0132bd590cc02652fe7218a7a5e8b0cb43bf16b6ec66c7133a5d68627ee11c8a",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:dc113fd944df86080c826fb3572e8cd424042a8d3b091a9cf017e159d30c6fb9",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "In the confidential-compute profile, identifiers are protected only inside the attested enclave; if the host OS, hypervisor or orchestration saw them, the provider would learn users' address books despite the attestation.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-INSIDER",
+        "TM-HARDWARE"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "host-visible-memory-and-log-inspection",
+        "enclave-boundary-identifier-flow-trace"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:6df52149b64848381d3205098dc5cdd676c3b421b2efa773ade131892faf7f49",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00511",
+      "requirement_id": "REQ-0362618de229956b664bac5b4caf4d91255eed876bf08c5c61d2c0a348918b19",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:b33130ce1d5eedd44be73e7e8ac7a752791a2207d6791b03dd351c6ef3ef6e45",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Stale directory snapshots may still list users who have since disabled discovery or rotated keys. Expiring them and detecting rollback to old epochs prevents a provider from serving outdated discovery state.",
+      "threat_ids": [
+        "TM-ROLLBACK",
+        "TM-DIRECTORY"
+      ],
+      "security_property_ids": [
+        "SP-ROLLBACK-RESISTANCE",
+        "SP-METADATA-MINIMIZATION"
+      ],
+      "evidence_expectations": [
+        "snapshot-expiry-policy-test",
+        "obsolete-epoch-rollback-detection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:b32d47a9cdee179a8878ce12765a08f4d20264001000233daff6d14dcad49625",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00512",
+      "requirement_id": "REQ-048a673c93311d2151dbc1f9a8a5d552127da369c1500aa24549960ed1e69a57",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:df9cff32a0724197869d62f2aa393c877de3d226c2c66c954e49efe33ed3f68b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Users who opt out of being found must not be discoverable by any profile; otherwise discovery becomes an enumeration tool against people who explicitly declined it.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-SERVICE-READ"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "discoverability-off-negative-query-test",
+        "per-profile-policy-enforcement-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:cdc6f8343789695d3ff7991c17a1f32099021fa8e0aee7c9e0709150ac25c700",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00513",
+      "requirement_id": "REQ-0ac9bb82666853c57405870c12c17d70a1705b6ed3ffe8bc9c536aabd5aff4b0",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:a9fa07651fc59e342426068db25e6193bc38e3221146b23e8f4d725a19183a19",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "VOPRF outputs depend on the server key; without explicit key identifiers and epochs, clients cannot tell which key produced a directory or detect substitution during rotation.",
+      "threat_ids": [
+        "TM-DIRECTORY",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-KEY-CONSISTENCY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "voprf-key-id-and-epoch-fields",
+        "unknown-key-id-rejection-test"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9497"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:75d6271dbf423740bf165437fd1df2b3cea939e5ade63cac0f66541a6ce6bc14",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00514",
+      "requirement_id": "REQ-0cc75191eb26b579d578df87a79986375bebcb26a64a3b678a21020e1f0dd883",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:43fc40ea7dffc8f4cdc0096818b8a3bfb2098019a174f83b54d4075fdebb2754",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Phone numbers and emails live in small enumerable spaces, so plain or truncated hashes are reversed by brute force. Uploading them is equivalent to uploading the raw address book and cannot be called private discovery.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-CONFIDENTIALITY",
+        "SP-METADATA-MINIMIZATION"
+      ],
+      "evidence_expectations": [
+        "upload-payload-inspection-for-hashed-identifiers",
+        "hash-reversal-demonstration-in-docs"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:c2f45cc23ebfa9dc2b36b68f8c305b0d529e5838a707a7683a3c21fe559ac2a3",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00515",
+      "requirement_id": "REQ-143f9b713dcaa1a96872d28b1de07e39662795dbb252d037cbc1d49118eb5de7",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:fb23dc17fbb71dfb13c2469a8255d08c2286ec56a69802a0afa03a17752e52ae",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "If clients and directory builders normalise identifiers differently, legitimate matches are missed or attacker-crafted forms match the wrong user. One normalisation profile per epoch keeps matching exact.",
+      "threat_ids": [
+        "TM-DIRECTORY"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-AVAILABILITY"
+      ],
+      "evidence_expectations": [
+        "shared-normalization-golden-vectors",
+        "client-directory-normalization-version-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:75d0220d6435d411263e304b5fe3f167bc326435fb842fccc6d28b26795e9d8f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00516",
+      "requirement_id": "REQ-2248f631abf064abbba5487a812d1d74672fb0f10196f40e1d3fc2e3034318e0",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:a65af4860a5ec1379a95f2b1c696f226a84e6add657fbb190aadea1d5c9e65aa",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The trusted code sees all queried identifiers; returning anything beyond the allowed intersection (e.g. extra users or attributes) would leak directory data to the querying client.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION"
+      ],
+      "evidence_expectations": [
+        "enclave-response-field-inventory",
+        "over-return-negative-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:c59017d60ad8d1ddc855361999854986887d79991bbe6f870d200aa49d217377",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00517",
+      "requirement_id": "REQ-22f818cf7961f352d2b37684b2f9633a6b2acacbb1db5b3799b99add2a76aaec",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:d14c43d9c1a25189fd17d825e3e10973526f1c9862aac5ae08ff5102807837dc",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Discovery privacy claims are only checkable with evidence of profile, normalisation version, batch size, policy enforcement and absence of raw or unkeyed uploads; otherwise assessors must trust configuration.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-SERVICE-READ"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "discovery-event-evidence-schema-validation",
+        "evidence-vs-observed-traffic-comparison"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:3da3adb459e352ab71cc7057d0a717ccb94abbb045aa94d392f3d3757f04e030",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00518",
+      "requirement_id": "REQ-2edfd10726ce8a17f6e1b8bb17006d3932da46a49048fdb140374bbf2b2696a2",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:17237e2083004f1b3ccefe71b798bcd21897fd062f773e1928f47eb2fd8c9e8b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Returning profile data or extra attributes in discovery responses turns discovery into a lookup service. Limiting responses to match bits and minimum bootstrap data keeps identity resolution in the E2EE flow.",
+      "threat_ids": [
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION"
+      ],
+      "evidence_expectations": [
+        "response-schema-minimal-fields-check",
+        "extra-attribute-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:550245f86d884ab16edddf6eddf2ed2dc5a5dd9817e3688c03a107586e871534",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00519",
+      "requirement_id": "REQ-3a42dc4d60cb582b19d131023d841ee493f5211c277614a545633ec753b12198",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:aaccbe41aa8b05d919e8b4b2562c5aa8dc369d3c4c466966e65b26d88294c9d7",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A client with enough query budget can test every identifier in a small space no matter how private the protocol is. Claims must acknowledge this limit instead of promising enumeration resistance.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-DOS"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "enumeration-limitation-statement",
+        "budget-vs-identifier-space-analysis"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e5e9b21d22ae00ba935db040a25f72628ce4acfae770f0482c57db3f0b8ebbb5",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00520",
+      "requirement_id": "REQ-53b99416d432a1c438082d97d9fcc32a1226ba6754551678f4b3d00018a54062",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:3c2fec78cc28634718e2973bb2ac0640e47febac463b9ae6ff1c19fc69f442d7",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Opt-out must hold even against someone who already knows the identifier; otherwise opt-out only hides users from strangers while still confirming their presence to stalkers who know their number.",
+      "threat_ids": [
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "known-identifier-opt-out-negative-test",
+        "directory-build-excludes-opted-out-users"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:f13e93cda8a70ccd4c189d97f4e117f45afd189af852d9031b1aa8bac72a6d97",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00521",
+      "requirement_id": "REQ-582b7ae21f3aff2d9370de96104b4e12cc07008f950ec1677f8765cc2502e592",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:7b8cff6142fa9d4b0a067791b9545fa0cd41dcb33fb97c93181c17c52af452b2",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Sending identifiers to an enclave is only safe after verifying its attestation chain, checking the measured code against an allowlist, binding the session to that instance and refusing plaintext fallback; skipping any step sends identifiers to unverified code.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-HARDWARE",
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-CONFIDENTIALITY",
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "attestation-verification-test",
+        "unallowlisted-measurement-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e425410254aebedcda1c35cdfc9aa9a67b5ecdfcba702ec43149168b6e8e0400",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00522",
+      "requirement_id": "REQ-59b833c0fdbeea6ebc042467de26803aaac1e1b848385bc6644b19a19f8f2e8d",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:d5f9fb808b3dc7cbfe85c4a8d547615f330120049e04d5ca34e5154d9c16e8c9",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Persisted query identifiers create a durable record of who searched for whom, which a breach or subpoena could expose. Not persisting them limits exposure to the request lifetime.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION"
+      ],
+      "evidence_expectations": [
+        "storage-and-log-scan-for-query-identifiers",
+        "persistence-absence-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:27c15da822e62bdb3110cd39a799ee54663ebb2235e41a2d83a0ac8db82621a5",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00523",
+      "requirement_id": "REQ-665b61a34c1fbde0338d3f24106bebd2baceada82d91777875f67c0496f69229",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:192e62de63f55c344e9fb2c3e630391eca80f369e5fb1e1073b0354e85f12338",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Binding normalisation version, VOPRF key, epoch, snapshot version and authentication data lets clients detect when a directory was built under a different key or rolled back.",
+      "threat_ids": [
+        "TM-DIRECTORY",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-KEY-CONSISTENCY",
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "directory-binding-field-vector",
+        "substituted-snapshot-detection-test"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9497"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:a5fb12e86a5bf3ce283ac647a39356f9f904fc358a15ef0006b8e5d38647f096",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00524",
+      "requirement_id": "REQ-6bac010b2ad9c2996fe6df7f491d3af1a3893d64e5644cba391b3c94d80c1b65",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:875abc859b6fb23eda9a3919415918d93d5c646a30051ddd4f82cda681261119",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Discovery protocols hide identifiers but not the client's IP address. Combining with a metadata-privacy transport is how products needing network-location privacy close that gap.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-NET-PASSIVE"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "transport-profile-selection-documentation",
+        "ip-visibility-analysis"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:66ee91305e0450e9d2b212bf3769273cef9c5c346a2fc9735c64c377adb97fee",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00525",
+      "requirement_id": "REQ-77487abc3c9c663de10ef99d668a31f714143793f053a1a94a9e628feefcac06",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:67696d8f879dd3dfe88a535946ce85b3c56fc182441d4c3f644292b74029776d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Attestation verifies code identity, not resistance to side channels such as cache timing. Claiming otherwise would overstate the enclave's protection of identifiers.",
+      "threat_ids": [
+        "TM-HARDWARE"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "side-channel-limitation-statement",
+        "claim-wording-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:24c4944cefc4eb9fcbd4208c1ac25b6dc24838a33d440a2d077bbf6ea9cd170f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00526",
+      "requirement_id": "REQ-7fc586fd5d7a6514b3879ff6e08a89e9dd2002c045aa8108f1bab3c56a74e50b",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:74110e92adcc2fcca0417827cd645d1e4128ab0ec91aa8c3e5bff589ce0ea8cc",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "In the handle-lookup profile, batching would let a client test many guesses per request. A batch size of one makes rate limits correspond directly to guesses.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-DOS"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION"
+      ],
+      "evidence_expectations": [
+        "batch-size-greater-than-one-rejection-test",
+        "policy-configuration-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:b593f3f35a23b904440599241c99c433d18831b28a8b859754a5350859dd2457",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00527",
+      "requirement_id": "REQ-8407bb7a5cc48422082da30fdc1913ae3f981f305ad64b0f0621d65d2c8d8276",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:39a9fcc1c8a77c21c11d59675186c6171764a9112e3c98a24242ede97c5983a5",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Since the service evaluates the VOPRF online, an unlimited budget lets a client enumerate identifiers. An explicit budget or equivalent abuse control bounds enumeration.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-DOS"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION",
+        "SP-AVAILABILITY"
+      ],
+      "evidence_expectations": [
+        "evaluation-budget-enforcement-test",
+        "budget-exhaustion-behaviour-test"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9497"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:60685564bfa0c9099c4ff813da9dcd9231b1bc9b82c8e66ff7f6bed4d7238a51",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00528",
+      "requirement_id": "REQ-85844118809a6a11fa9daddc0b60e7841cefa4bc3bb21e7c1e0fb8c888053c74",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:31f4576def3f6798fa61313d838770d2012ddacf293c627fc123e8db9781929c",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Publishing pseudorandom VOPRF-derived tags lets clients check membership offline after evaluating their own identifiers, while tags reveal nothing without server-key evaluation.",
+      "threat_ids": [
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "tag-derivation-from-finalized-output-vector",
+        "tag-unlinkability-without-evaluation-analysis"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9497"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:ebbf8229e6d2fb8b9053d8de928e6e5a9119bcd81895481f38760bb0d79022cb",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00529",
+      "requirement_id": "REQ-8bc36007a3fb604a4afc8fc5269dce5ea8d15b89cedd6a55a032e3ffcca87360",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:b3e4266399a89e24b8de427912bffc90d3a9f0afa10907a955c5b512afcab029",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Discovery only says an account exists; it does not authenticate keys. Requiring the normal identity, verification and transparency flow prevents a discovery match being treated as a verified peer.",
+      "threat_ids": [
+        "TM-DIRECTORY",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "discovery-match-not-verified-ui-test",
+        "identity-flow-required-before-verified-state"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:b1dc5481737a6fe443e5ff7febbf8aa5fa625711f6d0fe7938be204a9773a293",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00530",
+      "requirement_id": "REQ-93b0d659c924bd686a7366118b47212d4e10ff7c320b3f9a562ab6cb3888b337",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:8de98a89fe37f5547ba8da275a85953e7a814be39890e97275aaafddd66e21b1",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Uploading the raw address book reveals the user's entire social graph, including non-users, to the provider. Private discovery exists to avoid exactly this.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION"
+      ],
+      "evidence_expectations": [
+        "client-upload-inspection",
+        "raw-address-book-path-absence-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:24ef0ccd2cbc541f3aab0b0e235d5989cfab8b99bea01fcb3efe25e58ff2e599",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00531",
+      "requirement_id": "REQ-9652bc7ca01b6f416749b41c7b09ffa1df75ee113fdda952fb5da25e0194c135",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:1b72acf67cce589269b53465312a5423ba7e7050ee1863cca6cf79c57479031a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Changing normalisation changes which keys identifiers map to; reusing the old version would make old and new directories inconsistent and cause mismatches or wrong matches.",
+      "threat_ids": [
+        "TM-DIRECTORY"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-AVAILABILITY"
+      ],
+      "evidence_expectations": [
+        "normalization-change-version-bump-check",
+        "cross-version-mismatch-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:4e0708b68898e8f5d3f489b96b99757bd55ebe63a59791a8f234a749affb4ed5",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00532",
+      "requirement_id": "REQ-9b7defa08c4927e0128258a6415bf141b600953e8f849cfb43ec6a4c9cfcb311",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:2b0751e440a9bf23dee582a6cc5220ae8259a839329cba3476038996487e6ed0",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Extra results such as suggestions, similarity scores or unrequested matches leak social-graph information about other users. Returning only what was asked keeps discovery a narrow lookup.",
+      "threat_ids": [
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION"
+      ],
+      "evidence_expectations": [
+        "unrequested-result-absence-test",
+        "response-field-allowlist"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:3b9039439b2149d85f83a306a671ca73be2d963c9b7c15fad8cdbdf99e8833ca",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00533",
+      "requirement_id": "REQ-9bf35e4e7edcfd72d41ceac6257bc9157dba91b1b1c35a59c4173b08924dd5ad",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:ae7a7804d3de64851f72a10e4c53b03c4e1e5944b62b4aabc9801a18e96be5c0",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A discoverability change that takes effect indefinitely late leaves users exposed after opting out. A documented maximum delay bounds that window.",
+      "threat_ids": [
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION"
+      ],
+      "evidence_expectations": [
+        "opt-out-propagation-delay-measurement",
+        "documented-maximum-delay"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:2faa046a97af34e25e783f0fc4569895bc4e152ec02831b55399be1adb91f64a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00534",
+      "requirement_id": "REQ-a348838ab492405e93d695524542175b8f449da1137b0d61d6a6a313055c7783",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:bcb781c74a1074322634964e8c657623a8ecc29c8e87a2ad16ac8ae92a6a3810",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Batch size and per-account evaluation limits are the parameters that bound enumeration. Defining both makes the abuse controls concrete and testable.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-DOS"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION"
+      ],
+      "evidence_expectations": [
+        "policy-parameter-completeness-check",
+        "limit-enforcement-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:70c16d087f056b87bb8d540deb7d7ab191885b888397360625060652de1170cb",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00535",
+      "requirement_id": "REQ-be153dff85513c5c8952f866ca2dad321366a8f07d15c050be11453883a7921d",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:3b6126e10b0144046cc44529079945f8aee2d88cfa58a60bb9a58b9b7ed89979",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Outputs under one VOPRF key do not correspond to tags under another; mixing them causes false negatives or lets a server use a separate key to target users. Proof, key and snapshot must match.",
+      "threat_ids": [
+        "TM-DIRECTORY",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-KEY-CONSISTENCY"
+      ],
+      "evidence_expectations": [
+        "cross-key-proof-snapshot-rejection-test",
+        "key-id-binding-check"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9497"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:cf9550f66704442ed15f208b3ae261a1a80f1e24fe05ae4eb300ce1a88dfa4c8",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00536",
+      "requirement_id": "REQ-c1a6c3e3edeeb2b662d2def1b638452747af895837e105d02536409ad3fcf573",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:0063b2ff980ba9b1529cccb78d5bf36c1dc4aec48b1ba3f9da5a7d358bf4b1db",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The VOPRF proof shows the server used the committed key; without verifying it, a server could use a per-user key to tag and track specific queries.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-KEY-CONSISTENCY",
+        "SP-UNLINKABILITY"
+      ],
+      "evidence_expectations": [
+        "invalid-proof-rejection-test",
+        "per-user-key-detection-test"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9497"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:e5e9b2a7ddae94c995f7074ff8480d48b702c573061386ef63872407c559f4ed",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00537",
+      "requirement_id": "REQ-c60bf445541e8de83234fa3cd83923a96a3697656fdaa2a715afd2c0241f415c",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:9579330d0e6931d566195b7e3ecaaa6c285904e4dc17884dea95894c623666ea",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A versioned normalisation profile documents exactly how identifiers become discovery keys so clients, directories and auditors agree.",
+      "threat_ids": [
+        "TM-DIRECTORY"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "normalization-profile-document",
+        "version-identifier-in-evidence"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:a70702c9a397f56397d338ca2c4847935aa4b7c5550bbe77e345f5bcdee15c9c",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00538",
+      "requirement_id": "REQ-cbad04a76b9d7b9616770e878948a1cad1c88d232edde99f307bf1dd7bc62dcc",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:f90936e82c8399dd2949e2e2b706705d3eb631492969454d6caf75df6ba68313",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Membership tags derive from the server key; after rotation old tags no longer match new evaluations, and retaining them would let the compromised old key still identify members.",
+      "threat_ids": [
+        "TM-DIRECTORY",
+        "TM-SERVICE-READ"
+      ],
+      "security_property_ids": [
+        "SP-KEY-CONSISTENCY",
+        "SP-METADATA-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "tag-regeneration-on-rotation-test",
+        "old-key-tag-absence-check"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9497"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:5f2ba852e6cabb21ac7026fd380a235016c1f0ff3f7f79cb861754a08c8374c3",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00539",
+      "requirement_id": "REQ-dafa5c0b421a6cf7f06108c6169883a790a48ed95f699a63fbf22689bf96cc3b",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:6911b54eac0962fba60b1ce9b13287d310c794d07e15e54a1b6d29d210152b2a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Different membership structures suit different scales; any deterministic authenticated structure is acceptable as long as it supports authenticated membership checks.",
+      "threat_ids": [
+        "TM-DIRECTORY"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "structure-authentication-verification",
+        "deterministic-construction-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:1df81433c913ade407048187d59b0f39ca0a92cf9c5b20c5cb621ecae76ff52a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00540",
+      "requirement_id": "REQ-dedc124a2de2a708c6f66de1df9fc8bfd36d047bf3d29875c2ec468c9a01d48c",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:108eb3f69c4c516b9cde67543b98a680124a903738e1db590cf6f0bb1ddf5fea",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Discoverability can differ by mode (phone, email, handle). Positive results only for users whose policy allows that mode prevents one opt-in leaking presence under another identifier.",
+      "threat_ids": [
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "per-mode-discoverability-test",
+        "mode-mismatch-negative-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:b2f68dacaa610d55f3393a97635ca2e01a88941af453696a630670f306b95509",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00541",
+      "requirement_id": "REQ-e0aab2d5eee7692767456f9f52e014a1d3445771aa5686b8d81fb75cfc27173a",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:dcf21052089d7ec78b96b04e2dd6375f0047a6c579686b4d77a6b6c177250ac1",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Query plaintext left in reusable enclave memory can be exposed to later requests or memory-disclosure bugs. Prompt erasure limits that exposure.",
+      "threat_ids": [
+        "TM-HARDWARE",
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "enclave-memory-zeroization-review",
+        "cross-request-residue-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:d425b0e18b80fcfd060d9fa052c6e73875aa9101c7f24ff88d65ed72a34d3e12",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00542",
+      "requirement_id": "REQ-e45c14a2e3d991660ce588f947cb9dcfb0507e15730c49a0966455a98cafaca2",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:4cd561baee9cf548be9ce00f572e30b9cbb63a3427252808adfc727196a542ca",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "An unauthenticated snapshot can be modified to hide or add members. Clients must verify authentication before relying on it for discovery results.",
+      "threat_ids": [
+        "TM-DIRECTORY",
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-KEY-CONSISTENCY"
+      ],
+      "evidence_expectations": [
+        "unauthenticated-snapshot-rejection-test",
+        "snapshot-signature-verification"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:5740d1bba779f342a388da6061bf4ab923bcccbe331bb82581b368a0a0a72eb4",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00543",
+      "requirement_id": "REQ-e6e998d3ac69f8d0b888be16475b352afc56203f773dc9aba4b376081b1bf484",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:001ca099ce371f9ea4ba6f8ade1d809b2cfa6b524c4f3f511a5e9ba66b8190ac",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "In handle lookup the service sees the queried handle, so the profile only minimises address-book upload. Stating this prevents an overclaim of query secrecy.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION"
+      ],
+      "evidence_expectations": [
+        "profile-claim-excludes-query-secrecy",
+        "service-visible-query-documentation"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e3762f4b60b2936d9478fbed3090b1884f50f6b213994490e740b4331420cd6d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00544",
+      "requirement_id": "REQ-ed7330febbf8deedb6c0721a8cedbb5685ea99881a708564b9ac3da7d52d80c9",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:e369c93a483cf4ea11af985231f18c06595228a4ed398539d33bccc3ed067ed1",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Users must trust the attested code; reproducible builds let third parties confirm the measured binary matches reviewed source.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-BUILD-PROVENANCE",
+        "SP-SOFTWARE-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "reproducible-build-verification",
+        "measurement-to-source-mapping"
+      ],
+      "external_standard_ids": [
+        "SLSA-1.2"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:9708f4d2ba3e8b28b6bf5004fb33973141056631542d090a78f19e4017ad16cf",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00545",
+      "requirement_id": "REQ-f8f8938a1250b7b7656ec31a2ac2ea1e9333e0bad1c38e01f2d4330c934e275f",
+      "document_path": "spec/contact-discovery.md",
+      "text_digest": "sha256:e6a7ac919d81c3246c69f32eb235dd6499b4056a96d4688a580c84daf5bb8e4e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Memorable handles are guessable; the protocol cannot make enumeration hard if the space is small. Products must not imply cryptographic enumeration resistance for such handles.",
+      "threat_ids": [
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "handle-entropy-guidance",
+        "enumeration-claim-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:2989c021d70e09ce5eaa04404582317277944c7edf450862c32ecfb423b42ad9",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00546",
+      "requirement_id": "REQ-0b25eef2e859ea0ac3693a18cb27182e6500ee03ee7569abda73143abf6d3e99",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:04c65fd8532f69ba89f2fb3872adef17ba14dd3aa268535dbf4eda89ffc80ad7",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "SFrame base keys let holders decrypt media. If the SFU or signalling server received them, media E2EE would reduce to trusting the conferencing provider.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "sfu-key-receipt-absence-check",
+        "key-distribution-path-trace"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9605"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:84256ed0e9355a01c6021e468f8a79bf81e16d2e9d1c2124350807274e8ef4d3",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00547",
+      "requirement_id": "REQ-0f180f4865f284e2511a5825b16124467082d4d0363d556a031c2f07904dd46f",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:0f4a5fa9abe635664ab601fca7b11943122d7f14b9f85e655da4f995c6ad2c08",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Releasing unauthenticated media to decoders, recorders or analysis lets an SFU inject crafted frames that exploit decoders or spoof speech. Authentication must precede any consumer.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-ENDPOINT-LIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-MESSAGE-AUTHENTICITY"
+      ],
+      "evidence_expectations": [
+        "authenticate-before-decode-ordering-test",
+        "tampered-frame-not-rendered-test"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9605"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:95186b063cf5d882732ec829ddec27dd4302b2318e17a70fd07b9ab2112ae746",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00548",
+      "requirement_id": "REQ-1f60219a3c6524dac3c495d39394c52bb04cd28d8070c016e358727e52d3b6b6",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:5ab3e855a4e9822a8b330a02a4cc941b8fd754c814459389075d17693810e7f9",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "If semantics vary within a stream or interpretation metadata is unauthenticated, an SFU could cause frames to be decoded differently than intended. Consistent semantics with authenticated metadata prevent reinterpretation.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "metadata-in-aad-check",
+        "semantics-change-rejection-test"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9605"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:60c73bea8389d61b2f4e8006f034256e4cd65c1cbde2922abde2ad2dfd7ce936",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00549",
+      "requirement_id": "REQ-25c8bf0e62e93f518c5c488856577a929a809b56cb3ae1e279e2848f581c9cbe",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:19b84475d61631f22f0729e37de4a0102ac15b39189274d2d1e3f311a157d56b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "SFrame uses CTR as nonce; if a crash rolls it back, the next frames reuse key/nonce pairs, breaking confidentiality and authenticity. Persisting CTR before use prevents reuse.",
+      "threat_ids": [
+        "TM-ROLLBACK",
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "crash-restart-ctr-continuity-test",
+        "persist-before-encrypt-ordering-check"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9605"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:a21bb6b3758a83af5efdaf87e1f8f8db65eadf1f5e7449ea4b4ef001551724ae",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00550",
+      "requirement_id": "REQ-28b033d724fcc596e5e9a5441f16d9b373680ea77448910e44a6c2afcda84b41",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:e54edbf4175a08314c7289d545a77aa59898ddd11542482b8e2d57439d852651",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Restarting CTR under the same key after process resumption reuses nonces. A resumed process must continue the counter or rotate keys.",
+      "threat_ids": [
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "resume-ctr-reset-rejection-test",
+        "rotation-after-resume-test"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9605"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:42ddf8010c108fb176bf83c12651bdc66a21c2d430b6a182534511d9effa27a9",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00551",
+      "requirement_id": "REQ-2d7c5099d725d54acc3fffe5277e6de132cff58cb8eaa91f35440a2732e514f9",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:70b0f6eef622603ac136e0719db4bc792e32781a1dfde04f64bc7db076125c5d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Media E2EE depends on the exact suite, both encryption layers, no SFU key access, distinct sender keys, replay rejection, rotation and membership rekey. Demonstrating each prevents a working call being mistaken for a secure one.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-SERVICE-ACTIVE",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-REPLAY-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "media-conformance-checklist",
+        "per-item-negative-tests"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9605"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:af57640b695f1767c2802161bfcae9158f17e9e51c384e29304418b6efd79567",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00552",
+      "requirement_id": "REQ-2fc4287fb30ec94a937769bd76a2c7a0030f73ea7929c2324fd06d1db32c883d",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:eee8e2db7e360a28e5aa7ac0243e07ac1bc567217ca3b369383afd23cc431657",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Forwarding a call is not a reason to read it. Any relay, SFU or terminator receiving keys or plaintext would be able to record or alter media.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "infrastructure-component-key-absence-audit",
+        "media-payload-capture-shows-ciphertext"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9605"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:89d6de81b482c6781252451b64e0221c3df4465f3d155ba3ccf60def5c6018dd",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00553",
+      "requirement_id": "REQ-325f8723c0aaa2ae73028745b63d16b00488143e9f496033a27b1e7ff7734a4a",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:6f4bdc32d34facd62e75f68f36bb90fba182c6854aaf5ff20be438ad9a2139cd",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Accepting a lower media epoch would let an attacker replay an old membership state, re-admitting removed devices to key derivation.",
+      "threat_ids": [
+        "TM-ROLLBACK",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "lower-epoch-rejection-test",
+        "epoch-monotonicity-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:6cb58213850dc0ede71cd29e3c1cf1ae10d9c73b999d7cbd16d253d31d4b4a9e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00554",
+      "requirement_id": "REQ-46665ad336bc51909b9ebb6b83f9d4d5253b0abe82e8cd24e3cc248ba147d04c",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:6209a42e049218b54f039c0425c414b4f92f1a81ea3e19c91e611125e433b6cd",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Key lifetime and frame-count bounds limit how much media one key protects and stay within AEAD usage limits. Rotating at the bound keeps both exposure and cryptographic limits in check.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-FORWARD-SECRECY"
+      ],
+      "evidence_expectations": [
+        "rotation-at-bound-test",
+        "bound-configuration-check"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9605"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:300dd1eb754392342bd84cdacb4a426e911f9625190b69c4c3c215d29e667bdd",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00555",
+      "requirement_id": "REQ-48be9effbf0e20b5ad591c9cb6822f005599e748d3ce367b5102fe108e96f9af",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:ef3967f8521d08ef4cf9323dc95433d8c0e172de851533009a9dd8cde19b9525",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Every device holding a media key can decrypt the call; if it is not represented in authorisation state, users cannot see or control who is listening.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-ACCOUNT"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY",
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "key-holder-vs-membership-reconciliation",
+        "unrepresented-device-key-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:caa7edb21230276d2ad170ca10fe169b0164471cafba45981018bd2c88322c41",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00556",
+      "requirement_id": "REQ-4ad59d0597990dd888ab4a93a6ecbf9e1abebbd0402acde7734dc24009ed3213",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:812fd598590a47efbc28c9d57a45c177784a4760f1f8b892dafb7af9ca06bc32",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A rejoining device's previous sender key may have been exposed while it was absent. Treating it as new with fresh keys prevents reuse of possibly compromised keying.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE",
+        "TM-DEVICE-PHYSICAL"
+      ],
+      "security_property_ids": [
+        "SP-POST-COMPROMISE-SECURITY"
+      ],
+      "evidence_expectations": [
+        "rejoin-fresh-sender-key-test",
+        "old-key-reuse-rejection"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9605"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:1ea19ed9b81fc94e114f27f4d37fb6ad31e54c7c1ae47838b990ffb70f575695",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00557",
+      "requirement_id": "REQ-556bbd57ea2ba625c50aa520da8651b1d8b3995acc7b8c9dc6d4f82bafb36adb",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:5b41ddacf3e50082c0fa5f8eb52df1d9877697c5977c5d5e68a0c4ed3f78bc22",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Media is as sensitive as messages; every frame must be encrypted and authenticated end-to-end or the SFU can see or alter call content.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "unprotected-frame-absence-check",
+        "frame-level-e2ee-capture"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9605"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:27aaf66428d0ac66d3e82a53cdd84d81a8b4421117a80df8861a336b427aa93b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00558",
+      "requirement_id": "REQ-562e31c8d1f1ce59c1e21a909284f40903bb35ed2e3e2d4adb1611474163c990",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:58ab213b2792f0760191d693bd6c90c360f79fb950bbc6ed66946d02bdeee723",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A new epoch reflects a membership change; sender keys that persisted across it could still be held by removed participants. All senders must rekey.",
+      "threat_ids": [
+        "TM-DEVICE-PHYSICAL",
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-POST-COMPROMISE-SECURITY"
+      ],
+      "evidence_expectations": [
+        "all-senders-rekey-on-epoch-test",
+        "stale-key-after-epoch-rejection"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9605"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:32455ea2669987ffbd168f2eeb3933560983b09aea885b333b00f8252e3761e6",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00559",
+      "requirement_id": "REQ-5e5231b091da86aa20f4f7405a6bc9faa5ccff3616e2910a1eaf28a4b43806ac",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:953f40cadd35d5e857b52b0dd53dd0f0bbef2f21a86d3a3ffefef0a181f6b216",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "After compromise, old sender keys, replay checkpoints and authority may be in attacker hands. Reauthorised devices must start fresh rather than resume as if nothing happened.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE",
+        "TM-DEVICE-PHYSICAL"
+      ],
+      "security_property_ids": [
+        "SP-POST-COMPROMISE-SECURITY",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "reauthorized-device-fresh-state-test",
+        "old-checkpoint-reuse-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:50f3bd0fd81c8163da4afa75de9fc34a0ebd38630851c4c78f32015e0513ea6b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00560",
+      "requirement_id": "REQ-60a3276ae732542849092dc7e82a9016e0b612d86ab5c3547f2d847a6943e875",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:1b8a0234d64dd5b75daf2001834d44b5425354e4dc56ba04a6f6a76fc9659fa4",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Server-side recording of an E2EE call would require the server to decrypt, breaking E2EE silently. Recording must be visible and go through an authorised participant.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "server-recording-key-absence-check",
+        "recording-participant-visibility-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:05f4bd99e3daa47e4416de20d192537958c86da0abbd0eab3974feb936cb9f78",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00561",
+      "requirement_id": "REQ-620e846ae96e2f38316696fa2fc83c8d20bf1551123df6d7e3e2bb071bba9ce7",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:944f0b3f29461241bd59376ce6a850149e10f1ca0592e2151f68639813af739f",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Two senders sharing one base key would collide in CTR space and allow cross-sender nonce reuse and impersonation.",
+      "threat_ids": [
+        "TM-ENDPOINT-LIVE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-MESSAGE-AUTHENTICITY"
+      ],
+      "evidence_expectations": [
+        "per-sender-key-uniqueness-test",
+        "shared-key-detection"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9605"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:65ec6c9e4652caac57d01cf0edbd887649b3a61174f7b0f0c1d08a3467eba549",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00562",
+      "requirement_id": "REQ-63eccc1c5ecb998303fdeb08f9d65857fcee7ea96610cab769821d71aabfa983",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:fd605a974485d1583dc4a1c3670cab067bf414f8180e995935c6e28aefc2f7e8",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Periodic rotation limits exposure from a single key; reusing a KID with a new key confuses receivers about which key applies. Fresh key and fresh KID keep rotation unambiguous.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-FORWARD-SECRECY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "rotation-fresh-kid-test",
+        "kid-reuse-rejection"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9605"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:e407359e9e70dbbe88bce04a63bf204a2ae2494f40d8fe29bfe5ea4e6b6e47d8",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00563",
+      "requirement_id": "REQ-6e32df77422bdba701862b7da55aad795b3dedb478c99dfb68ac29faa47e1abd",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:3350d3406700d96c20b0f0090763e5580354721ea2b4748bf84e79b6fd420989",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A removed bot retains whatever keys it held; without rekeying it could continue decrypting the call.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "bot-removal-rekey-test",
+        "post-removal-decrypt-failure"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:5aa6b3d8d61b455118fea645d63ab6d1e173628661de53eb773380669ec2e879",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00564",
+      "requirement_id": "REQ-70265e4d0a560b1146ef51b556eb59f8579eb1caf6349cb53899003f12c929a2",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:0cf6b1ba0ed12b3ea5d158594f5bf06244e5e5e0113d764717545fa1a24d3a32",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Each (key, KID, CTR) tuple determines the AEAD nonce; using it twice breaks confidentiality and enables forgeries.",
+      "threat_ids": [
+        "TM-ROLLBACK",
+        "TM-RNG"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "nonce-uniqueness-property-test",
+        "duplicate-tuple-detection"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9605"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:0dbf55fd87cb82c8c5ed2ae71bdee0ecd684071438ff239e09f8b06e3d03cb87",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00565",
+      "requirement_id": "REQ-70319009297de5671977cb65efdcbf6fe6e1c5cecbab123c54c93223668ad24f",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:0dc4691fe57ee6bb149f51f19424a6eab71a928c73e830ec7dc27e0e111c99d2",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "An SFU can replay old frames to inject repeated audio or video. Receivers must remember enough per-sender state to reject duplicates within the reorder window.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-REPLAY-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "duplicate-frame-rejection-test",
+        "reorder-window-state-bound"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9605"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:500696569514357d60e3b5c2311af4304fc2c20bd0a781397803291ff8ad1244",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00566",
+      "requirement_id": "REQ-70f4aec3e513cfbaf5a1e5fc135c28bf3326871d37fa659b4aa36d8f7bf561c5",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:caa5271e786b70ef72ccf2d9f98cdcf6816d4f77c08c7d1bc0f3e1fc46ee623f",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "When the SFU terminates SRTP/DTLS, it sees plaintext media. Calling that end-to-end encryption misleads users about who can access the call.",
+      "threat_ids": [
+        "TM-SERVICE-READ"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "claim-wording-review",
+        "sframe-active-requirement-for-e2ee-label"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e02e9dadeab139e07f9c300ac260da9c23bda4a704bb86703b183cdf6e2593e9",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00567",
+      "requirement_id": "REQ-768ccb740038ec431482e2789b5f26eb7e3d7096b979f56208cc4e49cf71d9df",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:379eb1f91c9c8e00f1c74fc91d4bb0b25b1f608f77bb707e3427e1553f5b031b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Persisting the next safe counter before use, or rotating after restart, are the two safe ways to avoid nonce reuse across crashes.",
+      "threat_ids": [
+        "TM-ROLLBACK",
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "persisted-next-ctr-test",
+        "restart-rotation-test"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9605"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:570068a904eb447b82a4604aee09ff8242f90957124f8a9081d8049f991d7e39",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00568",
+      "requirement_id": "REQ-78070d437ee61efce09107ab29fd2c7eccb5a6913e71d05c9005e02c580874e4",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:05dc931d631ddb0eff4e1a66272adaab779a4a1a63274286fd9ec7e8f626bcb0",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Lost packets are normal in real-time media; treating them as authentication failures or skipping authentication to recover would let attackers inject media. Loss is an availability issue only.",
+      "threat_ids": [
+        "TM-DOS",
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-AVAILABILITY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "packet-loss-no-auth-bypass-test",
+        "loss-handling-review"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9605"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:31d71e4670f0da1e4254dd03ce68b900f9e61f8fbec4e3120566dd375a3d4c3c",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00569",
+      "requirement_id": "REQ-824db6c98890146fc486a7eb9cdde1781827e5c99c21e2bb3755daf4ec5af827",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:25a4560e9d2bc1b4479c5209db48b864169e44e26ec936d41163ed06dc74d17e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Non-overlapping key spaces ensure no two senders ever encrypt under the same key and nonce, which would break confidentiality and attribution.",
+      "threat_ids": [
+        "TM-ENDPOINT-LIVE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-MESSAGE-AUTHENTICITY"
+      ],
+      "evidence_expectations": [
+        "key-space-partition-check",
+        "cross-sender-collision-test"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9605"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:24cb38aa1c8f05cab8194c429f99ddd7976dcce454f89729fa06acedd231c40f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00570",
+      "requirement_id": "REQ-98472f1362d148faf23c65444128e244b1a5e308c5152a8fcf5b9a71e835a825",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:6ffde969d4b150405c9a5293ccba1612f449c951fccd3f1504d977f41f000026",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Accepting old CTR values without a formally defined window lets attackers replay frames. A bounded window with proof of non-acceptance is the only safe exception.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-REPLAY-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "old-ctr-rejection-test",
+        "replay-window-specification"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9605"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:1ab89b0e213a7f31ef09c4c6faddcec6941ff75147a407e8dad2da9f1d9816ba",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00571",
+      "requirement_id": "REQ-9d4a530a07a9a763c5bfc13651a4b1a36fdc23bcc2e7ac0c99fabe08a118e8e1",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:3e79bdefcf7307b69fdac8e29eff5130db34bc95de9dea241d08fab97419b39f",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Membership changes require the epoch to advance, all senders to rekey before resuming, keys to go only to the new set and new endpoints to receive no old keys; these together enforce join and leave confidentiality.",
+      "threat_ids": [
+        "TM-DEVICE-PHYSICAL",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "membership-change-rekey-sequence-test",
+        "new-endpoint-old-key-absence-test"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9420"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:782f1e1cc1f6b9517335e7e675261754164b967bf6a1ad929307fd11cba5a87e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00572",
+      "requirement_id": "REQ-9d538357c21f8bb1745fea492392e2f39a8a75fb8863000294db533a3416c4b5",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:8d76bec68899a2f3fd1491438ad7d38c95af09b266d8310a9b81ed7db16e6fd6",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A departing or compromised device must not derive new-epoch secrets. Excluding it from the MLS epoch is how removal takes cryptographic effect.",
+      "threat_ids": [
+        "TM-DEVICE-PHYSICAL",
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-POST-COMPROMISE-SECURITY"
+      ],
+      "evidence_expectations": [
+        "removed-device-epoch-exclusion-test",
+        "post-removal-decrypt-failure"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9420"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:fe75f36f84566d97dc7c528e2c016dd3faa33573f4f4e3daccd330a74a4a9379",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00573",
+      "requirement_id": "REQ-abb04c780bca912bdefe5c798711a009812b7afff9d6221b707ab5eec586f86b",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:5a58d7a05c1d35b66f8f63ab806cedfda7275c891c280872c53d58c1ed57a2e9",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Using an E2EESA pairwise or group profile for the media key control channel reuses analysed protection for key distribution instead of inventing a new channel.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-PEER-AUTHENTICATION"
+      ],
+      "evidence_expectations": [
+        "control-channel-profile-identification",
+        "control-channel-e2ee-capture"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:20c4c784cad8cd4af353d9b840746cab63c2e822cda59fd90c1ef1cd36794e82",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00574",
+      "requirement_id": "REQ-b63c37eb8cefdeb33175b422f9d472a8ae2f28f61e3a41eb1b73af443eae81fe",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:fe77ad3551e6811fa15e9092c490daf43f9bf8595d0e3e541491a505327965d9",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A joining device should not hear the call from before it joined. Withholding prior-epoch key material enforces join confidentiality.",
+      "threat_ids": [
+        "TM-ACCOUNT",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "joiner-prior-epoch-key-absence-test",
+        "prior-media-decrypt-failure"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:4a859e3aefeab64837ac3e2b7adb69cc931eacdc5b72660354d287be0544dea5",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00575",
+      "requirement_id": "REQ-c046b1c67796a207f4ee97cf43cc63f9e5111f0e1ca3977467006f7aa57f0b14",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:c6f43f58504552c4d73d46ac8b1ef83efc85d8f9854b9fddd8801922bbb45d36",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "If the client cannot prove its counter continued correctly (e.g. after restore), reuse is possible; rotating to fresh keys removes the risk.",
+      "threat_ids": [
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "continuity-unknown-rotation-test",
+        "restored-state-detection"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9605"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:6bb73c3ae1586c2df6fc0a6ea9583f119de1e41f79a2932d27271aab527a0b66",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00576",
+      "requirement_id": "REQ-c2ad42a4d98272bade73f682da42e601fafe469e98994898abd4f4bbc65d5ce8",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:69177510a6c28cc2ecd9252832cfc4d24646d0ee31969aa1175535588fcad2e9",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Keeping old epoch keys longer than the reordering window extends exposure if the device is later compromised. Discarding them bounds retention.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-FORWARD-SECRECY"
+      ],
+      "evidence_expectations": [
+        "superseded-epoch-key-deletion-test",
+        "overlap-window-configuration"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:c0e0c9e1e48fbf66aec566a6db56012a719081197cac0cdb4c0afc31075bb94f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00577",
+      "requirement_id": "REQ-cf97894d36f1b03ad68e253ef8763265896a5126f7966f5f64b49166b33ba680",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:596cb4c170dd1c8704299418f75f3cdc842deee026234d17368f31db0c0044be",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "KID and context values are visible to the SFU; encoding meaningful data in them leaks information about participants or streams.",
+      "threat_ids": [
+        "TM-METADATA",
+        "TM-SERVICE-READ"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION"
+      ],
+      "evidence_expectations": [
+        "kid-encoding-review",
+        "visible-field-privacy-analysis"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9605"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:86f6e8927d9dce025dbd5fcb6c01f6df318bca93bb50442db6dc1a88842e5431",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00578",
+      "requirement_id": "REQ-d35893d4030e155bbf1be951a3d30fa39e9aa6e1dd077b70f155c93b5b5bb107",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:1a829c034f85e199c372a89ed55b0331f6344978b86f9652d49d4395cc868dec",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "KID encoding must fit 64 bits; overflow could cause different senders or epochs to collide on the same KID.",
+      "threat_ids": [
+        "TM-ENDPOINT-LIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "kid-bit-allocation-check",
+        "overflow-boundary-test"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9605"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:8179297be01de62b39ff3e63880e131951e00455d86a05333f989b55c91677d5",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00579",
+      "requirement_id": "REQ-d5c971f49da2c0a779203d59e74b04676aea2cf7b3954956ed603d358260deb6",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:57fe59b61a843f4904530782d5944dc870cf37eac6115917b8a4c991d1c2807d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "SFrame is transport independent; allowing other transports is safe if all SFrame and E2EESA invariants are kept, avoiding WebRTC lock-in without weakening protection.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "non-webrtc-transport-invariant-tests",
+        "transport-profile-documentation"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9605"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:d0e1c6d01c848ff63a8903c426a0eba7e9fe92a6b079cac658e730425006efbc",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00580",
+      "requirement_id": "REQ-d5f198d43ea474adba5ad3254acc77299d3ee6d837bf7e4dcb8231c332af323f",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:fce22008ddbc2957426fac467e36016cf1e8d58adc4098e84e1f884421e5490d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Because media is authenticated end-to-end, any SFU modification must cause authentication failure at endpoints, preventing undetected tampering.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "sfu-bit-flip-detection-test",
+        "modified-frame-rejection"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9605"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:7d5f1fd1a5bf058d7621bbd254a9bf31e9cef908e5b01bcc2b6fcd22b560ce61",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00581",
+      "requirement_id": "REQ-d61dbc3613671608fa14e6e222a41f35377c5b386c51cc707faf30a4014d1566",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:08a9168c122c02dc1b0ac03926234d639787d65ca30a6cca3db596cc694e7294",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Without both a time and a frame-count bound, keys could protect unbounded media, increasing exposure and approaching AEAD limits.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "policy-bound-completeness-check",
+        "missing-bound-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:7c975e668e7003d5d85a8858d913e53ec1f5a49ebbb30f9251fbb86bf84cab48",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00582",
+      "requirement_id": "REQ-dea68984fd6ef39ba56c15badd27023a5d5e48ff632613d0e2eb5f6664a6e3ba",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:b3bc7c77838b48e3086dbd317bc750636764ec569ddb9609f1412d9efc328107",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Some deployments must guarantee no participant can export plaintext media. Allowing policies to forbid bots supports that requirement.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "bot-prohibition-policy-enforcement-test",
+        "bot-join-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:13e04b06f2bc1f09660d79ca4aac0746f8edb3da0e739174605238655129b96f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00583",
+      "requirement_id": "REQ-e471a2c65232855c68a986895960af96b97fd356b17b8f2b7f97618a800eec98",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:403ec7cbaf757dfc718c5a2314c2d98eeacecea309d92a7578d523fca8f6d8cb",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Recorders and bots can read the call; if they are invisible, users wrongly believe only humans present can hear them.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "bot-visible-in-roster-test",
+        "ui-indicator-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:029ed8478c37ede43d248caf729fcc7f92efeda1534160d5069e4b0959b3f232",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00584",
+      "requirement_id": "REQ-ecca5ee45a860434483896a2c547aebb2e0cea5fa4b07f9006e06a2742ed213e",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:5e1b42b4cbcc255ec5470f4a13b8a03f0450cd05a4cfb2bc0422a7ddfd8c2117",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Media must not resume under the old epoch after a membership change; otherwise removed members could still decrypt or new members be excluded inconsistently.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-DEVICE-PHYSICAL"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-KEY-CONSISTENCY"
+      ],
+      "evidence_expectations": [
+        "media-paused-until-new-epoch-test",
+        "commit-to-epoch-binding-check"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9420"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:41f44fc52df703f06a7ce310606fe4c5664d4b46f632575b2101cb9c7c8885a6",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00585",
+      "requirement_id": "REQ-f32d00dd219f4388fe11274deab2c1f27ff6144f019d08cf0daaf188e59fec56",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:c3bccc759ab6d321fbf9c5e47bea2e07bfd2d8640d73d6d1fb7c6b82a77e66db",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A compromised device in a live call keeps decrypting until removed and the epoch advances. Doing both before continuing limits ongoing exposure.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE",
+        "TM-DEVICE-PHYSICAL"
+      ],
+      "security_property_ids": [
+        "SP-POST-COMPROMISE-SECURITY",
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "compromised-device-removal-flow-test",
+        "epoch-advance-before-media-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e1a4bbdb5746e551d9ac435b8a79ca5ab0e474d0bc8ca2810b68c9cc28ceba89",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00586",
+      "requirement_id": "REQ-f75a225626f6bea90729e6f33828a5be6b64ed8b7cd8960b066216c143314da2",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:1374d316096de93971f668fb99d3e0b479fbf91340d7c29b31d99b9bba43765d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Encoded transforms apply SFrame inside the browser before media leaves the endpoint, which is necessary for E2EE in web clients.",
+      "threat_ids": [
+        "TM-SERVICE-READ"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "encoded-transform-integration-test",
+        "pre-egress-encryption-check"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9605"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:6858b7489c4a4ba092f3fbbd19b472f370c5dd92932dbf387e0841e91ef3a7e0",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00587",
+      "requirement_id": "REQ-f9f3757706e3fe7b6659daf2b224dff2e337fef8b9fd270d3e82a1904df226cc",
+      "document_path": "spec/real-time-media.md",
+      "text_digest": "sha256:bdda8ba7f44497347ffd28fecbd2dcda61af6312b6979caf113b0b560d4d587d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Plaintext-capable services must be treated as participants with the same authorisation and visibility as people; otherwise they become hidden decryption paths.",
+      "threat_ids": [
+        "TM-SERVICE-READ",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY",
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "processor-joins-as-participant-test",
+        "key-distribution-to-processor-audit"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:3cffa995a14edd9614f7049625c85d993e456a12252f53f5da28155dd44db6f8",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00588",
+      "requirement_id": "REQ-07eefe3b3c5ced11df642adf1237fc7a82ed66bd6f8da17fdd985330e06a6cc4",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:e86efe871558870f3d8e5665571335352b16a3a98d7d51f10ab3ad2528144c04",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Lifecycle states distinguish profiles safe by default from those needing explicit opt-in (provisional, experimental, legacy, deprecated). Defined states let resolvers keep risky profiles out unless deliberately chosen.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "lifecycle-state-enforcement-test",
+        "opt-in-required-for-non-default-states"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:b24a6e26d43fedd99523a7e9fb8d6971a2e6237b46067b76c851d12b17572420",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00589",
+      "requirement_id": "REQ-0fe226523f628ffeb4e6027635ad1c5abd4830c2016169289d4d2abe8bc9ae2a",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:3896bb125d9a324de0f93927306b542df43760fa74e916df1f9b5114f859ba24",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A new profile version can change security properties or dependencies. Treating a version change as a configuration change forces re-resolution so stale evaluation results are not carried forward.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "version-change-triggers-reresolution-test",
+        "stale-evaluation-invalidation"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:ea159d3ab53a5e669ac69075f86c51a2aebc5d22670d1b5a735d06cec0893583",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00590",
+      "requirement_id": "REQ-19c1bb97b9f96066a157ab006ebff03c079dd727506b6abcb5f7f0914befeb32",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:97b919ca16c1a941a4552abad8ddaf01789694f45c1454466441293a556f4bc3",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Sender-key and fanout groups rely on a pairwise channel for key distribution; binding it to the consuming flow prevents an unrelated or weaker pairwise channel elsewhere from being counted as satisfying the dependency.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "flow-scoped-pairwise-binding-check",
+        "unrelated-flow-dependency-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:f36de0010e670ec4aea1dfbf9424e19c3987a5b56cfea58d7bc204e88381de58",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00591",
+      "requirement_id": "REQ-2927be56eed92de643777c23dca86f09f2efe65363565a006d4a308b27128a08",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:480c1efcc6d41a9f8dc48cfc2731d4257d1e65ac6210a64d7ad9edfb31ca9446",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Family cardinality rules (e.g. exactly one identity architecture) prevent contradictory configurations; a violating set has no coherent security meaning and must fail.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "cardinality-violation-failure-test",
+        "family-count-validation"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:138f22d04332316efa54e28be3ce230f7abd7a5c48fadc076d56ee37a2547ada",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00592",
+      "requirement_id": "REQ-2a8ecf45f55932c3b925b7a45d4862631629e72a86103bd76330935ea7508cab",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:591b15e2b919e8d353367ec207c24b9ef282aae56b0098bc115ce1dd691c33ed",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Two versions of the same profile would make it ambiguous which rules apply, letting evaluators pick the weaker.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "duplicate-profile-version-rejection-test",
+        "effective-set-uniqueness-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:b636547a33eeccbd0aa6af2e79d75253584e6e3a9d3c0a3bba94bdb40104dacb",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00593",
+      "requirement_id": "REQ-410a2cd8272752c454b1e03409c4359be24166569e95f2f38d01bddd9106fec6",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:bc10b55fb954e54dc6f772febcb5edd455c25f8a8a8ef92c39dfc53f8d4f1740",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Account-root verification is only meaningful against the specific account-root identity profile in the same component; otherwise verification could refer to a different identity architecture.",
+      "threat_ids": [
+        "TM-DIRECTORY"
+      ],
+      "security_property_ids": [
+        "SP-PEER-AUTHENTICATION",
+        "SP-KEY-CONSISTENCY"
+      ],
+      "evidence_expectations": [
+        "same-component-identity-binding-check",
+        "cross-component-binding-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:68cb912aa324c7482ee9380614628c034bd809bc9cc18f961cb46c7d3ba39642",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00594",
+      "requirement_id": "REQ-539cc7b92954f781df6dbd37bd7441b9fd0894728fb3d090cb038e838cba0f8a",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:eb611e9b42d526147de7f1733547c3b80a3b6b7132f0b6fcf187d533b8929db8",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Profiles legitimately depend on others (e.g. pairwise on identity). Exact references make the dependency unambiguous.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "exact-dependency-reference-validation",
+        "dependency-resolution-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:73cd50268db517021e8db81fa2bbe59706b9de89c2cd834122f7f375356f27a2",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00595",
+      "requirement_id": "REQ-53dee20f185fc4a90dc048a849d635d4a4a6dbf7dda16d3e2632bc9788d2789e",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:a6bfdd61ab951cf6c86bc8521f2b5c0c595d9d04d2f6f676afdbe847e5f09363",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Conformance must be evaluated against a specific standard version and exact profiles; without them the result cannot be reproduced or compared.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "configuration-version-and-profile-fields-check",
+        "missing-version-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:65283dba535211e83e66a77fd3fc74d7d66650858e5f820913f9a181383d609b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00596",
+      "requirement_id": "REQ-542f47d840c948492b56ec086e305488d648980044db608238e678bc08fb033d",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:6ea934a0ef021d2fc148afbacaf6235000eef8120ffe944ce005758205c65a8b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Families address different concerns, so profiles from different families generally combine; explicit rules handle the exceptions.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "cross-family-coexistence-test",
+        "rule-driven-exception-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:4699e0c2b7edc9f4d118f829b65b58bd37536537b4a1a3cdd1477202f4529ab0",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00597",
+      "requirement_id": "REQ-554d49a008ce920a2f623ff7269ee8af54b58f31a6f5bd41366c4adcd2aae242",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:03bb42352ea107f887fc69dff0025519069f687f96d543298cf947252e3bc2e8",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Retaining resolution output with the artifact allows later reconstruction of which profiles actually applied, supporting audits and incident analysis.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "resolution-output-retention-check",
+        "reconstruction-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:0021d4abac2a9e7e388325a54b45c4168c2c63c7e306e85f50fe5ef7ffb98f32",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00598",
+      "requirement_id": "REQ-5ca535049b8a28a1d51b8e7d9faa12a84345d4861704ec0e2885a88b61cc93b6",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:b40656a15bccf4808b5e6221aba5f81812bb5fdac7836e9b9547b0c3383a73ce",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Stable ordering makes serialized resolution output byte-identical across runs, which is needed for digests and comparison.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "serialization-ordering-test",
+        "cross-run-digest-equality"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:7842c3702004f22ef80e55bbe8063221fb9b4462668d15354c3c1a5599dbba47",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00599",
+      "requirement_id": "REQ-607a039ee55f702d720933f0ca150cfcd0d1e9cfec10a2b1418c411f859bac74",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:3c0fd2d2ab2329a586ed7a3c3086dda46523b138b2b67ec15889c2c3db3d1827",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Individually recognised components may still conflict or lack required dependencies; conformance requires the combined configuration to satisfy all rules.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "valid-components-invalid-combination-test",
+        "whole-configuration-evaluation-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e5039bc1347f66d134867edc3f5c1d9e767e8f4ba27da5ba63e03bbacb444196",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00600",
+      "requirement_id": "REQ-6688eb36b95f811d01e94cf22b46c76c61c12941b717aa2cadd1d13f60d64c6e",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:c173f38f0941b32d25b6238bfeb8b418f3eaa51e28b46ecf4b803d37659ee837",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Ranges, floating tags and implicit upgrades let the evaluated configuration silently change. Exact pins keep conformance tied to a fixed set.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "floating-reference-rejection-test",
+        "exact-pin-validation"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:a66cee5cb3dab500c3e7a7531a5042e387d3d3d5fbee43da9bb3a3d99a8fb804",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00601",
+      "requirement_id": "REQ-69beba0bfe12555c5d0ba931d9f8caa338517627a7cf13931503441fbe8ccd90",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:62a3518b4874cf2fce53152ec89d30338b587eb31b8be7a41aa15fcf0706fc0d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Non-deterministic dependency expansion would let two evaluators reach different effective sets and verdicts for the same input.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "deterministic-expansion-test",
+        "order-independence-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:6771b9c36b362f835b74e35ca6fecf2ab2285d5297b8c166719cb467ee6aa83c",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00602",
+      "requirement_id": "REQ-6a628b03f6c08a7ab4790f4ff5086d0fba968c3fbfe483ae6bb6ed93ce9a10ee",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:662029e19ba910b433869b0b9efffbccec045fb2ee4bfb0feb1d31cd25ceb881",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Content-protecting profiles are only secure with an identity architecture and secret storage bound in the same component; discharging host obligations explicitly prevents assuming they exist elsewhere.",
+      "threat_ids": [
+        "TM-ENDPOINT-STATE",
+        "TM-DIRECTORY"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "content-authority-binding-check",
+        "undischarged-host-obligation-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:08f58fdf797ff79121d25d17755123c5f39df8cbe2cdf85d38856e28533fefd6",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00603",
+      "requirement_id": "REQ-6d5329e700140970e971ea155f027e64d850c5a440ce9c9b37d9e064aafa57b0",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:d3c8183f81519a78e8587866003953808363b21a55aa524575f8935a96ebf748",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Key transparency must refer to the same identity architecture and verification subject used by the component, otherwise it could prove consistency of a different subject.",
+      "threat_ids": [
+        "TM-DIRECTORY"
+      ],
+      "security_property_ids": [
+        "SP-KEY-CONSISTENCY"
+      ],
+      "evidence_expectations": [
+        "transparency-subject-binding-check",
+        "mismatched-subject-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:f13b8d21b1d06ce84aab4e610947b5e0be30b7f9382b070a02fae5569b84cc88",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00604",
+      "requirement_id": "REQ-6fd9bfa4454b3c10738ca31198a67a7153e6528fc60fef3482d29a1420c6701c",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:6c0edd49ef4bcb54206e5b613fc7cc2de4c2a5fcacbce1248b506bab62991c39",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Dependencies satisfied in another component or flow do not protect the consuming flow. Checking each flow and naming exact host obligations prevents cross-flow satisfaction.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "per-flow-dependency-check",
+        "cross-flow-satisfaction-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:0929932e6e1b7c1efe2469ef2bc82c755f6af5e4a355ebec184cbcd1f9751f03",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00605",
+      "requirement_id": "REQ-70868ebab861cd9af4031cc49cae8155cc127331fb30fa79204e0f43d3af002d",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:469fe930ec7933d1ebfab4df58221de8af7e470efb1953bfee6f31177446de51",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Dependencies can add profiles to a family; allowing this keeps resolution complete while cardinality rules still apply.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "dependency-populates-family-test",
+        "cardinality-after-expansion-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:a19a83c3f4bc77f72427bdea86b4aff0a1079295e6a10ef68cbc31477693a399",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00606",
+      "requirement_id": "REQ-75b3be03fca28fcbfe12260484a8cb6ca4fb01676a3ccd53b896e8f5a2bc0032",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:6b49878c2c9dc6f1684800fe6a1e6989f00e19164f836382222caabf52a54eb8",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Silently substituting a different architecture to repair a configuration would change security properties without the user's decision.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "invalid-configuration-no-repair-test",
+        "explicit-error-reporting"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:c0a72d4127249533c4ebc25d57eb87b853767742c4ff5436fc9c8de2ab8e2041",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00607",
+      "requirement_id": "REQ-76db15bb295e0454d1dcdb795cb8131fae1ae4a5e307276ecfe84b05a7245d4a",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:dedbaee7f75a5c3cca23b93e46303cc466e7acbb452cdfb6b6d186838117e973",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Choosing one of two conflicting required versions arbitrarily would break the other dependency's assumptions; failing exposes the conflict.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "conflicting-version-failure-test",
+        "no-arbitrary-selection-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:c753f17a65db885181fb0d8267daac7397bbcf2a25957c09ed26a6c6a9d50bd6",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00608",
+      "requirement_id": "REQ-8cb1877c61b79d59f615b3356997a8ecb6c9d4ed232d71252942c6584ef295ee",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:17f2a69fef032ac620fd186957a7fed49fe23546eb1cbae2430df7055678b783",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Required profiles must be included so the effective set actually contains everything the selected profiles depend on.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "required-profile-inclusion-test",
+        "missing-dependency-detection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:1220b38d119214cdd68549e555b723db058f2766982286dfe2147555bb625952",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00609",
+      "requirement_id": "REQ-9a20b1f4e3bb49a815259e70c1e6d416c7e43f93ec1462b7b8a7eab153b552a9",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:cf5fa9a57f0190cfb5f7bd979f5683575cf8e5a727856682234e00f3f7797a24",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Cycles can be legitimate; requiring mutual satisfiability, exact pins, termination and no duplication keeps resolution safe and finite.",
+      "threat_ids": [
+        "TM-DOS",
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-AVAILABILITY"
+      ],
+      "evidence_expectations": [
+        "cycle-resolution-termination-test",
+        "duplicate-in-cycle-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:33de1a388e5dea093c38821fef5df86b35eedce1d66096e5c4eefc74a1fb95b0",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00610",
+      "requirement_id": "REQ-9aa6da5080e1e7e8fc683480b43c80667eb0ffd79012d6d5546180f5b69f65c9",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:9fd4bc8ee2f6ded3a09ae6355a9c7a95da6aa4f26c289a196da1ff206763c696",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Typed dependency rules with explicit scope make component/flow binding machine-checkable instead of relying on prose.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "dependency-rule-schema-validation",
+        "scope-enforcement-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:139e3f7b33cd0a49327c7668f23fc2745b59435b13a75cdbca2b462762add988",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00611",
+      "requirement_id": "REQ-9b1f4b6ae57cc925174ea8de28c2eabafe962d27edbf204ca574a5b1be521bc4",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:9acf0eddfbcd2562c3a14e196ac7b3e4f01d556d867211869637b3e16f012458",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Cardinality types encode whether a family is mandatory, optional or multi-valued, preventing missing or contradictory selections.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "cardinality-type-validation",
+        "per-type-enforcement-tests"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:9c7e3180abeb26a8e2eb7760fe470ad8e131259308140d2bfede365025bb3318",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00612",
+      "requirement_id": "REQ-9eddd158005f76247412ae2b2ff35e8a5c1703a23abb24a50866b2c2b77df684",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:4346e006bd88bb6b8c985cf75f605881c0e8777c252894259ffd3d2975f93c8a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Explicit acceptance of non-default lifecycle states documents conscious risk acceptance rather than accidental use.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "explicit-acceptance-field-check",
+        "non-default-without-acceptance-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:a116f05bd1f8d79810118b7542cc0dbf68960bc2eb33effd6c19ac1825d47d3e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00613",
+      "requirement_id": "REQ-b15ea0fc9cdb1cb871f61ae13e39e66115471577ae5baf277272681231fe673e",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:1b0f72112abfc75f2306b3c3cd147dbf7cdc2b3838b7f2b2406fb76b7d6ce2e2",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The listed failure conditions (unknown references, cardinality, incompatibility, version conflicts, unsatisfiable dependencies) each mean the configuration has no coherent meaning; failing prevents evaluating an incoherent set.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "resolver-failure-condition-matrix",
+        "per-condition-negative-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:095d7a02832149238f1f45103e3a22edfa132dc8da98ae72bbee3ac0f4bf6f59",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00614",
+      "requirement_id": "REQ-c45dab73db2de82da78c94e645338e46e0c6185608eaa266cb2169bf55e5cc37",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:9f71a028f7e07268524187b9ebc18d1dcfb39f85b8d11aa79aaf067014419c54",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Attachments and sender-key media distribute keys over a parent channel; without binding an authenticated one in the same flow, keys could travel over an unauthenticated path.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-MESSAGE-AUTHENTICITY"
+      ],
+      "evidence_expectations": [
+        "parent-channel-binding-check",
+        "unauthenticated-parent-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:ec67bd20155adfaa3dc9d48ab8765d37396722f5076b556790f011c996b6da08",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00615",
+      "requirement_id": "REQ-c86f71178f670bb9db260fd290c48b1a08203ff7215e6dcdebbf74264f982726",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:e89489df5e69d1d7445017c274b7926023b11e46640a22f0621d7a3f43ec6faa",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Unknown references cannot be interpreted; guessing would evaluate against undefined rules.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "unknown-reference-rejection-test",
+        "catalog-lookup-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:67efab10acd09927e181b9fa68a5eb265f4b741abb7d7b802d3d800ca0c5b897",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00616",
+      "requirement_id": "REQ-ca1bc2fd3251ca07dec06f1b02383d0d6d5d13a155a49760951e656971afa7b7",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:6a078e5e731c13c9f31b1d5aaed0f41226afa0d627eb8c9bd6864fc37865e105",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "If incompatibility were only one-directional, order of evaluation could let incompatible profiles coexist. Symmetry closes that gap.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "symmetric-incompatibility-test",
+        "order-independence-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:08b6f41f9d762509e86d92e215cd00a62b881dce55ecae518e54d0bbfdf71f1b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00617",
+      "requirement_id": "REQ-cbc4801f70e2d0c05b89f8a127c2abbb5bed1a3d076bb9afda6aba393756b736",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:ac58da2089f7e9789dfcac8efaae49ab3dfb15bd363c3d7ed1bc6348327c3ddb",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Endpoint protocol profiles depend on client and transport security in the same component; without them, endpoint compromise or network attacks bypass protocol guarantees.",
+      "threat_ids": [
+        "TM-ENDPOINT-LIVE",
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "endpoint-boundary-binding-check",
+        "missing-client-security-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:85a620329b5a70e8da4fd1fa246c690b1fe5f7a7718747bc771eb266d471b439",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00618",
+      "requirement_id": "REQ-ceeebb98331610badef4f66e6ff8ce7ce1d2b602c3ba7d20426967139a964b66",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:f3f1fd48e05fdd51cc61e04329656e2dc5179632d653cfe9b46a4b9c61e0df48",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Representing competing approaches as distinct profiles in one family makes the choice explicit and comparable instead of baking one view into the standard.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "family-membership-review",
+        "alternative-profile-catalog-entries"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:cfa88eb0e04e04a0fe513431f53eb7053bc80ee5c8d3efe81212a4cc154a5f13",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00619",
+      "requirement_id": "REQ-d495e45f89f71ff47910f946099f26745414bcd9b90bd8bcf2c40706adbcb29e",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:6904442c7181208677f75b7ce235116922af4d3e6199a7f410523644ed384037",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Incompatibility declarations encode known unsafe or contradictory combinations so resolvers can reject them.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "incompatibility-reference-validation",
+        "incompatible-pair-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:eb17fca297a5da0e60f4935fd092694f105ebdbf2a2f6dba7f8bd8048c274158",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00620",
+      "requirement_id": "REQ-ef76796db42bb7a1c2e7c3381ec27c50af45ee14855c67da88f6efc4f911062b",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:8c9571712dbdc0c19427dfa0325c3deb3e66a095155c0f80d4436e30cca6a51e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Prohibited profiles have known breaks; no opt-in may enable them.",
+      "threat_ids": [
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-DOWNGRADE-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "prohibited-opt-in-rejection-test",
+        "lifecycle-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:43519ae00b43ac3aae88414705382706d8d3548c420cd77096699af8b2c63692",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00621",
+      "requirement_id": "REQ-f44c6e3f96f1d891d98e030d120da963efe369076f0b75eacfe97c379a1696fb",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:6af3a61c99c6a030f351191afef802c63db57f824255b6f3eda16ecf7e19e254",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Hidden dependency selection would change the effective configuration without the user or assessor seeing it.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "dependency-visibility-in-output-test",
+        "resolution-output-diff-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e865080e50ebfd4b6580124c5338ec1f9be13b9aef572f5d4ab99943297790ff",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00622",
+      "requirement_id": "REQ-f6e0c387ab1eca5e811025fd3195264d89eeab77f50fd986c773171da3371df7",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:0fb5d74897a7dd5aa5553c39dcf93db4dc5dc8dd93dc5de2477efc563eea1520",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Conformance results must be reproducible: the same input must yield the same effective set, warnings and outcome across conforming resolvers.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "cross-implementation-resolution-vectors",
+        "determinism-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:93ef2b264f65925c79e438131cec1dfd4fb6a145a6889835ac62462205e885ec",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00623",
+      "requirement_id": "REQ-f6ea50a926a02005f802029388d7fb5760989f204166d6bfe25956ae002b2a26",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:eff0e1f5b3ca672b5c9f3c7b4b34b42fc7dfa78ac5b0e1ce6e792dc90dc8b615",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Listing property IDs from profiles shows intent, not implementation. Treating the union as proof would bypass evidence requirements.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "property-union-labelled-informational",
+        "evidence-required-for-claims-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:7602d4e6bfbe801b3d2b4bc421cb89e754365eb6121995e200b53244e3fe8cb7",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00624",
+      "requirement_id": "REQ-fb7b908a55ec0342bf8625a8c729627870ded55660808d1b9a6eb05c0e3216bf",
+      "document_path": "spec/profile-configuration.md",
+      "text_digest": "sha256:c94033106d85c1c86d1f75bc03c55332aeef028937fc9b335efffad941651288",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Every reference must resolve in the catalog used; dangling references would leave parts of the configuration undefined.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "catalog-reference-integrity-check",
+        "dangling-reference-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:9d396f08220d5e46397ff3f1a77b2888633b971ca6d0d32eb30eb13bdb0c2888",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00625",
+      "requirement_id": "REQ-19e2bd2813a33ce9d40fce9566e97141e08d7008c1504a63acdf8f79b46f89de",
+      "document_path": "spec/native-web-client-security.md",
+      "text_digest": "sha256:8bab4a2311a9681b83f70e75ea3d35af553f4ba5a7cd7bd102e04d1c0d55c7c3",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Web clients load code from the server; binding all executable subresources and service-worker updates to the release manifest, with SRI and loader verification, prevents a server substituting malicious scripts.",
+      "threat_ids": [
+        "TM-UPDATE",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "subresource-manifest-binding-test",
+        "sri-coverage-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:050f9408f5f787bb7f66bf125cef16d9a200e2a56562fdc86b71b1755289fd29",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00626",
+      "requirement_id": "REQ-1f4afe998a9586076b604d1e67ea81144a2d8703cd567e38da3f4d433242a4cc",
+      "document_path": "spec/native-web-client-security.md",
+      "text_digest": "sha256:13dcfca221d62fef786c7929338f3da39016169e9ae0e180f759817e58c09825",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Binding log entries to exact release digests, preventing checkpoint rollback and blocking releases on split views or failed witnesses lets clients refuse targeted malicious updates.",
+      "threat_ids": [
+        "TM-UPDATE",
+        "TM-ROLLBACK",
+        "TM-SIGNING-KEY"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY",
+        "SP-KEY-CONSISTENCY"
+      ],
+      "evidence_expectations": [
+        "code-log-split-view-rejection-test",
+        "checkpoint-rollback-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:7e907ccf8d908f714c49a63609001052238147d4544729b129c3eba93da8b7d1",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00627",
+      "requirement_id": "REQ-26628a6f8791d88b6ea31822e2f6cec5243b3ba0620175f9b30386430fef4370",
+      "document_path": "spec/native-web-client-security.md",
+      "text_digest": "sha256:ea0e844251c8f0241cee5ade4ccee2d676b11c277b5203304ed8f2afe29d4674",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Closed schemas and content-addressed reports with identified assessor, policy, version and platform make client-security assessments reproducible and attributable.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-BUILD-PROVENANCE"
+      ],
+      "evidence_expectations": [
+        "schema-closure-validation",
+        "report-content-address-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:77ac636e374dff38ac37e6d3d9e6d73f9c8b7d554177bc9023c93dfd74a8630f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00628",
+      "requirement_id": "REQ-33731b4e75812ff622b17a76d27c32c51266e251f520483dd5a7444c8734bfbc",
+      "document_path": "spec/native-web-client-security.md",
+      "text_digest": "sha256:1d5e608d52104e9d3c1d073c3b6fc347db83c6f989e19d4444accb0b4c0cb2e4",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Pinned HTTPS origin, secure context, HSTS, no mixed content and header-delivered CSP close the main paths by which web clients load attacker-controlled code.",
+      "threat_ids": [
+        "TM-NET-ACTIVE",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "browser-security-header-test",
+        "mixed-content-rejection-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:5602da140609d080e4d03d5f885b9382ea6355159b8233fe9b5d148a78d73d00",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00629",
+      "requirement_id": "REQ-35dee5d22edddf0ba9e47478a31443d257bf6fc456507a332bc191bddd203252",
+      "document_path": "spec/native-web-client-security.md",
+      "text_digest": "sha256:7c7b5d85b2d0e8b8b04cf6a81a9b236dc6093d9724871b5edd2473493114b86a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Native clients must verify package signatures, use least privilege and sandboxing and disable debug features so that tampered builds or local attackers cannot easily read secrets.",
+      "threat_ids": [
+        "TM-UPDATE",
+        "TM-ENDPOINT-LIVE",
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY",
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "package-signature-verification-test",
+        "debug-feature-disabled-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:ff396968e39d927364468fbc4ad579022f9316d319d091d2b553764e5ea24b2a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00630",
+      "requirement_id": "REQ-6d1e3b2cd224bfe446f7924c2da1ed57f3ecf5db7043b0653bac645e3f9c71be",
+      "document_path": "spec/native-web-client-security.md",
+      "text_digest": "sha256:87c85e7d03adc24ba19d9d4dab661e3b95b07ec72d7f4041266575c42e32d249",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Update metadata authenticated against independently provisioned roots and pinned signers prevents the update server from substituting releases or signers.",
+      "threat_ids": [
+        "TM-UPDATE",
+        "TM-SIGNING-KEY"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "unpinned-signer-rejection-test",
+        "metadata-field-binding-check"
+      ],
+      "external_standard_ids": [
+        "SLSA-1.2"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:d2774f8e8d293b1d5f3ac04223668ec25e427beb489b2c43b176c04e759cfacb",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00631",
+      "requirement_id": "REQ-74579100baf00127da8cbe1b21c327f679d6a677eaadd56be016eac7702d45e2",
+      "document_path": "spec/native-web-client-security.md",
+      "text_digest": "sha256:43d7878663ae6d01d1b698789a86ba5f53b6a9589620e76ad4671847d9d01d8d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Platforms differ in security model; assessing each separately prevents a strong native result covering a weaker web build of the same product.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN",
+        "TM-UPDATE"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "per-platform-profile-selection",
+        "cross-platform-claim-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:757fe3444261f39c349c06e203146df4a4d3c1b1231e62d52fe49ebd6b24c085",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00632",
+      "requirement_id": "REQ-7afe7a5e31bd8fd154c155df503c5c452b9c8c5ebd8e09608eb7baa97c0c3dbc",
+      "document_path": "spec/native-web-client-security.md",
+      "text_digest": "sha256:5de0d3d8a520f802420120cc37de3e82932479dd1f20f26856e8108113b9aaaa",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The reference engine checks records, not running clients or signatures. External assessors must perform those checks so engine output is not taken as runtime verification.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "engine-scope-labelling",
+        "external-runtime-verification-evidence"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:1661fa86ffb020a92123cc9d20f0165c60e57247760ada76ff3d032ad5f92cf4",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00633",
+      "requirement_id": "REQ-87a4ebbe41c1a5b7d76dc4ea8a429fe23434e995b1342998d39b9d5b494a4dde",
+      "document_path": "spec/native-web-client-security.md",
+      "text_digest": "sha256:414c77923b88706fc6ece164b47e442eb2fe36fc7df87ecaa82126e98c911601",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A verified-bootstrap verifier delivered by the same server it verifies would be trivially bypassed; installing it independently and covering all code paths makes verification meaningful.",
+      "threat_ids": [
+        "TM-UPDATE",
+        "TM-SERVICE-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "independent-verifier-installation-check",
+        "uncovered-code-path-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:bb26f8638468f2d3b639643e2c377a317edb24e8a864f2ab45c53bd2b449f753",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00634",
+      "requirement_id": "REQ-b396a558c863cb75a8881934b49200a021fb17a7b8061358c1dfd3eb258e24ff",
+      "document_path": "spec/native-web-client-security.md",
+      "text_digest": "sha256:1fc58b53c37b907cb75f239cc6a6e5b3a67a2810e42182023e488dbfeadd97b0",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The restrictive CSP (no default sources, hash-only scripts, no inline or eval) blocks script injection paths that would otherwise reach key material.",
+      "threat_ids": [
+        "TM-SERVICE-ACTIVE",
+        "TM-ENDPOINT-LIVE"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY",
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "csp-directive-validation",
+        "inline-script-blocked-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:ad4191cb5ad71f7d309d9201d5da129fc05351a65f5244dd4c3c6025661b62db",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00635",
+      "requirement_id": "REQ-c8bcca6c27226eb9c71bedca5e849d8335e343d4975206caa292c0ffdf368826",
+      "document_path": "spec/native-web-client-security.md",
+      "text_digest": "sha256:5bde5098c428f6ed7bf6687b02c9cb798842c752fc67df070b0006e57f0bad97",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Origin and source checks, CSRF protection, frame isolation and no third-party scripts in secret contexts prevent cross-origin attacks from reaching keys or triggering actions.",
+      "threat_ids": [
+        "TM-ENDPOINT-LIVE",
+        "TM-NET-ACTIVE"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "postmessage-origin-check-test",
+        "csrf-protection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:61130ee6a5e5182fabee570859cc7ec66666182462178cb5aa27b97aa767d8b0",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00636",
+      "requirement_id": "REQ-d2bfeb703d73eda4ac3a350410ef1f6b892c241a574d2af130c909286a29b94b",
+      "document_path": "spec/native-web-client-security.md",
+      "text_digest": "sha256:0e0356d3874ef52f3ea935cab991e7a84c6b45a1f4f94c9ec7d60f202d698ba0",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A complete manifest of all executable artifacts with path, length and digest is the basis for verifying that clients run exactly the released code.",
+      "threat_ids": [
+        "TM-UPDATE",
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY",
+        "SP-BUILD-PROVENANCE"
+      ],
+      "evidence_expectations": [
+        "manifest-completeness-scan",
+        "unlisted-artifact-detection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:1b6268cd276ab11307d198aab7480fa170e692c1688d1001fb11b54400fd57ac",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00637",
+      "requirement_id": "REQ-dcdd83b0ef8b37334612e8fc68cd8fd4c0b287919dbce3307e2591eff094cb52",
+      "document_path": "spec/native-web-client-security.md",
+      "text_digest": "sha256:19cf724fa5f82b1c6fa31b81c21c20ec03939bb9476fa6f177ee3d5e0f745c12",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "An append-only code log with verified proofs, persistent checkpoints, equivocation monitoring and independent witnesses makes targeted malicious releases detectable.",
+      "threat_ids": [
+        "TM-UPDATE",
+        "TM-SIGNING-KEY"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY",
+        "SP-KEY-CONSISTENCY"
+      ],
+      "evidence_expectations": [
+        "inclusion-and-consistency-proof-verification",
+        "witness-cosignature-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:37924ca100951baafb1fe2280bd8943a3e35a4f1d308bfce2b224d534b4faad6",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00638",
+      "requirement_id": "REQ-e7199a2fd53f532bc288d7fd2d41de950c4a8b3d90665b5964c19848bda77509",
+      "document_path": "spec/native-web-client-security.md",
+      "text_digest": "sha256:200476f31824831395242d8d0905d8926e58dc39ec2f45630cfcf09f332a1057",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Update attacks include rollback, freeze, mix-and-match and partial installs; persisting accepted sequences and rejecting below-minimum versions defends against them.",
+      "threat_ids": [
+        "TM-UPDATE",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY",
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "rollback-and-freeze-attack-tests",
+        "partial-install-detection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:397baf5f99e93207a3a9b14e369d9929dd1535b1e4c9d8e591487b9bff42b367",
+      "review": null
     }
   ]
 }
