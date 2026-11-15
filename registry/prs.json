@@ -10,7 +10,7 @@
   "scopeNote": "The original 50 plan units and the later 26 upstream audit-remediation packages are separate approved work; provisional downstream ROLL slots are not counted as guaranteed PRs.",
   "schemaVersion": 1,
   "roadmapVersion": 1,
-  "observedAt": "2026-11-15T19:22:25.000Z",
+  "observedAt": "2026-11-15T19:49:11.000Z",
   "units": [
     {
       "id": "E2EESA-01",
@@ -832,7 +832,11 @@
         100,
         101,
         102,
-        103
+        103,
+        105,
+        106,
+        107,
+        108
       ]
     },
     {
@@ -892,6 +896,81 @@
     }
   ],
   "pullRequests": [
+    {
+      "id": 5326468672,
+      "number": 108,
+      "title": "AUD-22: final 104 requirement analyses (1,054/1,054 unique requirements covered)",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/108",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-11-15T19:45:07.000Z",
+      "updatedAt": "2026-11-15T19:48:56.000Z",
+      "closedAt": "2026-11-15T19:48:56.000Z",
+      "mergedAt": "2026-11-15T19:48:56.000Z",
+      "headSha": "a9fd09ccf72c295b1e723de7cad83091a299be1b",
+      "baseRef": "main",
+      "mergeCommitSha": "4e56404d3e9b0bf7cc391d4f2f9e616ced167ea1"
+    },
+    {
+      "id": 5326446818,
+      "number": 107,
+      "title": "AUD-22: 156 requirement analyses (registry, supply chain, verification, assurance, conformance, formal methods)",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/107",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-11-15T19:42:49.000Z",
+      "updatedAt": "2026-11-15T19:44:37.000Z",
+      "closedAt": "2026-11-15T19:44:37.000Z",
+      "mergedAt": "2026-11-15T19:44:37.000Z",
+      "headSha": "24e4ce34099e5f3cfc29a7dc23b285a0f654cb26",
+      "baseRef": "main",
+      "mergeCommitSha": "02c4683b46a230d951992221188fb7a57d32f91e"
+    },
+    {
+      "id": 5326418196,
+      "number": 106,
+      "title": "AUD-22: 156 requirement analyses (certification, confidence, advisories, vulnerability handling/disclosure)",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/106",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-11-15T19:39:31.000Z",
+      "updatedAt": "2026-11-15T19:42:17.000Z",
+      "closedAt": "2026-11-15T19:42:17.000Z",
+      "mergedAt": "2026-11-15T19:42:17.000Z",
+      "headSha": "fe0458827a20353c0160b412ce30378b6d68083a",
+      "baseRef": "main",
+      "mergeCommitSha": "ae00b8a256675ddf0d9bc95229179beab952e312"
+    },
+    {
+      "id": 5326391725,
+      "number": 105,
+      "title": "AUD-22: 129 requirement analyses (contact discovery, media, profile configuration, client security)",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/105",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-11-15T19:36:28.000Z",
+      "updatedAt": "2026-11-15T19:38:50.000Z",
+      "closedAt": "2026-11-15T19:38:49.000Z",
+      "mergedAt": "2026-11-15T19:38:49.000Z",
+      "headSha": "b1691f3668900e5e0cd62c951668d79541599e03",
+      "baseRef": "main",
+      "mergeCommitSha": "680a0d65cd32181c5580def31e6cd4ce870087b9"
+    },
+    {
+      "id": 5326271988,
+      "number": 104,
+      "title": "Refresh PR registry for audit units; add render.yaml",
+      "url": "https://github.com/Galinsky-Labs/End-To-End-Everywhere-Security-Architecture-Standard/pull/104",
+      "state": "closed",
+      "draft": false,
+      "createdAt": "2026-11-15T19:23:01.000Z",
+      "updatedAt": "2026-11-15T19:32:22.000Z",
+      "closedAt": "2026-11-15T19:32:22.000Z",
+      "mergedAt": "2026-11-15T19:32:22.000Z",
+      "headSha": "2c9038b002f00f31021ae84b23927be21e2924c6",
+      "baseRef": "main",
+      "mergeCommitSha": "dca96ed2cdba57ffa008fb543ebda187871e20cf"
+    },
     {
       "id": 5326178766,
       "number": 103,
