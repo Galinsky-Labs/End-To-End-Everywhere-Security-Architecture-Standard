@@ -6,7 +6,7 @@
   "normative_content_changed": false,
   "external_certification": "not-claimed",
   "external_review_status": "pending",
-  "individually_authored_requirement_count": 509,
+  "individually_authored_requirement_count": 638,
   "normative_requirement_count": 1055,
   "changed_since_release": [
     ".github/workflows/deployment-monitor-contract.yml",
@@ -1938,8 +1938,8 @@
     },
     {
       "path": "registry/requirement-analyses.json",
-      "size": 554440,
-      "git_blob_sha": "8ac1fadd70e220222fbb97dc50a58449a7c6d0cd"
+      "size": 683214,
+      "git_blob_sha": "3744ac49aadf3b6f42f84ed05e3794b19839ff2d"
     },
     {
       "path": "registry/research-profile-registry.json",
@@ -3992,5 +3992,5 @@
       "git_blob_sha": "6d83ea02d7cfb5a1c9f67e7a94f4b80df3f256f4"
     }
   ],
-  "tree_digest": "sha256:517b3a60ea0c3406a239f9234ad51171fb26b5bee9278e177bcdb4b168861cdb"
+  "tree_digest": "sha256:fd8b73d0386470322af1cd7a6cfd34da2a0e35b4a3bd00c3854ade03821eebfd"
 }
