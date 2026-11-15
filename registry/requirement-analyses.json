@@ -15232,6 +15232,3574 @@
       "dependencies": [],
       "context_digest": "sha256:397baf5f99e93207a3a9b14e369d9929dd1535b1e4c9d8e591487b9bff42b367",
       "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00639",
+      "requirement_id": "REQ-081fb3fd123f16bee20cfbe2f370612218b6ffd5fab2e16883f560b232a83a7d",
+      "document_path": "spec/certification-lifecycle.md",
+      "text_digest": "sha256:1403a12179d7ac620c9be88a5bbe9556685ecf3023ffee20859d27d56eda3780",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Reasons for adverse or state-changing events explain decisions to applicants and auditors. Deleting them would let a certifier hide why a product was suspended or denied.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-NON-REPUDIATION"
+      ],
+      "evidence_expectations": [
+        "event-log-append-only-test",
+        "reason-deletion-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:be2ac704677a10309e9c528fa3554126ca52d49c0c5e4241aa3c2ee559e7e58a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00640",
+      "requirement_id": "REQ-0ed9aec4712bf9ac8f7ddf6a1eb99e257b02811ce33c04805d443adef00b760f",
+      "document_path": "spec/certification-lifecycle.md",
+      "text_digest": "sha256:283e72fb8489784323099e6d72c66d909984fdae008fca5a104b995c7859f863",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Separating evaluation from decision prevents one person both producing and approving the evidence, a basic conflict-of-interest control.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "decision-maker-not-evaluator-check",
+        "conflict-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:c8d6410a82bf4a3d767bbef31094b85199d2cc9b23366638ca300fda8fbdadab",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00641",
+      "requirement_id": "REQ-12f22f38a80b3889f437235d61a3c2dffca46f22241fe449763c8216d9da05ff",
+      "document_path": "spec/certification-lifecycle.md",
+      "text_digest": "sha256:8612f15f5fdf41794d77aca97bdaee097ffedcdc720a03245a01da4c87a70a4c",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Allowing remediation before decision lets fixable findings be addressed instead of forcing denial, while keeping the event history explicit.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "remediation-transition-test",
+        "remediation-evidence-binding"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:da7e6d23362209c99dbe9b24ea423e290bbfccf2d30839f4daef3702b4a0c9fa",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00642",
+      "requirement_id": "REQ-17a52cf53ff36720235ff597335a4d96a0e906618623137089116f7fa58e5503",
+      "document_path": "spec/certification-lifecycle.md",
+      "text_digest": "sha256:38b29b2d9230e65a5bcd0df9c2eff2007655829ab6aef6f22b9c41a68f713cca",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A successful appeal reopens review but must not itself certify; a fresh positive decision keeps certification tied to an evaluated outcome.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "appeal-remand-no-auto-certify-test",
+        "post-remand-decision-required"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:a3efdabf88321691ad9e6ab051856eef2d38c6a296858ce580c4922652241a83",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00643",
+      "requirement_id": "REQ-195e9685804a3ae0f8502468f6ed74fdab05e0eba748f3047a7ccbf1efd211fa",
+      "document_path": "spec/certification-lifecycle.md",
+      "text_digest": "sha256:33657fde8051718fac65bb6a904626cb8170b631c0b4a201cec67b0442934590",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "If terminal or adverse states could be edited away, revocations and denials would be meaningless. Only registered transitions may change state.",
+      "threat_ids": [
+        "TM-INSIDER",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "record-edit-detection-test",
+        "adverse-state-bypass-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:df0d092d0b961d4e4be6518bc695b226822eb35a254a8a70cedb50684fd0e2da",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00644",
+      "requirement_id": "REQ-2bca2d43d11a8ab460dfaef0a97063f98404117d05f073b0ad7a228398de4af9",
+      "document_path": "spec/certification-lifecycle.md",
+      "text_digest": "sha256:dc319b82ec3b29d71c7358ebe8432b470f4863fa2bb2174dae49f4f071e3416e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Entering renewal before expiry avoids certification gaps for products under continuing assessment.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-AVAILABILITY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "renewal-before-expiry-transition-test",
+        "state-machine-path-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:cf206e7530ad0e2bd7b79aaf532a961e65d4f1e18b7742b4d0bd439f456f18aa",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00645",
+      "requirement_id": "REQ-3357d5f025c3b2c9f1baeb68969bc2901032b072fc5fecf0af25638871ae98ee",
+      "document_path": "spec/certification-lifecycle.md",
+      "text_digest": "sha256:015b1cf7bcdec2477e3cd6daf1e5cbbe33833ea1f4d523960425a1142b4868ed",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Renewal must rest on current evidence; reusing stale evidence would certify a product version or configuration no longer evaluated.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "renewal-bundle-currency-check",
+        "stale-bundle-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:1f3aa6b5a1b4f11496c89a84078c7e4084e1d66d45af307f0518b27509e89963",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00646",
+      "requirement_id": "REQ-34826bd13e458986ebee259d6fcb81bbf1946be127f32cbf3700aee175c624a2",
+      "document_path": "spec/certification-lifecycle.md",
+      "text_digest": "sha256:2284afffcf56e0463c9e453dbe54f2172d1edb61da322d61760967241e8e7578",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Approving a bundle different from the one reviewed would certify unevaluated evidence; the digest must match exactly.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "decision-bundle-digest-equality-check",
+        "bundle-swap-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:844f11c7c2fbf628e410a557d0902946554cb4dfeaa7a092616f1acbc701311f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00647",
+      "requirement_id": "REQ-3834d44ed016e5c8700c315bb1ccd185e9d0cd8e14fe21aafe5fae1fc144424f",
+      "document_path": "spec/certification-lifecycle.md",
+      "text_digest": "sha256:c016dd2c719b022c5a8d67d16dcbd4b3cb025b3e882b1d270472e4e2896527dc",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Revocation signals a serious problem; ordinary transitions reinstating it would undo revocation without a new full evaluation.",
+      "threat_ids": [
+        "TM-INSIDER",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-ROLLBACK-RESISTANCE",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "revoked-reinstatement-rejection-test",
+        "terminal-state-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:c0e6c3aa85caad4b65933aa19b340d7412f33154af3a63d80d4f3addc2ece4c9",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00648",
+      "requirement_id": "REQ-50534e770cbdfb4170d93566f9909d4dcd79e5a135f467eab6b64e2497efccb4",
+      "document_path": "spec/certification-lifecycle.md",
+      "text_digest": "sha256:f34ee3a6ace89c0762f5523fce4c5e22d4caa5746276b830c503501c57b9b229",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Expiring early could be used to drop a certification silently or mis-sequence events; expiry must follow the actual certificate time.",
+      "threat_ids": [
+        "TM-CLOCK",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "early-expire-rejection-test",
+        "expiry-time-comparison"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:883e6bc66c80f43796f998a3f444a1b213976830959468be69a2d837065c1fd7",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00649",
+      "requirement_id": "REQ-579b5627b50a16a8d8fd95ff5cf8d7a2cf06a07874e5bd42cd10f555bf7c00fc",
+      "document_path": "spec/certification-lifecycle.md",
+      "text_digest": "sha256:00e96531711da9467fc32e1a9b25e3352690708a6963e5670c9e9ded3367c9eb",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Surveillance lets certifiers re-examine certified products when concerns arise without waiting for renewal.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "surveillance-transition-test",
+        "surveillance-evidence-binding"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:d70061d46101e06c45beb99f29de44fbd1f82c72315ea78313239aba4f8db861",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00650",
+      "requirement_id": "REQ-6321099af5fc248abe8180f01c11db848009e0cd807d919a1167d2fa0c9d3f2b",
+      "document_path": "spec/certification-lifecycle.md",
+      "text_digest": "sha256:0cc02ec787020d58dfc49d3ef5f2fe0dbbbe5e102d6031d7de24e332ebcfa2c6",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Applicants need a way to contest denials; appeal review provides it within the lifecycle rather than through record edits.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "denied-to-appeal-transition-test",
+        "appeal-path-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:d4d127b913e49813c79b8ee98c2b8a7bb44511b3a23516582f746f31ef1829c1",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00651",
+      "requirement_id": "REQ-63b167c7543f43cb087837e4f67df9d32fca138d0c617b87e9006dc41d27f868",
+      "document_path": "spec/certification-lifecycle.md",
+      "text_digest": "sha256:83719b45be30e821ff174af677755c16a3d221465a4fe47c89fb825bf3ac81d5",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Declaring expected before and after states lets validators detect events applied out of order or against the wrong state.",
+      "threat_ids": [
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "event-state-declaration-validation",
+        "state-mismatch-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:f124819a8ba0fa437a56e8c4869af0fb62a12a09957f3d4e06cbefd4c290ffd2",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00652",
+      "requirement_id": "REQ-686c225734e0b61aa05ce151cd80b0ca5c3b13029a413f5aac6af53eb6dc1900",
+      "document_path": "spec/certification-lifecycle.md",
+      "text_digest": "sha256:21ead4c953da5d4cec152e1b68b9da1803a9b5aff4c5f4eeec061cda4ff6682b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Requiring from_state to equal the computed state prevents forked or replayed event histories.",
+      "threat_ids": [
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "from-state-consistency-test",
+        "forked-history-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:23c8fe13092ede2eaa16f706cf1dd943f32dd443b5669e71be3bd9fe071a7324",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00653",
+      "requirement_id": "REQ-6f8d2060596b7383125334a05fa2207a468022873d121a51e50bfec95b936770",
+      "document_path": "spec/certification-lifecycle.md",
+      "text_digest": "sha256:e85914fac4d57f7381b6af31c9c0995a56fac0413a7bf36c7db869ecb19f3bb0",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Duplicate event IDs would allow replaying or ambiguously referencing events in the log.",
+      "threat_ids": [
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-REPLAY-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "duplicate-event-id-rejection",
+        "uniqueness-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:23688fa57e8dff1c0bb8e565fabe7d0f3d8fed97a7b975021e949b39ef2cd1d9",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00654",
+      "requirement_id": "REQ-77a2d608e3d0e573fd655ed0651bc8e6963a3c27650350a975f772bbc8b0b552",
+      "document_path": "spec/certification-lifecycle.md",
+      "text_digest": "sha256:6cf0ff790df19e9bd95631ab8dceb493cb65a8f5f135802e7714c61ca5d19590",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "An appeal decided by the person who made the original adverse decision is not an independent review.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "appeal-reviewer-independence-check",
+        "self-review-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:bf8d6286ef687a92a240ec460907cabd3668acee71d0c9aa86b988ffbc19882e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00655",
+      "requirement_id": "REQ-973fa6932f013c0f16d3c4c0dda31927854ce589c88cbccd6a62ac96faf09928",
+      "document_path": "spec/certification-lifecycle.md",
+      "text_digest": "sha256:5912db028c9008c479a60603e1c26801c5245401db7ae55c5ec3fbf8fcc66969",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "New evidence cycles may replace the bundle, but naming the new digest explicitly keeps the chain of evidence auditable.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "bundle-replacement-digest-field-check",
+        "implicit-replacement-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:71dd33f959fc2e2c471096eaeee0ff3ab5395bacc32c56128304f153041fd937",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00656",
+      "requirement_id": "REQ-9c78b82a2579ad5b79c139d35a434d0bdc8e35bb0d8696fc1e523cabec08618b",
+      "document_path": "spec/certification-lifecycle.md",
+      "text_digest": "sha256:73581b55c77ecc835ffbff569eaa96fc676b79117ae00e0fd78e6379b8764bab",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Surveillance after expiry would be meaningless; requiring the due date not exceed expiry keeps oversight within the certificate's life.",
+      "threat_ids": [
+        "TM-CLOCK"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "surveillance-due-date-validation",
+        "late-due-date-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e7abadbe3f742e08d5b8941b1f8548bd150feb6f34ed85352ac1fc0bc3c4abde",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00657",
+      "requirement_id": "REQ-a1f14dd68ce0e779a64ee152f9b7adcf9ec81aa30b7313455cd0da07bf08eb82",
+      "document_path": "spec/certification-lifecycle.md",
+      "text_digest": "sha256:953a40d20ed676cbadcff85f3414664387ec8bdcf3d05be090bd230c4eefeda1",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Out-of-order timestamps can disguise backdated decisions or reorder history.",
+      "threat_ids": [
+        "TM-CLOCK",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "timestamp-monotonicity-test",
+        "backdated-event-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e71b9504494d4ae3def05385f8a9fcef149c261f44ef3cf286213dcf5171c1b9",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00658",
+      "requirement_id": "REQ-a27788ecf937d3473d07057f014400d9044c5594f1b968d5389e10fd97fda975",
+      "document_path": "spec/certification-lifecycle.md",
+      "text_digest": "sha256:cfc98e4ef2b58e2f3a225a1c14f28d7d9f6d6f37f0650e3c7fd9b1ee368d002b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Some programmes need stronger independence (separate organisations). Allowing later policy to add rules supports that without changing the base model.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "policy-extension-hook",
+        "stronger-independence-rule-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:25f0c41d061bc516de8784f62b88ebdf7a53d416deb005d4c7bbd8f1ac312a12",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00659",
+      "requirement_id": "REQ-a4ceb2f6996abcf3d11ccee5dd237aeef2942d8f70cb8b7b587d3c858007f06a",
+      "document_path": "spec/certification-lifecycle.md",
+      "text_digest": "sha256:0ee652f12ac0bc8f9059124befed327959616b520f0c481da24db0c53e28efbf",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Restricting events to registered transitions keeps the lifecycle a well-defined state machine with no undefined jumps.",
+      "threat_ids": [
+        "TM-INSIDER",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "unregistered-transition-rejection-test",
+        "transition-registry-validation"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e1b09f7ab699e9312e7c5f3714cb1c29359825951e822a06b07040897889356f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00660",
+      "requirement_id": "REQ-a8c14c7c649fcddb434a171f61178ce110d46184e4f0f87950a1887af9d23d11",
+      "document_path": "spec/certification-lifecycle.md",
+      "text_digest": "sha256:8469b8d6eff891078ab5b07e6d47a101138e485c3a82c6954f827da619e53fef",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A certificate past its surveillance due date without review has not been rechecked as required; presenting it as fully current would overstate assurance.",
+      "threat_ids": [
+        "TM-CLOCK",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "overdue-state-derivation-test",
+        "currency-label-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:784054eb9e0e2337cd87e0cc85e3669aa58d48b242d3847b82e6fb0c61a34a6e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00661",
+      "requirement_id": "REQ-ad38524d18de768b2122e25956c3cfb2be783e7ad1eafd65d87146d6be7f855c",
+      "document_path": "spec/certification-lifecycle.md",
+      "text_digest": "sha256:cbb028afb3124526c93052894fad38d0f065bc99bda5675a3c0e781db8dabf18",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Due and expiry times earlier than the event make no sense and could be used to fabricate already-expired or overdue states.",
+      "threat_ids": [
+        "TM-CLOCK"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "future-time-validation",
+        "past-deadline-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:27a3e0a3263f9d8b3e6e36cf178b863cb5ddb2c6ebcaf987e54cb0ef06ea4e16",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00662",
+      "requirement_id": "REQ-b273b220150062c917f935b5efa334302b0134d290bc9b4c53ff755502468094",
+      "document_path": "spec/certification-lifecycle.md",
+      "text_digest": "sha256:b1c7468c9365a00f3ae3aaa984109ef8ecd3e0960eec2a2aac40b9da0e75a21d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The approving or denying actor must not have evaluated; this enforces separation of duties at the event level.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "decision-actor-not-in-evaluator-set-check",
+        "violation-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:536e24eb46fb163055751756e0adb298dac57ae71addd5ca2fa22396f7f3e447",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00663",
+      "requirement_id": "REQ-c08ceb63ea5f0e4323a516825da44387fb2b4acd020f53082306892bd1e78674",
+      "document_path": "spec/certification-lifecycle.md",
+      "text_digest": "sha256:8100f483d018d7b019edb8ff6b09ac52594bc014dec14cda694b7599b8ece0de",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Applicants deciding their own certification is an obvious conflict of interest.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "decision-maker-not-applicant-check",
+        "self-certification-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:2cad8b37eb388fcb83184bfda433dfadab194d5f424ec7a227be57a02f6dd2aa",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00664",
+      "requirement_id": "REQ-ea262ce0cbb1338533921fccb81b588a6045c36428baa80ddd9e2dfd00348c56",
+      "document_path": "spec/certification-lifecycle.md",
+      "text_digest": "sha256:9e6150bcb03d1c40ca0fbe3f85b13b66f04745b50af1b3bad19a0d43f25a2e6b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Suspended products are not currently certified; representing them otherwise would mislead relying parties.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "suspended-status-rendering-test",
+        "current-certification-false-when-suspended"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:82538e99a0734d007bedd4225bd6bc6d7124922a586257bfc8341bc4502dbdfc",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00665",
+      "requirement_id": "REQ-09d76c31892aea88b66c5bbd6fcad8e191d3ecf61bcb5295a2d45657533c8da9",
+      "document_path": "spec/certification-evidence-model.md",
+      "text_digest": "sha256:18f77391f491a8de18527d2e6f009d531801025072b83d08192f3cb6749b5308",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The lowest assurance level (A1) does not require source access, matching its limited, black-box nature.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "a1-source-mode-validation",
+        "level-specific-rule-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:ad65afe87abded74f1907f9f8746caf3e5ee28529b035948b6ba917fc2de5039",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00666",
+      "requirement_id": "REQ-1916d706ada4953b6ecfac4b9a43592906c1c6a5528a0fb7aa5a11201a434d9f",
+      "document_path": "spec/certification-evidence-model.md",
+      "text_digest": "sha256:8f6b137bbd64c39837271934f83131047c6b01c464289991a39311d403f87b2e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Evidence is scoped to properties; reusing evidence for an untested property would claim assurance that was never produced.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "claim-evidence-property-binding-check",
+        "cross-property-reuse-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:9094e1905db47b7b1938581a83005c888fef95c7ea596c34d09bc1c3eed4348c",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00667",
+      "requirement_id": "REQ-1d61254ed82c81f75c5fc6fd912a4b49cb5d5708d263a46c9a22dfdf44440721",
+      "document_path": "spec/certification-evidence-model.md",
+      "text_digest": "sha256:d1513b28a13d2dbbeff7e0051442b5b83e1496adc27817f307e36be44072223d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Exceptions are temporary risk acceptances; expiry forces re-evaluation instead of letting deviations persist indefinitely.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN",
+        "TM-CLOCK"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "exception-expiry-enforcement-test",
+        "expired-exception-bundle-invalid"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:f26a5ecd4d8118fa8bc997b536c980e45343fe2715f70d36cd2626c0f4c41cdd",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00668",
+      "requirement_id": "REQ-1db2a9ffcddcab1f4ca6d410d55ab70f1c9693d2df6cbdf307a9ca107537e8e4",
+      "document_path": "spec/certification-evidence-model.md",
+      "text_digest": "sha256:72323994961f298233c38baec312f49f9621dd4ccef361ec6b73b4988d82426f",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Evidence counted as independent assessment must come from an independent issuer; otherwise vendors could self-assess and present it as independent.",
+      "threat_ids": [
+        "TM-INSIDER",
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-NON-REPUDIATION"
+      ],
+      "evidence_expectations": [
+        "independent-issuer-validation",
+        "vendor-issued-independent-evidence-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:3f814f0cfe93f37284f1b373ca6cb387f264672cea241335714753aa47eb0b0f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00669",
+      "requirement_id": "REQ-1e87970b2139687b77e233e18b34c3e87a4ab598617189a34c3379b91f38a194",
+      "document_path": "spec/certification-evidence-model.md",
+      "text_digest": "sha256:802b3d5126f1bce2d6f3d7d0cedc729ffd0287d46070000565cfec367543f9a3",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Each formal requirement must have its own evidence so formal coverage is complete and traceable.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "formal-requirement-evidence-mapping",
+        "missing-formal-evidence-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:48d588ab1635f2a48ac0643263802a4b5593e3595bfa3f07f236680ba5a1681d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00670",
+      "requirement_id": "REQ-25bc29489ce809e873a938e6de1a8e2791c0e2c1bb1f23f3686e73f6833db2e5",
+      "document_path": "spec/certification-evidence-model.md",
+      "text_digest": "sha256:bf974170934f5325865298412e192dbbe8e68b6c7b78a51218adce57c9a5cc74",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Adding evidence types in later versions keeps the model extensible without reinterpreting existing bundles.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "type-registry-versioning-check",
+        "prior-bundle-semantics-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:576ae521a3cac7cf1acbabb55c9a100460d29e22cfbc1e4812aa695910ec5e32",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00671",
+      "requirement_id": "REQ-2bd85ca39685209269718e58982f74b9ccc9ed9bc3e822aee6ecc20c229f77b7",
+      "document_path": "spec/certification-evidence-model.md",
+      "text_digest": "sha256:6d6889a934a5b12a5f17fa4c682dfbbe905737a82c6c11cdf68e29b6e5db4a49",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A claimed property supported only by not-supported records has no positive evidence; certifying it would be contradictory.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "claimed-property-positive-evidence-check",
+        "not-supported-only-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:4a6b16ad1609cb84f777ff6727f21575ec9568add53bc9e75ad4b29b44f7be2a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00672",
+      "requirement_id": "REQ-31ecd480077ab6bd7b4be68dbf7228f7e0108390cbc6c339d50fc803278521d7",
+      "document_path": "spec/certification-evidence-model.md",
+      "text_digest": "sha256:ed06b3e41395dc2ebd961e15b07e19a8ecd2e0abdfb1fee51cc623012d40955d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Higher assurance levels require source review because black-box testing cannot find many implementation flaws.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-SOFTWARE-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "source-review-evidence-presence-check",
+        "a2-plus-none-mode-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:69ff41d0cb554a727f36e7c6ce647818ce721b7d7cb769ea55caf222b1a607df",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00673",
+      "requirement_id": "REQ-3f7dbadd27d27ee119fc6856b98a36f0ce787bd1d97e8df280262359ed335166",
+      "document_path": "spec/certification-evidence-model.md",
+      "text_digest": "sha256:105ee374dbce37dfaaef58897e26bcfa0c76f4f0cdc89fec33f5cdbdd95ace24",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Exceptions must be fully described (scope, rationale, approver, expiry) so reviewers can judge and track accepted risk.",
+      "threat_ids": [
+        "TM-INSIDER",
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "exception-field-completeness-check",
+        "incomplete-exception-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:20198bb943d81889ffe57f42eaf7c48b682f506c9ce19cdb5959be1228af86f0",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00674",
+      "requirement_id": "REQ-4abc6d6f1f5f86b29fe634dfd198ef5969b8e1d39edda5a6fa2c95671e86becb",
+      "document_path": "spec/certification-evidence-model.md",
+      "text_digest": "sha256:a8bb4d836b9e8aae6476aef8675a57f4322bcfcc395b095e9a4ce259d4ebc735",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Binding the bundle to product, version, platform, configuration and plan prevents evidence being transplanted to another subject.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "bundle-binding-field-validation",
+        "subject-mismatch-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:16fc03a97202930a428b8324dc19927087d57584880bef3d96d10aceeee8adb3",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00675",
+      "requirement_id": "REQ-59f83a25b29010612718d59f99b1256d12f00f69c9a1877d83b723276a7edcb0",
+      "document_path": "spec/certification-evidence-model.md",
+      "text_digest": "sha256:674f8d4e905f1aefd76a5ab227cd8e46b9e429ba9675f4121b2dbb734efc58ec",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Waiving MUST requirements would let certification issue for non-conforming products.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-AUTHORIZATION-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "must-waiver-rejection-test",
+        "exception-scope-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:63c11ab8fa356afe1e416e724e0a1eac266ad86b5b0b3fb33a916f138df70c4f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00676",
+      "requirement_id": "REQ-61959dcbe498181bd2c94a9faa4742960197ecd882586b115b057cfe9056c196",
+      "document_path": "spec/certification-evidence-model.md",
+      "text_digest": "sha256:878ba1b47077fb85070a6571ea0c3b664d3fdade9d02b10fe8138fea0ca41c0a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "One artifact can cover several requirements when it genuinely addresses them all, avoiding redundant evidence while staying honest about scope.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "multi-requirement-scope-review",
+        "scope-overclaim-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:5b615305fc29cb368439f632bec30f84c838a8bbf2a30698b8c48fcc33fd9aee",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00677",
+      "requirement_id": "REQ-6997fa695019be12b69ce77b5c62e5d812644a7f5eedb7b4512d15841aba048e",
+      "document_path": "spec/certification-evidence-model.md",
+      "text_digest": "sha256:4b1568fe500999c60b341188519f0a529abe41167df522aad33755415be4a4e5",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Evidence about behaviour without identified source or artifact scope cannot be tied to the certified product.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-BUILD-PROVENANCE"
+      ],
+      "evidence_expectations": [
+        "evidence-scope-field-check",
+        "unscoped-evidence-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:62ec1f429d094fa46691933a0163fb5e00fcb7c5bee0f8351355692dfe9a588d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00678",
+      "requirement_id": "REQ-86d99f78ed18fd63313493dc039a910e34cd1cae433cccfb37764deb7a000243",
+      "document_path": "spec/certification-evidence-model.md",
+      "text_digest": "sha256:82012cf5b6022b18db1f9c7e385ef8acd432eb1092035774de70078b980321af",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Each claimed property needs at least one evidence record; otherwise claims are unsupported assertions.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "per-claim-evidence-count-check",
+        "unsupported-claim-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:a5a7796ffa07376fb779d2ad72bafc8474b7fb4af7c40777c73689ea16b3f1e6",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00679",
+      "requirement_id": "REQ-8abc28b779e3a4a54365989ea29094729b6a2f735dc1d321f9f4338b187ee965",
+      "document_path": "spec/certification-evidence-model.md",
+      "text_digest": "sha256:77f2774791dbd0e503f3f46e59a366dbac3199f5233a64ec7c9a8f0d0a584318",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Named independent assessors who produced no evidence suggest their participation was nominal.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "assessor-evidence-presence-check",
+        "phantom-assessor-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:926d1060645d0a1cd310df57e8264bb6d3d15b7beb2b81a00cc8d2f5e9235e7a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00680",
+      "requirement_id": "REQ-8dba5e5b3ceb5f0d541fe1b99e27562245f434e38f6085ae54851cc9b820eb9d",
+      "document_path": "spec/certification-evidence-model.md",
+      "text_digest": "sha256:dd362acb9e4d0667d06dc5b3b2ebd4b1188a2af9656baf7313a8811c00c9591a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Evidence about a different build or source does not demonstrate the assessed subject's behaviour.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-BUILD-PROVENANCE"
+      ],
+      "evidence_expectations": [
+        "subject-digest-match-check",
+        "background-evidence-labelling"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:2de526b15c7bfb20414d94b56926d546c3bcb9b6472095cf91b49c36c7b3a93d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00681",
+      "requirement_id": "REQ-ba24c8c575270709b031bde063837278b8959ee6ef9f9234761c845929b7d932",
+      "document_path": "spec/certification-evidence-model.md",
+      "text_digest": "sha256:a34f2669e1f61a574b74f7c5d427a864d9c354dd93f47eb961ee4f1d48f8e4b6",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Categories are a floor; certification policies may require more evidence for higher risk products.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "policy-additional-requirement-hook",
+        "minimum-category-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:5e342db322c63b46e2dccb97d66a87a4f6c564db78642fcfa1934e95c4462d3f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00682",
+      "requirement_id": "REQ-bb649e3dd3f25007e139959b5813b6d8d63220d87924588dc4357cebe9188081",
+      "document_path": "spec/certification-evidence-model.md",
+      "text_digest": "sha256:28e802ef04a9f00e3e18147707ca9c4bf283b6643b15f9b8d2e28dee1ed57309",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Reusing a bundle for another version, platform or configuration certifies something never evaluated.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "bundle-reuse-detection-test",
+        "subject-binding-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:a717a02b7ac64dcd8c493f211f12c1993f63eae5f69e075147afd89c7b283a08",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00683",
+      "requirement_id": "REQ-c4743bdd26b2d054a3c1392cc82201f8ecc0329ca4cbe39fef44b7d738dac1d8",
+      "document_path": "spec/certification-evidence-model.md",
+      "text_digest": "sha256:9b7a041fb8b7506f7a3b3c6b8035346d0c554ab8cc3a93e7afe8f9f30b060396",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The listed validator failures (missing bindings, unsupported claims, expired exceptions, wrong scope) are the conditions under which the bundle cannot support certification.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "validator-failure-matrix",
+        "per-condition-negative-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:38a377acf9ae60861d2b268859dafeb29f2db582f02e1bc1af59fdd3cbb40f9c",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00684",
+      "requirement_id": "REQ-d9e26285770351423c3e29266603e2fd7f9303f13c484204c38f60e05f4db24b",
+      "document_path": "spec/certification-evidence-model.md",
+      "text_digest": "sha256:46587b787315a94313c8b561f0be19e8cf3b099f0ac55b861b71f7ac9235635f",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Exceptions may only cover SHOULD deviations or narrowing limitations; this keeps MUST requirements non-waivable.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "exception-type-validation",
+        "must-exception-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:fc546c3fd97484aebde475ae4875bd2ceb0172b31da57736626a1f7b10262740",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00685",
+      "requirement_id": "REQ-dfb2fef51f3a0c3d1fc6786722d2d88563728c1b1c324307f1193fa4cdbf5cae",
+      "document_path": "spec/certification-evidence-model.md",
+      "text_digest": "sha256:f092307308d12f0b621f66839670b3a3594b4d23472013657461f35c17ea963e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Vendor artifacts are useful context but not independent; counting them as independent would undermine assurance levels.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "vendor-artifact-independence-flag",
+        "independence-count-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:003a1c62342d9ca14a1780598d5ada1fbdb507f2d642c0fa1b07a49226d21282",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00686",
+      "requirement_id": "REQ-e87f1a797062f3a1f2656bd003600bf2f2f3e128ffd92e1f95e44a4814a05467",
+      "document_path": "spec/certification-evidence-model.md",
+      "text_digest": "sha256:a210528ee0d042eef2ca730e0d474c06a3ec588c9be171dc11811a6ea0ef7ce2",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Declaring source-access mode sets which evidence types are valid and what assessors could see.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "source-access-mode-field-check",
+        "mode-evidence-consistency"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:4f64b91db48060db53db0b33bc4215871910562b57e39916834625d4e5f0e56d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00687",
+      "requirement_id": "REQ-f9605d62f3932e9c2ef8b5dff8b498c18bc5b5531426db7d6e19f3d8e5c4f8a0",
+      "document_path": "spec/certification-evidence-model.md",
+      "text_digest": "sha256:6819d7c5d7362eb5544e732fa2d78ba18e1d9b12a3039e2c0ab4658d33a53ee0",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Evidence dated after the observation time could not have been considered and suggests backdating or tampering.",
+      "threat_ids": [
+        "TM-CLOCK",
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "evidence-date-vs-observation-check",
+        "future-dated-evidence-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:d19aac71d0c7ef329c3eecc5d9f694bcd26a92a07eb198ff0d10c3f77f331912",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00688",
+      "requirement_id": "REQ-55f72997c948c3e63c30fb6175daf57316b385f025fde563c54ebfdb4855c307",
+      "document_path": "spec/certification-attestations.md",
+      "text_digest": "sha256:ff649dc5aff409382cb4d70f5656ab9463314248f03856f48f30cfe4efae9442",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Different envelope formats must not change meaning; identical payload digests ensure JOSE and COSE copies attest the same thing.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "cross-envelope-payload-digest-equality",
+        "divergent-payload-rejection"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC7515",
+        "IETF-RFC9052"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:4589a94bc2d29c465a7819ffae1731b993cef1600b1d25903c98a4f8162d5ae8",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00689",
+      "requirement_id": "REQ-6ec84a8c3357dda90bf76c6f37da2c10eaadf775ec08568187a22cc967669e03",
+      "document_path": "spec/certification-attestations.md",
+      "text_digest": "sha256:a5316302fa3c40bbd59676b98c87c97f7f913f8c5066b2e1e98c5178d8f08e91",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Binding each status to its predecessor makes the status history a chain, so verifiers can detect omitted or forked statements.",
+      "threat_ids": [
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-ROLLBACK-RESISTANCE",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "previous-digest-chain-test",
+        "fork-detection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:ec4e5bdafde4f0487895e527285ae76c7fe20c354be7397703b50709d698437b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00690",
+      "requirement_id": "REQ-716eac3d61c610716213e6e6c440811590b976af6dcc1e2cd9d8ee249299a48d",
+      "document_path": "spec/certification-attestations.md",
+      "text_digest": "sha256:0bdb00e654f85490bcb369d5c905ce124f79ecb471d195b71e536bd264a2d085",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Signatures over non-canonical JSON can verify differently across parsers; canonicalisation ensures all verifiers check the same bytes.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "canonical-payload-vectors",
+        "noncanonical-signing-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:ad3ad99674a8378c61b6ea2a9b57a9a2eb319f77ab6e72b9c4f0a18c11cfbcd9",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00691",
+      "requirement_id": "REQ-740eb77d1b190c6d0290f7b4de618516db7a52f8514741d226b4da8fd19b12c3",
+      "document_path": "spec/certification-attestations.md",
+      "text_digest": "sha256:3bd3a3a07ca1092e1fd67441bfb514ee46e071b297e6b497e051c2c053057514",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "An attestation must rest on a valid evidence bundle; issuing without validation would certify unsupported claims.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "bundle-validation-before-issuance-test",
+        "invalid-bundle-issuance-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:1bce33de77acf003fda88a55bca543145b6b50c2eb77e2ff92202906b45042a2",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00692",
+      "requirement_id": "REQ-7520a0bc370891d18350b2f2ebf78ab8f16e7d61fb5f41ca3c111df9cac526eb",
+      "document_path": "spec/certification-attestations.md",
+      "text_digest": "sha256:aba31144bd3e7dffe41c8d20e7ba922d1917abd47459ec6aa6352ac00826f20c",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Rendering not-supported as certified would claim protection that the evaluation explicitly did not find.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "rendering-state-mapping-test",
+        "not-supported-display-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:eafe289d59c3a2d68f84c1c05670ed80834e12308c712c76d5996f65a384acb5",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00693",
+      "requirement_id": "REQ-7a79587f9b7ba1e8045bcd1c45f70ee63ce8761f938f671e31e6611de2c5d5a2",
+      "document_path": "spec/certification-attestations.md",
+      "text_digest": "sha256:3755036d4a4ff4162f4871c0e90324f1abdbe96d571e2166053a3d57789075b4",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Envelope headers outside the signed payload could change interpretation without invalidating signatures.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "envelope-metadata-semantics-review",
+        "header-change-no-semantic-effect-test"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC7515",
+        "IETF-RFC9052"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:eae0b819202bdd4b078efef6b3d9c8be0f79c7d33747426519e292862c986815",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00694",
+      "requirement_id": "REQ-7a8ad6061195e46c828840418c8d5e5a2545970d40b32c07b32c5a183652420b",
+      "document_path": "spec/certification-attestations.md",
+      "text_digest": "sha256:928111714197a670001abde8dc79a11190d982a1673548e223cc54f1a5fd5ee6",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Fixed ASCII keys, valid Unicode and no floats remove encoding ambiguities that could make the same payload hash differently.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "payload-type-restriction-validation",
+        "float-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:072a7b371b9ddc21a0e247c45ae92213ad8ce4d716a54f76ea6d60df2a286aed",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00695",
+      "requirement_id": "REQ-89a5d212a1580c3fcd9d4dde801d0d7e5eb52526e13fe6c436b0eb04e29b6b3c",
+      "document_path": "spec/certification-attestations.md",
+      "text_digest": "sha256:bfe8a0294517a18ede874b109acb6ec9cc23f4b3b0918c8149c6697a0d1b9a7a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Dropping limitations from conditional claims would present them as unconditional certification.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "conditional-limitation-preservation-test",
+        "rendering-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:f03af88c379a62ff6ed79dcfbdbf44d46b51528e1f0f4411cb6572da0b7d9886",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00696",
+      "requirement_id": "REQ-a4d3bdef737074841dbdd889eb037976c138924b3246fb7b9ad031f820d60d0d",
+      "document_path": "spec/certification-attestations.md",
+      "text_digest": "sha256:607014c8d7457ecc834690d242a2ab84113f20b40b2adf7402855a972162fbdc",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Certification can be revoked after issuance; consumers must check a current signed status statement in the listed cases to avoid relying on stale certificates.",
+      "threat_ids": [
+        "TM-ROLLBACK",
+        "TM-CLOCK"
+      ],
+      "security_property_ids": [
+        "SP-ROLLBACK-RESISTANCE",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "current-status-check-requirement-test",
+        "stale-certificate-detection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:62bdf1bfd33f48c368c3019108549a64eb3b6cdc336e3e9da76d0968b00c6d85",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00697",
+      "requirement_id": "REQ-b3d9ed6e9e487a8ae8ea4e8f42ba9edc95954777a2bfdb107b34c3a4534b6338",
+      "document_path": "spec/certification-attestations.md",
+      "text_digest": "sha256:4d02303ce4b761db2e073792675e9ce5edde2c737cbbd431bbe43cf428307e5e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Status statements must bind the latest event, full event log, current bundle and not outlive the certificate, so status cannot be detached from the lifecycle.",
+      "threat_ids": [
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "status-binding-field-validation",
+        "detached-status-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:a31833c39fb424e6d2d502a5aa12891fc7e49f89376848ef9b75a9beaa2caf81",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00698",
+      "requirement_id": "REQ-bf33353e48b246cb687bc1efa993e81a1bc26588682f6e554b105aa50a7cbdae",
+      "document_path": "spec/certification-attestations.md",
+      "text_digest": "sha256:ee9ad12eacc2efcb45dbabdb138e99ce2175e37b6c9cd18904b2c5297c42eeb3",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Accepting a lower sequence would let an attacker replay an older status, e.g. before revocation.",
+      "threat_ids": [
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-ROLLBACK-RESISTANCE",
+        "SP-REPLAY-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "lower-sequence-rejection-test",
+        "highest-sequence-persistence"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:7c37573ad5a27690e1da316964ae075100b219c4967ae54955d4f0abddab8782",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00699",
+      "requirement_id": "REQ-c20280760bfbc8d886bfff161ba81488e668e85c2d3928970fdce3243eaed7b0",
+      "document_path": "spec/certification-attestations.md",
+      "text_digest": "sha256:45ac40812e6429043b00c398e4b058d2061808724bd366807bea0fc6d8b1a863",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Signatures must use registered, non-prohibited algorithms for new issuance so attestations are not forgeable with weak algorithms.",
+      "threat_ids": [
+        "TM-SIGNING-KEY",
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-NON-REPUDIATION"
+      ],
+      "evidence_expectations": [
+        "signing-algorithm-registry-check",
+        "deprecated-algorithm-issuance-rejection"
+      ],
+      "external_standard_ids": [
+        "NIST-FIPS204",
+        "IETF-RFC8032"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:a33e85413424887aa0cc83f1ef2dd03d40c53017ccb1094ec5aa4594153d2686",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00700",
+      "requirement_id": "REQ-d02c4bf26ec43bd44fe0368a4a538f488cacf66d3531619ea4bd78096168a1da",
+      "document_path": "spec/certification-attestations.md",
+      "text_digest": "sha256:0747cac725709fe395d9596fb8cdb4b4a118b679757ab59b332c769cce42f0db",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The signing backend requirements (key protection, access control, audit) protect the attestation keys whose compromise would allow forged certifications.",
+      "threat_ids": [
+        "TM-SIGNING-KEY",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-NON-REPUDIATION"
+      ],
+      "evidence_expectations": [
+        "signing-backend-control-evidence",
+        "key-access-audit-log"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:289447a006c20eae2892133fd9865bf9485ac7315d347cecdc65539af0b08895",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00701",
+      "requirement_id": "REQ-d27e8d5cfea92dadc269a34560b1d45bc848100d8a9550b8ca3f5e2d8ef32acd",
+      "document_path": "spec/certification-attestations.md",
+      "text_digest": "sha256:0704521fdc194c9223226dededddb4981d8d22d45a6dd663c68d799d4e835e82",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Inventing private algorithm identifiers would break interoperability and could collide with future standard ones; RFC 9964 identifiers must be used.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "jose-cose-alg-id-check",
+        "private-id-rejection"
+      ],
+      "external_standard_ids": [
+        "NIST-FIPS204",
+        "IETF-RFC7515",
+        "IETF-RFC9052"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:90ea5363a1943bc2d25a26b980484816a0c3092cc0256f8fbbb98e2a0c011a42",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00702",
+      "requirement_id": "REQ-e7b8eeb3ba8555da6d101ba31b365a4872df15da7172cde8350991cd720f6364",
+      "document_path": "spec/certification-attestations.md",
+      "text_digest": "sha256:21834c89c73be0d34c04949055589a9e2234d4012672d7b990b5e39ea18209d7",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Threshold signatures over different bytes would not jointly attest the same statement.",
+      "threat_ids": [
+        "TM-SIGNING-KEY"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "signature-payload-equality-check",
+        "divergent-payload-signature-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:13b1485cc645d042c8a991087a01430eb48fb976fa8410c26759ab1c324a545b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00703",
+      "requirement_id": "REQ-e9de60e080d352c768fbff5cffa9f4719e49a4ffbe3308b9d77fd7ea3bef1c18",
+      "document_path": "spec/certification-attestations.md",
+      "text_digest": "sha256:747432ba0ae3c92aa8e1c2613e3cf42ab1d9b34f8d493b477ad8c1dd77202fc6",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Suspended, revoked or expired status means the product is not currently certified; verification must fail.",
+      "threat_ids": [
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "adverse-status-verification-failure-test",
+        "status-state-mapping"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:2e75216aaaa828f1ca7ab0d775868b594040b686d9e7d5a96c393037816fb25d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00704",
+      "requirement_id": "REQ-ea4d093e608ed5ada9135aba1f9e994533d25667b08fd4f0b451cb29e4b3c95c",
+      "document_path": "spec/certification-attestations.md",
+      "text_digest": "sha256:ad4b17872022694e049e9cb4e95c2ba64b6bfc5de809f5749961e41d82f3cbfe",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Attestation claims must match the validated bundle and assurance plan, so signed statements cannot claim more than was evaluated.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "attestation-bundle-consistency-check",
+        "overclaim-rejection-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:2d5edd87330add2604609277656df47b61073f29744c97ec01e76c4cd210a564",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00705",
+      "requirement_id": "REQ-f170debe3712938abdfb19855e5cd04885f7f124c7b5b41396b93f617f04aaf0",
+      "document_path": "spec/certification-attestations.md",
+      "text_digest": "sha256:22bc5abdbf9de6efbaa696c9007a6efd95abbeb3dfc994aa2564953a3084d879",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Replaying an old certified statement after a newer adverse one would reinstate certification without authority.",
+      "threat_ids": [
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-ROLLBACK-RESISTANCE",
+        "SP-REPLAY-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "replay-older-certified-rejection-test",
+        "sequence-precedence-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:48262f2d00d290288552e55bbd3e5d5d57c47890623c0654f195394a6dafd073",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00706",
+      "requirement_id": "REQ-0a10cc6269eedd55468036e21d620e98c8a0eab8aa1ef4886de272fea6cad411",
+      "document_path": "spec/confidence-classification.md",
+      "text_digest": "sha256:d483e1d97e8a0e19ac125293c474196be45ff2325b90d1c644f5ddcdea621506",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Automated assessments may use any permitted model, but probability claims carry a stronger meaning that requires calibration.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "confidence-model-field-check",
+        "calibrated-probability-validation"
+      ],
+      "external_standard_ids": [
+        "OASIS-STIX-2.1"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:b1a41ca832cdf3c0367c5a523e2167afca76ec13c0ed4547aff638f684dedc76",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00707",
+      "requirement_id": "REQ-16ab49283ab9047a1f784b508eed6f6c4afa6203af889b401a9eacc5311bbb16",
+      "document_path": "spec/confidence-classification.md",
+      "text_digest": "sha256:3df14ecac9b645c68ad0cdc369e34caefc108169d551c1fce8e607a9c0ac9c97",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "An uncalibrated score is not a probability; calling it one misleads consumers about how often classifications are correct.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "probability-label-requires-calibration",
+        "uncalibrated-probability-rejection"
+      ],
+      "external_standard_ids": [
+        "OASIS-STIX-2.1"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:c69a4fe77d165fa092c5fc30e9ae97c948b757cbfe39c1b490d1aa19bbf572bd",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00708",
+      "requirement_id": "REQ-192aa6e00601bf666cbabf3746fb99feb62c97136b670fb7354b995000c3c6b2",
+      "document_path": "spec/confidence-classification.md",
+      "text_digest": "sha256:23158b03c25f64a4dfbc027980b0aa0030ad523a1bbc5f81d5994b1d82402aae",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Reconstructing model, version, inputs and thresholds lets reviewers audit automated classifications and reproduce them.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-BUILD-PROVENANCE"
+      ],
+      "evidence_expectations": [
+        "classifier-reconstruction-record-check",
+        "missing-provenance-rejection"
+      ],
+      "external_standard_ids": [
+        "W3C-PROV-O"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:ff8b07723aaa1bfc41ef604612bb6ac24581f307e762282eac7cdbf180e4a7a4",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00709",
+      "requirement_id": "REQ-1e64412f704c6cdf473670f7306d025294f365b5aaf1938e1caad8d7ac0c2634",
+      "document_path": "spec/confidence-classification.md",
+      "text_digest": "sha256:3311e8626725c23cc72ebf88a727a3750915cd8343f8b58d24b094fe93317d7a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "When human and automated assessments agree, declaring which supplies the final confidence avoids hidden averaging that would produce a value neither assessor gave.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "final-confidence-source-field",
+        "implicit-averaging-absence-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:7ac496f43fa634fe16d9d602a4af183f8705fe812e9189bc5e4627437db57b14",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00710",
+      "requirement_id": "REQ-28550dc2d4013ab97dec37fab529276d2f86fb439170de29d2d4789433b4e5c5",
+      "document_path": "spec/confidence-classification.md",
+      "text_digest": "sha256:b407278594face803e808f2a7197a9c92dc5887e9f36e406d907525995dad1e1",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Calibration evaluated after the assessment could not have informed it and suggests backdating.",
+      "threat_ids": [
+        "TM-CLOCK"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "calibration-time-ordering-check",
+        "future-calibration-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:839b6fffd88404550e918f0968f58bcda695992ea76fd0e6916e578e22e93d3a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00711",
+      "requirement_id": "REQ-3614d9f09b45fac50f7bbd70be2de3f224c8c9266b7f206e2da6b8c3aa34fb0f",
+      "document_path": "spec/confidence-classification.md",
+      "text_digest": "sha256:506fc733295d01cf28c8b91083eea8b327ab3187ef44eac912021889c35fab54",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "needs-review records are unresolved; giving them final labels would present undecided items as decided.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "needs-review-empty-final-fields-check",
+        "premature-label-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:757715caeeeb9ad3f60ec727ebda3d10620e275d25dd452c81d4e15f3bdc9688",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00712",
+      "requirement_id": "REQ-3eb5f8dc2dc0785607b24e9f21c2a2e775118cbb725a86582982871d9db68bc5",
+      "document_path": "spec/confidence-classification.md",
+      "text_digest": "sha256:a58237395e4340d2648cf35ad9293f47b531c6e029ec3dbfdcccf22bce4ca76e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Recording the classifier's identity, version and parameters allows auditing and detecting drift between versions.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-BUILD-PROVENANCE"
+      ],
+      "evidence_expectations": [
+        "classifier-record-field-validation",
+        "missing-version-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:ee936ee81dad5945abf1328e95d4a6b1fd001310144544dad79c70d01b163246",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00713",
+      "requirement_id": "REQ-4b8e01989064220597b5424901f596822937c863eb3be70f821a9b6f284b0568",
+      "document_path": "spec/confidence-classification.md",
+      "text_digest": "sha256:493293f893e5dfe9055087d1c3bedb0b536f8325737d01ff9175719b6a41e7a2",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "For mixed policies, final classifications require human and automated agreement to avoid one silently overriding the other.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "label-agreement-check",
+        "disagreement-to-needs-review-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e9131af9aef0cbe875c0b0a8c4c12260c845cafaff44ea2e30a3971d1dbf129a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00714",
+      "requirement_id": "REQ-5aeaa2f67a71a85cffb2ffcfad3bf4b15e12d9499744ecec51e7c8a97f405757",
+      "document_path": "spec/confidence-classification.md",
+      "text_digest": "sha256:fb4885a49850c49a6ebfbbc7150300e0f68ad6e163aa7bdbcff73c37ff25de56",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Stale calibration may no longer reflect classifier behaviour; enforcing the maximum age keeps probability claims current.",
+      "threat_ids": [
+        "TM-CLOCK"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "calibration-age-enforcement-test",
+        "expired-calibration-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:bfe1d3c4d176b108f7e7054e020bf255eb048f7fbd34e0e9c3885a047ff5160b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00715",
+      "requirement_id": "REQ-5af53b5e2ab1041e73956f88d25fc0ef19c1cb4a8754ba0087cb9506fe437724",
+      "document_path": "spec/confidence-classification.md",
+      "text_digest": "sha256:27bee547ea23366b74d84f6050dc8fa5baf40f0567040dede23270d8044a44c7",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A rationale tying evidence to the confidence level makes human judgements reviewable rather than arbitrary.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "rationale-presence-check",
+        "rationale-review-sample"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:beeb7952d60c4702d82a9901b28d24e22cd36dfd855f1e9763a0740e504c1d35",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00716",
+      "requirement_id": "REQ-614c4408452f2fe00e8c48f055c0422a89af7565c7e9eb394a0aa432e1360da5",
+      "document_path": "spec/confidence-classification.md",
+      "text_digest": "sha256:3c1b6423c2c5748041da5eca35118870dd39eeb46909d558fe578ec097d14aa2",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Without a maximum calibration age, very old calibration could justify current probabilities.",
+      "threat_ids": [
+        "TM-CLOCK"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "policy-max-age-field-check",
+        "missing-max-age-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:8893dc3f044a931be3317a1f4fd8f63a45995c51f1f6cbd19cecb1f7f296663c",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00717",
+      "requirement_id": "REQ-617898ed3cd4a101a4ea0f80c5ff80121584e1f9a64800114b1940460d5a573c",
+      "document_path": "spec/confidence-classification.md",
+      "text_digest": "sha256:42946eb3a4af74c712bbde49815f4af3ecb3a81fff4c13d48bc870df27889500",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Revisions must preserve history and link to predecessors so classifications cannot be silently rewritten.",
+      "threat_ids": [
+        "TM-INSIDER",
+        "TM-ROLLBACK"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-ROLLBACK-RESISTANCE"
+      ],
+      "evidence_expectations": [
+        "revision-linkage-check",
+        "history-preservation-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e34090be4045684abcd9083bb12d56291c728641be6344e0bda9277e2f214b2e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00718",
+      "requirement_id": "REQ-77101b531f5b9d0f732fbf780a070acceab186a6fd3b56c0597396de1673fdd6",
+      "document_path": "spec/confidence-classification.md",
+      "text_digest": "sha256:a7829015110aeb1929227da91d7e9bfe9ac0a6a4a6cb934ccf0b0bcd9c9b1b09",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Deleting source assessments after resolution would remove the evidence for how a final decision was reached.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "source-assessment-retention-test",
+        "deletion-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:cdc7aaad2203248cadeaed970ce673a533a792280a3f7d9a4cab1dbcfa62f822",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00719",
+      "requirement_id": "REQ-816996c27183d743d8836dfa5c1403cdfb34aabfa53d84e7710aa971e7902238",
+      "document_path": "spec/confidence-classification.md",
+      "text_digest": "sha256:4bd88390899bb113f0386e3123af150d4b5398a949f5e1f0715d404c6e876ad6",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Mapping qualitative human judgements to numbers without a documented mapping invents false precision.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "documented-mapping-requirement",
+        "arbitrary-score-rejection"
+      ],
+      "external_standard_ids": [
+        "OASIS-STIX-2.1"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:1aef9aab8548d498ab1abe8b365b70494bef0b2d29f0b68114c16fe80d7ff11b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00720",
+      "requirement_id": "REQ-830e870c8a95070f94f1b7fade62dc0c43fa2980ff13888398eb9c021c6b39c4",
+      "document_path": "spec/confidence-classification.md",
+      "text_digest": "sha256:d3fe63705d3a259f9dc57c51a22cc8ede368d757381c230addf271aa4a5ea0f1",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Binding subject, labels, confidence, assessors and policy to each record prevents classifications being moved between subjects or policies.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "classification-binding-validation",
+        "subject-mismatch-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:2e6c61c2559fb314846ae8b05d2348f5bf8680767230fea9f2d859b660c622df",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00721",
+      "requirement_id": "REQ-878cb70ad1f67c9b2eb44c57bf50dfce611a1aa9f524dc1d7e6c9e5defef90a9",
+      "document_path": "spec/confidence-classification.md",
+      "text_digest": "sha256:bc7148146e7dfd70dadd7c1f6d5ee661acfa789e24244495c8e3598f5c71d170",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "In consensus mode, mismatched labels mean no consensus; finalising would misrepresent agreement.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "consensus-label-match-check",
+        "mismatch-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:f515de38d7efb3b3829dc93a43129a4731579a80c1e8fc002af876f1f67175ef",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00722",
+      "requirement_id": "REQ-99c7bf03a44e94b24d55e34a72369c8225e49885ea46949323e890e47cfadcc2",
+      "document_path": "spec/confidence-classification.md",
+      "text_digest": "sha256:44381a80c17d5412c171b29f898cba3fd17859bb8432fdcc32e6eea6e07ff048",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Mixed or weighted disagreement cannot be resolved automatically without hiding one view; sending to review keeps disagreement visible.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "disagreement-needs-review-test",
+        "auto-resolution-absence"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:ed529ae166c87103238e07969e947d644e499e382502544c8c4076a1dafb3437",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00723",
+      "requirement_id": "REQ-b28ae5f6d8783864b588551d1f681ca744844ea42c58e8ae6176e475e3415adf",
+      "document_path": "spec/confidence-classification.md",
+      "text_digest": "sha256:e4465702f8b7ad3e9b487847a9256ef8b5184bd90c1f31f1d3f98803f4556de1",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Describing automated results as human-reviewed overstates the scrutiny they received.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "review-provenance-labelling-test",
+        "automated-as-human-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:5a3b4bfe1588cbd6c7180b165cd007afb8b1bdcd1ae857beb96fc955eb64fcb7",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00724",
+      "requirement_id": "REQ-b66cdd9a7c0f4fd1d1acc69a2069903fecf980097c91bfdd83269cfad7d6c508",
+      "document_path": "spec/confidence-classification.md",
+      "text_digest": "sha256:54ec619d63560cfe4fd8f67a51b117e23799c3d1650bf61f22a1aea745ad453b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "STIX confidence is an ordinal scale, not a probability; silent conversion invents a calibrated meaning.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "stix-score-conversion-absence-check",
+        "probability-label-review"
+      ],
+      "external_standard_ids": [
+        "OASIS-STIX-2.1"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:a0a0f2aa0dd750394227b009c11ab7c3a749b5556094abf09c2cb4874127e51f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00725",
+      "requirement_id": "REQ-c0c652ea0f9b71c165d4d633d2f4de3e611cf3f10b33a0d8167baf0a6524599c",
+      "document_path": "spec/confidence-classification.md",
+      "text_digest": "sha256:6d4969894ad246d6a97ca09c22b8003ed749205962518f395f520eb0a61327cf",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Comparing human and automated assessments requires a common scale; both must use STIX 0-100 in that mode.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "scale-consistency-check",
+        "mixed-scale-rejection"
+      ],
+      "external_standard_ids": [
+        "OASIS-STIX-2.1"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:b0d7b36a64149f679cd071b312741cc47673afbc97658c9917d88dbf115c1acb",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00726",
+      "requirement_id": "REQ-dd60c73b247829bb9b1ee797ad2ed93bb061a6b687fd258f23640b5fea62bbb6",
+      "document_path": "spec/confidence-classification.md",
+      "text_digest": "sha256:9554d58128e93b85950cd8165f41f14c17b14b91b1c36a9fee15f6c5ca6c8036",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Humans do not produce calibrated probabilities; labelling their judgements that way is misleading.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "human-assessment-model-check",
+        "human-probability-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:d02924d2fea1520a9f12433d8dbb2c2a639e22c4bce23f7cadd46fd5986d003b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00727",
+      "requirement_id": "REQ-e3a187878ca89d64997653f1b97a077e99c6bc0afad82d225ba6464a8eb975fc",
+      "document_path": "spec/confidence-classification.md",
+      "text_digest": "sha256:ee694aae4c865421eec5a7da70d59d6089a7af8b7de126b3954e712f2e45e9e5",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Representing reviewers as person agents gives provenance that distinguishes humans from software agents.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-NON-REPUDIATION"
+      ],
+      "evidence_expectations": [
+        "reviewer-agent-type-check",
+        "non-person-reviewer-rejection"
+      ],
+      "external_standard_ids": [
+        "W3C-PROV-O"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:57b9f8b45af3b0a210d2fb21c8b769f80aef56620bf16d6d2237773f13276c6a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00728",
+      "requirement_id": "REQ-f4c90a7843deb23dd2de09aeff372a91a1eed674064a3b2fc30be51c03101b21",
+      "document_path": "spec/confidence-classification.md",
+      "text_digest": "sha256:a01dec379bfccea051abca9558042d5b73c1a844f9f21c3242963c695c387316",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Raw model scores in [0,1] are not calibrated probabilities; the label requires calibration evidence.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "raw-score-label-check",
+        "calibration-evidence-requirement"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:f1962b2e23d879f795bad278e67abfe74cdce40ccf1b8a0461215da9d8628840",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00729",
+      "requirement_id": "REQ-ff9fc182fec2fbd65b0d88690e22816bb33c9954e3e70631e932af6bd6f1f32f",
+      "document_path": "spec/confidence-classification.md",
+      "text_digest": "sha256:90c5406856afb8c4d230572558a53d1a9babccf5e6fdcc218fa79cb8547cec56",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A classified record without labels or confidence has no content, so classification must carry both.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "classified-record-field-check",
+        "empty-classified-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:3766fb39f0fa0afcbdd4ebc3175ecc1601d97adb9ace10283bce03af157af506",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00730",
+      "requirement_id": "REQ-08b10fee3ad5c2cdfa3a00c9cde7c731274fcc9802be20b813e57a79b336be1a",
+      "document_path": "spec/advisory-interoperability.md",
+      "text_digest": "sha256:94b6e4025d5c2e8726ff343f70b2e4abb0793fcb1a61355f55ea3c2c8adbe8c6",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Without the version prefix, tools may misparse a v4 vector as v3 and compute the wrong severity.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "cvss-vector-prefix-validation",
+        "v3-vector-rejection"
+      ],
+      "external_standard_ids": [
+        "OASIS-CSAF-2.0"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:3e9fdc29e94e08f17d3a680aed5874dc33fbd4368654424932ff48b415327e25",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00731",
+      "requirement_id": "REQ-1e2e318d036915c078fd7f9aaad45c706be4dfecd2a7e39d59cfccd0b7713e11",
+      "document_path": "spec/advisory-interoperability.md",
+      "text_digest": "sha256:1b1673c958708c08f37414f9f37428944ee4706dec6d65a8e4d2395bec192072",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A product both fixed and affected for the same vulnerability gives consumers contradictory patch guidance.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-SOFTWARE-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "status-set-exclusivity-check",
+        "contradictory-status-rejection"
+      ],
+      "external_standard_ids": [
+        "OASIS-CSAF-2.0"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:06a5b5b01be23692223e7834a5e33362e7dc863a9eed2fcc6378e985a8a5a5ce",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00732",
+      "requirement_id": "REQ-2b3a399b5f1bec41633c8b782f05a0db25ba512476897faeaf693c53dc394937",
+      "document_path": "spec/advisory-interoperability.md",
+      "text_digest": "sha256:2117762188a8cdb0d7407c8c6c6782e1f8021f9f4596a2fe15bf755bef38d1a7",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Validation warnings flag questionable advisory content; dropping them hides issues from consumers.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "warning-preservation-test",
+        "export-warning-passthrough"
+      ],
+      "external_standard_ids": [
+        "OASIS-CSAF-2.0"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:ed3e64de817ead4c73d5ec3b3f9610a3827e52bfb98e6dacbdfc0f69d7fba418",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00733",
+      "requirement_id": "REQ-4f309aa3f7ed964a5fd55fc7c906eaad1702d66af428c46b4755f3305c98e35e",
+      "document_path": "spec/advisory-interoperability.md",
+      "text_digest": "sha256:f2b12fd1b00b4d9185113e7e739d7af8c62a0a600b3ff030bae92f982cdcc58d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Advisory updates must increment version, record revision history and keep identifiers so consumers can see what changed and trust they are reading the latest version.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "advisory-update-revision-history-check",
+        "version-increment-test"
+      ],
+      "external_standard_ids": [
+        "OASIS-CSAF-2.0"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:a928c7dd29a75f7a57edd5cd48312866f53cb0bd6b4e80585616d5785572fdfe",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00734",
+      "requirement_id": "REQ-736854dcdceb31c406877d54ed1a94b6f8ea8da76381dc48337a3949cca013d0",
+      "document_path": "spec/advisory-interoperability.md",
+      "text_digest": "sha256:05f8c24366b23a353a92cd54d9c022ed8f22e4d0a18d26eca8f41c2ea73fb657",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A fixed product without a matching affected product in scope makes the fix claim unverifiable and may mislead users of other branches.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-SOFTWARE-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "fixed-affected-pairing-check",
+        "orphan-fixed-product-rejection"
+      ],
+      "external_standard_ids": [
+        "OASIS-CSAF-2.0"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:2480fe11e3defe55516be7e4c7adf59bff04919bc1605623e195933ae4947c44",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00735",
+      "requirement_id": "REQ-79057e4ed97561bc41672a3e8c36a4080061d2a0ff70bf74abc037d9d45bc633",
+      "document_path": "spec/advisory-interoperability.md",
+      "text_digest": "sha256:b601d1c2f421634da8c60b94763b2831c21feae2f1fec7de320eaa46d7dda1d9",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Down-converting v4 to v3 loses information and can change severity, misrepresenting risk.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "no-downconversion-check",
+        "csaf-score-field-review"
+      ],
+      "external_standard_ids": [
+        "OASIS-CSAF-2.0"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:d9c487c3a55fbe4bc7fb16dfcb5893b55019eb62bdd74a1e6cabe15ab9efefa6",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00736",
+      "requirement_id": "REQ-8e3c6a6a2fb317e192d446a72b0e3f44f8a477729127ad8c2a9e7da32d2f3494",
+      "document_path": "spec/advisory-interoperability.md",
+      "text_digest": "sha256:de50e9e5e689607d86b5987888b98ad63e41da6ee0607f0133ec0e8ed7349075",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "KEV lists only confirmed known exploitation; absence does not mean unexploited, and treating it so delays urgent patching.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY",
+        "SP-SOFTWARE-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "kev-absence-interpretation-review",
+        "exploitation-signal-independence-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:f9452057872cf50b652b2d071447af843ebbdecf81909e942b3f363752f5cf9e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00737",
+      "requirement_id": "REQ-981ed23b53e23d58112f7896bee5d91da11a6469ada44c8f8b6d0788cd60449a",
+      "document_path": "spec/advisory-interoperability.md",
+      "text_digest": "sha256:217ebb95b3617bf05cf3d6221cc3ae60e92ec87ec74e9c2c1585ddc87ad08ca6",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Internal exploitation findings and KEV come from different evidence; forcing agreement would discard real signals.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "independent-signal-storage-test",
+        "no-forced-reconciliation-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:274872e4081008c593d595b4cc97a9d567f8686408fcf58600360ea48dca8d1a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00738",
+      "requirement_id": "REQ-9da882f1b21446a0a035e4ebd9f0c3f9018996a0e9b75249943b2171cb28aa43",
+      "document_path": "spec/advisory-interoperability.md",
+      "text_digest": "sha256:f384893ce812b6154578720c192e952b8080cf064334e6dae0a4abdce88c4012",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "CSAF 2.0 cannot carry all modern metrics; summarising them in notes keeps information visible while the normalised record remains authoritative.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "metric-summary-in-notes-test",
+        "normalized-record-retention"
+      ],
+      "external_standard_ids": [
+        "OASIS-CSAF-2.0"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:b9ffb45e7d71c2c8d475c9a26e43a4b7e2c1a6105d356dc986eb2ac91ae01fcb",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00739",
+      "requirement_id": "REQ-aee581aaa4273131118e946dec931ebe23d5aca2f0a5b0409f5ca12ea6aa66ec",
+      "document_path": "spec/advisory-interoperability.md",
+      "text_digest": "sha256:b7462594a3ff85567a5a2a2e048c881537f83bdc8a7cc531ff525aca225c655d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The internal exporter checks semantics, not full CSAF validity; claiming csaf_validated would overstate conformance.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "csaf-validator-run-evidence",
+        "validated-flag-gating-test"
+      ],
+      "external_standard_ids": [
+        "OASIS-CSAF-2.0"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:ba0b2322f6ee90a6592f35b706d572322dd60e627909f1d709cc6c69ec5c2f2e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00740",
+      "requirement_id": "REQ-b0ca11cccb4a91deea37ac2ecb172dc87c8ef8f7541de14d8d4b9ffe2f645fad",
+      "document_path": "spec/advisory-interoperability.md",
+      "text_digest": "sha256:2317d95f44cc126d8bf77567236f3b441e45586d5c30988d0d8e5813b0f122fd",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "An immutable fix reference lets consumers obtain exactly the remediated artifact rather than a moving target.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "fix-url-or-artifact-reference-check",
+        "immutable-reference-review"
+      ],
+      "external_standard_ids": [
+        "OASIS-CSAF-2.0"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:ba932da9bfa81680eccbb5cccb854d401ffc2a8a096e569076bec21bfc396504",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00741",
+      "requirement_id": "REQ-b28a388dd5e20b6c361ca1cec57fb5e3e60d97a2ca41dbbcf1cdd8b80614e904",
+      "document_path": "spec/advisory-interoperability.md",
+      "text_digest": "sha256:2b65c46b5d29fa8979e5a4d21c1a2cc4272dbf9ab69af01a1635ad69bace6c1c",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Vulnerabilities can involve several weakness classes; recording all aids root-cause analysis.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "multi-cwe-field-support",
+        "cwe-format-validation"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e892e232b0a8bf119569fc68806fdc7bada865a75bf32b1dd4024c120f76888f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00742",
+      "requirement_id": "REQ-b534ef741f83d3267671877951ff1963222997a40d672061cdcedc444584e494",
+      "document_path": "spec/advisory-interoperability.md",
+      "text_digest": "sha256:f7e6d18e29648e9aed34f4baed2a2a7c20709406ac53ec548035aab5ecf87411",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "PURL and CPE help automated matching of affected products in inventories.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "identifier-format-validation",
+        "matching-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:6ba916e23d1913f1624dfc5b1cb562ed1be308c614683b9c294fd9f57d732695",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00743",
+      "requirement_id": "REQ-c0d4b155198ec732f34da438c1a466f4f7f353c6b701b440b7197859fb9f30f4",
+      "document_path": "spec/advisory-interoperability.md",
+      "text_digest": "sha256:7ce1fa05acdf8311703abf6ee45fa62cc3eab2abf98ef2f40bc38b6cce1a9edd",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Remediations must state which products they apply to so users know whether a fix is relevant.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "remediation-product-id-check",
+        "unscoped-remediation-rejection"
+      ],
+      "external_standard_ids": [
+        "OASIS-CSAF-2.0"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:d605bc6347502a0beca8a8b5bd175e34ffa0036712527300beb896264cc563e2",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00744",
+      "requirement_id": "REQ-cbd82168ae4119b855299918fb0bd814ee840cf18a06fbcccea04886a2346e11",
+      "document_path": "spec/advisory-interoperability.md",
+      "text_digest": "sha256:c31a5a9e65ca2783bd9f2a5a99775be66fc5a30f622751d662a605655d66b21f",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Malformed CVE IDs break cross-referencing with other databases.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "cve-syntax-validation",
+        "invalid-cve-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:5a6f614945d44fb36f82d667a8646aa46281cc4fd7f39f9a719bd3a7412020f8",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00745",
+      "requirement_id": "REQ-cf6a6c7713c6df61106be39048a3f9143349f19e670b5937a00f68e288e8f5ab",
+      "document_path": "spec/advisory-interoperability.md",
+      "text_digest": "sha256:fb6e1f3b5cf156fd36d29b4d7218c43c94d0fe0e4b576f4f37593c79a8c88d42",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Publishing a score without the full vector and version prevents verification of how it was computed.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "cvss-record-field-completeness",
+        "score-without-vector-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:91d18f4adae50c69298cfb8cbdad956854b5eb4f78d30ec073392a614a3aee68",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00746",
+      "requirement_id": "REQ-d2f1efb3d958827b03f8653e3c5eb0cf1301e28b569ad0bc15a7d4322e66fe9c",
+      "document_path": "spec/advisory-interoperability.md",
+      "text_digest": "sha256:ef64ddeaea3126387847468ec6e12d384d96e1f141808cf6d84afe743bcbce0a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "KEV observations change over time; recording source, time and status preserves provenance for later review.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN",
+        "TM-CLOCK"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "kev-observation-field-check",
+        "provenance-preservation-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:c59a671ba1b2aa64631ae0a45041a99a37440d8975787a55e2a0bf974d0c4fe6",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00747",
+      "requirement_id": "REQ-e95c34de7af70f0abc803bfef9bf2163f49c24a4ba500f810595e138424a0209",
+      "document_path": "spec/advisory-interoperability.md",
+      "text_digest": "sha256:a3f2ec56de14e46e9dc152d01e36eb791a54a4b3b466e8e39bea13d3e7214cd2",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Consistent CWE formatting enables reliable mapping to the CWE catalogue.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "cwe-format-validation",
+        "malformed-cwe-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:378ea0f83041be6a51ceeb437e544721c2549ecc8ab603a8ccbd8f6b6fc9ef7e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00748",
+      "requirement_id": "REQ-eef7a03faa2abfd197f5f813fc985a5461324636938c6e6d10cc1e9cbcfda87a",
+      "document_path": "spec/advisory-interoperability.md",
+      "text_digest": "sha256:fcd999e64191972193994d825b06dc361fa0c7075dafa9715f5cc44b0cac20d4",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "CWE classifies weaknesses, not specific vulnerabilities; using it as an identifier conflates distinct issues.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "cwe-not-used-as-id-check",
+        "identifier-field-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:328b9658ec6fd17d8435fa92688d50fe07f025bfd7575b2f64b17e90a35fd0c1",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00749",
+      "requirement_id": "REQ-f2cfcf1ff317191001193d8365ede0619ecedc58613a9576f9a86e4316bac316",
+      "document_path": "spec/advisory-interoperability.md",
+      "text_digest": "sha256:016c3eae7f4c7bf778f24c4dde5e5e9103294f903523c36470554ba534c23f51",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Refreshing time-varying signals without rewriting history keeps an auditable record of what was known when.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN",
+        "TM-CLOCK"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "append-only-signal-history-test",
+        "refresh-without-overwrite-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:76d561a3c66bb13320318d8d13bb3820ee19c01e751fb1146fe5a108ea35429f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00750",
+      "requirement_id": "REQ-f7d1d32bbd50a1ba7663b05c4c09e6cb5d10e0e01e43a77dd07095c10aff34a4",
+      "document_path": "spec/advisory-interoperability.md",
+      "text_digest": "sha256:89ecda02edc753e580c343746eece57929254ccae54f1fa43ab14c2691f300db",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Human-readable representation is allowed, but the normalised record stays authoritative so machine consumers are not misled by prose.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "authoritative-source-declaration",
+        "prose-vs-record-consistency-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:246ce0080fbdc90c83b9dcb640d341c00a9db91a9f3d370c4dd03a91e174e55d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00751",
+      "requirement_id": "REQ-02a18e109cdaecc484df119076cb11232dcbc542c895006a3ffcd70eb268d1e5",
+      "document_path": "spec/vulnerability-handling.md",
+      "text_digest": "sha256:d39c9a8cbe3c762ff7a1859d6a46f00aaf5afa75735fd6fe312bae81f0030345",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Waiting for a normal release train could leave users exposed past the disclosure deadline or during active exploitation.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY",
+        "SP-AVAILABILITY"
+      ],
+      "evidence_expectations": [
+        "deadline-over-cadence-test",
+        "emergency-release-path-evidence"
+      ],
+      "external_standard_ids": [
+        "ISO-IEC-30111-2019"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:166adcf54581172cea2f9bcee64902e7c15104c3581692225b82a0f51576d450",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00752",
+      "requirement_id": "REQ-05da02830012a913a3d56664767d98c8f999aa366e72531ab01479dab741f434",
+      "document_path": "spec/vulnerability-handling.md",
+      "text_digest": "sha256:95dc6fa8d3c4019e1fee860822024fa8abee7cc2c1ed102023c5d162635cda38",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Old versions still in use remain vulnerable; guidance helps users mitigate or migrate.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "unsupported-version-guidance-check",
+        "deployment-data-review"
+      ],
+      "external_standard_ids": [
+        "ISO-IEC-30111-2019"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:78cd95031cdcf1585496f37e506bbdec8091d55d27517eeb3c7389831a602b39",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00753",
+      "requirement_id": "REQ-1c6b1f557723c83927bd9da96653b9060cd3452b22211bd3f95e82b6e3f5c96d",
+      "document_path": "spec/vulnerability-handling.md",
+      "text_digest": "sha256:08a4cfb49755e5b5b18ccdc718ccb7802166318fd7351c028728a1e4da57f45d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Distinguishing report receipt, triage, confirmation, remediation and disclosure keeps handling state accurate for deadlines and audits.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "handling-state-field-validation",
+        "state-distinction-test"
+      ],
+      "external_standard_ids": [
+        "ISO-IEC-30111-2019"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:ab1e2ab47be58a1051835ccbf7de40bff8a4553a26c0cf258af34e0d4784d365",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00754",
+      "requirement_id": "REQ-1d775ef06b49b622ad425a8e075a0b5f2b8877081366efee1421745ac862ab2f",
+      "document_path": "spec/vulnerability-handling.md",
+      "text_digest": "sha256:5cb2a8025554e7b621a0125c56f09f61931e4a2153e5bd42fc1b68a66fd975ae",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Consistent CVSS v4 recording, or a justified exception, gives a comparable severity baseline.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "cvss-or-justification-check",
+        "missing-severity-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:855b8100a27af41e6d2c8d255357a2a3aab3d2988bcb16ce26f54d9c0cbffa02",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00755",
+      "requirement_id": "REQ-26e69d75653dda1ac63b2c40226316e5925bd517946a3ee7843c4862c6ee8281",
+      "document_path": "spec/vulnerability-handling.md",
+      "text_digest": "sha256:e538ae6eed890e0a32fa24374bfa0cb47994354aa6fb0c95388ea14522e38f20",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Recording why a report was rejected allows later review and prevents silent dismissal of real issues.",
+      "threat_ids": [
+        "TM-INSIDER",
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "rejection-reason-field-check",
+        "reasonless-rejection-test"
+      ],
+      "external_standard_ids": [
+        "ISO-IEC-30111-2019"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:e0e88ad58f44889aa655c62c98d9f0f21b2b03aeb89ece3db1a03d3e2baff953",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00756",
+      "requirement_id": "REQ-278407bc1d733577c27b1c0717c84c5605690356700968e4952abf5394ff699b",
+      "document_path": "spec/vulnerability-handling.md",
+      "text_digest": "sha256:f78a37e5c4bf54bb0470022e0106a7e7f8fe4bd61336c2a7105d2dc58f035463",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Identifying affected products, versions and severity before remediation ensures fixes target the right scope.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "pre-remediation-field-check",
+        "incomplete-case-rejection"
+      ],
+      "external_standard_ids": [
+        "ISO-IEC-30111-2019"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:7edfa2913c3fefb69f9e9df0e537efa66086e3e68b74ee6d5ba1dd8b5e3f28fc",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00757",
+      "requirement_id": "REQ-390da0638d12e9545e1662fea21be80efd17d3a26619d068be6d11da2155a727",
+      "document_path": "spec/vulnerability-handling.md",
+      "text_digest": "sha256:6425e724a1db9e775a85dce39fb968e43d1cb7fd38d51a25c360ecc22ac5e30f",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "SSVC trees differ by stakeholder and version; recording the exact tree makes decisions reproducible.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "ssvc-tree-reference-check",
+        "decision-reproduction-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:241a4e887fa71a4494a03fa896aaab8f65056418bf0e06caf58d6029f00fed4b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00758",
+      "requirement_id": "REQ-45259f0eee1a2a221652ef324f1af2d92eb2ecd090eca05b1b825915277eea18",
+      "document_path": "spec/vulnerability-handling.md",
+      "text_digest": "sha256:6ec3a3b94f3ef7648405d209177528d6dad46fe162268ed6001ea4de3d30b844",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Duplicates must not reset deadlines; otherwise re-reports could be used to delay disclosure indefinitely.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "duplicate-link-and-clock-test",
+        "clock-reset-rejection"
+      ],
+      "external_standard_ids": [
+        "ISO-IEC-30111-2019"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:2b8f51248f4942c95634d7397351890db84332ec06604104fd90d9d644f5ea9b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00759",
+      "requirement_id": "REQ-4613f49a508c7a17f9df2df901a5663c34942bcb4d348b9f57c4cd5af29e7f57",
+      "document_path": "spec/vulnerability-handling.md",
+      "text_digest": "sha256:bf7516a5c611cc1f53e4b6d1cf898b06fe12d5ce1986e98b3725c26a1e0d499a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Root causes enable systemic fixes; restating symptoms leaves the underlying flaw unaddressed.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "root-cause-review-checklist",
+        "symptom-only-statement-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:47503b4356cdb6c096082dd31b3dc421df10ef8b24aa9c1e8a9abaed8f0db6bc",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00760",
+      "requirement_id": "REQ-4817ed4217b17cf2a2a72fff7b5a0d211ed357fe95b81130e2f720b505c72aee",
+      "document_path": "spec/vulnerability-handling.md",
+      "text_digest": "sha256:4d734193970ef44d808506428d5637f967b3bddcd950aee69b5632f6f34f53d6",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Active exploitation requires prompt escalation; the escalation must happen within the defined clock.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY",
+        "SP-AVAILABILITY"
+      ],
+      "evidence_expectations": [
+        "escalation-timing-test",
+        "clock-violation-detection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:3c824f98d9bd47b8c9a4c0ad38b9b3a806ca6651325893d85ccbc049f62a08f7",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00761",
+      "requirement_id": "REQ-4eb3a6f4183c948724c77df96031bbd8c800c9d9ab0c627e31c2912a1a7221b9",
+      "document_path": "spec/vulnerability-handling.md",
+      "text_digest": "sha256:8b76993f7fc52f3a0053d1b2afbaf392c630cf65fe0fcfa4b3548bc7c8429f12",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Duplicate records need links to the original and reporter information so credit and history are preserved.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "duplicate-record-field-check",
+        "missing-link-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:5386d0007b0d5698eae50cf9b33fb5c2654d6b70c8ca9fe3dd3ce616142cb442",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00762",
+      "requirement_id": "REQ-570668681115a91dab7986ffa5af1a6abdf9e8b3bf2baa8dda5566b7a415f29d",
+      "document_path": "spec/vulnerability-handling.md",
+      "text_digest": "sha256:0b21f667e13dcdd068a740c684352a475d50b614d67251dde140ebb0c9bc99ff",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "New evidence can show a rejected report was valid; reopening without erasing events keeps the history honest.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "reopen-transition-test",
+        "history-preservation-check"
+      ],
+      "external_standard_ids": [
+        "ISO-IEC-30111-2019"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:ff82db031b7876ee8eea8012d9a92056b339566ea8d543a723fc2686420ffd1d",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00763",
+      "requirement_id": "REQ-66e8c4a1d3559cd829c3219b8d175e3a9bcf32954566932f9efccdaae9bb8e9f",
+      "document_path": "spec/vulnerability-handling.md",
+      "text_digest": "sha256:f5bc723b9c0b8d196cbe23fa62da61e95eff3da984831e1c2e938fff3f1a417e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Closing a case must not hide accepted risks still outstanding.",
+      "threat_ids": [
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "closure-exception-retention-test",
+        "exception-visibility-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:f0b6e49a5d7785c507c3d17f6313fa26cdafdf583041719859c7f4532b5d3925",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00764",
+      "requirement_id": "REQ-8061fb33bc7e135d94ac7987eaf9fd4654d0bc1769d1adce1d544d3af2b7f3b5",
+      "document_path": "spec/vulnerability-handling.md",
+      "text_digest": "sha256:53fb7a5d7f6a0d648653dfc49cad9d197ff64a67287336f5862e71c103bc143b",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Accepting risk on an actively exploited vulnerability leaves users under attack; such cases need remediation or mitigation.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "exploited-risk-acceptance-rejection-test",
+        "closure-condition-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:b0e6f92a8785ae389835ee56edcab715dc8399ae80b968839fc6209ac949bb59",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00765",
+      "requirement_id": "REQ-8bebe840780498be7aa9751fda0b62f0771db363e8770f32f287faa2e83e36d8",
+      "document_path": "spec/vulnerability-handling.md",
+      "text_digest": "sha256:df3a8e66a08379e4573d00f35a06f747792a0fb20f9173f2aeeb104f3127082f",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "A remedy must be tested, available and documented before disclosure so users can act on the advisory.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "disclosure-ready-precondition-check",
+        "untested-remedy-rejection"
+      ],
+      "external_standard_ids": [
+        "ISO-IEC-30111-2019"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:4a8d62b06245fe78d09e9ef6fe289489a0bc35c1cf09f64ea20c6c80bc4866e9",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00766",
+      "requirement_id": "REQ-a72459341b6df8e5605863202b43bd6e2cf4671665907d61b123688f04c549a7",
+      "document_path": "spec/vulnerability-handling.md",
+      "text_digest": "sha256:ae297f9424af72f6b82a2af98981de4b1f5c2e0dc4eb9eb4cbead16f158880ae",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Stating per supported version whether it will be fixed, mitigated or not fixed informs users of their options.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "per-version-plan-field-check",
+        "missing-version-plan-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:508b69ea0cd77706b70b730f1f1facfb9fca5e7bf0d83e06449b81eff3af9e27",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00767",
+      "requirement_id": "REQ-a78410b9d51a6b759b2f300ad4951aeb20b0cf92946cca5bafe0ce13eac1f8e6",
+      "document_path": "spec/vulnerability-handling.md",
+      "text_digest": "sha256:e07e3a55853994d97bbd9b67ef70da95a27395ef6ef4e6ab04870e605f53c56c",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Emergency response records (who, when, actions) support accountability and post-incident review.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN",
+        "TM-INSIDER"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "emergency-record-field-check",
+        "incomplete-emergency-record-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:5bafd267c7995c89085f051a71b0ee696714cece46337226be8ce5f86bf36eaa",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00768",
+      "requirement_id": "REQ-c5c127feafa548bd3519b3fde28981f330b4ddc6d715f402555d187a3e8f84cf",
+      "document_path": "spec/vulnerability-handling.md",
+      "text_digest": "sha256:9a397f63f2b12585c8fad19ab4875108861abc71db1d7a4220e0205fe9caf522",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Postmortems for critical or exploited cases capture lessons and systemic fixes.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "postmortem-reference-requirement",
+        "closure-without-postmortem-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:b0db8c459fc361b63d321c177610a5e1e64e7f5c10853d38ee69e87994cb218e",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00769",
+      "requirement_id": "REQ-d8a15dbbaa46d20e3f873fbdf0f103fb2bd71bca524c654bc83f51195bff5a76",
+      "document_path": "spec/vulnerability-handling.md",
+      "text_digest": "sha256:a960cabcdb5f21e6d014b9c564cafdc4902cb2c4fa4f80ef624c8bb5ddb27c0d",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Inventing a separate disclosure deadline would conflict with the policy-defined clock.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "single-deadline-source-check",
+        "duplicate-deadline-absence"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:3cd43056376814f93adacd234f94ee199cac26cb2c5694d027706b9865d0cc81",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00770",
+      "requirement_id": "REQ-ed4d05e904f32b5e2081a762c95b7f81ae51a2c18f7bfce20107721d6bc417d4",
+      "document_path": "spec/vulnerability-handling.md",
+      "text_digest": "sha256:bb935c7289968d74b90663e07cc8608209aaedca1e7b5e8b635bb344c503c4f2",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Multi-vendor issues require coordination; recording participants supports it.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "participant-field-support",
+        "coordination-record-test"
+      ],
+      "external_standard_ids": [
+        "ISO-IEC-29147-2018"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:2fb157bb625f17b627bad9dd08fcfb7bfa7fa60b791b3df5607a815202dd5b1f",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00771",
+      "requirement_id": "REQ-f7ba6814b51addb4dc0d908795f5406561df78643af3f974e13d0d838987e8de",
+      "document_path": "spec/vulnerability-handling.md",
+      "text_digest": "sha256:55cd8165d82165ec9fb5acd7259c22d8c9c2f7efc94cda34394dcaa868a821d2",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Adding vendors must not reset dates; otherwise coordination could be used to delay disclosure.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "vendor-join-no-reset-test",
+        "date-immutability-check"
+      ],
+      "external_standard_ids": [
+        "ISO-IEC-29147-2018"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:178375b81416a3487bef9a4d0863890ee4123fe99c71bd9603da0d8740a05c2a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00772",
+      "requirement_id": "REQ-fc5eb512e9d588ea73583845551cc80e539f0289b93cc1dc179548ea0965cc0d",
+      "document_path": "spec/vulnerability-handling.md",
+      "text_digest": "sha256:dc1fef2f3ee645c20cf323b3dc35216ab8e311d7d44100da01ab9cdaefbb7a19",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Active exploitation demands emergency handling; anything less would leave users exposed.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "exploitation-to-emergency-mapping-test",
+        "non-emergency-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:36f64710bcaf116325007f9a4896a509b164bafc1282fb14cec8d3d270229980",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00773",
+      "requirement_id": "REQ-fc67dc651b95a0477de144579a078e294a03e05ae67c813f5a157f9605ea0633",
+      "document_path": "spec/vulnerability-handling.md",
+      "text_digest": "sha256:83b9924356f95de1887e639ff52b9210cb3e0b79010b52431984b98a0bcc5a55",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "These obligations (severity, scope, plan, deadlines) define the minimum complete handling for confirmed vulnerabilities.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY",
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "confirmed-case-obligation-check",
+        "incomplete-case-rejection"
+      ],
+      "external_standard_ids": [
+        "ISO-IEC-30111-2019"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:59787ed1146c5d931d1f8bf4a6576d010e9cebb833be802bd762c2cbde7fddf9",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00774",
+      "requirement_id": "REQ-087428ff76fe157da6b45a0f9f24a30df4f377b0c617aa9b81c218068f33ca41",
+      "document_path": "spec/vulnerability-disclosure-profiles.md",
+      "text_digest": "sha256:baf5c8adbb7b3365ce2c88c2f4e24547b6d1ada6c95d2f339344199756e9e96f",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Exploitation and context change urgency; hiding them in a static base score understates risk.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "separate-threat-context-fields",
+        "base-score-only-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:db195b2cfaf6eddb867dc306e8a7bcaf24037ea380f8dba93526b21764961dcf",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00775",
+      "requirement_id": "REQ-0b08c8b4bbbf4572c49ba9df2c3aa9cf64756deae33ec9fc24890c5f3e3d13fd",
+      "document_path": "spec/vulnerability-disclosure-profiles.md",
+      "text_digest": "sha256:9de72239feb9159459af250a9702952a04f887f2d8f17c1bf045dbf5ad5439ab",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Shared components affect many vendors; policies must support coordination to avoid partial fixes.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "multi-party-coordination-policy-check",
+        "coordination-procedure-test"
+      ],
+      "external_standard_ids": [
+        "ISO-IEC-29147-2018"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:f9fa3d1afe5dca98295d5b02c3b9be2a24668ed4c7de69efc525932bd368b53b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00776",
+      "requirement_id": "REQ-0e52f7a8f99a34e6d80b9e4e6f4729095425d377b1118d96d0e2538d28533dbe",
+      "document_path": "spec/vulnerability-disclosure-profiles.md",
+      "text_digest": "sha256:3bd016424c906baa0163d14f687beea036aca4e9cf052dc64b667834f69b6284",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "The listed policy elements (scope, contact, safe harbor, deadlines, coordination) are the minimum for researchers to report safely and know what to expect.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "policy-element-completeness-check",
+        "missing-element-rejection"
+      ],
+      "external_standard_ids": [
+        "ISO-IEC-29147-2018"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:5c869e9f86e401b10789c3ddcc717d581c1d2d04b4557299cc63d682928ca8cf",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00777",
+      "requirement_id": "REQ-1326255143b9f80132bff08462f22c53a4dde4a165887e25aa084de458f50cbf",
+      "document_path": "spec/vulnerability-disclosure-profiles.md",
+      "text_digest": "sha256:6faaad857a379db278bd73ac4b59bc42a0e67a7f4bc49c992af215fc31d58667",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Extensions are allowed only under recorded justified conditions, preventing indefinite delays.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "extension-condition-validation",
+        "unjustified-extension-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:65e7d65bf6019ddc4cd68517b45aa03dde3fd3adb6855d3d57ca1b8bd2605081",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00778",
+      "requirement_id": "REQ-16818dd39140bb892f2f7b3cf5781365c6e7ea40f7987d61ef86d1797e010530",
+      "document_path": "spec/vulnerability-disclosure-profiles.md",
+      "text_digest": "sha256:41de6c745a00b888ddc6a903cf638947fa1b1a0187cb65037bb8e35f3310e072",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Deadlines must be positive and bounded; 180 days caps how long users remain uninformed.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "deadline-range-validation",
+        "out-of-range-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:2236612db4bd340081730dcd0f13edb2765dc2ece2390d11302f2b8e6dd042dd",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00779",
+      "requirement_id": "REQ-1ce2ae691226bddf288ed637a82416ca76a8fc53225f619da0fe6106bb4f824a",
+      "document_path": "spec/vulnerability-disclosure-profiles.md",
+      "text_digest": "sha256:5cfc8a3470445ea6f4d14dd60ee6b2c9d097f8e555dfc067a86fd7e85f19754a",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Safe-harbor statements encourage good-faith research without fear of legal action.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "safe-harbor-statement-check",
+        "policy-text-review"
+      ],
+      "external_standard_ids": [
+        "ISO-IEC-29147-2018"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:3b12c06b248a3fa5042591ce78115078fe6594fcd89f4ba1e9d48eb7e7d30e3a",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00780",
+      "requirement_id": "REQ-25a0a86de528f377865ac570f68d2bcce1f09a2a64b0693b8d095a6e85ee86de",
+      "document_path": "spec/vulnerability-disclosure-profiles.md",
+      "text_digest": "sha256:23a79f91774c397929cad3e7859b1392df62312f59f38540e2a86e1e6ca9d840",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "security.txt Contact and Expires are required by RFC 9116 so researchers can reach the right team and trust the information is current.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "security-txt-field-validation",
+        "missing-contact-rejection"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9116"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:73441e05e189f9b170aefaabfaf9331bbff9a028cc5a7967a7fb05a432916787",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00781",
+      "requirement_id": "REQ-4a92a87a3904508326521fa8d845bd337837cd9156c7516297ff83244204f7a6",
+      "document_path": "spec/vulnerability-disclosure-profiles.md",
+      "text_digest": "sha256:3f08e5bd982c2ffd4e67a778362e1b15c9aad7ed282ef6adbf7f45903a8bb083",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Deadline extensions need a real dependency, recorded reason and advance notice to the reporter to keep the process fair and accountable.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "extension-record-validation",
+        "late-notice-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:271fcc23ecd60b981036a2dba7d98578155acc9aad8060b9560d50ac3d4bd258",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00782",
+      "requirement_id": "REQ-584607a638a0f6b00072e35789e8af9f58586253a401a117606d90cb1e3b93a8",
+      "document_path": "spec/vulnerability-disclosure-profiles.md",
+      "text_digest": "sha256:7abcb91f0ba2ebb5cc0df5cd7bdc26be0350de1fedb5e83443218ef729226a22",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Resetting the clock when vendors join would allow coordination to postpone disclosure indefinitely.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "vendor-join-clock-test",
+        "silent-reset-rejection"
+      ],
+      "external_standard_ids": [
+        "ISO-IEC-29147-2018"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:acf5e6240630874697cbf741f983d14027ed1800a4734a318a74a8334c3180ed",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00783",
+      "requirement_id": "REQ-5ae4d9d7070a6f0b7938bad54fa47135cee37a27339401ff5d353cf565bc370a",
+      "document_path": "spec/vulnerability-disclosure-profiles.md",
+      "text_digest": "sha256:921ae7b6a8d9681d7ca608927676411e210badf7481ff3023bb91e3cb3a77bea",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Trusted coordinators help manage multi-party disclosure and conflicts.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "coordinator-field-support",
+        "coordinator-role-documentation"
+      ],
+      "external_standard_ids": [
+        "ISO-IEC-29147-2018"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:e5cecb9e20f540945166b901892b3e3d776d5e2619137b6c92355e1a175755ce",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00784",
+      "requirement_id": "REQ-7394751d3f7a680ac61cf8b4c0c14b051cac84f547bf984529cb2d9c8261eada",
+      "document_path": "spec/vulnerability-disclosure-profiles.md",
+      "text_digest": "sha256:dad508c4974a0f1d1b0a8de9cf3159c702a66beef9de546de80c0455b3f872b1",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Researchers encountering sensitive data must stop, minimise retention and report, protecting affected users.",
+      "threat_ids": [
+        "TM-SERVICE-READ"
+      ],
+      "security_property_ids": [
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "sensitive-data-handling-clause-check",
+        "policy-review"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:31ab2a227b50edca0189d992b756e5e887f491c88a4bfe87f066310bb93cae9c",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00785",
+      "requirement_id": "REQ-780d3103a1bf498f5ff5fe9b11e17478f12899bb618038d7ad6acf8281fb34c2",
+      "document_path": "spec/vulnerability-disclosure-profiles.md",
+      "text_digest": "sha256:2a34407016907ced9f4e26758d818332337b77ad2e270a4a0df461147d95ff4e",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Defining prohibited conduct (e.g. DoS, social engineering, data exfiltration) sets clear boundaries for authorised research.",
+      "threat_ids": [
+        "TM-DOS",
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-AVAILABILITY",
+        "SP-CONFIDENTIALITY"
+      ],
+      "evidence_expectations": [
+        "prohibited-conduct-list-check",
+        "policy-completeness-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:8452a42e2f6f68ee1811c64d7c39f978a6e05fc369afbc7f44c14a1dde564d10",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00786",
+      "requirement_id": "REQ-7b8ddfb4ad5a1d4a95859d525d107b3e116b4a48a3c242543581355e213766ed",
+      "document_path": "spec/vulnerability-disclosure-profiles.md",
+      "text_digest": "sha256:54382ba0cc5deb65285a4085ba31f08fd07efb1abdf6288470770b3518809802",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Explicit deadlines per severity tier give predictable disclosure timing.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "tier-deadline-field-check",
+        "missing-tier-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:5416caea93fd25b8be8660bfeea2d32698f7cd4d6610b24a1d7ffe175d9c12a9",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00787",
+      "requirement_id": "REQ-9d73c96764bbf4270ed77863bdf4d38c9ffa2b01a40df8ce3d01eea3629d310a",
+      "document_path": "spec/vulnerability-disclosure-profiles.md",
+      "text_digest": "sha256:b0d0d0b42dffd76eb814c48965706ad83b4a3d4f0ceae3ff4d8a2fe857dc53a6",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Earlier disclosure by mutual agreement can benefit users when fixes are ready.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "mutual-agreement-record",
+        "early-disclosure-transition-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:e9e3861f4b6c17d15cfd9ab63801dbde3587a0842a56870ec89c9c0f25602cf3",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00788",
+      "requirement_id": "REQ-b5e6c6da05dec09b445a20c6fe28dabcca01956a490cbef1550cb9a8e94a0663",
+      "document_path": "spec/vulnerability-disclosure-profiles.md",
+      "text_digest": "sha256:49ae51b66d83b6536711e2f7af1588837160fd977fcc11a1c21160ed0742a396",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Severe issues should be disclosed no later than minor ones; inverse ordering would delay critical warnings.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "tier-ordering-validation",
+        "inverted-deadline-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:db4928abd9938b44e06257cf618fb735d1a09137ae5d964403e5c13ced441ace",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00789",
+      "requirement_id": "REQ-c4710d0569617cfb923dab3fc8c647fb2d97b66e45bd30e7cd5bb9a51f3aadbb",
+      "document_path": "spec/vulnerability-disclosure-profiles.md",
+      "text_digest": "sha256:a2ad4d7d32e5aa9797476ae95fbe4f00455628e432eba8c72d652be71dd29802",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Disclosing 30 days after a fix gives users time to patch while capping delay at day 120.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "post-fix-disclosure-window-test",
+        "day-120-cap-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:5e0f12524fc18f94034bda0330256282d7978448efa0d907c9194c3d57fb9dec",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00790",
+      "requirement_id": "REQ-cc7020a9ff8fc6cf83fea222f84d77452eeec23cff616724026304b7920b1565",
+      "document_path": "spec/vulnerability-disclosure-profiles.md",
+      "text_digest": "sha256:c83b12cd8fabc99a994646a7ff699a07b87d6dd4483da63d04f722178a2ec1f0",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Requiring account identifiers would deter anonymous reporters and leak reporter identity.",
+      "threat_ids": [
+        "TM-METADATA"
+      ],
+      "security_property_ids": [
+        "SP-METADATA-MINIMIZATION"
+      ],
+      "evidence_expectations": [
+        "report-form-field-review",
+        "account-id-optional-test"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:119226a8961c73224a9543e6be9932f53317c93c3fd064c780bf8b672df2c12b",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00791",
+      "requirement_id": "REQ-d74bdbb49f726a54d68166eed038abf948c4d521eaccac97cfc5503f708b2806",
+      "document_path": "spec/vulnerability-disclosure-profiles.md",
+      "text_digest": "sha256:d77c762ecfe435b22475fe89ee8758df612b394ded31f37d3defe3a7b9f961bc",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Declared policy parameters (scope, channels, deadlines) make the policy machine-checkable and transparent.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "policy-declaration-schema-check",
+        "missing-declaration-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:93efbd0190f0a7bfd786453ed121fe727e7b50c3442bce770ba64d8ed60d0add",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00792",
+      "requirement_id": "REQ-e4379648a399f812f800e9efeabfaf8c89b9c2d88415d482b24190797da290fd",
+      "document_path": "spec/vulnerability-disclosure-profiles.md",
+      "text_digest": "sha256:4c5e239a3bcf86302bd19037e87036c6d3c414d576ce331e462e4f9dce6048c6",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Using v4.0 with full vectors makes published scores verifiable and comparable.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "cvss-v4-vector-check",
+        "score-without-vector-rejection"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:103246be9e5b04b6ce43f52bb90dafd1ee55f3ccd4189cc4377e41b01888c9e3",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00793",
+      "requirement_id": "REQ-ea22557068f21929a0f96b0ccd0a04292dc6989ed7551c20edda6bad6c89bfc4",
+      "document_path": "spec/vulnerability-disclosure-profiles.md",
+      "text_digest": "sha256:667a6b8cc0c8806313c9652fc69abf982e048240cc95fa322d16db0b511ac3d8",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Exploited reports need rapid escalation (24h) and a decision on warnings within 72h to protect users.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN"
+      ],
+      "security_property_ids": [
+        "SP-SOFTWARE-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "exploitation-escalation-timing-test",
+        "72h-decision-check"
+      ],
+      "external_standard_ids": [],
+      "dependencies": [],
+      "context_digest": "sha256:cd0774ac0f5e539174b5c273b8439bb84cea1d4708e8fc075bbb36290ac1b165",
+      "review": null
+    },
+    {
+      "logical_id": "E2EESA-R-00794",
+      "requirement_id": "REQ-f7fb4d613b15fc7f7f06c53e718f85fa89057a83e04cb327818efa1a10ec6b2c",
+      "document_path": "spec/vulnerability-disclosure-profiles.md",
+      "text_digest": "sha256:e2450b833029fc2286c05d52ff19aec6382328e814495189dca21d69204cd067",
+      "author_id": "galinsky-labs-ai-assisted",
+      "rationale": "Short expiry ensures security.txt is reviewed regularly and contact data stays current.",
+      "threat_ids": [
+        "TM-SUPPLY-CHAIN",
+        "TM-CLOCK"
+      ],
+      "security_property_ids": [
+        "SP-INTEGRITY"
+      ],
+      "evidence_expectations": [
+        "expires-within-366-days-check",
+        "stale-security-txt-detection"
+      ],
+      "external_standard_ids": [
+        "IETF-RFC9116"
+      ],
+      "dependencies": [],
+      "context_digest": "sha256:351a50eaffa00378b933d261da29827c186eb2bfd364d97536ade0b8f2d63c3a",
+      "review": null
     }
   ]
 }
